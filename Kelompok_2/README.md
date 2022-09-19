@@ -9,14 +9,14 @@
 
 ## Tugas Review Materi
 1. Bagian 1
-   Kode pengenalan PHP pada materi Client-Server slide 43 dan 47
+      - Kode pengenalan PHP pada materi Client-Server slide 43 dan 47
 2. Bagian 2
-   Kode pada materi PHP Basics slide 14, 22, 26, 34-36, 38-42, 47-50, 52-56, 58-59. 
+      - Kode pada materi PHP Basics slide 14, 22, 26, 34-36, 38-42, 47-50, 52-56, 58-59. 
 3. Bagian 3
-   Penerapan seleksi kondisi, looping, array pada materi Seleksi kondisi, looping, array.
+      - Penerapan seleksi kondisi, looping, array pada materi Seleksi kondisi, looping, array.
 4. Bagian 4
-   Penerapan materi terhadap nilai konversi mahasiswa
+      - Penerapan materi terhadap nilai konversi mahasiswa
 5. Bagian 5a
-   Studi kasus registrasi dan login (slide 18-23)
+      - Studi kasus registrasi dan login (slide 18-23)
 6. Bagian 5b
-   Ajax chat (slide 50-56)
+      - Ajax chat (slide 50-56)
