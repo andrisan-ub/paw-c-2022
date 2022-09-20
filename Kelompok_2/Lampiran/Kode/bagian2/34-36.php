@@ -29,7 +29,7 @@ echo $a . "<br>";
 $b = 2;
 echo $b . "<br>";
 //$c = $a + b; // ini akan terjadi eror
-$d = $a . $b; // nilai bernilai 100 karena merujuk pada variabel terakhir yaitu pada baris ke 23
+$d = $a . $b; // nilai bernilai 100 karena merujuk pada variabel terakhir yaitu pada baris ke 24
 echo $d;
 
 
