@@ -3,6 +3,7 @@
     echo "PROGRAM KONVERSI NILAI\n";
 
     do {
+        echo "\n";
         echo "Apakah anda ingin merubah nilai menjadi angka mutu atau huruf mutu? ((a : Angka Mutu / h : Huruf Mutu)\n";
 
         $choose = readline('Masukkan disini: ');
@@ -91,6 +92,7 @@
             echo "Silahkan restart program";
             exit();
         }
+        echo "\n";
         echo "Apakah anda ingin melakukan konversi lagi? (y : Ya / t : tidak)\n";
         $continue = readline('Masukkan disini: ');
 
