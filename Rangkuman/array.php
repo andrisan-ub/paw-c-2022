@@ -26,7 +26,7 @@
 <body style="background-color: black;">
     <div class="h-screen bg-black halaman">
         <div class="mx-auto text-center justify-center">
-            <h1 class="text-4xl font-[studly]  text-white">Penerapan Array dan looping pada PHP</h1>
+            <h1 class="text-4xl font-[studly] mt-10 text-white">Penerapan Array dan looping pada PHP</h1>
         </div>
         <div class="w-full max-w-xs mx-auto mt-2">
         </div>
