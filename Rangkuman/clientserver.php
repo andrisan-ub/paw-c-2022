@@ -48,7 +48,7 @@
         
         <img src="../img/43 run.png" class="md:w-1/2" alt="">
     </div>
-    <h1 class="font-[studly] text-2xl mt-5 text-white bg-blue-500 p-4">Halaman 47</h1>
+    <h1 class="font-[studly] text-2xl mt-5 text-center text-white bg-blue-500 p-4">Halaman 47</h1>
     <div class="md:flex mt-5 ">
         
         <img src="../img/47 code.png" class="md:w-1/2  " alt="">
@@ -62,7 +62,7 @@
                  elemen hasil. Langkah yang terakhir yaitu diberikan atribut script sebagai penutup.  
         </p>
     </div>
-    <h1 class="font-[studly] text-3xl text-white mt-5">Hasil Dilocal host</h1>
+    <h1 class="font-[studly] text-3xl text-center text-white mt-5">Hasil Dilocal host</h1>
     <div class="items-center flex  justify-center m-auto">
         
         <img src="../img/47 run.png" class="md:w-1/2" alt="">
