@@ -7,7 +7,7 @@
 | Candra Setiawan          | 215150700111024 |
 | Aditya Permana Heriansyah| 215150700111056 |
 | Danish Alif Arsan        | 215150701111005 |
-| Irfan Hanif Habibi       |  215150701111025|
+| Irfan Hanif Habibi       | 215150701111025 |
 
 ## Tugas Review Materi
 1. Bagian 1
