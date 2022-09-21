@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="/src/input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="https://kit.fontawesome.com/3eeab2f4f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body >
+
+    
+
+        <section  >
+            <nav class=" px-4 sm:px-4 py-2.5 w-full top-0 left-0 fixed dark:border-gray-600"style="z-index: 1000; position: fixed;" >
+            <div class="flex flex-wrap justify-between  items-center mx-auto ">
+            <a href="https://flowbite.com/" class=" flex items-center">
+                <span class="self-center text-xl md:ml-14 font-semibold z-30 flex mt-5 ">
+                  <img src="img/logo (2).png" class="w-14  md:w-16" alt="">
+                  <h1 href=""class="text-white mt-3" > KODE<strong>CITA</strong> </h1>
+                  
+                </span>
+            </a>
+        
+        
+            <div class="flex">
+                <button id="hamburger" type="button" name="hamburger" class="z-20 items-center p-2 text-sm right-4 text-white rounded-lg md:hidden hover:bg-opacity-80     bg-[#58020B]">
+                  <span class="w-[30px] h-[2px] my-1 block bg-white transition duration-500 ease-in-out origin-top-left"></span>
+                  <span class="w-[30px] h-[2px] my-2 block bg-white transition duration-500 ease-in-out"></span>
+                  <span class="w-[30px] h-[2px] my-1 block bg-white transition duration-500 ease-in-out origin-bottom-left"></span>
+                </button>
+              </div>
+        
+              
+        
+        <nav id="nav-menu" class="-translate-y-72 lg:translate-y-0 transition duration-500 z-10 absolute py-5 left-0 bg-[#134E4A] w-full top-full  lg:-mt-16 lg:block lg:static lg:bg-transparent" >
+          <ul  class=" block lg:flex lg:justify-center text-white md:space-x-20 lg:ml-32" >
+          <li>
+              <a href="index.html" class="underlined md:mr-10 md:text-lg block py-2 pr-4 pl-3  decoration-0 text-white  focus:bg-[#8E3C38] md:focus:bg-transparent rounded md:bg-transparent  md:hover:text-white md:p-0 " aria-current="page">Beranda</a>
+          </li>
+          <li>
+              <a href="tentang.html" class="underlined md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white  dark:hover:text-white">Tentang Kami</a>
+          </li>
+          <li>
+              <a href="#materi" class="underlined md:[underline-none] md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white ">Materi</a>
+          </li>
+          <li>
+            <a href="#referensi" class="underlined md:[underline-none] md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white ">Referensi</a>
+        </li>
+        
+          </ul>
+        
+        </nav>
+        
+              
+              
+                
+            </div>
+            
+            </div>
+            </nav>
+        
+            <script>
+              $(window).scroll(function(){
+                  $('nav').toggleClass('scrolled', $(this).scrollTop()>15);
+              })
+            </script>
+            <style>
+              .scrolled{
+                background-color: #134E4A;
+              }
+                .underlined{
+                position:relative;
+                color: white;
+                letter-spacing: 0.5px;
+                color:#fff;
+                }
+                .underlined:after{
+                    content: '';
+                  position: absolute;
+                  width: 100%;
+                  transform: scaleX(0);
+                  height: 2px;
+                  bottom: 0;
+                  left: 0;
+                  background-color: #F3CF0E;
+                  transform-origin: bottom right;
+                  transition: transform 0.25s ease-out;
+                }
+                .underlined:hover:after{
+                    transform: scaleX(1);
+                  transform-origin: bottom left;
+                  text-decoration:none;
+                  color:#000;
+                }
+            </style>
+        
+        <style>
+          .hamburger-active > span:nth-child(1){
+            transform: rotate(45deg) translate(4px, -3px);
+            transform-origin: top left;
+            
+          }
+          .hamburger-active > span:nth-child(2){
+            scale: 0;
+          }
+          .hamburger-active > span:nth-child(3){
+            transform: rotate(-45deg) translate(3px, 4px);
+            transform-origin: bottom left;
+          }
+          
+        </style>
+        
+        <script>
+          
+          const hamburger = document.querySelector('#hamburger');
+          const navMenu = document.querySelector('#nav-menu');
+        
+          hamburger.addEventListener('click', function(){
+            hamburger.classList.toggle('hamburger-active')
+            navMenu.classList.toggle('-translate-y-72')
+          });
+        
+          window.addEventListener('click', function (e){
+            if(e.target != hamburger && e.target != navMenu){
+              hamburger.classList.remove('hamburger-active');
+              navMenu.classList.add('-translate-y-72');
+            }
+          });
+        
+          </script>
+        
+        </section>
+
+        <section>
+            <div class="md:flex bg-[#134E4A] h-screen md:px-20" >
+                <div class="md:w-1/3  h-fit sm:mt-48 lg:mt-72 pt-36 md:pt-0 md:float-right md:right-0 md:absolute z-20">
+                    <img src="img/laptop.png" class="w-1/2 md:w-full mx-auto" alt="">
+                </div>
+                <div class="flex md:w-2/3  h-fit md:mt-16 lg:mt-36 mt-10 text-white md:p-24 p-10 font-semibold text-xl md:float-left md:left-0 md:absolute z-30">
+                  <p class="-translate-x-5">
+                    <span class="w-2 h-2 absolute bg-[#00BAF1] rounded-full"></span> <br>
+                    <span class="w-2 h-10 absolute bg-[#00BAF1]"></span> <br> <br>
+                    <span class="w-2 h-2 absolute bg-[#00BAF1] rounded-full"></span>
+                  </p>
+                  
+                    <p> <span class="text-[#F3CF0E]">KodeCita</span> adalah platform untuk membantu pengguna
+                        dalam belajar<span class="text-[#F3CF0E]"> koding</span>. KodeCita menyediakan beberapa
+                        materi <span class="text-[#F3CF0E]"> pemrograman</span> khususnya bahasa pemrograman 
+                        <span class="text-[#F3CF0E]">PHP</span>.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="custom-shape-divider-bottom-1663505343">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    
+        <style>
+            .custom-shape-divider-bottom-1663505343 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1663505343 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 229px;
+}
+
+.custom-shape-divider-bottom-1663505343 .shape-fill {
+    fill: #0F172A;
+}
+        </style>
+
+        <section id="materi">
+            <div class=" bg-[#0F172A] pb-16">
+                <div class="judul pt-10">
+                    <h1 class="text-4xl lg:text-6xl text-white text-center font-bold" >Materi</h1>
+                    <p class="text-xl font-normal text-white p-10 ">Kumpulan materi pemrograman ini akan terus update, jadi jangan lupa para sobat codingers
+                        untuk terus memantau website kami ya, yuk belajar bareng!</p>
+                </div>
+                <div class="md:flex md:space-x-10 space-x-0 space-y-10 md:space-y-0 justify-center content-center items-center  grid justify-items-center">
+
+                    <div class="card card-compact w-72 bg-base-100 shadow-xl mx-auto md:mx-0 ">
+                        <figure><img src="https://www.php.net/images/logos/new-php-logo.svg" alt="Shoes" /></figure>
+                        <div class="card-body">
+                          <h2 class="card-title">Client-Server PHP</h2>
+                          <p>Pemaparan dasar mengenai cara kerja PHP</p>
+                          <div class="card-actions justify-end">
+                            <button class="btn btn-primary"> <a href="clien-server.html">Pelajari</a></button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="card card-compact w-72 bg-base-100 shadow-xl mx-auto md:mx-0 self-center place-self-center justify-items-center ">
+                        <figure><img src="https://3.bp.blogspot.com/-qFthLMBF9k4/WA78Is5p8JI/AAAAAAAAAWM/-A0NxWVdvHUR4qK7-J5p7GVPi6ow60w-ACLcB/s640/bd2_6f5_636_330-1-original.jpg" alt="Shoes" /></figure>
+                        <div class="card-body">
+                          <h2 class="card-title">PHP Dasar</h2>
+                          <p>Pemaparan dasar mengenai syntax dan logika PHP</p>
+                          <div class="card-actions justify-end">
+                            <button class="btn btn-primary"> <a href="phpdasar.html">Pelajari</a></button>
+                          </div>
+                        </div>
+                      </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        
+  
+
+    
+
+    
+
+    
+    
+</body>
+</html>
