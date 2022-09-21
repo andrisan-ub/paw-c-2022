@@ -1,7 +1,7 @@
 <script>
 const chat = document.querySelector('#chat');
 const message = document.querySelector('#message');
-const baseUrl = 'http://localhost/chat';
+const baseUrl = 'http://paw-c-2022.test/Kelompok2/Lampiran/Kode/bagian5b/chat';
 
 function readChat() {
     fetch(`${baseUrl}/chat-read.php`)
