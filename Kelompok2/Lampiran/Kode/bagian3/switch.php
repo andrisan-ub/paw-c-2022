@@ -16,7 +16,7 @@ switch ($color) {
     echo "My favorite color is green!";
     break;
   default:
-    echo "My favorite color is neither red, blue, nor green!";
+    echo "My favorite color is neither red, blue, or green!";
 }
 ?>
 
