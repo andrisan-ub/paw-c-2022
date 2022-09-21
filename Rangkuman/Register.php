@@ -56,7 +56,21 @@
 
 
                                             </div>
-                                         
+                                            <?php
+
+                                        if (isset($_POST['username']) and isset($_POST['password'])) {
+                                            $user = $_POST['username'];
+                                            $password = $_POST['password'];
+                                            echo "<h1 class='text-xl font-[studly] text-white'>Register Berhasil dengan Username $user dan password $password </h1>";
+                                        } else {
+                                            $user = null;
+                                            echo "<h1 class='text-2xl font-[studly] text-white'>Belum ada dataaaaa</h1>";
+                                        }
+                                        // $username = $_POST['username'];
+                                        // // $password = $_POST['password'];
+                                        // echo "registering $username with password $password"
+                                        ?>
+
                                             
 
                                             <div class="flex items-center justify-between pb-6">
