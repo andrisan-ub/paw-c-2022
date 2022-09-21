@@ -48,6 +48,24 @@
         
         <img src="../img/43 run.png" class="md:w-1/2" alt="">
     </div>
+    <h1 class="font-[studly] text-2xl mt-5 text-white bg-blue-500 p-4">Halaman 47</h1>
+    <div class="md:flex mt-5 ">
+        
+        <img src="../img/47 code.png" class="md:w-1/2  " alt="">
+        <p class="text-sm md:w-1/2 text-left font-['Montserrat', sans-serif;] ml-4 mr-4 text-white">Pada source code kali ini, dimulai dengan php. Pada baris ke 4 dan 5 diberikan variabel  
+                dan diberikan nilai masing masing 10 dan 20. Kemudian mengambil nilai dengan menjalankan echo  "Server output: ", $var1 * $var2; variabel 1 
+                dan variabel 2 dikalikan dan mendapatkan hasil server output yaitu 200 ketika dijalankan. Di bagian kedua yaitu, dimulai dengan JavaScript atau js.
+                 Dengan di deklarasikan  script untuk memulainya. Lalu memasukkan variabel diawali dengan syntax var dan diberi nama variabel yang diisikan nilai 
+                 variabelnya. var hasil = "Client output: " + var1 * var2;, ini untuk mengambil nilai dari variabel, yang nantinya outputnya ketika dijalankan yaitu 
+                 Client output = 300, hasil perkalian dari var1 yang memiliki nilai 10 dan var2 yang memiliki nilai 30. Pada baris ke 14 diberikan atribut document.querySelector
+                yang berfungsi untuk mengambil elemen dari HTML yaitu ("#client")dan diberikan elemen innerHTML untuk menampilkan output ke elemen HTML yang lebih spesifik yaitu 
+                 elemen hasil. Langkah yang terakhir yaitu diberikan atribut script sebagai penutup.  
+        </p>
+    </div>
+    <h1 class="font-[studly] text-3xl text-white mt-5">Hasil Dilocal host</h1>
+    <div class="items-center flex  justify-center m-auto">
+        
+        <img src="../img/47 run.png" class="md:w-1/2" alt="">
     </div>
 </body>
 </html>
