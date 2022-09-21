@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="text-center justify-center  md:h-[20vh] flex ">
-        <h1 class="text-3xl text-white font-[studly]">Penerapan Materi Terhadap Konversi Nilai Mahasiswa</h1>
+        <h1 class="text-3xl text-black font-[studly]">Penerapan Materi Terhadap Konversi Nilai Mahasiswa</h1>
         <a href="../index.html" > <button class="text-black bg-white rounded-lg px-4 py-2  absolute float-right md:right-10">Beranda</button></a>
     </div>
     <form method="POST" class=" " action=" ">
