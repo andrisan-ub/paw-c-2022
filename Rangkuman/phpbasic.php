@@ -75,16 +75,16 @@
     <div class="md:flex md:space-x-5 mt-5">
         <div class="card w-96 bg-base-100 shadow-xl ">
             <div class="card-body">
-                <h2 class="card-title text-white text-xl font-[studly]">Halaman 38-42</h2>
+                <h2 class="card-title text-black text-xl font-[studly]">Halaman 38-42</h2>
                 <img src="../img/WhatsApp Image 2022-09-21 at 16.50.24.jpeg" alt="">
                 <img src="../img/hasil" alt="">
-                <p class="text-white font-['Montserrat',sans-serif]">Syntax diatas merupakan syntax yang salah dan apabila dijalankan akan error karena tidak menggunakan notasi $. Fungsi notasi $ adalah mendeklarasikan sebuah variabel, jika tidak ada notasi $ maka program tidak bisa mendeteksi jika myFunction adalah sebuah variabel.</p>
+                <p class="text-black font-['Montserrat',sans-serif]">Syntax diatas merupakan syntax yang salah dan apabila dijalankan akan error karena tidak menggunakan notasi $. Fungsi notasi $ adalah mendeklarasikan sebuah variabel, jika tidak ada notasi $ maka program tidak bisa mendeteksi jika myFunction adalah sebuah variabel.</p>
                
             </div>
         </div>
         <div class="card w-96 bg-base-100 shadow-xl ">
             <div class="card-body">
-                <h2 class="card-title text-white text-xl font-[studly]">Halaman 47-50</h2>
+                <h2 class="card-title text-black text-xl font-[studly]">Halaman 47-50</h2>
                 <img src="../img/47.jpeg" alt="">
                <img src="../img/50.jpeg" alt="">
                
@@ -94,10 +94,10 @@
 
         <div class="card w-96 bg-base-100 shadow-xl ">
             <div class="card-body">
-                <h2 class="card-title text-white text-xl font-[studly]">Halaman 52-56</h2>
+                <h2 class="card-title text-black text-xl font-[studly]">Halaman 52-56</h2>
                 <img src="../img/52.jpeg" alt="">
                
-                <p class="text-white font-['Montserrat',sans-serif]">strlen() pada bahasa pemrograman PHP adalah khusus untuk tipe data String. Fungsi strlen() adalah untuk mencari panjang sebuah tipe data String yang dimana spasi juga dihitung.
+                <p class="text-black font-['Montserrat',sans-serif]">strlen() pada bahasa pemrograman PHP adalah khusus untuk tipe data String. Fungsi strlen() adalah untuk mencari panjang sebuah tipe data String yang dimana spasi juga dihitung.
                 strtolower() adalah sebuah perintah dalam bahasa pemrograman PHP untuk mengubah karakter dalam sebuah tipe data String menjadi huruf kecil semua.
                 Sesuai namanya yang berlawanan dengan strtolower(), strtoupper() juga merupakan perintah dalam bahasa pemrograman PHP yang berfungsi mengubah karakter dalam sebuah tipe data String menjadi huruf besar semua.
                 Fungsi trim() pada bahasa pemrograman PHP adalah untuk menghapus spasi atau whitespace pada tipe data String yang berada di awal maupun di akhir.
@@ -107,10 +107,10 @@
         </div>
         <div class="card w-96 bg-base-100 shadow-xl ">
             <div class="card-body">
-                <h2 class="card-title text-white text-xl font-[studly]">Halaman 58-59</h2>
+                <h2 class="card-title text-black text-xl font-[studly]">Halaman 58-59</h2>
                 <img src="../img/58 code.jpeg" alt="">
                 <img src="../img/58 output.jpeg" alt="">
-                <p class="text-white font-['Montserrat',sans-serif]">Hasil Eror untuk halaman 58 karena tidak terdapat isset untuk kode yang benar ada dibawaah ini</p>
+                <p class="text-black font-['Montserrat',sans-serif]">Hasil Eror untuk halaman 58 karena tidak terdapat isset untuk kode yang benar ada dibawaah ini</p>
                 <img src="../img/59.jpeg" alt="">              
 
 </p>
