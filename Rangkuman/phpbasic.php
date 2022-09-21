@@ -35,19 +35,19 @@
     <div class="md:flex md:space-x-5">
         <div class="card w-96 bg-base-100 shadow-xl ">
             <div class="card-body">
-                <h2 class="card-title text-white text-xl font-[studly]">Halaman 14</h2>
+                <h2 class="card-title text-black text-xl font-[studly]">Halaman 14</h2>
                 <img src="../img/14 code.png" alt="">
                 <img src="../img/14 run.png" alt="">
-                <p class="text-white font-['Montserrat',sans-serif]">Syntax diatas merupakan syntax yang salah dan apabila dijalankan akan error karena tidak menggunakan notasi $. Fungsi notasi $ adalah mendeklarasikan sebuah variabel, jika tidak ada notasi $ maka program tidak bisa mendeteksi jika myFunction adalah sebuah variabel.</p>
+                <p class="text-black font-['Montserrat',sans-serif]">Syntax diatas merupakan syntax yang salah dan apabila dijalankan akan error karena tidak menggunakan notasi $. Fungsi notasi $ adalah mendeklarasikan sebuah variabel, jika tidak ada notasi $ maka program tidak bisa mendeteksi jika myFunction adalah sebuah variabel.</p>
                
             </div>
         </div>
         <div class="card w-96 bg-base-100 shadow-xl ">
             <div class="card-body">
-                <h2 class="card-title text-white text-xl font-[studly]">Halaman 22</h2>
+                <h2 class="card-title text-black text-xl font-[studly]">Halaman 22</h2>
                 <img src="../img/22 code.png" alt="">
                
-                <p class="text-white font-['Montserrat',sans-serif]">Syntax diatas adalah contoh bagaimana sebuah variabel dideklarasikan pada bahasa pemrograman PHP. Caranya adalah dengan menambahkan notasi $ di depan nama variabel seperti contoh di atas.</p>
+                <p class="text-black font-['Montserrat',sans-serif]">Syntax diatas adalah contoh bagaimana sebuah variabel dideklarasikan pada bahasa pemrograman PHP. Caranya adalah dengan menambahkan notasi $ di depan nama variabel seperti contoh di atas.</p>
                
             </div>
         </div>
@@ -62,10 +62,10 @@
         </div>
         <div class="card w-96 bg-base-100 shadow-xl ">
             <div class="card-body">
-                <h2 class="card-title text-white text-xl font-[studly]">Halaman 34-36</h2>
+                <h2 class="card-title text-black text-xl font-[studly]">Halaman 34-36</h2>
                 <img src="../img/halaman34 code.png" alt="">
                 <img src="../img/halaman34 run.png" alt="">
-                <p class="text-white font-['Montserrat',sans-serif]">Jadi , jika penulisan seperti varibel $c maka akan terjadi error saat program dijalankan. Untuk output dari variabel $d output yang dihasilkan adalah 12. Karena tanda “.” berfungsi sebagai concat atau penggabungan string. Jadi nilai variabel $a dan $b akan dibaca menjadi sebuah string walaupun nilai yang ditulis berupa angka.
+                <p class="text-black font-['Montserrat',sans-serif]">Jadi , jika penulisan seperti varibel $c maka akan terjadi error saat program dijalankan. Untuk output dari variabel $d output yang dihasilkan adalah 12. Karena tanda “.” berfungsi sebagai concat atau penggabungan string. Jadi nilai variabel $a dan $b akan dibaca menjadi sebuah string walaupun nilai yang ditulis berupa angka.
 
 </p>
                
