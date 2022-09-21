@@ -48,11 +48,53 @@ if (isset($_POST['enter'])) {
         echo '<span class="error">Please type in a name</span>';
     }
 }
+function loginForm()
+{
+    echo
 
+    '
+    <div class=" text-center justify-center mb-20">
+    <h1 class="text-4xl font-[studly] text-black">AJAX CHAT</h1>
+   </div>
+    <div id="loginform">
+    <p class= "text-xl" >Please enter your name to continue!</p>
+    <form action="index.php" class="w-full" method="post">
+      <label for="name" class="text-2xl">Name </label>
+      <input type="text" name="name" id="name" class="input text-white input-bordered input-primary w-full max-w-xs" />
+      <input type="submit" class="btn btn-active" name="enter" id="enter" value="Enter" />
+    </form>
+  </div>';
+}
+
+?>  
 
 
 ?>  
 <body>
-    
+<?php
+    if (!isset($_SESSION['name'])) {
+        loginForm();
+    } else {
+    ?>
+    <div id="wrapper">
+            <div id="menu">
+                <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
+                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+            </div>
+
+            <div id="chatbox">
+                <?php
+                if (file_exists("log.html") && filesize("log.html") > 0) {
+                    $contents = file_get_contents("log.html");
+                    echo $contents;
+                }
+                ?>
+            </div>
+
+            <form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" class="input text-white input-bordered input-primary w-full max-w-xs" />
+                <input class="btn btn-active ml-3" name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            </form>
+        </div>
 </body>
 </html>
