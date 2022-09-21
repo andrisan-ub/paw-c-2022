@@ -36,7 +36,33 @@
                     </div>
 
                 </div>
-                
+                h1 class="text-center">
+                <?php
+                        
+                        if(isset($_POST['register'])){
+                        $nilai = $_POST["nilai"];
+                        if ($nilai > 3.75 and $nilai <= 4) {
+                            echo "Nilai Anda A";
+                        } else if ($nilai > 3.25 and $nilai < 3.75) {
+                            echo "Nilai Anda B+";
+                        } else if ($nilai > 2.74 and $nilai < 3.24) {
+                            echo "Nilai Anda B";
+                        } else if ($nilai > 2.25 and $nilai < 2.74) {
+                            echo "Nilai Anda C+";
+                        } else if ($nilai > 1.75 and $nilai < 2.74) {
+                            echo "Nilai Anda C";
+                        } else if ($nilai > 1.25 and $nilai < 1.74) {
+                            echo "Nilai Anda D+";
+                        } else if ($nilai > 0.75 and $nilai < 1.23) {
+                            echo "Nilai Anda D";
+                        } else if ($nilai < 0.25) {
+                            echo "Nilai Anda E";
+                        } else {
+                            echo "Nilai Tidak Tersedia";
+                        }
+                    }
+                        ?>
+                </h1>
                 
             </div>
         </form>
