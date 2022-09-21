@@ -28,6 +28,7 @@
                 <div class="flex  items-center justify-center text-center m-auto mt-5 bg-white w-96 h-60">
                     <div class="text-center justify-center ">
                         <label class="text-black -" for="nilai">Masukkan Nilai</label> <br>
+                        <p class= "text-0.5xl">(Masukkan Nilai range 1-4)</p>
                         <input id="nilai" type="text" name="nilai" placeholder="Nilai" class="input input-bordered input-info w-full max-w-xs" autocomplete="off"/>
                         
                     </div>
