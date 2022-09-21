@@ -48,7 +48,25 @@ if (isset($_POST['enter'])) {
         echo '<span class="error">Please type in a name</span>';
     }
 }
+function loginForm()
+{
+    echo
 
+    '
+    <div class=" text-center justify-center mb-20">
+    <h1 class="text-4xl font-[studly] text-black">AJAX CHAT</h1>
+   </div>
+    <div id="loginform">
+    <p class= "text-xl" >Please enter your name to continue!</p>
+    <form action="index.php" class="w-full" method="post">
+      <label for="name" class="text-2xl">Name </label>
+      <input type="text" name="name" id="name" class="input text-white input-bordered input-primary w-full max-w-xs" />
+      <input type="submit" class="btn btn-active" name="enter" id="enter" value="Enter" />
+    </form>
+  </div>';
+}
+
+?>  
 
 
 ?>  
