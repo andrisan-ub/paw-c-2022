@@ -27,8 +27,8 @@
 </head>
 
 <body style="background-color: black; background-size: cover;">
-    <div class="text-center justify-center  md:h-[20vh] flex ">
-        <h1 class="text-4xl text-white font-[studly]">PHP BASIC</h1>
+    <div class="text-center justify-center pt-5  md:h-[20vh] flex ">
+        <h1 class="text-4xl text-white font-[studly] ">PHP BASIC</h1>
         <a href="../index.html" > <button class="text-black bg-white rounded-lg px-4 py-2  absolute float-right md:right-10">Beranda</button></a>
     </div>
 
