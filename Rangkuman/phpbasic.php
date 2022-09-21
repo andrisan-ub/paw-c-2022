@@ -53,10 +53,10 @@
         </div>
         <div class="card w-96 bg-base-100 shadow-xl ">
             <div class="card-body">
-                <h2 class="card-title text-white text-xl font-[studly]">Halaman 26</h2>
+                <h2 class="card-title text-black text-xl font-[studly]">Halaman 26</h2>
                 <img src="../img/26 code.png" alt="">
                
-                <p class="text-white font-['Montserrat',sans-serif]">Di awal ditulis bahwa variabel $foo bernilai sebuah string “bar”. Lalu pada baris kedua nilai variabel $foo diganti menjadi string “world” dengan cara menambahkan notasi $ didepan, menjadi $$foo. Lalu pada baris ketiga, langkah sebelumnya diulang dengan menambahkan notasi $ lagi di depan nama variabel $$foo, dan nilainya diganti menjadi “100”. Maka, output yang ditampilkan ketika syntax diatas dijalankan adalah “100”</p>
+                <p class="text-black font-['Montserrat',sans-serif]">Di awal ditulis bahwa variabel $foo bernilai sebuah string “bar”. Lalu pada baris kedua nilai variabel $foo diganti menjadi string “world” dengan cara menambahkan notasi $ didepan, menjadi $$foo. Lalu pada baris ketiga, langkah sebelumnya diulang dengan menambahkan notasi $ lagi di depan nama variabel $$foo, dan nilainya diganti menjadi “100”. Maka, output yang ditampilkan ketika syntax diatas dijalankan adalah “100”</p>
                
             </div>
         </div>
