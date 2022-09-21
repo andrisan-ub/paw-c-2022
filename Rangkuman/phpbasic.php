@@ -92,6 +92,32 @@
             </div>
         </div>
 
+        <div class="card w-96 bg-base-100 shadow-xl ">
+            <div class="card-body">
+                <h2 class="card-title text-white text-xl font-[studly]">Halaman 52-56</h2>
+                <img src="../img/52.jpeg" alt="">
+               
+                <p class="text-white font-['Montserrat',sans-serif]">strlen() pada bahasa pemrograman PHP adalah khusus untuk tipe data String. Fungsi strlen() adalah untuk mencari panjang sebuah tipe data String yang dimana spasi juga dihitung.
+                strtolower() adalah sebuah perintah dalam bahasa pemrograman PHP untuk mengubah karakter dalam sebuah tipe data String menjadi huruf kecil semua.
+                Sesuai namanya yang berlawanan dengan strtolower(), strtoupper() juga merupakan perintah dalam bahasa pemrograman PHP yang berfungsi mengubah karakter dalam sebuah tipe data String menjadi huruf besar semua.
+                Fungsi trim() pada bahasa pemrograman PHP adalah untuk menghapus spasi atau whitespace pada tipe data String yang berada di awal maupun di akhir.
+                </p>
+               
+            </div>
+        </div>
+        <div class="card w-96 bg-base-100 shadow-xl ">
+            <div class="card-body">
+                <h2 class="card-title text-white text-xl font-[studly]">Halaman 58-59</h2>
+                <img src="../img/58 code.jpeg" alt="">
+                <img src="../img/58 output.jpeg" alt="">
+                <p class="text-white font-['Montserrat',sans-serif]">Hasil Eror untuk halaman 58 karena tidak terdapat isset untuk kode yang benar ada dibawaah ini</p>
+                <img src="../img/59.jpeg" alt="">              
+
+</p>
+               
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
