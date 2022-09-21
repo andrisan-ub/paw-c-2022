@@ -36,7 +36,7 @@
                     </div>
 
                 </div>
-                h1 class="text-center">
+                <h1 class="text-center">
                 <?php
                         
                         if(isset($_POST['register'])){
