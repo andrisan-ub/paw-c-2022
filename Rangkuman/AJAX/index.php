@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,10 +20,11 @@
             src: url('../img/font/Studly\ Regular.ttf') format('truetype');
         }
 
+        .tugas {}
     </style>
     <meta charset="utf-8" />
 
-    <title>Ajax Chat app</title>
+    <title>Tuts+ Chat Application</title>
     <meta name="description" content="Tuts+ Chat Application" />
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -32,7 +34,7 @@ session_start();
 
 if (isset($_GET['logout'])) {
 
-    //exit
+    //Simple exit message
     $logout_message = "<div class='msgln'><span class='left-info'>User <b class='user-name-left'>" . $_SESSION['name'] . "</b> has left the chat session.</span><br></div>";
     file_put_contents("log.html", $logout_message, FILE_APPEND | LOCK_EX);
 
@@ -47,6 +49,7 @@ if (isset($_POST['enter'])) {
         echo '<span class="error">Please type in a name</span>';
     }
 }
+
 function loginForm()
 {
     echo
@@ -66,21 +69,18 @@ function loginForm()
 }
 
 ?>  
-
-
-?>  
 <style>
     p{
         font: studly;
     }
 </style>
 <body>
-<?php
+    <?php
     if (!isset($_SESSION['name'])) {
         loginForm();
     } else {
     ?>
-    <div id="wrapper">
+        <div id="wrapper">
             <div id="menu">
                 <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
                 <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
@@ -100,7 +100,6 @@ function loginForm()
                 <input class="btn btn-active ml-3" name="submitmsg" type="submit" id="submitmsg" value="Send" />
             </form>
         </div>
-
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             // jQuery Document
@@ -145,4 +144,8 @@ function loginForm()
             });
         </script>
 </body>
+
 </html>
+<?php
+    }
+?>
