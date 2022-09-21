@@ -60,7 +60,37 @@
                
             </div>
         </div>
+        <div class="card w-96 bg-base-100 shadow-xl ">
+            <div class="card-body">
+                <h2 class="card-title text-white text-xl font-[studly]">Halaman 34-36</h2>
+                <img src="../img/halaman34 code.png" alt="">
+                <img src="../img/halaman34 run.png" alt="">
+                <p class="text-white font-['Montserrat',sans-serif]">Jadi , jika penulisan seperti varibel $c maka akan terjadi error saat program dijalankan. Untuk output dari variabel $d output yang dihasilkan adalah 12. Karena tanda “.” berfungsi sebagai concat atau penggabungan string. Jadi nilai variabel $a dan $b akan dibaca menjadi sebuah string walaupun nilai yang ditulis berupa angka.
 
+</p>
+               
+            </div>
+        </div>
+    </div>
+    <div class="md:flex md:space-x-5 mt-5">
+        <div class="card w-96 bg-base-100 shadow-xl ">
+            <div class="card-body">
+                <h2 class="card-title text-white text-xl font-[studly]">Halaman 38-42</h2>
+                <img src="../img/WhatsApp Image 2022-09-21 at 16.50.24.jpeg" alt="">
+                <img src="../img/hasil" alt="">
+                <p class="text-white font-['Montserrat',sans-serif]">Syntax diatas merupakan syntax yang salah dan apabila dijalankan akan error karena tidak menggunakan notasi $. Fungsi notasi $ adalah mendeklarasikan sebuah variabel, jika tidak ada notasi $ maka program tidak bisa mendeteksi jika myFunction adalah sebuah variabel.</p>
+               
+            </div>
+        </div>
+        <div class="card w-96 bg-base-100 shadow-xl ">
+            <div class="card-body">
+                <h2 class="card-title text-white text-xl font-[studly]">Halaman 47-50</h2>
+                <img src="../img/47.jpeg" alt="">
+               <img src="../img/50.jpeg" alt="">
+               
+               
+            </div>
+        </div>
 
 </body>
 
