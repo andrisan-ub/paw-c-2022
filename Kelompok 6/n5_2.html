@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+    <h1 class="text-6xl text-center pt-10" style="color: white;">REVIEW NOMOR 5</h1>
+    <p class="text-center text-xl" style="color: white;">
+        Studi kasus registrasi dan login (slide 18-23)
+    </p><br>
+
+    <p class="px-5 text-justify" style="color: white; text-indent: 30px;">
+        HTML form dapat digunakan untuk mengirim data menggunakan method POST atau method GET. Pada tag form terdapat attribut action dan attribut method, value dari attribut action adalah file php yang akan dikirimkan data, sementara value dari attribut method adalah POST atau GET yang sama sama berfungsi untuk melakukan pengiriman data. Data akan dikirimkan ke file php setelah user menekan tombol submit. Untuk mengakses data di file php kita bisa menggunakan variabel super global yaitu $_GET[“name input”]; untuk method GET dan $_POST[“nameinput”]; untuk method POST.
+    </p><br>
+
+    <p class="px-5 text-justify" style="color: white; text-indent: 30px;">
+        Pada contoh ini terdapat 2 file yaitu register dan register_process. Register adalah file dimana tag form berada, file ini bisa memiliki ekstensi html ataupun php, namun jika tidak ada kode php didalamnya sebaiknya file ini memiliki ekstensi php. Form pada file register menggunakan method post dan mengirimkan data ke file register_process.php. Data yang dikirimkan adalah username dan password.
+    </p><br>
+
+    <p class="text-justify px-5" style="text-indent: 30px; color: white;">
+        Pada file register_process data dari username dan Password diambil menggunakan $_POST[“nameinput”]; dan dipindahkan ke variabel. Data ini digunakan untuk menghasilkan output ucapan selamat datang.
+    </p><br>
+
+    <p class="px-5 text-justify" style="color: white; text-indent: 30px;">
+        Pada contoh ini terdapat 2 file yaitu login.php dan login_process.php. Tag form berada pada file login.php, data dari file ini dikirimkan menggunakan method POST. File ini memiliki data username dan password yang akan dikirimkan ke file login_process.php.
+    </p><br>
+
+    <p class="text-justify px-5" style="text-indent: 30px; color: white;">
+        Pada login_process.php data yang dikirim diambil menggunakan  $_POST[“nameinput”]; dan dipindahkan ke varibel. Lalu data dari variabel akan dicek apakah sesuai dengan ketentuan yang ada. Jika sesuai maka akan muncul outpun login succesfull. Jika tidak maka akan muncul output login fails.
+    </p><br>
+</body>
+</body>
+</html>
