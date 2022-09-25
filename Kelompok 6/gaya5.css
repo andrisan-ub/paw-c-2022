@@ -1,0 +1,12 @@
+.btn{
+    background-color: white;
+    color: black;
+    border-color: white;
+    transition: all .5s;
+}
+
+.btn:hover{
+    background-color: white;
+    opacity: 50%;
+    border-color: white;
+}
