@@ -26,4 +26,4 @@ for ($i = 0; $i < $_POST['kolom']; $i++) {
 
 </table>
 <br>
-<button><a href="/Nomor 4/Nomor4.html" style="text-decoration: none;">Back</a></button>
+<button><a href="/Kelompok-5/Nomor 4/Nomor4.html" style="text-decoration: none;">Back</a></button>
