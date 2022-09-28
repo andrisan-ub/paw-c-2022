@@ -26,7 +26,11 @@
 <body style="background-color: black;">
     <div class="h-screen bg-black halaman">
         <div class="mx-auto text-center justify-center">
+<<<<<<< HEAD
             <h1 class="text-4xl font-[studly] mt-10 text-white">Penerapan Array dan looping pada PHP</h1>
+=======
+            <h1 class="text-4xl font-[studly] pt-10 mb-10 text-white">Penerapan Array dan looping pada PHP</h1>
+>>>>>>> d668e0aa6d85a1c35ba359fce7df86a2db502817
         </div>
         <div class="w-full max-w-xs mx-auto mt-2">
         </div>
@@ -40,7 +44,7 @@
         ?>
 
 
-        <div class="flex">
+        <div class="flex bg-black">
             <div class="card bg-black bg-base-100 shadow-xl mx-auto z-10">
                 <figure><img src="../img/looping.jpeg" class="w-3/4"  alt=""></figure>
                 <div class="card-body bg-black">
