@@ -459,6 +459,39 @@
         
     </div>
 
+    <div class="12 mt-5">
+      <h1 class="text-white text-xl font-bold">12. Memetakan Data Ke Objek</h1>
+
+      <p class="text-white">
+          <span class="ml-14">
+              PDO dapat memetakan hasil dalam bentuk obyek. Hal ini sangat berguna jika Anda tidak ingin menggunakan lapisan abstraksi database kustom, tapi masih ingin perilaku seperti-ORM. Mari kita bayangkan bahwa kita memiliki class Student dengan beberapa properti, yang cocok dengan nama field dari database.
+          </span>
+      </p>
+
+
+      <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+          <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+              <span class="-ml-32">class Student  {</span> 
+              <span class="-ml-28">// must be public</span>
+              <span class="-ml-28"> public $id;</span>
+              <span class="-ml-28">public $nim;</span>
+              <span class="-ml-28">public $name;</span>
+              
+              <span class="-ml-32">}</span>
+
+              <span class="-ml-32">$sql = “SELECT * FROM student”;</span>
+              <span class="-ml-32">$query = $db->query($sql);</span>
+              <span class="-ml-32">$rows = $query->fetchAll(PDO::FETCH_CLASS);</span>
+              <span class="-ml-32">foreach ($rows as $student) {</span>
+              <span class="-ml-28">echo $student->id, $student->nim, $student->name;</span>
+              <span class="-ml-32">}</span>
+              
+
+      </code></pre></div></div>
+      
+      
+  </div>
+
         
 
                 
