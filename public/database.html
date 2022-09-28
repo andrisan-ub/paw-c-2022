@@ -391,6 +391,74 @@
           
       </div>
 
+      <div class="11 mt-5">
+        <h1 class="text-white text-xl font-bold">11. FETCH_</h1>
+    
+        <p class="text-white">
+            <span class="ml-14">Kita dapat mengikat data ke variabel dengan column index dan method fetch(PDO::FETCH_BOUND) menetapkan nilai kolom ke variabel yang ditetapkan dengan metode bindColumn()
+
+                Berikut merupakan contoh penggunaan syntax FETCH_OBJ:
+
+        </p>
+
+        <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+            <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+                <span class="-ml-32">$sql = “SELECT * FROM student”;</span>
+                <span class="-ml-32">$query = $db->query($sql);</span>
+                <span class="-ml-32">$query->bindColumn(1, $id);</span>
+                <span class="-ml-32">$query->bindColumn(2, $nim);</span>
+                <span class="-ml-32">$query->bindColumn(3, $name);</span>
+                <span class="-ml-32">while ($row = $query->fetch(PDO::FETCH_BOUND)) {</span>
+                <span class="-ml-28">echo $id, '&lt;br&gt;;</span>
+                <span class="-ml-28">echo $nim, '&lt;br&gt;;</span>
+                <span class="-ml-28">echo $name, '&lt;br&gt;;</span>
+                <span class="-ml-32">}</span>
+
+        </code></pre></div></div>
+
+        <p class="text-white"> <span class="ml-14">
+            Kita juga dapat mengikat data ke variabel dengan column name dan method fetch(PDO::FETCH_BOUND) menetapkan nilai kolom ke variabel yang ditetapkan dengan metode bindColumn()
+        </span></p>
+
+        <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+            <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+                <span class="-ml-32">$sql = “SELECT * FROM student”;</span>
+                <span class="-ml-32">$query = $db->query($sql);</span>
+                <span class="-ml-32">$query->bindColumn('id', $id);</span>
+                <span class="-ml-32">$query->bindColumn('nim', $nim);</span>
+                <span class="-ml-32">$query->bindColumn('name', $name);</span>
+                <span class="-ml-32">while ($row = $query->fetch(PDO::FETCH_BOUND)) {</span>
+                <span class="-ml-28">echo $id, '&lt;br&gt;;</span>
+                <span class="-ml-28">echo $nim, '&lt;br&gt;;</span>
+                <span class="-ml-28">echo $name, '&lt;br&gt;;</span>
+                <span class="-ml-32">}</span>
+
+        </code></pre></div></div>
+
+        <p class="text-white">
+            <span class="ml-14">
+                Kita juga dapat mengikat data ke variabel dengan menggunakan column name dan column index, serta method fetch(PDO::FETCH_BOUND) menetapkan nilai kolom ke variabel yang ditetapkan dengan metode bindColumn()
+            </span>
+        </p>
+
+        <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+            <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+                <span class="-ml-32">$sql = “SELECT * FROM student”;</span>
+                <span class="-ml-32">$query = $db->query($sql);</span>
+                <span class="-ml-32">$query->bindColumn('id', $id);</span>
+                <span class="-ml-32">$query->bindColumn(2, $nim);</span>
+                <span class="-ml-32">$query->bindColumn('name', $name);</span>
+                <span class="-ml-32">while ($row = $query->fetch(PDO::FETCH_BOUND)) {</span>
+                <span class="-ml-28">echo $id, '&lt;br&gt;;</span>
+                <span class="-ml-28">echo $nim, '&lt;br&gt;;</span>
+                <span class="-ml-28">echo $name, '&lt;br&gt;;</span>
+                <span class="-ml-32">}</span>
+
+        </code></pre></div></div>
+        
+        
+    </div>
+
         
 
                 
