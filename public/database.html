@@ -208,6 +208,31 @@
                     </code></pre></div></div>
                 </div>  
 
+                <div class="4 mt-5">
+                    <h1 class="text-white text-xl font-bold">4. Perulangan Untuk Mengakses Tabel Database</h1>
+                <p class="text-white "> <span class="ml-14">Kita</span> dapat melakukan perulangan melalui PDOStatement objek secara langsung untuk mendapatkan data
+
+                </p>
+                    <br>
+                    <p class="text-white">
+                        <span class="ml-14">Dengan </span>menggunakan perulangan foreach kita dapat mengakses semua data pada tabel SQL yang diinginkan
+                        berikut adalah contoh query foreach untuk mengakses data MySQL:
+                    </p>
+                    
+                    <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+                        <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+                            <span class="-ml-32">$sql = “SELECT * FROM student”;</span>
+                            <span class="-ml-32">// Returns a PDOStatement objec</span>
+                            <span class="-ml-32">$query = $db->query($sql);</span>
+                            <span class="-ml-32">foreach ($query as $row) {</span>
+                            <span class="-ml-28">// Column name as array index</span>
+                            <span class="-ml-28">// Using associative array</span>
+                            <span class="-ml-28">echo $row[‘nim’], ‘ ‘, $row[‘name’];</span>
+                            <span class="-ml-32">}</span>
+
+                    </code></pre></div></div>
+                </div>
+
                 
                 
 
