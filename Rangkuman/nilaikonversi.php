@@ -20,14 +20,15 @@
 </head>
 <body>
 <div class="text-center justify-center  md:h-[20vh] flex ">
-        <h1 class="text-3xl text-white font-[studly]">Penerapan Materi Terhadap Konversi Nilai Mahasiswa</h1>
+        <h1 class="text-3xl text-black pt-10 font-[studly]">Penerapan Materi Terhadap Konversi Nilai Mahasiswa</h1>
         <a href="../index.html" > <button class="text-black bg-white rounded-lg px-4 py-2  absolute float-right md:right-10">Beranda</button></a>
     </div>
     <form method="POST" class=" " action=" ">
             <div class="m-auto">
-                <div class="flex  items-center justify-center text-center m-auto bg-white w-96 h-60">
+                <div class="flex  items-center justify-center text-center m-auto mt-5 bg-white w-96 h-60">
                     <div class="text-center justify-center ">
                         <label class="text-black -" for="nilai">Masukkan Nilai</label> <br>
+                        <p class= "text-0.5xl">(Masukkan Nilai range 1-4)</p>
                         <input id="nilai" type="text" name="nilai" placeholder="Nilai" class="input input-bordered input-info w-full max-w-xs" autocomplete="off"/>
                         
                     </div>
@@ -36,7 +37,7 @@
                     </div>
 
                 </div>
-                h1 class="text-center">
+                <h1 class="text-center mt-5">
                 <?php
                         
                         if(isset($_POST['register'])){
