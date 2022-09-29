@@ -518,7 +518,28 @@
     
   </div>
 
-                
+    <div class="14 mt-5">
+      <h1 class="text-white text-xl font-bold">14. UPDATE</h1>
+
+      <p class="text-white">
+          <span class="ml-14">Untuk menjalankan perintah SQL UPDATE, gunakan method exec yang mengembalikan jumlah baris yang terpengaruh
+
+              Berikut merupakan contoh penggunaan syntax UPDATE:
+
+      </p>
+
+      <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+          <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+              <span class="-ml-32">$update = “UPDATE student SET name = ‘Lee’“ .“ WHERE nim = ‘1234’”;
+                </span>
+              <span class="-ml-32">$count = $db->exec($update);</span>
+              <span class="-ml-32">// Prints the number of updated rows</span>
+              <span class="-ml-32">echo $count;</span>
+
+      </code></pre></div></div>
+    
+    
+  </div>            
                 
 
                 
