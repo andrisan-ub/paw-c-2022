@@ -1,16 +1,25 @@
 <?php
 
-$n = 12;
-echo "You are the $n th person";
-echo "You are the {$n}th person";
+$s = 'FILKOM UB';
+echo strlen($s); // menghitung jumlah huruf pada string
 
-$var = 'world';
-$$var = 100;
-echo 'Hello $var<br>';
-echo "Hello $var<br>";
-echo "Hello $world<br>";
-echo "Hello $world<br>";
+echo "<br>";
+$s = 'FILKOM UB';
+echo strtolower($s); // mengubah string menjadi huruf kecil
 
-$s = 'Hello';
-echo $s[0]; 
-echo $s[-1]; 
+echo "<br>";
+
+$s = 'filkom ub';
+echo strtoupper($s); // mengubah string menjadi huruf kapital
+
+echo "<br>";
+
+$s = ' FILKOM UB ';
+echo trim($s);  // memotong space sisa
+
+echo "<br>";
+
+$s1 = 'FILKOM ';
+$s2 = 'UB';
+$s3 = $s1 . $s2; 
+echo $s3; // menggabungkan dua string menjadi satu
