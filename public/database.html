@@ -562,6 +562,45 @@
     
     
   </div>
+
+    <div class="16 mt-5">
+      <h1 class="text-white text-xl font-bold">16. exec($insert)</h1>
+
+      <p class="text-white">
+          <span class="ml-14">exec($insert) berfungsi untuk mengembalikan jumlah nilai yang dimasukkan dan dapat dicetak dengan syntax “ echo $count;” 
+
+
+              Berikut merupakan contoh penggunaan syntax exec($insert):
+
+      </p>
+
+      <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+          <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+              <span class="-ml-32"> $insert = “INSERT INTO student (nim, name)” .“ VALUES (‘1236’, ‘Dennis’)”;</span>
+              <span class="-ml-32">$count = $db->exec($insert);</span>
+              <span class="-ml-32">// Prints the number of inserted rows</span>
+              <span class="-ml-32">echo $count;</span>
+
+      </code></pre></div></div>
+
+      <p class="text-white mt-5">
+        <span class="ml-14">exec($insert) juga berfungsi untuk mengembalikan jumlah nilai yang dimasukkan dan dapat dicetak jumlah baris yang dimasukkan 
+            dengan syntax “ echo $count;”  serta dengan menggunakan syntax “echo $db->lastInsertId();” dapat mencetak id baris baru.
+      </p>
+
+      <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+          <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+              <span class="-ml-32"> $insert = “INSERT INTO student (nim, name)” .“ VALUES (‘1236’, ‘Dennis’)”;</span>
+              <span class="-ml-32">$count = $db->exec($insert);</span>
+              <span class="-ml-32">// Prints the number of inserted rows</span>
+              <span class="-ml-32">echo $count;</span>
+              <span class="-ml-32">// Prints the id of the new row</span>
+              <span class="-ml-32">echo $db->lastInsertId();</span>
+
+      </code></pre></div></div>
+    
+    
+  </div>
                 
                 
               </div>
