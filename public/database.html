@@ -647,7 +647,7 @@
     
     
   </div>
-
+    <p>dvjdsvnsdkv</p>
   <div class="19 mt-5">
     <h1 class="text-white text-xl font-bold">19. prepare($insert)</h1>
 
@@ -678,45 +678,15 @@
 
   <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
       <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
-          <span class="-ml-32">$delete = “DELETE FROM student WHERE nim = ‘1234’”;</span>
+          <span class="-ml-32">$delete = “DELETE FROM student WHERE nim = 1234”;</span>
           <span class="-ml-32">$prepared = $db->prepare($delete);</span>
           <span class="-ml-32">$prepared->execute();</span>
   </code></pre></div></div>
   
   
 </div>
-
-<div class="21 mt-5">
-  <h1 class="text-white text-xl font-bold">21. Parameter Tanda Tanya</h1>
-
-  <p class="text-white mb-10">
-      <span class="ml-14">Cara ini menggunakan teknologi prepared statement. Perintah sql diketik dalam sebuah template, kemudian nilai dari parameter di dalam perintah tersebut dikirim, dan baru pada akhirnya perintah tersebut dieksekusi.
-          arameter tanda tanya lebih mudah digunakan, akan tetapi rentan dengan kesalahan pengurutan.
-          Berikut merupakan contoh penggunaan parameter tanda tanya:
-
-  </p>
-
-  <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
-      <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
-          <span class="-ml-32">// Using question-mark parameter</span>
-          <span class="-ml-32">$insert = “INSERT INTO student (nim, name) VALUES (?, ?)”;</span>
-          <span class="-ml-32">$prepared = $db->prepare($insert);</span>
-          <span class="-ml-32">// With bindValue() method</span>
-          <span class="-ml-32">$prepared->bindValue(1, ‘1234’);</span>
-          <span class="-ml-32">$prepared->bindValue(2, ‘Smith’);</span>
-          <span class="-ml-32">$prepared->execute();</span>
-  </code></pre></div></div>
-
-  <p class="text-white mt-10">
-      <span class="ml-14">
-          Pada contoh di atas, pertama-tama objek $db (PDO) menyiapkan template perintah INSERT dan disimpan dalam objek $insert (PDOStatement). Tanda tanya di dalam template kemudian diberi nilai dengan perintah bindValue. 1, 2 pada bindParam mewakili urutan parameter di dalam template. Pada akhirnya, saat $prepare->execute(), perintah SQL benar-benar dikirim dan dieksekusi. Perhatikan bahwa kita menggunakan $prepare->execute(), bukan $db->exec(). Keduanya merupakan fungsi yang berbeda pada class yang berbeda.
-
-Pada contoh di atas, $id, $tipe, $kategori dan $harga tidak perlu diproses dengan PDO::quote() penggunaan metode prepared statement otomatis telah mengamankan query dari SQL Injection.
-      </span>
-  </p>
-  
-  
-</div>
+<p class="action">adfbjdsvjdlvhldshv</p>
+<h1>shghsidgh</h1>
 
                 
                 
