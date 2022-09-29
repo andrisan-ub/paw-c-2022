@@ -968,6 +968,40 @@ Pada contoh di atas, $id, $tipe, $kategori dan $harga tidak perlu diproses denga
     
 </div>
 
+<div class="29 mt-5">
+    <h1 class="text-white text-xl font-bold">29. Transaksi</h1>
+<p class="text-white "> <span class="ml-14">Secara</span> default, setiap perintah SQL berkomitmen langsung ke database. 
+    Ada kasus di mana kita perlu mengelompokkan beberapa perintah SQL. Dalam sebuah transaction, semua perintah SQL harus 
+    berhasil dijalankan, atau yang lain, itu harus digulung kembali. Jika kita tidak secara eksplisit melakukan transaction , 
+    PDO akan menganggap ada yang error. Maka untuk keamanan data, PDO akan melakukan rollback.
+</p>
+    <br>
+    <p class="text-white">
+        <span class="ml-14">Dengan </span>menggunakan penanganan kesalahan (exceptions), 
+        berikut adalah modifikasi kode PHP untuk koneksi MYSQLI dengan MySQL:
+    </p>  
+    <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+        <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+            <span class="-ml-32" $db->try {</span>
+            <span class="-ml-28" $db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);</span>
+            <span class="-ml-28">$db->beginTransaction();</span>
+            <span class="-ml-28">$db->exec(“UPDATE account SET ...”);</span>
+            <span class="-ml-28">$db->exec(“INSERT INTO account ...”);</span>
+            <span class="-ml-28">$db->exec(“DELETE FROM transaction WHERE ...”);</span>
+            <span class="-ml-28">$db->commit();</span>
+            <span class="-ml-32">}</span>
+            <span class="-ml-32">catch{</span>
+            <span class="-ml-28">$db->rollback();</span>
+            <span class="-ml-28">echo “Transaction error: “, $error->getMessage();</span>
+            <span class="-ml-32">}</span>
+    </code></pre></div></div>
+</div>  
+
+
+
+
+
+
 
 
 
