@@ -715,7 +715,31 @@ Pada contoh di atas, $id, $tipe, $kategori dan $harga tidak perlu diproses denga
     
     
 </div>
-                
+<div class="22 mt-5">
+  <h1 class="text-white text-xl font-bold">22. Parameter Bernama</h1>
+
+  <p class="text-white mb-10">
+      <span class="ml-14">Parameter bernama lebih sulit diketik, tetapi lebih kebal terhadap kesalahan pengurutan.
+          Berikut merupakan contoh penggunaan parameter bernama:
+
+  </p>
+
+  <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+      <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+          <span class="-ml-32">// Using named parameter</span>
+          <span class="-ml-32">$insert = “INSERT INTO student (nim, name) VALUES (:nim, :name)”;</span>
+          <span class="-ml-32">$prepared = $db->prepare($insert);</span>
+          <span class="-ml-32">// Directly to the execute() method</span>
+          <span class="-ml-32">$prepared->execute(</span>
+          <span class="-ml-28">array(</span>
+          <span class="-ml-24">‘nim’ => ‘1234’,</span>
+          <span class="-ml-24">‘name’ => ‘Smith’</span>
+          <span class="-ml-28">)</span>
+          <span class="-ml-32">);</span>
+  </code></pre></div></div>
+  
+  
+</div>
                 
             </div>
             </div>
