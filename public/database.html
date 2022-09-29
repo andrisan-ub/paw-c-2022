@@ -189,7 +189,7 @@
                     </code></pre></div></div>
                 </div>  
 
-                <div class="3 mt-5">
+                <div class ="3 mt-5">
                     <h1 class="text-white text-xl font-bold">3. Perintah SQL dari PHP</h1>
                 <p class="text-white "> <span class="ml-14">Setelah</span> kita memiliki koneksi database, kita dapat menggunakan koneksi tersebut untuk mengirim perintah SQL dengan metode query.
                 </p>
@@ -815,6 +815,51 @@ Pada contoh di atas, $id, $tipe, $kategori dan $harga tidak perlu diproses denga
 
   
 </div>
+
+<div class="25 mt-5">
+    <h1 class="text-white text-xl font-bold">25. MySQLI_ASSOC</h1>
+
+    <p class="text-white mb-10">
+        <span class="ml-14">Mendapatkan baris data dengan As array menggunakan (fetch_array) associative (MYSQLI_ASSOC) serta menggunakan object oriented programming style
+
+
+            Berikut merupakan contoh penggunaan MySQLI_ASSOC:
+
+    </p>
+
+    <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+        <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+            <span class="-ml-32">$query = $mysqli->query(“SELECT * FROM student”);</span>
+            <span class="-ml-32">// Prints the number of rows</span>
+            <span class="-ml-32">// Object-oriented style</span>
+            <span class="-ml-32">echo $query->num_rows;</span>
+            <span class="-ml-32">// Procedural style</span>
+            <span class="-ml-32">echo mysqli_num_rows($query);</span>
+            
+    </code></pre></div></div>
+
+    <p class="text-white mt-5">
+        <span class="ml-14">
+            Mendapatkan baris data dengan As array menggunakan (fetch_array) associative (MYSQLI_ASSOC) serta menggunakan procedural programming style
+        </span>
+    </p>
+
+    <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html">
+        <span class="-ml-36 text-[#ff79c6]"> &lt;?php </span>
+            <span class="-ml-32">// Procedural style</span>
+            <span class="-ml-32">$query = $mysqli->query(“SELECT * FROM student”);</span>
+            <span class="-ml-32">while ($row = mysqli_fetch_array($result), MYSQLI_ASSOC) {</span>
+            <span class="-ml-28">// Can use indexed array only</span>
+            <span class="-ml-28">/echo $row[0], $row[1], $row[2];</span>
+            <span class="-ml-28">// Cannot use associative array</span>
+            <span class="-ml-28">echo $row[‘id’], $row[‘nim’], $row[‘name’];</span>
+            <span class="-ml-32">}</span>
+    </code></pre></div></div>
+
+    
+</div>
+
+
             </div>
             </div>
             <div class="lg:w-1/3 bg-slate-700 rounded-lg p-5 h-fit">
