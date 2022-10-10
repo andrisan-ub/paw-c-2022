@@ -6,7 +6,7 @@ $siswas = [
     'Budi' => 'Bermain'
   ];
   foreach ($siswas as $siswa => $siswa_value) { 
-    echo "Key = " . $siswa . ", Value = " . $siswa_value;
+    echo "Key = " . $siswa . ", Value = " . $siswa_value . "<br>";
   }
   
 ?>
