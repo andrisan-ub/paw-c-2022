@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://kit.fontawesome.com/3eeab2f4f4.js" crossorigin="anonymous"></script>
+  <title>Penjelasan Database | Kelompok 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+</head>
+<body class="bg-gray-300">
+
+  <nav
+  class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 "
+>
+  <div
+    class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+  >
+    <div
+      class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
+    >
+      <a
+        class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-black"
+        href="index.html"
+        >Review Code PHP</a
+      ><button
+        class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+        type="button"
+        onclick="toggleNavbar('example-collapse-navbar')"
+      >
+        <i class="text-black fas fa-bars"></i>
+    </button>
+  </div>
+  <div
+      class="lg:flex flex-grow items-center bg-black lg:bg-transparent lg:shadow-none hidden"
+      id="example-collapse-navbar"
+    >
+    <ul class="flex flex-col lg:flex-row list-none mr-auto">
+      <li class="flex items-center">
+        <a
+          class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+          href="index.html"
+          ><i class="fa-solid fa-house px-2"></i>
+          Home</a
+        >
+      </li>
+    </ul>
+    <ul class="flex flex-col lg:flex-row list-none mr-auto">
+      <li class="flex items-center">
+        <a
+          class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+          href=""
+          ><i
+            class="lg:text-black text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
+          ></i>
+          Pilihan Materi</a
+        >
+      </li>
+    </ul>
+    <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+      <li class="flex items-center">
+        <a
+          class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+          href="#pablo"
+          ><i
+            class="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg "
+          ></i
+          ><span class="lg:hidden inline-block ml-2">Share</span></a
+        >
+      </li>
+      <li class="flex items-center">
+        <a
+          class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+          href="#pablo"
+          ><i
+            class="lg:text-gray-300 text-gray-500 fab fa-twitter text-lg leading-lg "
+          ></i
+          ><span class="lg:hidden inline-block ml-2">Tweet</span></a
+        >
+      </li>
+      <li class="flex items-center">
+        <a
+          class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+          href="#pablo"
+          ><i
+            class="lg:text-gray-300 text-gray-500 fab fa-github text-lg leading-lg "
+          ></i
+          ><span class="lg:hidden inline-block ml-2">Star</span></a
+        >
+      </li>
+      </ul>
+      <li class="flex items-center">
+        <a href="login.php">
+        <button
+          class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+          type="button"
+          style="transition: all 0.15s ease 0s;"
+        >
+          <i class="fas fa-arrow-alt-circle-down"></i> Login
+        </button></a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<section class=" ">
+  <div class="lg:gap-5 lg:gap-y-0 mt-28 px-10">
+      <div class="bg-white p-10 w-full">
+          <h1 class="text-4xl font-bold font-serif mb-5">Koneksi Database</h1>
+          <img data-aos="zoom-in" src="img/database/latihan1.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <img data-aos="zoom-in" src="img/database/db1.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Gambar di atas merupakan cara untuk membuat databasebaru melalui PHPMyAdmin. Pada kode program sebelumnya, database yang kita inputkan bernama "library". Oleh karena itu supaya prohgram PHP tersebut tidak error ketika dijalankan, maka harus membuat database "library" terlebih dahulu. Ketika database "library" telah dibuat, langkah selanjutnya yaitu menjalankan kode program PHP sebelumnya. Apabila program PHP dan koneksi dengan database "library" sukses dilakukan, maka web browser dengan server lokal yang kita miliki akan menghasilkan output di bawah ini :</p>
+          <img data-aos="zoom-in" src="img/database/output1.png">
+      
+        </div>
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan2.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas bertujuan untuk menangkap kesalahan eror pada kode program yang telah dibuat sebelumnya.Pada kode program sebelumnya, database yang kita inputkan bernama "library". Oleh karena itu supaya prohgram PHP tersebut tidak error ketika dijalankan, maka harus membuat database "library" terlebih dahulu. Ketika database "library" telah dibuat, langkah selanjutnya yaitu menjalankan kode program PHP sebelumnya. Apabila program PHP dan koneksi dengan database "library" sukses dilakukan, maka web browser dengan server lokal yang kita miliki akan menghasilkan output di bawah ini :</p>
+          <img data-aos="zoom-in" src="img/database/output2.png">
+      
+        </div>
+        
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan3.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <img data-aos="zoom-in" src="img/database/db3.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas bertujuan untuk menangkap kesalahan eror pada kode program yang telah dibuat sebelumnya.Pada kode program sebelumnya, database yang kita inputkan bernama "student". Oleh karena itu supaya program PHP tersebut tidak error ketika dijalankan, maka harus membuat database "student" terlebih dahulu. Setelah itu, inputkan data-data student pada database student yang telah dibuat. Ketika database "student" telah dibuat, langkah selanjutnya yaitu menjalankan kode program PHP sebelumnya. Apabila program PHP dan koneksi dengan database "student" sukses dilakukan, maka web browser dengan server lokal yang kita miliki akan menampilkan nama dan nim mahasiswa yang telah diinputkan ke dalam database student dan menampilkan output seperti di bawah ini :</p>
+          <img data-aos="zoom-in" src="img/database/output3.png">
+      
+        </div>
+
+        
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan4.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas akan mengambil data dari database student dengan menggunakan query SQL select. Data yang diambil dari database akan dikembalikan ke user berupa associative array. Berbeda dengan sebelumnya pengambilan datanya akan berupa indexing array.</p>
+          <img data-aos="zoom-in" src="img/database/output4.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan5.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas akan mengambil data dari database student dengan menggunakan query SQL selectdan FETCH_NUM bawaan dari class atau objek PDO. Sesuai namanya, FETCH_NUM berfungsi untuk mengembalikan array yang diindeks oleh nomor kolom seperti yang dikembalikan dalam set hasil Anda, mulai dari kolom 0</p>
+          <img data-aos="zoom-in" src="img/database/output5.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan6.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas akan mengambil data dari database student dengan menggunakan query SQL selectdan FETCH_ASSOC bawaan dari class atau objek PDO. Sesuai namanya, FETCH_ASSOC berfungsi untuk mengembalikan array associative yang artinya suatu array dengan index string dimana value nya tidak disimpan secara linear, melainkan dengan memberikan key tertentu.</p>
+          <img data-aos="zoom-in" src="img/database/output6.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan7.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas akan mengambil data dari database student dengan menggunakan query SQL select dan FETCH_OBJ bawaan dari class atau objek PDO. Sesuai namanya, FETCH_OBJ berfungsi untuk mengembalikan data dari database berupa objek.</p>
+          <img data-aos="zoom-in" src="img/database/output7.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan8.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas akan mengambil data dari database student dengan menggunakan query SQL select dan FETCH_BOUND bawaan dari class atau objek PDO. Sesuai namanya, FETCH_BOUND berfungsi untuk mengembalikan true dan memberikan nilai kolom dalam hasil Anda yang disetel ke variabel PHP yang terikat dengannya</p>
+          <img data-aos="zoom-in" src="img/database/output8.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan9.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas akan mengambil data dari database student dengan menggunakan query SQL select dan FETCH_BOUND bawaan dari class atau objek PDO. Sesuai namanya, FETCH_BOUND berfungsi untuk mengembalikan true dan memberikan nilai kolom dalam hasil Anda yang disetel ke variabel PHP yang terikat dengannya. Namun perbedaannya dengan kode sebelumnya yaitu, pada method bindcolumn kali ini menggunakan key dan value sedangkan yang sebelumnya menggunakan indexing data array.</p>
+          <img data-aos="zoom-in" src="img/database/output9.png">
+      
+        </div>
+
+        
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan10.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas akan mengambil data dari database student dengan menggunakan query SQL select dan FETCH_BOUND bawaan dari class atau objek PDO. Sesuai namanya, FETCH_BOUND berfungsi untuk mengembalikan true dan memberikan nilai kolom dalam hasil Anda yang disetel ke variabel PHP yang terikat dengannya. Namun perbedaannya dengan kode sebelumnya yaitu, pada method bindcolumn kali ini menggunakan key dan value yang dikombinasikan dengan indexing data array.</p>
+          <img data-aos="zoom-in" src="img/database/output10.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan11.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas akan mengambil data dari database student dengan menggunakan query SQL select dan FETCH_CLASS bawaan dari class atau objek PDO. Sesuai namanya, FETCH_CLASS berfungsi untuk mengembalikan nilai kedalam class yang telah disiapkan.</p>
+          <img data-aos="zoom-in" src="img/database/output11.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan12.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas merupakan kode program bahasa PHP untuk membuat objek baru yaitu PDO. interface universal yang disediakan PHP untuk “berkomunikasi” dengan database server. Maksud istilah “interface universal” disini adalah bahwa PDO tidak terikat dengan aplikasi database tertentu. Apabila saat ini kita menggunakan database MySQL dan dikemudian hari ingin bermigrasi menggunakan PostgreSQL, kita hanya tinggal mengganti cara pemanggilan awal PDO dan seluruh kode program yang ada bisa langsung digunakan untuk database baru. Contoh di atas merupakan implementasi PDO dengan database my MySQL. Dalam construct objek PDO, kita dapat melakukan input data yaitu host database yang kita miliki. Secara default, pada device kita memiliki dbhost yaitu localhost. Selanjutnya diikuti nama database yanng ingin dikoneksikan dengan catatan nama database yang diinputkan harus telah tersedia pada database MySQL. Untuk input selanjutnya diisi username serta password dari databaseyang kita miliki.</p>
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program diatas akan mengambil data dari database student dengan menggunakan query SQL select dan FETCH_FUNC bawaan dari class atau objek PDO. Sesuai namanya, FETCH_FUNC berfungsi untuk mengembalikan nilai kmenggunakan function bawaan PDO.</p>
+          <img data-aos="zoom-in" src="img/database/output12.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan13.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas bertujuan untuk mengganti atau mengubah isi data dari database student. Sebagai contoh sebelumnya database student memiliki salah satu anggota bernama Mohammad ilham Arkan. Kemudian menggunakan syntax di atas menggunakan query UPDATE untuk mengubah nama tersebut menjadi huruf kapital semua. Namun untuk mengubah nama juga harus mnenggunakan kata kunci yang unique seperti nim. Karena setiap mahasiswa memiliki nim yang berbeda maka nim dapat dijadikan katakunci untuk dilakukan perubahan dengan query perkondisian WHERE.</p>
+          <img data-aos="zoom-in" src="img/database/db13.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Ketika program bahasa PHP sebelumnya dijalankan, maka data nama dari Mohammad Ilham Arkan  berubah menjadi MOHAMMAD ILHAM ARKAN dengan menggunakan query SQL yang dikombinasikan dengan bahasa pemrograman PHP. Ketika terjadi perubahan pada salah satu field database student, maka web browser akan mengeluarkan angka 1 yang berarti true. Itu artinya salah satu data tersebut sukses dirubah.</p>
+          <img data-aos="zoom-in" src="img/database/output13.png">
+      
+        </div>
+
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan14.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas bertujuan untuk menghapus salah satu data dari tabel database student. Sebagai contoh di atas ingin menghapus salah satu mahasiswa dengan nama Alfiyanto Ghani. Namun karena nama bukan menjadi field unik, maka nama tidak dapat dijadikan sebagai kolom pengkondisian. Karena terdapat NIM yang berbeda-beda pada tiap mahasiswa, maka NIM dapat digunakan sebagai pengkondisian SQL untuk menghapus data mahasiswa dari tabel student menggunakan  queri DELETE dan query WHERE sebagai pengkondisiannya.</p>
+          <img data-aos="zoom-in" src="img/database/db14.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Ketika program bahasa PHP sebelumnya dijalankan, maka data dari Alfiyanto Ghani akan terhapus dari database. Dan hal ini dibuktikan  dengan munculnya angka 1 pada halaman web browser yang berrati true. Itu artinya salah satu data dari tabel student telah berhasil dihapus.</p>
+          <img data-aos="zoom-in" src="img/database/output14.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan14.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas bertujuan untuk menghapus salah satu data dari tabel database student. Sebagai contoh di atas ingin menghapus salah satu mahasiswa dengan nama Alfiyanto Ghani. Namun karena nama bukan menjadi field unik, maka nama tidak dapat dijadikan sebagai kolom pengkondisian. Karena terdapat NIM yang berbeda-beda pada tiap mahasiswa, maka NIM dapat digunakan sebagai pengkondisian SQL untuk menghapus data mahasiswa dari tabel student menggunakan  queri DELETE dan query WHERE sebagai pengkondisiannya.</p>
+          <img data-aos="zoom-in" src="img/database/db14.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Ketika program bahasa PHP sebelumnya dijalankan, maka data dari Alfiyanto Ghani akan terhapus dari database. Dan hal ini dibuktikan  dengan munculnya angka 1 pada halaman web browser yang berrati true. Itu artinya salah satu data dari tabel student telah berhasil dihapus. Di bawah ini merupakan output dari web browser dengan  kode program sebelumnya :</p>
+          <img data-aos="zoom-in" src="img/database/output14.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan15.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas bertujuan untuk mmenambahkan data dari tabel database student. Sebagai contoh di atas ingin mmenambahkan kembali mahasiswa yang bernama Alifiyanto Ghani Wijaya dengan nim 215150707111015. Untuk menambahknan data baru diperlukan queri SQL yaitu INSERT INTO.</p>
+          <img data-aos="zoom-in" src="img/database/db15.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Ketika program bahasa PHP sebelumnya dijalankan, maka data dari Alfiyanto Ghani akan ditambahkan dari database. Dan hal ini dibuktikan  dengan munculnya angka 1 pada halaman web browser yang berati true. Itu artinya salah satu data dari tabel student telah berhasil dibuat. Di bawah ini merupakan output dari web browser dengan  kode program sebelumnya :</p>
+          <img data-aos="zoom-in" src="img/database/output15.png">
+      
+        </div>
+
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan16.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas bertujuan untuk mmenambahkan data dari tabel database student. Sebagai contoh di atas ingin mmenambahkan  mahasiswa yang bernama Dimas Saputro dengan nim 215150700111028. Untuk menambahknan data baru diperlukan queri SQL yaitu INSERT INTO.</p>
+          <img data-aos="zoom-in" src="img/database/db16.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Ketika program bahasa PHP sebelumnya dijalankan, maka data dari Dimas Saputro akan ditambahkan dari database. Dan hal ini dibuktikan  dengan munculnya angka 15 pada halaman web browser yang berarti panjang dari nim mahasiswa tersebut adalah 15 character. Hal tersebut terjadi karena akibat method lastinsertid(). Di bawah ini merupakan output dari web browser dengan  kode program sebelumnya :</p>
+          <img data-aos="zoom-in" src="img/database/output16.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan17.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas bertujuan untuk mengambil dan menampilkan data dari database student menggunakan FETCH_OBJ. Seperti yang telah dijelaskan sebelumnya, FETCH_OBJ akan mengembalikan data berupa objek dari database. Kemudian untuk menampilkan data yang telah diambil sebelumnya maka menggunakan fungsi echo dan menggunakan looping dengan foreach sebanyak jumlah data yang ada pada database. Apabila kode program usukses dilakukan maka akan menghasilkan output di bawah ini :
+          </p>
+          <img data-aos="zoom-in" src="img/database/output17.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan18.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas bertujuan untuk mmenambahkan data dari tabel database student. Sebagai contoh di atas ingin mmenambahkan  mahasiswa yang bernama Maitsa Adinda Prana dengan nim 215150701111029. Untuk menambahknan data baru diperlukan query SQL yaitu INSERT INTO.</p>
+          <img data-aos="zoom-in" src="img/database/db18.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Ketika program bahasa PHP sebelumnya dijalankan, maka data dari Maitsa Adinda Prana akan ditambahkan dari database. Dan hal ini dibuktikan  dengan tidak ada pemberitahuan eror pada halaman web brwoser seperti gambar di bawah ini :</p>
+          <img data-aos="zoom-in" src="img/database/output18.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan19.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas bertujuan untuk mengubah isi data salah satu mahasiswa yang terdapat pada tabel student. Sebagai contoh di atas ingin mengubah data nama dari MOHAMMAD ILHAM ARKAN untuk diubah menjadi Mohammad Ilham Arkan. Oleh karena itu diperlukan key value yaitu nim sebagai identitas dari mahasiswa tersebut.</p>
+          <img data-aos="zoom-in" src="img/database/db19.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Ketika program bahasa PHP sebelumnya dijalankan, maka datanama dari MOHAMMAD ILHAM ARKAN akan secara otomatis berubah menjadi Mohammad ilham Arkan pada database student. Hal ini dibuktikan dengan halaman web browser tidak menampilkan pesan errorseperti gambar di bawah ini :</p>
+          <img data-aos="zoom-in" src="img/database/output19.png">
+      
+        </div>
+
+        <div class="bg-white p-10 w-full">
+          <img data-aos="zoom-in" src="img/database/latihan20.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas bertujuan untuk menghapus salah satu data dari tabel database student. Sebagai contoh di atas ingin menghapus salah satu mahasiswa dengan nama Moch Danial Rasyid. Namun karena nama bukan menjadi field unik, maka nama tidak dapat dijadikan sebagai kolom pengkondisian. Karena terdapat NIM yang berbeda-beda pada tiap mahasiswa, maka NIM dapat digunakan sebagai pengkondisian SQL untuk menghapus data mahasiswa dari tabel student menggunakan  queri DELETE dan query WHERE sebagai pengkondisiannya.</p>
+          <img data-aos="zoom-in" src="img/database/db20.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Ketika program bahasa PHP sebelumnya dijalankan, maka datanama dari Moch Danial Rasyid akan secara otomatis terhapus dari database student. Hal ini dibuktikan dengan halaman web browser tidak menampilkan pesan errorseperti gambar di bawah ini :</p>
+          <img data-aos="zoom-in" src="img/database/output20.png">
+      
+        </div>
+ 
+ 
+ 
+</div>
+</section>
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</html>
