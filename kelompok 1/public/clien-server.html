@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="/src/input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="https://kit.fontawesome.com/3eeab2f4f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <section  >
+        <nav class=" px-4 sm:px-4 py-2.5 w-full top-0 left-0 fixed dark:border-gray-600"style="z-index: 1000; position: fixed;" >
+        <div class="flex flex-wrap justify-between  items-center mx-auto ">
+        <a href="https://flowbite.com/" class=" flex items-center">
+            <span class="self-center text-xl md:ml-14 font-semibold z-30 flex mt-5 ">
+              <img src="img/logo (2).png" class="w-14  md:w-16" alt="">
+              <h1 href=""class="text-white mt-3" > KODE<strong>CITA</strong> </h1>
+              
+            </span>
+        </a>
+    
+    
+        <div class="flex">
+            <button id="hamburger" type="button" name="hamburger" class="z-20 items-center p-2 text-sm right-4 text-white rounded-lg md:hidden hover:bg-opacity-80     bg-[#58020B]">
+              <span class="w-[30px] h-[2px] my-1 block bg-white transition duration-500 ease-in-out origin-top-left"></span>
+              <span class="w-[30px] h-[2px] my-2 block bg-white transition duration-500 ease-in-out"></span>
+              <span class="w-[30px] h-[2px] my-1 block bg-white transition duration-500 ease-in-out origin-bottom-left"></span>
+            </button>
+          </div>
+    
+          
+    
+    <nav id="nav-menu" class="-translate-y-72 lg:translate-y-0 transition duration-500 z-10 absolute py-5 left-0 bg-[#134E4A] w-full top-full  lg:-mt-16 lg:block lg:static lg:bg-transparent" >
+      <ul  class=" block lg:flex lg:justify-center text-white md:space-x-20 lg:ml-32">
+      <li>
+          <a href="index.html" class="underlined md:mr-10 md:text-lg block py-2 pr-4 pl-3  decoration-0 text-white  focus:bg-[#8E3C38] md:focus:bg-transparent rounded md:bg-transparent  md:hover:text-white md:p-0 " aria-current="page">Beranda</a>
+      </li>
+      <li>
+          <a href="#" class="underlined md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white  dark:hover:text-white">Tentang Kami</a>
+      </li>
+      <li>
+          <a href="#" class="underlined md:[underline-none] md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white ">Materi</a>
+      </li>
+      <li>
+        <a href="#" class="underlined md:[underline-none] md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white ">Referensi</a>
+    </li>
+    
+      </ul>
+    
+    </nav>
+    
+          
+          
+            
+        </div>
+        
+        </div>
+        </nav>
+    
+        <script>
+          $(window).scroll(function(){
+              $('nav').toggleClass('scrolled', $(this).scrollTop()>15);
+          })
+        </script>
+        <style>
+          .scrolled{
+            background-color: #134E4A;
+          }
+            .underlined{
+            position:relative;
+            color: white;
+            letter-spacing: 0.5px;
+            color:#fff;
+            }
+            .underlined:after{
+                content: '';
+              position: absolute;
+              width: 100%;
+              transform: scaleX(0);
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: #F3CF0E;
+              transform-origin: bottom right;
+              transition: transform 0.25s ease-out;
+            }
+            .underlined:hover:after{
+                transform: scaleX(1);
+              transform-origin: bottom left;
+              text-decoration:none;
+              color:#000;
+            }
+        </style>
+    
+    <style>
+      .hamburger-active > span:nth-child(1){
+        transform: rotate(45deg) translate(4px, -3px);
+        transform-origin: top left;
+        
+      }
+      .hamburger-active > span:nth-child(2){
+        scale: 0;
+      }
+      .hamburger-active > span:nth-child(3){
+        transform: rotate(-45deg) translate(3px, 4px);
+        transform-origin: bottom left;
+      }
+      
+    </style>
+    
+    <script>
+      
+      const hamburger = document.querySelector('#hamburger');
+      const navMenu = document.querySelector('#nav-menu');
+    
+      hamburger.addEventListener('click', function(){
+        hamburger.classList.toggle('hamburger-active')
+        navMenu.classList.toggle('-translate-y-72')
+      });
+    
+      window.addEventListener('click', function (e){
+        if(e.target != hamburger && e.target != navMenu){
+          hamburger.classList.remove('hamburger-active');
+          navMenu.classList.add('-translate-y-72');
+        }
+      });
+    
+      </script>
+    
+    </section>
+
+    <section>
+        <div class="lg:flex p-5 lg:p-12 mt-20 lg:space-x-10 space-y-10 lg:space-y-0 ">
+            <div class="lg:w-2/3 bg-slate-700 rounded-lg p-10 ">
+              <div class="Keterangan pb-10">
+                <h1 class="text-white text-2xl font-bold">Pengenalan PHP: Client-Server</h1>
+                <p class="text-white pt-5">PHP adalah kependekan dari Hypertext Preprocessor. Sebuah server-side script yang banyak digunakan untuk mengembangkan website dan biasa disisipkan ke dalam file HTML.
+                  PHP disebut sebagai server-side script karena proses eksekusi kode dasar programnya dilakukan pada sisi server. 
+                  Sehingga, client (web browser) hanya akan menerima hasil dari PHP script yang dijalankan berupa plain HTML, namun client tidak akan mengetahui kode dasarnya.</p>
+
+                  <p class="text-white pt-5">Berikut merupakan gambaran bahasa PHP sebagai server side:</p>
+                  
+              </div>
+                <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html"><span style="display:flex"><span><span style="color:#ff79c6">&lt;!DOCTYPE html&gt;</span>
+                </span></span><span style="display:flex"><span>&lt;<span style="color:#ff79c6">html</span> <span style="color:#50fa7b">lang</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"en"</span>&gt;
+                </span></span><span style="display:flex"><span>&lt;<span style="color:#ff79c6">head</span>&gt;
+                </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">charset</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"UTF-8"</span>&gt;
+                </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">http-equiv</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"X-UA-Compatible"</span> <span style="color:#50fa7b">content</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"IE=edge"</span>&gt;
+                </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"viewport"</span> <span style="color:#50fa7b">content</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"width=device-width, initial-scale=1.0"</span>&gt;
+                </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">title</span>&gt;Client Server PHP&lt;/<span style="color:#ff79c6">title</span>&gt; 
+                </span></span><span style="display:flex"><span>&lt;/<span style="color:#ff79c6">head</span>&gt;
+                </span></span><span style="display:flex"><span>&lt;<span style="color:#ff79c6">body</span>&gt;
+                </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">h1</span>&gt;
+              </span></span><span style="display:flex"><span class="ml-5 text-[#ff79c6]">  &lt;<span  style="color:#ff79c6">?php</span>
+              <span class="-ml-20"> <span class="text-white">$Hello</span>  <span class="text-[#ff79c6]">=</span> <span class="text-[#f1fa8c]">"Hello";</span> </span>
+              <span class="-ml-20"> <span class="text-white">$World</span>  <span class="text-[#ff79c6]">=</span> <span class="text-[#f1fa8c]">"World";</span> </span>
+              <span class="-ml-20"> <span class="text-blue-300">echo</span>  <span class="text-white"> $Hello, $World;</span></span>
+            </span></span><span style="display:flex"><span class="ml-5 text-[#ff79c6]">  &lt;<span  style="color:#ff79c6">?</span>>
+              </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">/h1</span>&gt;
+                </span></span><span style="display:flex"><span>&lt;/<span style="color:#ff79c6">body</span>&gt;
+                </span></span><span style="display:flex"><span>&lt;/<span style="color:#ff79c6">html</span>&gt;</span></span></code></pre></div></div>
+
+                <div class="pt-5">
+                  <p class="text-white">Setelah menuliskan kode diatas pada file dengan ekstensi .php, kita akan menjalankan kode tersebut pada server (disini saya memakai laragon), dan seperti ini hasilnya</p>
+                  <img src="img/klien.png" class="mt-5" alt="">
+                  <p class="mt-5 text-white">Dapat kita lihat, pada web server menghasilkan output berupa tulisan "HelloWorld", hal tersebut menunjukkan bahwa PHP yang kita sisipkan pada tag HTML akan diproses oleh server kemudian dikirimkan ke sisi klien (web browser) dengan format HTML nya saja.
+                  </p>
+
+                  <p class="text-white my-7">Jika masih bingung, maka akan saya tunjukkan perbedaannya antara PHP dengan Javascript. Kita akan menuliskan kode javascript dalam file ekstensi (.html):</p>
+                </div>
+
+                <div class="codeblock--content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:2;-o-tab-size:2;tab-size:2" class="p-5 overflow-x-scroll lg:overflow-x-hidden"><code class="language-html" data-lang="html"><span style="display:flex"><span><span style="color:#ff79c6">&lt;!DOCTYPE html&gt;</span>
+                </span></span><span style="display:flex"><span>&lt;<span style="color:#ff79c6">html</span> <span style="color:#50fa7b">lang</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"en"</span>&gt;
+                </span></span><span style="display:flex"><span>&lt;<span style="color:#ff79c6">head</span>&gt;
+                </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">charset</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"UTF-8"</span>&gt;
+                </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">http-equiv</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"X-UA-Compatible"</span> <span style="color:#50fa7b">content</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"IE=edge"</span>&gt;
+                </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">meta</span> <span style="color:#50fa7b">name</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"viewport"</span> <span style="color:#50fa7b">content</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">"width=device-width, initial-scale=1.0"</span>&gt;
+                </span></span><span style="display:flex"><span>  &lt;<span style="color:#ff79c6">title</span>&gt;Client Server PHP&lt;/<span style="color:#ff79c6">title</span>&gt; 
+                </span></span><span style="display:flex"><span>&lt;/<span style="color:#ff79c6">head</span>&gt;
+                </span></span><span style="display:flex"><span>&lt;<span style="color:#ff79c6">body</span>&gt;
+              </span></span><span style="display:flex"><span class="ml-5 text-[#ff79c6]">  &lt;<span  style="color:#ff79c6">?php</span>
+              <span class="-ml-20"> <span class="text-white">$var1</span>  <span class="text-[#ff79c6]">=</span> <span class="text-[#f1fa8c]">10;</span> </span>
+              <span class="-ml-20"> <span class="text-white">$var2</span>  <span class="text-[#ff79c6]">=</span> <span class="text-[#f1fa8c]">20;</span> </span>
+              <span class="-ml-20"> <span class="text-blue-300">echo</span>  <span class="text-[#f1fa8c]"> "Server output:"</span><span class="text-white">, $var1 <span class="text-[#ff79c6]">*</span> $var2;</span></span>
+            </span></span><span style="display:flex"><span class="ml-5 text-[#ff79c6]">  &lt;<span  style="color:#ff79c6">?</span>>
+            <span class="-ml-20"><span class="text-white">&lt;</span>div <span class="text-[#50fa7b]">id <span class="text-[#ff79c6]">=</span> <span class="text-[#f1fa8c]">"client"</span></span><span class="text-white">>&lt/</span>div<span class="text-white">></span></span>
+            <span class="-ml-20"><span class="text-white">&lt;</span>script<span class="text-white">></span></span>
+            <span class="-ml-14">var <span class="text-white">var1 <span class="text-[#ff79c6]">=</span><span class="text-[#f1fa8c]">10;</span></span></span>
+            <span class="-ml-14">var <span class="text-white">var2 <span class="text-[#ff79c6]">=</span><span class="text-[#f1fa8c]">30;</span></span></span>
+            <span class="-ml-14">var <span class="text-white">hasil<span class="text-[#ff79c6]">=</span><span class="text-[#f1fa8c]"> "Server output:"</span><span class="text-white">+ var1 <span class="text-[#ff79c6]">*</span> var2;</span></span></span>
+            <span class="-ml-14">doucument.<span class="text-[#50fa7b]">querySelector <span class="text-white">(</span><span class="text-[#f1fa8c]">"#client"</span><span class="text-white">).innerHTML = hasil;</span></span></span>
+            <span class="-ml-20"><span class="text-white">&lt;/</span>script<span class="text-white">></span></span>
+                </span></span><span style="display:flex"><span>&lt;/<span style="color:#ff79c6">body</span>&gt;
+                </span></span><span style="display:flex"><span>&lt;/<span style="color:#ff79c6">html</span>&gt;</span></span></code></pre></div></div>
+
+                <div class="pt-5">
+                  <p class="text-white">Setelah menuliskan kode diatas pada file dengan ekstensi .php, kita akan menjalankan kode tersebut pada server (disini saya memakai laragon), dan seperti ini hasilnya</p>
+                  <img src="img/scriptserver.png" class="mt-5" alt="">
+                  <p class="my-5 text-white">Sebenarnya, output yang ditampilkan pada website sama saja, tetapi jika ingin melihat perbedaan lebih detail, kita harus melihat lewat inspect (ctrl + u), maka akan terlihat jelas pada syntax yang terdapat dalam tag php, kode yang terlihat pada inspect hanya berupa format html saja. Sedangkan pada kode yang terdapat dalam javascript, semua kode terlihat oleh user (klien).
+                  </p>
+                  <img src="img/inspect.png" alt="">
+
+                  
+                </div>
+
+            </div>
+            <div class="lg:w-1/3 bg-slate-700 rounded-lg p-5 h-fit">
+
+              <div class="mt-5">
+                <h1 class="text-white text-2xl font-bold">Daftar Materi</h1>
+                <ul class="mt-5">
+                  <li><a href="" class="underlined text-white">1. PHP Client - Server</a></li>
+                  <li><a href="" class="underlined text-white">2. Syntax Dasar PHP</a></li>
+                  <li><a href="" class="underlined text-white">3. Penerapan Seleksi Kondisi, Looping, Array PHP</a></li>
+                  <li><a href="" class="underlined text-white">4. Studi Kasus Konversi Nilai Mahasiswa</a></li>
+                  <li><a href="" class="underlined text-white">5. Studi Kasus Form Login PHP</a></li>
+                  <li><a href="" class="underlined text-white">6. Studi Kasus Ajax</a></li>
+                  
+                </ul>
+              </div>
+
+              <div class="mt-5 ">
+                <h1 class="text-2xl text-white font-bold">Developer</h1>
+                <ul class="space-y-5 mt-5">
+                  <li class="flex my-auto justify-around  items-center">
+                    <img src="img/FARCHAN SURYADIO.JPG" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white  w-full ml-2 font-semibold underlined">Farchan Suryadio Rizki <br> 215150700111005 </a>
+                  </li>
+                  <li class=" flex my-auto justify-around  items-center">
+                    <img src="img/asyam.jpg" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white  w-full ml-2 font-semibold underlined">Ahmad Asyam Adil <br> 215150700111005 </a>
+                  </li>
+                  <li class=" flex my-auto justify-around  items-center">
+                    <img src="img/Fingka Aprilia Efendy.jpeg" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white  w-full ml-2 font-semibold underlined">Fingka Aprilia Effendy <br> 215150700111005 </a>
+                  </li>
+                  <li class="flex my-auto justify-around items-center">
+                    <img src="img/Kevn.jpg" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white ml-2 w-full font-semibold underlined">Kevin Leonardo Julianto <br> 215150700111005 </a>
+                  </li>
+                  <li class="flex my-auto justify-around items-center">
+                    <img src="img/farid.jpeg" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white ml-2 w-full font-semibold underlined">Akhmad Farid Nur Efendi <br> 215150700111005 </a>
+                  </li>
+                </ul>
+              </div>
+                
+             
+
+                
+            </div>
+        </div>
+    </section>
+
+
+
+   
+    
+</body>
+</html>

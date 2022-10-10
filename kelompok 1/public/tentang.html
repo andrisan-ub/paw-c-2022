@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="/src/input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="https://kit.fontawesome.com/3eeab2f4f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <section class="bg-white">
+        <nav class=" px-4 sm:px-4 py-2.5 w-full top-0 left-0 fixed dark:border-gray-600 bg-[#107D95]"style="z-index: 1000; position: fixed;" >
+            <div class="flex flex-wrap justify-between  items-center mx-auto ">
+            <a href="https://flowbite.com/" class=" flex items-center">
+                <span class="self-center text-xl md:ml-14 font-semibold z-30 flex mt-5 ">
+                  <img src="img/logo (2).png" class="w-14  md:w-16" alt="">
+                  <h1 href=""class="text-white mt-3" > KODE<strong>CITA</strong> </h1>
+                  
+                </span>
+            </a>
+        
+        
+            <div class="flex">
+                <button id="hamburger" type="button" name="hamburger" class="z-20 items-center p-2 text-sm right-4 text-white rounded-lg md:hidden hover:bg-opacity-80     bg-[#58020B]">
+                  <span class="w-[30px] h-[2px] my-1 block bg-white transition duration-500 ease-in-out origin-top-left"></span>
+                  <span class="w-[30px] h-[2px] my-2 block bg-white transition duration-500 ease-in-out"></span>
+                  <span class="w-[30px] h-[2px] my-1 block bg-white transition duration-500 ease-in-out origin-bottom-left"></span>
+                </button>
+              </div>
+        
+              
+        
+        <nav id="nav-menu" class="-translate-y-72 lg:translate-y-0 transition duration-500 z-10 absolute py-5 left-0 bg-[#134E4A] w-full top-full  lg:-mt-16 lg:block lg:static lg:bg-transparent" >
+          <ul  class=" block lg:flex lg:justify-center text-white md:space-x-20 lg:ml-32" >
+          <li>
+              <a href="index.html" class="underlined md:mr-10 md:text-lg block py-2 pr-4 pl-3  decoration-0 text-white  focus:bg-[#8E3C38] md:focus:bg-transparent rounded md:bg-transparent  md:hover:text-white md:p-0 " aria-current="page">Beranda</a>
+          </li>
+          <li>
+              <a href="tentang.html" class="underlined md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white  dark:hover:text-white">Tentang Kami</a>
+          </li>
+          <li>
+              <a href="index.html #materi" class="underlined md:[underline-none] md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white ">Materi</a>
+          </li>
+          <li>
+            <a href="index.html #referensi" class="underlined md:[underline-none] md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white ">Referensi</a>
+        </li>
+        
+          </ul>
+        
+        </nav>
+        
+              
+              
+                
+            </div>
+            
+            </div>
+            </nav>
+        
+            <script>
+              $(window).scroll(function(){
+                  $('nav').toggleClass('scrolled', $(this).scrollTop()>15);
+              })
+            </script>
+            <style>
+              .scrolled{
+                background-color: #107D95;
+              }
+                .underlined{
+                position:relative;
+                color: white;
+                letter-spacing: 0.5px;
+                color:#fff;
+                }
+                .underlined:after{
+                    content: '';
+                  position: absolute;
+                  width: 100%;
+                  transform: scaleX(0);
+                  height: 2px;
+                  bottom: 0;
+                  left: 0;
+                  background-color: #F3CF0E;
+                  transform-origin: bottom right;
+                  transition: transform 0.25s ease-out;
+                }
+                .underlined:hover:after{
+                    transform: scaleX(1);
+                  transform-origin: bottom left;
+                  text-decoration:none;
+                  color:#000;
+                }
+            </style>
+        
+        <style>
+          .hamburger-active > span:nth-child(1){
+            transform: rotate(45deg) translate(4px, -3px);
+            transform-origin: top left;
+            
+          }
+          .hamburger-active > span:nth-child(2){
+            scale: 0;
+          }
+          .hamburger-active > span:nth-child(3){
+            transform: rotate(-45deg) translate(3px, 4px);
+            transform-origin: bottom left;
+          }
+          
+        </style>
+        
+        <script>
+          
+          const hamburger = document.querySelector('#hamburger');
+          const navMenu = document.querySelector('#nav-menu');
+        
+          hamburger.addEventListener('click', function(){
+            hamburger.classList.toggle('hamburger-active')
+            navMenu.classList.toggle('-translate-y-72')
+          });
+        
+          window.addEventListener('click', function (e){
+            if(e.target != hamburger && e.target != navMenu){
+              hamburger.classList.remove('hamburger-active');
+              navMenu.classList.add('-translate-y-72');
+            }
+          });
+        
+          </script>
+
+    <div class="mt-10 pt-44  bg-white ">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#107D95" fill-opacity="1" d="M0,64L30,58.7C60,53,120,43,180,53.3C240,64,300,96,360,128C420,160,480,192,540,202.7C600,213,660,203,720,176C780,149,840,107,900,106.7C960,107,1020,149,1080,165.3C1140,181,1200,171,1260,154.7C1320,139,1380,117,1410,106.7L1440,96L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
+    </div>
+
+    </section>
+
+    <section>
+        <div class="bg-[#107D95]">
+
+          <div class=" profil px-20 lg:flex z-30 justify-center ">
+            <div class="box w-1/2">
+              <div class="foto">
+                <img src="img/FARCHAN SURYADIO.JPG" class="" alt="">
+              </div>
+              
+            </div>
+
+            <div class="lg:w-1/2 bg-white rounded-md mt-10 mb-10 lg:ml-32">
+              <h1 class="p-5 text-black font-semibold" >Nama: Farchan Suryadio Rizki <br> NIM  : 215150701111012 <br> Jobdesc: Desain, review materi, front end
+               </h1>
+            </div>
+          </div>
+
+          <div class=" profil px-20 lg:flex z-30 justify-center flex-row-reverse ">
+            <div class="box w-1/2">
+              <div class="foto">
+                <img src="img/asyam.jpg" alt="">
+              </div>
+              
+            </div>
+
+            <div class="lg:w-1/2 bg-white rounded-md mt-10 mb-10 lg:mr-32">
+              <h1 class="p-5 text-black font-semibold" >Nama: Ahmad Asyam Adil <br>NIM   : 215150707111013 <br>Jobdesc: Review Materi, front end </h1>
+            </div>
+          </div>
+
+          <div class=" profil px-20 lg:flex z-30 justify-center ">
+            <div class="box w-1/2">
+              <div class="foto">
+                <img src="img/Fingka Aprilia Efendy.jpeg" alt="">
+              </div>
+              
+            </div>
+
+            <div class="lg:w-1/2 bg-white rounded-md mt-10 mb-10 lg:ml-32">
+              <h1 class="p-5 text-black font-semibold">Nama: Fingka Aprilia Efendy <br>NIM   : 215150707111017 <br>Jobdesc: Review Materi, front end </h1>
+            </div>
+          </div>
+
+          <div class=" profil px-20 lg:flex z-30 justify-center flex-row-reverse ">
+            <div class="box w-1/2">
+              <div class="foto">
+                <img src="img/Kevn.jpg" alt="">
+              </div>
+              
+            </div>
+
+            <div class="lg:w-1/2 bg-white rounded-md mt-10 mb-10 lg:mr-32">
+              <h1 class="p-5 text-black font-semibold" >Nama: Kevin Leonardo Julianto <br>NIM   : 215150701111039 <br>Jobdesc: Review Materi, front end  </h1>
+            </div>
+          </div>
+
+          <div class=" profil  px-20 lg:flex z-30 justify-center ">
+            <div class="box w-1/2">
+              <div class="foto">
+                <img src="img/farid.jpeg" alt="">
+              </div>
+              
+            </div>
+
+            <div class="lg:w-1/2 bg-white rounded-md mt-10 mb-10 lg:ml-32">
+              <h1 class="p-5 text-black font-semibold" >Nama: Akhmad Farid Nur Efendi <br>NIM   :2151507000111005 <br>Jobdesc: Review Materi, front end  </h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#107D95" fill-opacity="1" d="M0,96L48,128C96,160,192,224,288,213.3C384,203,480,117,576,80C672,43,768,53,864,85.3C960,117,1056,171,1152,197.3C1248,224,1344,224,1392,224L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+        </div>
+    </section>
+
+    <section>
+      <footer>
+        <div class="#134E4A flex px-10">
+
+          <div class=" md:flex md:items-center md:space-x-10 justify-center mx-auto">
+            <div class="py-5">
+            <span class="self-center text-xl  font-semibold z-30 flex mt-5 ">
+              <img src="/public/img/logo (2).png" class="w-14  md:w-16" alt="">
+              <h1 href=""class="text-white mt-3" > KODE<strong>CITA</strong> </h1>
+            </span>
+            <span class="text-white mt-2">Jl. Veteran No. 8 Malang, 
+              Indonesia - 65145.
+            </span> <br> <br>
+            <span class="text-white mt-5 font-bold">Email
+            </span>
+            <br>
+            <span class="text-white mt-2 font-normal">kodecita@gmail.com
+            </span>
+            </div>
+
+            <div class="py-5">
+              <span class="self-center text-xl  font-semibold z-30 flex mt-5 ">
+                <img src="/public/img/logo (2).png" class="w-14 opacity-0  md:w-16" alt="">
+                <h1 href=""class="text-white mt-3" > <strong>Hubungi Kami</strong> </h1>
+              </span>
+              <a href="" class="text-white mt-2">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a> <br>
+              <a href="" class="text-white mt-2">
+                <i class="fa-brands fa-instagram"></i>
+              </a> <br>
+              <a href="" class="text-white mt-2">
+                <i class="fa-brands fa-youtube"></i>
+              </a> <br>
+              <a href="" class="text-white mt-2">
+                <i class="fa-brands fa-twitter"></i>
+              </a> <br>
+              </div>
+
+            
+            
+              <div class="py-5">
+                <span class="self-center text-xl  font-semibold z-30 flex mt-5 ">
+                  <img src="img/logo (2).png" class="opacity-0 w-14  md:w-16" alt="">
+                  <h1 href=""class="text-white mt-3" ><strong>Penelusuran</strong> </h1>
+                </span>
+                <a href="" class="text-white mt-2 underlined"> Beranda
+                </a> <br>
+                <a href="" class="text-white mt-2 underlined"> Tentang Kami
+                </a> <br>
+                <a href="" class="text-white mt-2 underlined"> Materi
+                </a> <br>
+                <a href="" class="text-white mt-2 underlined"> Referensi
+                </a> <br> 
+                </div>
+          </div>
+
+
+        </div>
+      </footer>
+    </section>
+
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+      .box{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: rgba(0,0,0,0.5);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .box::before{
+        content: "";
+        position: absolute;
+        inset: -10px 40px;
+        background: linear-gradient(315deg, #F3CF0E, #d400d4);
+        animation: animate 4s linear infinite;
+      }
+      @keyframes animate{
+        0%{
+          transform: rotate(0deg);
+        }
+        0%{
+          transform: rotate(360deg);
+        }
+      }
+      .box::after{
+        content: '';
+        position: absolute;
+        inset: 6px;
+        background: #107D95;
+        border-radius: 50%;
+        z-index: 1;
+      }
+      .foto{
+        position: absolute;
+        inset: 15px;
+        border: 6px solid #000;
+        z-index: 3;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .foto img{
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+
+    
+
+   
+    
+   
+    
+</body>
+</html>
