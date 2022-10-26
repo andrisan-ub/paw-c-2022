@@ -42,5 +42,32 @@
     <p><code>'bg-red' => $hasError,</p></code>
 <p><code>])></span></p></code>
 
+<!-- Additional Attribut-->
+    <h3>Conditional Classes</h3>
+<p>Untuk kenyamanan, Anda dapat menggunakan @checked directive untuk dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan diperiksa kembali jika kondisi yang diberikan bernilai benar:</p>
+<p><code><input type="checkbox"</p></code>
+       <p><code> name="active"</p></code>
+        <p><code>value="active"</p></code>
+        <p><code>@checked(old('active', $user->active)) /></p></code>
+<p>demikian pula, arahan @selected dapat digunakan untuk menunjukkan apakah opsi pilih yang diberikan harus "dipilih":</p>
+<p><code><select name="version"></p></code>
+    <p><code>@foreach ($product->versions as $version)</p></code>
+        <p><code><option value="{{ $version }}" @selected(old('version') == $version)></p></code>
+            <p><code>{{ $version }}</p></code>
+        <p><code></option></p></code>
+    <p><code>@endforeach</p></code>
+<p><code></select></p></code>
+<p>Selain itu, arahan @disabled dapat digunakan untuk menunjukkan apakah elemen tertentu harus "dinonaktifkan":</p>
+	<p><code><button type="submit" @disabled($errors->isNotEmpty())>Submit</button></p></code>
+<p>Selain itu, direktif @readonly dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus "readonly":</p>
+<p><code><input type="email"/<p></code>
+        <p><code>name="email"</p></code>
+        <p><code>value="email@laravel.com"</p></code>
+        <p><code>@readonly($user->isNotAdmin()) /></p></code>
+<p>Selain itu, arahan @required dapat digunakan untuk menunjukkan apakah elemen tertentu harus "diperlukan":</p>
+<p><code><input type="text"</p></code>
+        <p><code>name="title"</p></code>
+        <p><code>value="title"</p></code>
+        <p><code>@required($user->isAdmin()) /></p></code>
   </body>
 </html>
