@@ -44,22 +44,22 @@
 	 padding: 0;
 }
  .kelebihanCard .container .card .face.face1 .kelebihan1 {
-	 background-color: #fffc00;
+	 background-color: #fff;
 	 -webkit-background-clip: text;
 	 -webkit-text-fill-color: transparent;
 }
- .kelebihanCard .container .card .face.face1 .python {
-	 background-color: #00fffc;
+ .kelebihanCard .container .card .face.face1 .kelebihan2 {
+	 background-color: #fff;
 	 -webkit-background-clip: text;
 	 -webkit-text-fill-color: transparent;
 }
  .kelebihanCard .container .card .face.face1 .kelebihan4 {
-	 background-color: #FF2B21;
+	 background-color: #fff;
 	 -webkit-background-clip: text;
 	 -webkit-text-fill-color: transparent;
 }
  .kelebihanCard .container .card .face.face1 .kelebihan3 {
-	 background-color: #fc00ff;
+	 background-color: #fff;
 	 -webkit-background-clip: text;
 	 -webkit-text-fill-color: transparent;
 }
