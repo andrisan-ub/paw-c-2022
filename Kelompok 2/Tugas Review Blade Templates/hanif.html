@@ -17,10 +17,11 @@
             <li><em>Class based components</em></li>
             <li><em>Anonymous components</em></li>
         </ul>
-
+        
         <p>Untuk membuat <em>component</em> berbasis kelas, Anda dapat menggunakan perintah Artisan <code>make:component</code>.</p>
         <p>Contoh:</p>
         <!-- php artisan make:component Alert -->
+        
         <p>Perintah <code>make:component</code> juga akan membuat template <em>view</em> untuk <em>component</em>. <em>View</em> akan ditempatkan di direktori <code>resources/views/components</code>. 
         Saat menulis <em>component</em> untuk aplikasi Anda sendiri, <em>component</em> secara otomatis ditemukan dalam direktori <code>app/View/Components</code> dan direktori 
         <code>resources/views/components</code>, jadi biasanya tidak diperlukan registrasi <em>component</em> lebih lanjut.</p>
@@ -105,5 +106,53 @@
                 <!-- {{ $attributes->get('class') }} -->
                 <!-- {{ $attributes->filter(fn ($value, $key) => $key == 'foo') }} -->
         </ul>
+
+        <h4>Reserved Keyword</h4>
+        <p>Secara default, beberapa kata kunci disimpan untuk penggunaan internal Blade untuk merender komponen. 
+            Kata kunci berikut tidak dapat didefinisikan sebagai properti publik atau nama metode dalam komponen:</p>
+        <ul>
+            <li>data</li>
+            <li>render</li>
+            <li>resolveView</li>
+            <li>shouldRender</li>
+            <li>view</li>
+            <li>withAttributes</li>
+            <li>withName</li>
+        </ul>
+
+        <h4><em>Slots</em></h4>
+
+        <p>Seringkali, kita harus meneruskan konten tambahan ke komponen Anda melalui "slot". Slot komponen dirender 
+            dengan <code>echo</code> variabel <code>$slot</code>.</p>
+        
+        <p>Contoh:</p>
+            <!-- <div class="alert alert-danger">
+                {{ $slot }}
+            </div> -->
+
+        <p><strong>Scoped Slots</strong></p>
+        <p>Scoped Slots digunakan untuk mengakses data atau metode dari komponen dengan "scoped slots".</p>
+        <p>Contoh:</p>
+            <!-- <x-alert>
+                <x-slot:title>
+                    {{ $component->formatAlert('Server Error') }}
+                </x-slot>
+            
+                <strong>Whoops!</strong> Something went wrong!
+            </x-alert> -->
+
+        <p><strong>Atribut Slot</strong></p>
+        <p>COntoh:</p>
+            <!-- <x-card class="shadow-sm">
+                <x-slot:heading class="font-bold">
+                    Heading
+                </x-slot>
+            
+                Content
+            
+                <x-slot:footer class="text-sm">
+                    Footer
+                </x-slot>
+            </x-card> -->
     </body>
 </html>
