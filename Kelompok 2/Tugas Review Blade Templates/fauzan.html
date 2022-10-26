@@ -1,0 +1,145 @@
+<html>
+    <head>
+    </head>
+        <body>
+            <h3>#Inline Component Views</h3>
+            <p>Akan terasa rumit untuk mengelola kelas <em>component</em> dan template tampilan <em>component</em> yang sangat kecil.
+                Oleh karena itu, kita dapat mengembalikan <em>markup</em> <em>component</em> langsung dari <em>method</em> <code>render</code></p>
+            <p><code>/**</code></p> 
+            <p><code>* Get the view / contents that represent the component.</code></p>    
+            <p><code>*</code></p>
+            <p><code>* @return \Illuminate\View\View|\Closure|string</code></p>    
+            <p><code>*/</code></p>    
+            <p><code>public function render()</code></p>    
+            <p><code>{</code></p>    
+            <p><code>return <<<'blade'</code></p>        
+            <p><code>&lt;div class="alert alert-danger">&lt;/div></code></p>            
+            <p><code>{{ $slot }}</code></p>                
+            <p><code></div></code></p>            
+            <p><code>blade;</code></p>        
+            <p><code>}</code></p>
+            <br>     
+
+            <h4>Generating Inline View Components</h4>
+            <p>Untuk membuat komponen yang merender tampilan sebaris, 
+                kita dapat menggunakan perintah <code>make:component</code> pada terminal</p>
+            <p><code>php artisan make:component Alert --inline</code></p>
+            <br>
+            
+            <h3>#Dynamic Components</h3>
+            <p>Terkadang kita mungkin perlu merender <em>component</em> tetapi tidak tahu <em>component</em> mana yang harus dirender hingga <em>runtime</em>.
+                Maka dari itu kita dapat menggunakan <code>dynamic-component</code> bawaan Laravel untuk merender berdasarkan nilai atau variabel <em>runtime</em>.</p>
+            <p><code>&lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;</code></p>
+            <br>
+
+            <h3>#Manually Registering Components</h3>
+            <p>Saat menulis <em>component</em> untuk aplikasi kita sendiri, 
+                <em>component</em> secara otomatis ditemukan dalam <em>directory</em> <code>app/View/Components</code> dan <em>directory</em> <code>resources/views/components</code>.</p>
+            <p>Namun, jika kita membuat <em>package</em> yang menggunakan <em>Blade components</em>. 
+                Kita perlu mendaftarkan <em>component class</em> atau tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan <em>component</em> tersebut.
+                Biasanya kita harus mendaftarkan <em>component</em> dalam <code>boot</code> <em>method</em> dari <em>package's service provider</em> kita.</p>
+            <p><code>use Illuminate\Support\Facades\Blade;</code></p> 
+            <p><code>use VendorPackage\View\Components\AlertComponent;</code></p>     
+            <p><code>/**</code></p>     
+            <p><code>* Bootstrap your package's services.</code></p>     
+            <p><code>*</code></p>     
+            <p><code>* @return void</code></p>     
+            <p><code>*/</code></p>     
+            <p><code>public function boot()</code></p>     
+            <p><code>{</code></p>     
+            <p><code>Blade::component('package-alert', AlertComponent::class);</code></p>       
+            <p><code>}</code></p>
+
+            <p>Setelah <em>component</em> terdaftar, <em>component</em> tersebut dapat dirender menggunakan tag-nya.</p>
+            <p><code>&lt;x-package-alert/></code></p>
+            <br>
+
+            <h5>Autoloading Package Components</h5>
+            <p>Kita dapat menggunakan <code>componentNamespace</code> <em>method</em> untuk memuat <em>component</em> kelas secara otomatis berdasarkan konvensi.
+            Misalnya <em>package</em> <code>Nightsade</code> mungkin memiliki <em>component</em> <code>calender</code> dan <code>colorPicker</code> yang berada pada <code>Package\Views\Components</code> <em>namespace</em>.</p>
+            <p><code>use Illuminate\Support\Facades\Blade;</code></p>
+            <p><code>/**</code></p>
+            <p><code>* Bootstrap your package's services.</code></p>
+            <p><code>*</code></p>
+            <p><code>* @return void</code></p>
+            <p><code>*/</code></p>
+            <p><code>public function boot()</code></p>
+            <p><code>{</code></p>
+            <p><code>Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');</code></p>
+            <p><code>}</code></p>
+
+            <p>Ini akan memungkinkan penggunaan komponen paket oleh namespace vendor mereka menggunakan <code>package-name::</code> <em>syntax</em></p>
+            <p><code>&lt;x-nightshade::calendar /></code></p> 
+            <p><code>&lt;x-nightshade::color-picker /></code></p>
+            <p>Blade akan secara otomatis mendeteksi kelas yang ditautkan ke <em>component</em> dengan <em>pascal-casing</em> dari <em>component name</em>. Subdirektori juga didukung menggunakan <em>"dot" notation</em>.</p>
+            <br>
+            <br>
+
+            <h2>#Anonymous Components</h2>
+            <p>Mirip dengan <em>component</em> inline, <em>component</em> anonim menyediakan mekanisme untuk mengelola <em>component</em> melalui satu file. Namun, <em>component</em> anonim menggunakan file tampilan tunggal dan tidak memiliki kelas terkait.
+                <em>component</em> anonim hanya perlu menempatkan <em>Blade template</em> di dalam <em>directory</em> <code>resources/views/components</code>. Misalnya, dengan asumsi kita telah mendefinisikan sebuah <em>component</em> di <code>resources/views/components/inputs/button.blade.php</code>
+                kita dapat merendernya dengan</p> 
+            <p><code>&lt;x-alert/></code></p>
+            <p>Gunakan "." jika <em>component</em> bereda dalam <em>directory component</em>. Misalnya <em>component</em> didefinisikan di <code>resources/views/components/inputs/button.blade.php</code>
+                kita dapat merendernya dengan</p>
+            <p><code>&lt;x-inputs.button/></code></p>
+            <br>
+
+            <h3>#Anonymous Index Components</h3>
+            <p>Ketika <em>component</em> terdiri dari bari <em>Blade template</em>, kita ingin mengelompokkan <em>component</em> yang ada dalam satu <em>directory</em>.
+                Misal <em>component</em> "accordion" dengan struktur direktori.</p>
+            <p><code>/resources/views/components/accordion.blade.php</code></p> 
+            <p><code>/resources/views/components/accordion/item.blade.php</code></p>
+
+            <p>Struktur <em>directory</em> ini memungkinkan kita untuk merender <em>component</em> accordion dan itemnya seperti</p>
+            <p><code>&lt;x-accordion></code></p>
+            <p><code>&lt;x-accordion.item></code></p>        
+            <p><code>...</code></p>            
+            <p><code>&lt;/x-accordion.item></code></p>        
+            <p><code>&lt;/x-accordion></code></p>
+
+            <p>Namun untuk merender accordion melalui <code>x-accordion</code>, kita harus menempatkan template <em>component</em> akordeon "indeks" di <em>directory</em> <code>resources/views/components</code>
+            dari pada menumpuk di dalam <em>directory</em> <code>accordion</code> dengan template terkait accordion lainnya.</p>
+            <p>Blade memungkinkan kita menempatkan file <code>index.blade.php</code> dalam <em>directory template component</em>. Ketika <code>index.blade.php</code> ada untuk <em>component</em>itu akan dirender sebagai simpul "root" dari komponen. 
+                Jadi, kita dapat terus menggunakan sintaks Blade yang sama seperti yang diberikan. Namun, kita akan menyesuaikan struktur direktori kami seperti</p>
+            <p><code>/resources/views/components/accordion/index.blade.php</code></p>
+            <p><code>/resources/views/components/accordion/item.blade.php</code></p>
+            <br>
+
+            <h3>#Data Properties/Attributes</h3>
+            <p>Karena <em>component</em> anonim tidak memiliki kelas terkait, bagaimana dapat membedakan data mana yang harus diteruskan ke <em>component</em> sebagai variabel dan <em>arrtibute</em> mana yang harus ditempatkan di <em>component arrtibute bag</em>.</p>
+            <p>Kita dapat menentukan <em>arrtibutes</em> mana yang dianggap variabel data menggunakan <code>@props</code> dibagian atas <em>Blade templat</em>. Jika ingin memberikan nilai default pada variabel data, kita dapat menentukan nama variabel sebagai kunci array dan nilai default sebagai nilai array</p>
+            <p><code>&lt;!-- /resources/views/components/alert.blade.php --></code></p>
+            <p><code>@props(['type' => 'info', 'message'])</code></p>
+            <p><code>&lt;div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}></code></p>
+            <p><code>{{ $message }}</code></p>
+            <p><code>&lt;/div></code></p>
+
+            <p>Mengingat definisi komponen di atas, kita dapat membuat <em>component</em> seperti</p>
+            <p><code>&lt;x-alert type="error" :message="$message" class="mb-4"/></code></p>
+            <br>
+
+            <h3>#Accessing Parent Data</h3>
+            <p>Saat kita ingin mengakses data dari komponen <em>parent</em> di dalam komponen turunan, kita dapat menggunakan <code>@aware</code>. Misal <em>component</em> menu kompleks yang terdiri dari &lt;x-menu> <em>parent</em> dan &lt;x-menu.item> <em>child</em>.</p>
+            <p><code>&lt;x-menu color="purple">&lt;/x-menu></code></p>
+            <p><code>&lt;x-menu.item>...&lt;/x-menu.item></code></p>
+            <p><code>&lt;x-menu.item>...&lt;/x-menu.item></code></p>
+            <p><code>&lt;/x-menu></code></p>
+
+            <p>Komponen &lt;x-menu> memiliki implementasi</p>
+            <p><code>&lt;!-- /resources/views/components/menu/index.blade.php --></code></p>
+            <p><code>@props(['color' => 'gray'])</code></p>
+            <p><code>&lt;ul {{ $attributes->merge(['class' => 'bg-'.$color.'-200']) }}></code></p>
+            <p><code>{{ $slot }}</code></p>
+            <p><code>&lt;/ul></code></p>
+
+            <p>Karena <code>color</code> prop hanya diteruskan ke <em>parent</em> (&lt;x-menu>), maka tidak akan ada di &lt;x-menu.item> Namun, jika kita menggunakan direktif <code>@aware</code>, kita juga dapat membuatnya ada di &lt;x-menu.item></x-menu.item></p>
+            <p><code>&lt;!-- /resources/views/components/menu/item.blade.php --></code></p>
+            <p><code>@aware(['color' => 'gray'])</code></p>
+            <p><code>&lt;li {{ $attributes->merge(['class' => 'text-'.$color.'-800']) }}></code></p>
+            <p><code>{{ $slot }}</code></p>
+            <p><code>&lt;/li></code></p>
+
+            <p><code>@aware</code> tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke <em>component</em> induk melalui atribut HTML. Nilai <code>@props</code> default yang tidak secara eksplisit diteruskan ke <em>component</em> induk tidak dapat diakses oleh <code>@aware</code>.</p>
+        </body>
+</html>
