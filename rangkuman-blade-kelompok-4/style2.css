@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+#kelebihan{
+  background: linear-gradient(61.39deg, #7175CE 20.46%, #E96862 61.93%);
+}
+ .kelebihanCard {
+	
+	 justify-content: center;
+	 align-items: center;
+	 
+}
+ .kelebihanCard .container {
+	 max-width: 100vw;
+	 display: grid;
+	 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	 grid-gap: 35px;
+
+	 padding: 40px 0;
+}
+ .kelebihanCard .container .card {
+	 position: relative;
+	 width: 300px;
+	 height: 400px;
+	 
+	 background: #000;
+	 border-radius: 15px;
+	 box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+}
+ .kelebihanCard .container .card .face {
+	 position: absolute;
+	 bottom: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+}
+ .kelebihanCard .container .card .face.face1 {
+	 box-sizing: border-box;
+	 padding: 20px;
+}
+ .kelebihanCard .container .card .face.face1 h2 {
+	 
+	 padding: 0;
+}
+ .kelebihanCard .container .card .face.face1 .kelebihan1 {
+	 background-color: #fffc00;
+	 -webkit-background-clip: text;
+	 -webkit-text-fill-color: transparent;
+}
+ .kelebihanCard .container .card .face.face1 .python {
+	 background-color: #00fffc;
+	 -webkit-background-clip: text;
+	 -webkit-text-fill-color: transparent;
+}
+ .kelebihanCard .container .card .face.face1 .kelebihan4 {
+	 background-color: #FF2B21;
+	 -webkit-background-clip: text;
+	 -webkit-text-fill-color: transparent;
+}
+ .kelebihanCard .container .card .face.face1 .kelebihan3 {
+	 background-color: #fc00ff;
+	 -webkit-background-clip: text;
+	 -webkit-text-fill-color: transparent;
+}
+ .kelebihanCard .container .card .face.face2 {
+	 transition: 0.5s;
+}
+ .kelebihanCard .container .card .face.face2 h2 {
+	 
+	 padding: 0;
+	 font-size: 1em;
+	 color: #fff;
+	 transition: 0.5s;
+	 text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	 z-index: 10;
+}
+ .kelebihanCard .container .card:hover .face.face2 {
+	 height: 60px;
+}
+ .kelebihanCard .container .card:hover .face.face2 h2 {
+	 font-size: 1em;
+}
+ .kelebihanCard .container .card:nth-child(1) .face.face2 {
+  background: linear-gradient(2.24deg, #2227B1 13.37%, #FF2B21 80.95%);
+	 border-radius: 15px;
+}
+ .kelebihanCard .container .card:nth-child(2) .face.face2 {
+  background: linear-gradient(2.24deg, #2227B1 13.37%, #FF2B21 80.95%);
+	 border-radius: 15px;
+}
+ .kelebihanCard .container .card:nth-child(3) .face.face2 {
+  background: linear-gradient(2.24deg, #2227B1 13.37%, #FF2B21 80.95%);
+	 border-radius: 15px;
+}
+ .kelebihanCard .container .card:nth-child(4) .face.face2 {
+  background: linear-gradient(2.24deg, #2227B1 13.37%, #FF2B21 80.95%);
+	 border-radius: 15px;
+}
+p{
+  font-size: 14px;
+}
+#bladetemplate{
+  background: linear-gradient(180.39deg, #1E7480 44.54%, #1E7480 50.98%, #3A8DDB 93.19%)
+}
+
