@@ -1,0 +1,46 @@
+<html>
+  <head> </head>
+  <body>
+    <!-- introduction -->
+    <h3>The Loop Variable</h3>
+    <p>
+      Saat melakukan iterasi melalui loop foreach, variabel $loop akan tersedia di dalam loop Anda. Variabel ini menyediakan akses ke beberapa bit informasi yang berguna seperti indeks loop saat ini dan apakah ini adalah iterasi pertama atau terakhir melalui loop:
+    </p>
+    <!-- displaying data -->
+    <p><code>@foreach ($users as $user)</code></p>
+    <p><code>@if ($loop->first)</code></p>
+        <p><code>This is the first iteration.</code></p>
+    <p><code>@endif</code></p>
+ 
+    <p><code>@if ($loop->last)</code></p>
+        <p><code>This is the last iteration.</code></p>
+    <p><code>@endif</code></p>
+ 
+    <p>This is user {{ $user->id }}</code></p>
+<p><code>@endforeach</code></p>
+    <p>Jika Anda berada dalam loop bersarang, Anda dapat mengakses variabel $loop loop induk melalui properti induk:</p>
+<p><code>@foreach ($users as $user)</p></code>
+    <p><code>@foreach ($user->posts as $post)</p></code>
+        <p><code>@if ($loop->parent->first)</p></code>
+            <p><code>This is the first iteration of the parent loop.</p></code>
+        <p><code>@endif</p></code>
+    <p><code>@endforeach</p></code>
+<p><code>@endforeach</p></code>
+    <br />
+    <!-- Conditional Classes -->
+    <h3>Conditional Classes</h3>
+    <p>Arahan @class mengkompilasi string kelas CSS secara kondisional. Arahan menerima array kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan, sedangkan nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen tersebut akan selalu disertakan dalam daftar kelas yang dirender:</p>
+ <p><code>@php</p></code>
+  <p><code>$isActive = false;</p></code>
+    <p><code>$hasError = true;</p></code>
+<p><code>@endphp</p></code>
+ 
+<p><code><span @class([</p></code>
+    <p><code>'p-4',</p></code>
+    <p><code>'font-bold' => $isActive,</p></code>
+    <p><code>'text-gray-500' => ! $isActive,</p></code>
+    <p><code>'bg-red' => $hasError,</p></code>
+<p><code>])></span></p></code>
+
+  </body>
+</html>
