@@ -48,6 +48,33 @@
     <p><code>'bg-red' => $hasError,</p></code>
 <p><code>])></span></p></code>
 
+<h3>Including Subviews</h3>
+<p>Direktif @include Blade memungkinkan Anda menyertakan tampilan Blade dari dalam tampilan lain. Semua variabel yang tersedia untuk tampilan induk akan tersedia untuk tampilan yang disertakan:</p>
+<p><code><div></p></code>
+    <p><code>@include('shared.errors')</p></code>
+ 
+    <p><code><form></p></code>
+       <p><code> <!-- Form Contents --></p></code>
+    <p><code></form></p></code>
+<p><code></div></p></code>
+<p>Meskipun tampilan yang disertakan akan mewarisi semua data yang tersedia di tampilan induk, Anda juga dapat meneruskan larik data tambahan yang harus tersedia untuk tampilan yang disertakan:</p>
+<p><code>@include('view.name', ['status' => 'complete'])</p></code>
+
+<p>Jika Anda mencoba include tampilan yang tidak ada, Laravel akan membuat kesalahan. Jika Anda ingin menyertakan tampilan yang mungkin ada atau tidak, Anda harus menggunakan direktif @includeIf:</p>
+<p><code>@includeIf('view.name', ['status' => 'complete'])</p></code>
+
+<p>Jika Anda ingin @include tampilan jika ekspresi boolean yang diberikan bernilai benar atau salah, Anda dapat menggunakan arahan @includeWhen dan 
+@includeUnless:</p>
+
+<p><code>@includeWhen($boolean, 'view.name', ['status' => 'complete'])</p></code>
+ 
+<p><code>@includeUnless($boolean, 'view.name', ['status' => 'complete'])</p></code>
+
+<p>Untuk menyertakan tampilan pertama yang ada dari larik tampilan tertentu, Anda dapat menggunakan direktif includeFirst:pression mengevaluasi ke true atau false, Anda dapat menggunakan arahan @includeWhen dan @includeUnless:</p>
+
+<p><code>@includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])</p></code>
+
+
 <!-- Additional Attribut-->
     <h3>Conditional Classes</h3>
 <p>Untuk kenyamanan, Anda dapat menggunakan @checked directive untuk dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan diperiksa kembali jika kondisi yang diberikan bernilai benar:</p>
