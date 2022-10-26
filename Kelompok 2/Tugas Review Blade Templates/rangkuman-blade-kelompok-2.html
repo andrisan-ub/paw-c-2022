@@ -74,6 +74,13 @@
 
 <p><code>@includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])</p></code>
 
+<h3>Rendering Views For Collection</h3>
+<p>dapat menggabungkan loop dan memasukkan ke dalam satu baris dengan arahan @each Blade:</p>
+<p><code>@each('view.name', $jobs, 'job')</p></code>
+<p>Argumen pertama @each directive adalah tampilan yang akan dirender untuk setiap elemen dalam array atau koleksi. Argumen kedua adalah larik atau koleksi yang ingin Anda ulangi, sedangkan argumen ketiga adalah nama variabel yang akan ditetapkan ke iterasi saat ini dalam tampilan. Jadi, misalnya, jika Anda mengulangi array pekerjaan, biasanya Anda ingin mengakses setiap pekerjaan sebagai variabel pekerjaan dalam tampilan. Kunci array untuk iterasi saat ini akan tersedia sebagai variabel kunci dalam tampilan.
+
+Anda juga dapat meneruskan argumen keempat ke @each directive. Argumen ini menentukan tampilan yang akan dirender jika array yang diberikan kosong.</p>
+<p><code>@each('view.name', $jobs, 'job', 'view.empty')</p></code>
 
 <!-- Additional Attribut-->
     <h3>Conditional Classes</h3>
