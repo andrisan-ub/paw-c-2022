@@ -3,11 +3,11 @@
 
     </head>
     <body>
-        <h3>Comment</h3>
+        <h4>Comment</h4>
         <p>Blade menyediakan <em>comment</em> untuk view namun <em>comment</em>
         tidak di-<em>include</em> ke HTML yang di-<em>return</em>. </p>
 
-        <h2>Components</h2>
+        <h3>Components</h3>
         <p>Components memiliki manfaat yang mirip dengan <em>sections, 
         Layouts,</em> dan <em>Includes</em> sehingga dapat digunakan untuk
         membangun sistem yang dapa diandalkan dan <em>extensible</em>.</p>
@@ -24,7 +24,86 @@
         <p>Perintah <code>make:component</code> juga akan membuat template <em>view</em> untuk <em>component</em>. <em>View</em> akan ditempatkan di direktori <code>resources/views/components</code>. 
         Saat menulis <em>component</em> untuk aplikasi Anda sendiri, <em>component</em> secara otomatis ditemukan dalam direktori <code>app/View/Components</code> dan direktori 
         <code>resources/views/components</code>, jadi biasanya tidak diperlukan registrasi <em>component</em> lebih lanjut.</p>
+        
+        <p>Jika ingin membuat <em>component</em> anonim (<em>component</em> dengan hanya template Blade dan tanpa kelas), bisa menggunakan flag <code>--view</code> saat menjalankan perintah <code>make:component</code>.</p> 
+        <p>Contoh:</p>
+            <!-- php artisan make:component forms.input --view     -->
 
+        <p><strong>Mendaftarkan <em>Package Component</em> Secara Manual</strong></p>
 
+        <p>Saat menulis <em>component</em> untuk aplikasi Anda sendiri, <em>component</em> secara otomatis ditemukan dalam direktori <code>app/View/Components</code> dan direktori <code>resources/views/components</code>.
+            Namun, jika Anda membuat <em>package</em> yang menggunakan <em>component</em> Blade, Anda perlu mendaftarkan kelas <em>component</em> dan alias tag HTML-nya secara manual.</p>
+        <p>Contoh:</p>
+            <!-- use Illuminate\Support\Facades\Blade;
+    
+            /**
+            * Bootstrap your package's services.
+            */
+            public function boot()
+            {
+                Blade::component('package-alert', Alert::class);
+            } -->
+
+        <p>Setelah <em>component</em> terdaftar, <em>component</em> tersebut dapat dirender menggunakan alias tagnya</p>
+        <p>Contoh:</p>
+              <!-- <x-package-alert/>     -->
+
+        <h4>Render Components</h4>
+
+        <p>Untuk me-<em>render component</em>, dapat menggunakan tag <em>component</em> Blade dalam salah satu template Blade Anda. Tag <em>component</em> blade dimulai dengan string <code>x-</code> diikuti dengan 
+            nama <em>kebab-case</em> dari kelas <em>component</em>.</p>
+        <p>Contoh:</p>
+            <!-- <x-alert/>
+    
+            <x-user-profile/> -->
+
+        <h4>Pass Data ke <em>Components</em></h4>
+
+        <p>Data di-<em>pass</em> ke <em>component</em> Blade menggunakan atribut HTML. Nilai primitif yang <em>hard-code</em> dapat diteruskan ke <em>component</em> menggunakan string atribut HTML sederhana. 
+            <em>Expression</em> dan <em>variable</em> PHP harus diteruskan ke <em>component</em> melalui atribut yang menggunakan karakter <code>:</code> sebagai awalan.</p>
+        <p>Contoh:</p>
+            <!-- <x-alert type="error" :message="$message"/> -->
+        <p>Semua atribut data <em>component</em> harus didefinisikan di dalam konstruktor kelasnya.</p>
+        
+        <p>Fitur: </p>
+        <ul>
+            <li><em>Casing</em></li>
+            <li>Sintaks Atribut Pendek</li>
+            <li><em>Escape</em> Ketika <em>Render</em> Atribut</li>
+            <li>Metode dalam <em>Components</em></li>
+            <li>Mengakses Atribut dan <em>Slot</em> dalam <em>Components</em></li>
+            <li>Dependensi Tambahan</li>
+            <li>Menyembunyikan Atribut atau Metode dari <em>Components</em></li>
+        </ul>
+
+        <h4>Atribut <em>Components</em></h4>
+        <p>Atribut <em>component</em> adalah <em>typed fields</em> yang ditetapkan pada instance dari suatu <em>component</em>, dan dapat direferensikan dari dalam markup <em>component</em> menggunakan sintaks <em>expression</em>. 
+            Atribut memungkinkan untuk membuat <em>component</em> lebih dinamis.</p>
+        <p>Contoh:</p>
+           <!-- <x-alert type="error" :message="$message" class="mt-4"/> -->
+        
+        <p>Render atribut dalam <em>view</em>:</p>
+            <!-- <div {{ $attributes }}>
+                 Component content 
+            </div> -->
+
+        <p>Ketentuan: </p>
+        <ul>
+            <li>Atribut <em>Default/Merged</em></li>
+                <!-- <div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}>
+                    {{ $message }}
+                </div> -->
+            <li>Penggabungan Kondisional Kelas</li>
+                <!-- <button {{ $attributes->class(['p-4'])->merge(['type' => 'button']) }}>
+                    {{ $slot }}
+                </button> -->
+            <li>Penggabungan Atribut Non-Kelas</li>
+                <!-- <button {{ $attributes->merge(['type' => 'button']) }}>
+                    {{ $slot }}
+                </button> -->
+            <li>Pengambilan dan Filter Atribut</li>
+                <!-- {{ $attributes->get('class') }} -->
+                <!-- {{ $attributes->filter(fn ($value, $key) => $key == 'foo') }} -->
+        </ul>
     </body>
 </html>
