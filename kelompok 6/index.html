@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rangkuman Laravel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.33.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <div class="navbar bg-primary text-primary-content rounded-box">
+      <div class="flex-1 px-2 lg:flex-none">
+        <a class="text-lg font-bold">Rangkuman Laravel</a>
+      </div>
+      <div class="flex justify-end flex-1 px-2">
+        <div class="flex items-stretch">
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost rounded-btn">Lihat</label>
+            <ul
+              tabindex="0"
+              class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+            >
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex item-center py-5">
+      <div class="grid grid-cols-1 mx-auto gap-5 md:grid-cols-2 md:gap-8">
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Introduction</h2>
+            <p>
+              Blade adalah salah satu fitur yang tersedia dalam Laravel yang
+              berfungsi untuk membuat template guna pengembangan tampilan
+              halaman web. Tidak seperti fitur fitur templating PHP yang
+              lainnya, dalam fitur blade user tidak akan dibatasi dalam
+              pembuatan kode untuk tampilannya. Semua tampilan bisa diubah dalam
+              kode PHP biasa. File template PHP menggunakan ekstensi file
+              “.blade.php” yang akan tersimpan dalam direktori resource/views.
+              Tampilan blade dapat dikembalikan dari direktori route atau
+              controller dan biasanya ditampilkan pada direktori view. Untuk
+              menuju halaman yang kita inginkan, blade memiliki fungsi view
+              dengan menambahkan “ / ”
+            </p>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Displaying Data</h2>
+            <p></p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="displaydata_html"
+                class="btn btn-md modal-button btn-primary"
+                >HTML Entity Encoding</label
+              >
+              <label
+                for="displaydata_blade"
+                class="btn btn-md modal-button btn-primary"
+                >Blade & JavaScript Framework</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Blade Directive</h2>
+            <p></p>
+            <div class="card-actions justify-end columns grid">
+              <label
+                for="bladeDirective_if"
+                class="btn btn-md modal-button btn-primary"
+                >If Statements</label
+              >
+              <label
+                for="bladeDirective_switch"
+                class="btn btn-md modal-button btn-primary"
+                >Switch Statements</label
+              >
+              <label
+                for="bladeDirective_loops"
+                class="btn btn-md modal-button btn-primary"
+                >Loops</label
+              >
+              <label
+                for="bladeDirective_loopsVar"
+                class="btn btn-md modal-button btn-primary"
+                >The Loop Variable</label
+              >
+              <label
+                for="bladeDirective_conditional"
+                class="btn btn-md modal-button btn-primary"
+                >Conditional Classes</label
+              >
+              <label
+                for="bladeDirective_additional"
+                class="btn btn-md modal-button btn-primary"
+                >Additional Attributes</label
+              >
+              <label
+                for="bladeDirective_including"
+                class="btn btn-md modal-button btn-primary"
+                >Including Subviews</label
+              >
+              <label
+                for="bladeDirective_directive"
+                class="btn btn-md modal-button btn-primary"
+                >The @once Directive</label
+              >
+              <label
+                for="bladeDirective_raw"
+                class="btn btn-md modal-button btn-primary"
+                >Raw PHP</label
+              >
+              <label
+                for="bladeDirective_comments"
+                class="btn btn-md modal-button btn-primary"
+                >Comments</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Components</h2>
+            <p></p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="components_rendering"
+                class="btn btn-md modal-button btn-primary"
+                >Rendering Components</label
+              >
+              <label
+                for="components_passing"
+                class="btn btn-md modal-button btn-primary"
+                >Passing Data To Components</label
+              >
+              <label
+                for="components_attributes"
+                class="btn btn-md modal-button btn-primary"
+                >Component Attributes</label
+              >
+              <label
+                for="components_reserved"
+                class="btn btn-md modal-button btn-primary"
+                >Reserved Keywords</label
+              >
+              <label
+                for="components_slots"
+                class="btn btn-md modal-button btn-primary"
+                >Slots</label
+              >
+              <label
+                for="components_inline"
+                class="btn btn-md modal-button btn-primary"
+                >Inline Component Views</label
+              >
+              <label
+                for="components_dynamic"
+                class="btn btn-md modal-button btn-primary"
+                >Dynamic Components</label
+              >
+              <label
+                for="components_manually"
+                class="btn btn-md modal-button btn-primary"
+                >Manually Registering Components</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Anonymous Components</h2>
+            <p>
+              Mirip seperti inline components, anonymous components menyediakan
+              mekanisme untuk mengatur komponen menggunakan satu file. Namun,
+              anonymous components memanfaatkan satu single view file dan tidak
+              memiliki associated class. Untuk mendefinisikan anonymous
+              component, kita hanya perlu menempatkan blade template di dalam
+              direktori resources/views/components. Contohnya, anggaplah kita
+              sudah mendefinisikan komponen di
+              resources/views/components/alert.blade.php, kita cukup membuatnya
+              seperti berikut:
+              <xmp>
+              <x-alert />
+            </xmp>
+              Kita dapat menggunakan titik (.) untuk mengindikasikan jika sebuah
+              komponen bersarang di dalam direktori components. Misalnya, anggap
+              bahwa komponen didefinisikan di
+              resources/views/components/inputs/button.blade.php, kita dapat
+              membuatnya seperti berikut:
+              <xmp>
+              <x-inputs.button />
+            </xmp>
+            </p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="anonymous_index"
+                class="btn btn-md modal-button btn-primary"
+                >Anonymous Index Components</label
+              >
+              <label
+                for="anonymous_data"
+                class="btn btn-md modal-button btn-primary"
+                >Data Properties / Attributes</label
+              >
+              <label
+                for="anonymous_accessing"
+                class="btn btn-md modal-button btn-primary"
+                >Accessing Parent Data</label
+              >
+              <label
+                for="anonymous_components"
+                class="btn btn-md modal-button btn-primary"
+                >Anonymous Components Namespaces</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Building Layouts</h2>
+            <p></p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="buildingLayouts_components"
+                class="btn btn-md modal-button btn-primary"
+                >Layouts Using Components</label
+              >
+              <label
+                for="buildingLayouts_template"
+                class="btn btn-md modal-button btn-primary"
+                >Layouts Using Template Inheritance</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Forms</h2>
+            <p></p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="forms_csrf"
+                class="btn btn-md modal-button btn-primary"
+                >CSRF Field</label
+              >
+              <label
+                for="forms_method"
+                class="btn btn-md modal-button btn-primary"
+                >Method Field</label
+              >
+              <label
+                for="forms_validation"
+                class="btn btn-md modal-button btn-primary"
+                >Validation Errors</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Put this part before </body> tag -->
+
+    <input type="checkbox" id="displaydata_html" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">HTML Entity Encoding</h3>
+        <p class="py-4">
+          Cara menampilkan data yang akan diteruskan ke tampilan Blade dengan
+          menuliskan :
+          <xmp>
+            Route::get('/', function () {
+            return view('welcome', ['name' => 'Samantha']);
+            })
+          </xmp>
+          Atau saat kita akan menampilkan ( contoh : nama) kita juga dapat
+          menuliskan seperti ini
+          <xmp>Hello, {{$name}}</xmp>
+          Statement {{}} blade akan secara otomatis terkirim melalui fungsi html
+          special chars PHP. Tidak ada batasan untuk menampilkan konten yang
+          akan ditampilkan dalam Blade. <br />
+          <b>Displaying Unescaped Data</b><br />
+          Secara default, pernyataan Blade {{}} secara otomatis dikirim melalui
+          fungsi htmlspecialchars PHP untuk mencegah serangan XSS. Jika Anda
+          tidak ingin data Anda di-escape, Anda dapat menggunakan sintaks
+          berikut:
+          <xmp>Halo, {!! $name!!}.</xmp>
+        </p>
+        <div class="modal-action">
+          <label for="displaydata_html" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="displaydata_blade" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Blade & Javascript Framework</h3>
+        <p class="py-4">
+          Karena dalam JS juga banyak menggunakan tanda “{}” maka dalam blade
+          kita harus menggunakan tanda “@” untuk memberi tahu mesin rendering
+          blade Contoh :
+          <xmp>
+            <h1>Laravel</h1>
+            Hello, @{{ name }}.
+          </xmp>
+          Dalam contoh ini, simbol @ akan dihapus oleh Blade; namun, ekspresi {{
+            name }} akan tetap tidak tersentuh oleh mesin Blade, memungkinkannya
+          dirender oleh kerangka kerja JavaScript Anda. Simbol @ juga dapat
+          digunakan untuk menghindari arahan Blade: Contoh :
+          <xmp> {{-- Blade template --}}
+            @@if()
+            <!-- HTML output -->
+            @if()
+          </xmp>
+          <b>Rendering JSON</b><br />
+          Rendering JSON digunakan untuk menginisialisasi variabel JS yang ada
+          pada file “.json”. bisa berupa format data number, String, Boolean,
+          Array, Object, NULL Contoh :
+          <xmp>
+            <script>
+              var app = <?php echo json_encode($array); ?>;
+            </script>
+          </xmp>
+          Namun, alih-alih memanggil json_encode secara manual, Anda dapat
+          menggunakan arahan metode Illuminate\Support\Js::from. Metode from
+          menerima argumen yang sama dengan fungsi json_encode PHP; namun, ini
+          akan memastikan bahwa JSON yang dihasilkan diloloskan dengan benar
+          untuk dimasukkan dalam tanda kutip HTML. Metode from akan
+          mengembalikan pernyataan JavaScript string JSON.parse yang akan
+          mengubah objek atau larik yang diberikan menjadi objek JavaScript yang
+          valid:
+          <xmp>
+            <script>
+              var app = {
+                {
+                  Illuminate\ Support\ Js::from($array)
+                }
+              };
+            </script>
+          </xmp>
+          <b>The @verbatim Directive</b><br />
+          ika Anda menampilkan variabel JavaScript di sebagian besar template
+          Anda, Anda dapat membungkus HTML di direktif @verbatim sehingga Anda
+          tidak perlu mengawali setiap pernyataan gema Blade dengan simbol @ :
+          Contoh :
+          <xmp> @verbatim
+            <div class="container">
+              Hello, {{ name }}.
+            </div>
+            @endverbatim
+          </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="displaydata_blade" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_if" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">if Statements</h3>
+        <p class="py-4">
+          Anda dapat membuat pernyataan if menggunakan direktif @if, @elseif,
+          @else, dan @endif.
+          <xmp>
+            @if (count($records) === 1)
+            I have one record!
+            @elseif (count($records) > 1)
+            I have multiple records!
+            @else
+            I don't have any records!
+            @endif
+          </xmp>
+          Untuk kenyamanan, Blade juga menyediakan @unless directive:
+          <xmp>
+            @unless (Auth::check())
+            You are not signed in.
+            @endunless
+          </xmp>
+          Selain direktif bersyarat yang telah dibahas, direktif @isset dan
+          @empty dapat digunakan sebagai pintasan yang nyaman untuk fungsi PHP
+          masing-masing:
+          <xmp>
+            @isset($records)
+            // $records is defined and is not null...
+            @endisset
+  
+            @empty($records)
+            // $records is "empty"...
+            @endempty
+          </xmp>
+          <b>Authentication Directives</b><br />
+          @auth dan @guest dapat digunakan untuk menentukan dengan cepat apakah
+          pengguna saat ini diautentikasi atau merupakan guest:
+          <xmp>
+            @auth
+            // The user is authenticated...
+            @endauth
+  
+            @guest
+            // The user is not authenticated...
+            @endguest
+          </xmp>
+          Jika diperlukan, Anda dapat menentukan penjaga otentikasi yang harus
+          diperiksa saat menggunakan arahan @auth dan @guest:
+          <xmp>
+            @guest directives:
+  
+            @auth('admin')
+            // The user is authenticated...
+            @endauth
+  
+            @guest('admin')
+            // The user is not authenticated…
+            @endguest
+          </xmp>
+          <b>Environment Directives</b><br />
+          Anda dapat memeriksa apakah aplikasi berjalan di lingkungan produksi
+          menggunakan arahan @production:
+          <xmp>
+            @production
+            // Production specific content...
+            @endproduction
+          </xmp>
+          Atau, Anda dapat menentukan apakah aplikasi berjalan di lingkungan
+          tertentu menggunakan direktif @env:
+          <xmp>
+            @env('staging')
+            // The application is running in "staging"...
+            @endenv
+  
+            @env(['staging', 'production'])
+            // The application is running in "staging" or "production"...
+            @endenv
+          </xmp>
+          <b>Section Directives</b><br />
+          Anda dapat menentukan apakah bagian pewarisan templat memiliki konten
+          menggunakan arahan @hasSection:
+          <xmp>
+            @hasSection('navigation')
+            <div class="pull-right">
+              @yield('navigation')
+            </div>
+  
+            <div class="clearfix"></div>
+            @endif
+            Anda dapat menggunakan arahan section Missing untuk menentukan apakah suatu bagian tidak memiliki konten:
+            @sectionMissing('navigation')
+            <div class="pull-right">
+              @include('default-navigation')
+            </div>
+            @endif
+          </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_if" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+
+    <input type="checkbox" id="components_rendering" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Rendering Components</h3>
+      <p class="py-4">
+        Untuk menampilkan komponen, bisa kita gunakan dengan Blade component tag dalam satu Blade templates. Blade component tag dimulai dengan string “x-” diikuti oleh nama case kebab dari komponen kelas:
+<xmp>
+<x-alert/>
+ 
+<x-user-profile/>
+</xmp>
+Jika component class ber-nested lebih dalam di dalam app/View/Components directory, kita dapat menggunakan “.” karakter untuk menunjukkan directory nesting. Misalnya, jika kita menganggap bahwa component terletak pada app/View/Component/Inputs/Button.php, kita mungkin bisa meng-render seperti:
+<xmp>
+<x-inputs.button/>
+</xmp>
+
+      </p>
+      <div class="modal-action">
+        <label for="components_rendering" class="btn btn-sm">Close</label>
+    <input type="checkbox" id="components_slots" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Slots</h3>
+      <p class="py-4">
+        Kita akan sering meneruskan konten tambahan ke komponen Anda melalui "slot". Slot komponen dirender dengan melakukan echo pada variabel $slot. Untuk menjelajahi konsep ini, mari kita bayangkan bahwa komponen peringatan memiliki markup berikut:
+<xmp>
+<!-- /resources/views/components/alert.blade.php -->
+ 
+<div class="alert alert-danger">
+   {{ $slot }}
+</div>
+</xmp>
+Kita dapat meneruskan konten ke slot dengan mengisikan konten ke dalam komponen:
+<xmp>
+<x-alert>
+   <strong>Whoops!</strong> Something went wrong!
+</x-alert>
+</xmp>
+Terkadang komponen mungkin perlu membuat beberapa slot berbeda di lokasi berbeda di dalam komponen. Mari kita ubah komponen peringatan kita untuk memungkinkan injeksi slot "title":
+<xmp>
+<!-- /resources/views/components/alert.blade.php -->
+ 
+<span class="alert-title">{{ $title }}</span>
+ 
+<div class="alert alert-danger">
+   {{ $slot }}
+</div>
+</xmp>
+Kita juga dapat menentukan konten slot bernama menggunakan tag x-slot. Konten apa pun yang tidak berada dalam tag slot-x eksplisit akan diteruskan ke komponen dalam variabel $slot:
+<xmp>
+<x-alert>
+   <x-slot:title>
+       Server Error
+   </x-slot>
+ 
+   <strong>Whoops!</strong> Something went wrong!
+</x-alert>
+</xmp>
+      </p>
+      <div class="modal-action">
+        <label for="components_slots" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="components_passing" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Passing Data to Components</h3>
+      <p class="py-4">
+        Kita dapat melempar atau memberikan data ke Blade components menggunakan atribut HTML. Hard-coded, nilai primitif mungkin akan dioper ke component menggunakan atribut string HTML sederhana. PHP expressions dan variable harus melewati component melalui atribut yang menggunakan “:” karakter sebagai:
+<xmp>
+<x-alert type="error" :message="$message"/>
+</xmp>
+	Kita harus menentukan semua component data atribut yang ada di dalam class constructor. Semua properti public pada component secara otomatis akan tersedia untuk view component. Hal ini tidak perlu untuk mengoper data ke view dari method component’s render:
+<xmp>
+<?php
+ 
+namespace App\View\Components;
+ 
+use Illuminate\View\Component;
+ 
+class Alert extends Component
+{
+   /**
+    * The alert type.
+    *
+    * @var string
+    */
+   public $type;
+ 
+   /**
+    * The alert message.
+    *
+    * @var string
+    */
+   public $message;
+ 
+   /**
+    * Create the component instance.
+    *
+    * @param  string  $type
+    * @param  string  $message
+    * @return void
+    */
+   public function __construct($type, $message)
+   {
+       $this->type = $type;
+       $this->message = $message;
+   }
+ 
+   /**
+    * Get the view / contents that represent the component.
+    *
+    * @return \Illuminate\View\View|\Closure|string
+    */
+   public function render()
+   {
+       return view('components.alert');
+   }
+}
+</xmp>
+	Ketika component kita telah ter-render, kita bisa menampilkan isi dari component public variabel dengan memanggil variable dengan nama:
+<xmp>
+<div class="alert alert-{{ $type }}">
+   {{ $message }}
+</div>
+</xmp>
+
+      </p>
+      <div class="modal-action">
+        <label for="components_passing" class="btn btn-sm">Close</label>
+  <input type="checkbox" id="components_inline" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Inline Component Views</h3>
+      <p class="py-4">
+        Untuk komponen yang sangat kecil, mungkin terasa rumit untuk mengelola kelas komponen dan template tampilan komponen. Untuk alasan ini, Anda dapat mengembalikan markup komponen langsung dari metode render:
+<xmp>
+/**
+* Get the view / contents that represent the component.
+*
+* @return \Illuminate\View\View|\Closure|string
+*/
+public function render()
+{
+   return <<<'blade'
+       <div class="alert alert-danger">
+           {{ $slot }}
+       </div>
+   blade;
+}
+</xmp>
+<b>Generate Inline View Components</b><br> 
+Untuk membuat komponen yang merender tampilan sebaris, Anda dapat menggunakan opsi sebaris saat menjalankan perintah make:component:
+
+<xmp>
+php artisan make:component Alert --inline
+</xmp>
+      </p>
+      <div class="modal-action">
+        <label for="components_inline" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="components_attributes" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Component Attributes</h3>
+      <p class="py-4">
+        Kita sudah membahas bagaimana cara untuk mengoper data atribut ke component. Namun, terkadang kita mungkin membutuhkan untuk menentukan atribut tambahan HTML, seperti class, yang bukan merupakan bagian dari kebutuhan data untuk suatu component ke fungsi. Biasanya, kita ingin mengoper tambahan atribut ini ke bawah menuju akar elemen dari component template. Contohnya, bayangkan bahwa kita ingin me-render peringatan component seperti:
+<xmp>
+<x-alert type="error" :message="$message" class="mt-4"/>
+</xmp>
+	Seluruh atribut yang bukan merupakan bagian dari component constructor akan ditambahkan sendirinya ke component ‘attribute bag’. Atribut bag ini secara otomatis yang tersedia untuk component melalui $attribute variable. Semua atribut akan ter-render di dalam component dengan meng-echo variable ini:
+<xmp>
+<div {{ $attributes }}>
+   <!-- Component content -->
+</div>
+</xmp>
+
+      </p>
+      <div class="modal-action">
+        <label for="components_attributes" class="btn btn-sm">Close</label>
+  <input type="checkbox" id="components_dynamic" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Dyamic Components</h3>
+      <p class="py-4">
+        Terkadang Anda mungkin perlu merender komponen tetapi tidak tahu komponen mana yang harus dirender hingga runtime. Dalam situasi ini, Anda dapat menggunakan komponen komponen dinamis bawaan Laravel untuk merender komponen berdasarkan nilai atau variabel runtime:
+<xmp>
+<x-dynamic-component :component="$componentName" class="mt-4" />
+</xmp>
+      </p>
+      <div class="modal-action">
+        <label for="components_dynamic" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="components_reserved" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Reserved Keywords</h3>
+      <p class="py-4">
+        Pada saat default, beberapa kata kunci disediakan untuk user Blade's internal dalam rangka untuk me-render components. Berikut ini merupakan kata kunci yang tidak dapat didefinisikan sebagai sifat properti public atau method nama di dalam components kita: <br>
+        </p>
+        <ul>
+          <li>Data</li>
+          <li>Render</li>
+          <li>resolveView</li>
+          <li>shouldRender</li>
+          <li>view</li>
+          <li>withAttributes</li>
+          <li>withName</li>
+        </ul>
+      <div class="modal-action">
+        <label for="components_reserved" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+  <input type="checkbox" id="components_manually" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Manually Registering Components</h3>
+      <p class="py-4">
+        Saat menulis komponen untuk aplikasi Anda sendiri, komponen secara otomatis ditemukan dalam direktori app/View/Components dan direktori resources/views/components.
+
+Namun, jika Anda membuat paket yang menggunakan komponen Blade atau menempatkan komponen di direktori non-konvensional, Anda perlu mendaftarkan kelas komponen dan alias tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan komponen tersebut. Anda biasanya harus mendaftarkan komponen Anda dalam metode boot dari penyedia layanan paket Anda:
+<xmp>
+use Illuminate\Support\Facades\Blade;
+use VendorPackage\View\Components\AlertComponent;
+ 
+/**
+* Bootstrap your package's services.
+*
+* @return void
+*/
+public function boot()
+{
+   Blade::component('package-alert', AlertComponent::class);
+}
+</xmp>
+Setelah komponen Anda terdaftar, komponen tersebut dapat dirender menggunakan alias tag-nya:
+<xmp>
+<x-package-alert/>
+</xmp>
+<b>Autoloading Package Components</b> <br>
+Atau, Anda dapat menggunakan metode componentNamespace untuk memuat kelas komponen secara otomatis berdasarkan konvensi. Misalnya, paket Nightshade mungkin memiliki komponen Kalender dan ColorPicker yang berada di dalam namespace Package\Views\Components:
+<xmp>
+use Illuminate\Support\Facades\Blade;
+ 
+/**
+* Bootstrap your package's services.
+*
+* @return void
+*/
+public function boot()
+{
+   Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');
+}
+</xmp>
+Ini akan memungkinkan penggunaan komponen paket oleh namespace vendor mereka menggunakan sintaks package-name::
+<xmp>
+<x-nightshade::calendar />
+<x-nightshade::color-picker />
+</xmp>
+Blade akan secara otomatis mendeteksi kelas yang ditautkan ke komponen ini dengan pascal-casing nama komponen. Subdirektori juga didukung menggunakan notasi "titik".
+      </p>
+      <div class="modal-action">
+        <label for="components_manually" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+
+    <input type="checkbox" id="bladeDirective_switch" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Switch Statements</h3>
+        <p class="py-4">
+          Switch statements dapat dibuat menggunakan direktif @switch, @case,
+          @break, @default dan @endswitch:
+          <xmp>
+            @switch($i)
+            @case(1)
+            First case...
+            @break
+            @case(2)
+            Second case...
+            @break
+            @default
+            Default case...
+            @endswitch
+          </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_switch" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_loops" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Loops</h3>
+        <p class="py-4">
+          Selain pernyataan bersyarat, Blade menyediakan arahan sederhana untuk
+          bekerja dengan struktur loop PHP. Sekali lagi, masing-masing arahan
+          ini berfungsi identik dengan rekan PHP mereka:
+          <xmp>
+            @for ($i = 0; $i < 10; $i++) The current value is {{ $i }} @endfor @foreach ($users as $user) <p>This is user {{ $user->id }}
+        </p>
+        @endforeach
+  
+        @forelse ($users as $user)
+        <li>{{ $user->name }}</li>
+        @empty
+        <p>No users</p>
+        @endforelse
+  
+        @while (true)
+        <p>I'm looping forever.</p>
+        @endwhile
+        </xmp>
+  
+        When using loops you may also skip the current iteration or end the
+        loop using the @continue and @break directives:
+        <xmp>
+          @foreach ($users as $user)
+          @if ($user->type == 1)
+          @continue
+          @endif
+  
+          <li>{{ $user->name }}</li>
+  
+          @if ($user->number == 5)
+          @break
+          @endif
+          @endforeach
+        </xmp>
+  
+        You may also include the continuation or break condition within the
+        directive declaration:
+        <xmp>
+          @foreach ($users as $user)
+          @continue($user->type == 1)
+  
+          <li>{{ $user->name }}</li>
+  
+          @break($user->number == 5)
+          @endforeach
+        </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_loops" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_loopsVar" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Loops Variable</h3>
+        <p class="py-4">
+          Saat melakukan iterasi melalui loop foreach, variabel $loop akan
+          tersedia di dalam loop Anda. Variabel ini menyediakan akses ke
+          beberapa bit informasi yang berguna seperti indeks loop saat ini dan
+          apakah ini adalah iterasi pertama atau terakhir melalui loop:
+          <xmp>
+            @foreach ($users as $user)
+            @if ($loop->first)
+            This is the first iteration.
+            @endif
+  
+            @if ($loop->last)
+            This is the last iteration.
+            @endif
+  
+            <p>This is user {{ $user->id }}</p>
+            @endforeach
+          </xmp>
+  
+          Jika Anda berada dalam loop bersarang, Anda dapat mengakses variabel
+          $loop loop induk melalui properti induk:
+          <xmp>
+            @foreach ($users as $user)
+            @foreach ($user->posts as $post)
+            @if ($loop->parent->first)
+            This is the first iteration of the parent loop.
+            @endif
+            @endforeach
+            @endforeach
+          </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_loopsVar" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_conditional" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Conditional Classes</h3>
+        <p class="py-4">
+          Arahan @class mengkompilasi string kelas CSS secara kondisional.
+          Arahan menerima array kelas di mana kunci array berisi kelas atau
+          kelas yang ingin Anda tambahkan, sedangkan nilainya adalah ekspresi
+          boolean. Jika elemen array memiliki kunci numerik, elemen tersebut
+          akan selalu disertakan dalam daftar kelas yang dirender:
+          <xmp>
+  @php
+     $isActive = false;
+     $hasError = true;
+  @endphp
+  
+  @php
+     $isActive = false;
+     $hasError = true;
+  @endphp
+   
+  <span @class([
+     'p-4',
+     'font-bold' => $isActive,
+     'text-gray-500' => ! $isActive,
+     'bg-red' => $hasError,
+  ])></span>
+   
+  <span class="p-4 text-gray-500 bg-red"></span>
+   
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_conditional" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_additional" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Additional Classes</h3>
+        <p class="py-4">
+          Untuk kenyamanan, Anda dapat menggunakan @checked directive untuk dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan diperiksa kembali jika kondisi yang diberikan bernilai benar:
+  <xmp>
+  <input type="checkbox"
+         name="active"
+         value="active"
+         @checked(old('active', $user->active)) />
+  </xmp>
+  
+  Demikian juga, arahan @selected dapat digunakan untuk menunjukkan apakah opsi pilih yang diberikan harus "dipilih":
+  <xmp>
+  <select name="version">
+     @foreach ($product->versions as $version)
+         <option value="{{ $version }}" @selected(old('version') == $version)>
+             {{ $version }}
+         </option>
+     @endforeach
+  </select>
+  </xmp>
+  
+  Selain itu, arahan @disabled dapat digunakan untuk menunjukkan apakah elemen tertentu harus "dinonaktifkan":
+  <xmp>
+  <button type="submit" @disabled($errors->isNotEmpty())>Submit</button>
+  </xmp>
+  
+  Selain itu, direktif @readonly dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus "readonly":
+  <xmp>
+  <input type="email"
+         name="email"
+         value="email@laravel.com"
+         @readonly($user->isNotAdmin()) />
+  </xmp>
+  
+  Selain itu, arahan @required dapat digunakan untuk menunjukkan apakah elemen tertentu harus "diperlukan":
+  <xmp>
+  <input type="text"
+         name="title"
+         value="title"
+         @required($user->isAdmin()) />
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_additional" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_including" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Including Subviews</h3>
+        <p class="py-4">
+          Meskipun Anda bebas menggunakan direktif @include, komponen Blade menyediakan fungsionalitas serupa dan menawarkan beberapa manfaat dibandingkan direktif @include seperti pengikatan data dan atribut.
+  
+  Direktif @include Blade memungkinkan Anda menyertakan tampilan Blade dari dalam tampilan lain. Semua variabel yang tersedia untuk tampilan induk akan tersedia untuk tampilan yang disertakan:
+  <xmp>
+  <div>
+     @include('shared.errors')
+   
+     <form>
+         <!-- Form Contents -->
+     </form>
+  </div>
+  </xmp>
+  
+  Meskipun tampilan yang disertakan akan mewarisi semua data yang tersedia di tampilan induk, Anda juga dapat meneruskan larik data tambahan yang harus tersedia untuk tampilan yang disertakan:
+  <xmp>
+  @include('view.name', ['status' => 'complete'])
+  </xmp>
+  Jika Anda mencoba @menyertakan tampilan yang tidak ada, Laravel akan membuat kesalahan. Jika Anda ingin menyertakan tampilan yang mungkin ada atau tidak, Anda harus menggunakan direktif @includeIf:
+  <xmp>
+  @includeIf('view.name', ['status' => 'complete'])
+  </xmp>
+  Jika Anda ingin @menyertakan tampilan jika ekspresi boolean yang diberikan bernilai benar atau salah, Anda dapat menggunakan arahan @includeWhen dan @includeUnless:
+  <xmp>
+  @includeWhen($boolean, 'view.name', ['status' => 'complete'])
+   
+  @includeUnless($boolean, 'view.name', ['status' => 'complete'])
+  </xmp>
+  Untuk menyertakan tampilan pertama yang ada dari larik tampilan tertentu, Anda dapat menggunakan direktif includeFirst:
+  <xmp>
+  @includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])
+  </xmp>
+  
+  Notes!!	:	Anda harus menghindari penggunaan konstanta __DIR__ dan __FILE__ dalam tampilan Blade Anda, karena keduanya akan merujuk ke lokasi tampilan yang di-cache dan dikompilasi.
+  <br>
+  <br>
+  <b>Rendering Views For Collections</b><br>
+  Anda dapat menggabungkan loop dan memasukkan ke dalam satu baris dengan @each directive Blade:
+  <xmp>
+  @each('view.name', $jobs, 'job')
+  </xmp>
+  Argumen pertama @each directive adalah tampilan yang akan dirender untuk setiap elemen dalam array atau koleksi. Argumen kedua adalah larik atau koleksi yang ingin Anda ulangi, sedangkan argumen ketiga adalah nama variabel yang akan ditetapkan ke iterasi saat ini dalam tampilan. Jadi, misalnya, jika Anda mengulangi array pekerjaan, biasanya Anda ingin mengakses setiap pekerjaan sebagai variabel pekerjaan dalam tampilan. Kunci array untuk iterasi saat ini akan tersedia sebagai variabel kunci dalam tampilan.
+  
+  Anda juga dapat meneruskan argumen keempat ke @each directive. Argumen ini menentukan tampilan yang akan dirender jika array yang diberikan kosong.
+  <xmp>
+  @each('view.name', $jobs, 'job', 'view.empty')
+  </xmp>
+  
+  Notes!!	:	Tampilan yang dirender melalui @each tidak mewarisi variabel dari tampilan induk. Jika tampilan anak memerlukan variabel-variabel ini, Anda harus menggunakan arahan @foreach dan @include sebagai gantinya.
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_including" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_directive" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">The @ONCE Directive</h3>
+        <p class="py-4">
+          Arahan @once memungkinkan Anda untuk menentukan bagian dari template yang hanya akan dievaluasi sekali per siklus rendering. Ini mungkin berguna untuk mendorong bagian tertentu dari JavaScript ke dalam header halaman menggunakan tumpukan. Misalnya, jika Anda merender komponen tertentu dalam satu lingkaran, Anda mungkin hanya ingin mendorong JavaScript ke header saat pertama kali komponen dirender:
+  <xmp>
+  @once
+     @push('scripts')
+         <script>
+             // Your custom JavaScript...
+         </script>
+     @endpush
+  @endonce
+  </xmp>
+  
+  Karena direktif @once sering digunakan bersama dengan direktif @push atau @prepend, direktif @pushOnce dan @prependOnce tersedia untuk kenyamanan Anda:
+  <xmp>
+  @pushOnce('scripts')
+     <script>
+         // Your custom JavaScript...
+     </script>
+  @endPushOnce
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_directive" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_raw" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">RAW PHP</h3>
+        <p class="py-4">
+          Dalam beberapa situasi, sangat berguna untuk menyematkan kode PHP ke dalam tampilan Anda. Anda dapat menggunakan direktif Blade @php untuk mengeksekusi blok PHP biasa di dalam template Anda:
+  <xmp>
+  @php
+     $counter = 1;
+  @endphp
+  </xmp>
+  
+  Jika Anda hanya perlu menulis satu pernyataan PHP, Anda dapat menyertakan pernyataan tersebut dalam direktif @php:
+  <xmp>
+  @php($counter = 1)
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_raw" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_comments" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Comments</h3>
+        <p class="py-4">
+          Blade juga memungkinkan Anda untuk menentukan komentar dalam pandangan Anda. Namun, tidak seperti komentar HTML, komentar Blade tidak disertakan dalam HTML yang dikembalikan oleh aplikasi Anda:
+  <xmp>
+  {{-- This comment will not be present in the rendered HTML --}}
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_comments" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+
+    <input type="checkbox" id="anonymous_index" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Anonymous Index Components</h3>
+      <p class="py-4">
+        Terkadang, ketika sebuah komponen terdiri dari banyak blade template,
+        kita mungkin ingin mengelompokkan komponen yang diberikan di dalam
+        satu direktori. Contohnya, bayangkan sebuah komponen “accordion”
+        dengan direktori sebagai berikut:
+        /resources/views/components/accordion.blade.php
+        /resources/views/components/accordion/item.blade.php Struktur
+        direktori ini memungkinkan kita untuk merender komponen accordion dan
+        item-nya seperti berikut:
+        <xmp>
+          <x-accordion>
+            <x-accordion.item> ... </x-accordion.item>
+          </x-accordion>
+        </xmp>
+        Namun, untuk membuat komponen accordion melalui “x-accordion”, kita
+        terpaksa untuk menempatkan template komponen accordion “index” di
+        direktori resources/views/components daripada menumpuknya di dalam
+        direktori “accordion” dengan template accordion terkait lainnya.
+        Untungnya, blade memungkinkan kita untuk menempatkan sebuah file
+        “index.blade.php” di dalam template direktori komponen. Ketika sebuah
+        template “index.blade.php” ada untuk komponen, template tersebut akan
+        dibuat sebagai node “root” dari komponen. Jadi, kita dapat terus
+        menggunakan sintaks blade yang sama yang diberikan pada contoh di
+        atas. Namun, kita akan memperbaiki struktur direktorinya seperti
+        berikut: /resources/views/components/accordion/index.blade.php
+        /resources/views/components/accordion/item.blade.php
+      </p>
+      <div class="modal-action">
+        <label for="anonymous_index" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="anonymous_data" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Data Properties / Attributes</h3>
+      <p class="py-4">
+        Karena anonymous components tidak memiliki associated class apapun,
+        kita mungkin bertanya-tanya bagaimana kita dapat membedakan data mana
+        yang harus diteruskan ke komponen sebagai variabel dan atribut mana
+        yang harus ditempatkan di dalam component’s attribute bag. Kita dapat
+        menentukan atribut mana yang harus dipertimbangkan sebagai variabel
+        data menggunakan “@props” di atas blade template komponen kita. Semua
+        atribut lainnya pada komponen akan tersedia melalui component’s
+        attribute bag. Jika kita ingin memberikan nilai default pada variabel
+        data, kita dapat menentukan nama variabelnya sebagai array key dan
+        nilai default-nya sebagai array value, seperti berikut:
+        <xmp>
+          <!-- /resources/views/components/alert.blade.php -->
+
+          @props(['type' => 'info', 'message'])
+
+          <div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}>
+            {{ $message }}
+          </div>
+        </xmp>
+        Mengingat definisi komponen di atas, kita dapat membuat komponen
+        seperti berikut:
+        <xmp>
+          <x-alert type="error" :message="$message" class="mb-4" />
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="anonymous_data" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="anonymous_accessing" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Accessing Parent Data</h3>
+      <p class="py-4">
+        Terkadang, kita mungkin ingin mengakses data dari komponen induk di
+        dalam komponen turunan. Dalam kasus ini, kita dapat menggunakan
+        “@aware”. Contohnya, bayangkan kita membuat sebuah menu komponen
+        kompleks terdiri dari induk dari tag x-menu dan turunan dari tag
+        x-menu.item seperti berikut:
+        <xmp>
+          <x-menu color="purple">
+            <x-menu.item>...</x-menu.item>
+            <x-menu.item>...</x-menu.item>
+          </x-menu>
+        </xmp>
+        Komponen dari tag x-menu dapat memiliki implementasi seperti berikut:
+        <xmp>
+          <!-- /resources/views/components/menu/index.blade.php -->
+
+          @props(['color' => 'gray'])
+
+          <ul {{ $attributes->merge(['class' => 'bg-'.$color.'-200']) }}>
+            {{ $slot }}
+          </ul>
+        </xmp>
+        Dikarenakan properti “color” hanya diteruskan ke dalam induk tag
+        x-menu, itu tidak akan tersedia di dalam tag x-menu.item. Namun, jika
+        kita menggunakan “@aware”, kita dapat membuatnya tersedia di dalam tag
+        x-menu.item seperti berikut:
+        <xmp>
+          <!-- /resources/views/components/menu/item.blade.php -->
+
+          @aware(['color' => 'gray'])
+
+          <li {{ $attributes->merge(['class' => 'text-'.$color.'-800']) }}>
+            {{ $slot }}
+          </li>
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="anonymous_accessing" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="anonymous_components" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Anonymous Components Namespaces</h3>
+      <p class="py-4">
+        Seperti yang telah dibahas sebelumnya, anonymous component biasanya
+        didefinisikan dengan menempatkan template blade di dalam direktori
+        resources/views/components kita. Namun, kita terkadang ingin
+        mendaftarkan jalur anonymous component lainnya dengan Laravel selain
+        ke jalur default. Contohnya, ketika membuat sebuah aplikasi pemesanan
+        liburan, kita ingin menempatkan pemesanan penerbangan terkait
+        anonymous components di dalam direktori
+        resources/views/flight/bookings/components. Untuk memberitahukan
+        Laravel mengenai lokasi anonymous component ini, kita dapat
+        menggunakan method “anonymousComponentNamespace” yang disediakan oleh
+        Blade facade. Method “anonymousComponentNamespace” menerima jalur ke
+        lokasi anonymous component sebagai argumen pertama dan “namespace”
+        tempat komponen harus ditempatkan sebagai argumen kedua. Seperti yang
+        akan kita lihat pada contoh di bawah, “namespace” akan diawali dengan
+        nama komponen ketika komponen dibuat. Biasanya, method ini harus
+        dipanggil dari method “boot” salah satu penyedia layanan aplikasi
+        kita:
+        <xmp>
+          /**
+          * Bootstrap any application services.
+          *
+          * @return void
+          */
+          public function boot()
+          {
+          Blade::anonymousComponentNamespace('flights.bookings.components', 'flights');
+          }
+        </xmp>
+        Mengingat contoh di atas, kita dapat membuat sebuah komponen “panel”
+        yang ada di dalam direktori komponen yang baru didaftarkan terbaru
+        seperti:
+        <xmp>
+          <x-flights::panel :flight="$flight" />
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="anonymous_components" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="buildingLayouts_components" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Layouts Using Components</h3>
+      <p class="py-4">
+        Kebanyakan aplikasi web mempertahankan layout umum yang sama di
+        berbagai halaman. Itu akan sangat merepotkan dan sulit untuk
+        mempertahankan aplikasi kita jika kita harus mengulang seluruh layout
+        HTML di setiap view yang kita buat. Untungnya, lebih mudah untuk
+        mendefinisikan layout sebagai single blade component dan kemudian
+        menggunakannya di seluruh aplikasi kita.<br />
+        <b>the Layout Component</b> <br />
+        Sebagai contoh, bayangkan kita membuat sebuah “to do” list
+        application. Kita dapat mendefinisikan “layout” yang terlihat seperti
+        berikut:
+        <xmp>
+          <!-- resources/views/components/layout.blade.php -->
+
+          <html>
+
+          <head>
+            <title>{{ $title ?? 'Todo Manager' }}</title>
+          </head>
+
+          <body>
+            <h1>Todos</h1>
+            <hr />
+            {{ $slot }}
+          </body>
+
+          </html>
+        </xmp>
+        <b>Applying The Layout Component</b> <br />
+        Sekali komponen “layout” sudah didefinisikan, kita dapat membuat
+        tampilan Blade yang memanfaatkan komponen tersebut. Pada contoh ini,
+        kita akan mendefinisikan sebuah tampilan sederhana yang menampilkan
+        daftar tugas kita:
+        <xmp>
+          <!-- resources/views/tasks.blade.php -->
+
+          <x-layout>
+            @foreach ($tasks as $task)
+            {{ $task }}
+            @endforeach
+          </x-layout>
+        </xmp>
+        Ingat, konten yang disuntikkan ke dalam sebuah komponen akan diberikan
+        ke variabel default “$slot” di dalam komponen “layout” kita. Seperti
+        yang mungkin telah kita sadari, “layout” kita juga mengikuti sebuah
+        slot “$title” jika tersedia; jika tidak, title default akan muncul.
+        Kita dapat menyuntikkan custom title dari tampilan daftar tugas kita
+        menggunakan sintaks slot standar yang dibahas pada component
+        documentation:
+        <xmp>
+          <!-- resources/views/tasks.blade.php -->
+
+          <x-layout>
+            <x-slot:title>
+              Custom Title
+            </x-slot:title>
+
+            @foreach ($tasks as $task)
+            {{ $task }}
+            @endforeach
+          </x-layout>
+        </xmp>
+        Sekarang setelah kita mendefinisikan layout kita dan tampilan daftar
+        tugas, kita hanya harus mengembalikan tampilan “task” dari sebuah
+        route:
+        <xmp>
+          use App\Models\Task;
+
+          Route::get('/tasks', function () {
+          return view('tasks', ['tasks' => Task::all()]);
+          });
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="buildingLayouts_components" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="buildingLayouts_template" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Layouts Using Template Inheritance</h3>
+      <p class="py-4">
+        Layout dapat juga dibuat melalui “template inheritance”. Ini adalah
+        langkah utama dalam membuat aplikasi sebelum pengenalan komponen.
+        Untuk memulai, mari melihat ke contoh sederhana. Pertama, kita akan
+        meneliti sebuah halaman layout. Sejak banyaknya aplikasi
+        mempertahankan layout umum yang sama di berbagai halaman, akan mudah
+        untuk mendefinisikan layout ini sebagai sebuah single Blade view:
+        <xmp>
+          <!-- resources/views/layouts/app.blade.php -->
+
+          <html>
+
+          <head>
+            <title>App Name - @yield('title')</title>
+          </head>
+
+          <body>
+            @section('sidebar')
+            This is the master sidebar.
+            @show
+
+            <div class="container">
+              @yield('content')
+            </div>
+          </body>
+
+          </html>
+        </xmp>
+        Seperti yang dapat kita lihat, file tersebut berisi mark-up HTML
+        biasa. Namun, perhatikan “@section” dan “@yield”. “@section”, sesuai
+        namanya, mendefinisikan bagian dari konten, sedangkan “@yield”
+        digunakan untuk menampilkan konten bagian tertentu. Sekarang kita
+        harus mendefinisikan layout untuk aplikasi kita, mari kita menentukan
+        halaman turunan yang mewarisi layout
+        <b>Extending A Layout</b> <br />
+        Saat mendefinisikan tampilan turunan, gunakan “@extends” untuk
+        menentukan layout mana yang harus diwariskan. Tampilan yang
+        meng-extend sebuah Blade layout akan menyuntikkan konten ke bagian
+        layout menggunakan “@section”. Ingat, seperti pada contoh di atas,
+        beberapa konten akan ditampilkan pada layout menggunakan “@yield”:
+        <xmp>
+          <!-- resources/views/child.blade.php -->
+
+          @extends('layouts.app')
+
+          @section('title', 'Page Title')
+
+          @section('sidebar')
+          @parent
+
+          <p>This is appended to the master sidebar.</p>
+          @endsection
+
+          @section('content')
+          <p>This is my body content.</p>
+          @endsection
+        </xmp>
+        Pada contoh, bagian “sidebar” memanfaatkan “@parent” untuk menambahkan
+        konten ke sidebar layout. “@parent” akan digantikan oleh konten dari
+        layout ketika tampilan digunakan. “@yield” juga menerima nilai default
+        sebagai parameter keduanya. Nilai ini akan digunakan jika bagian yang
+        dihasilkan tidak didefinisikan:
+        <xmp>
+          @yield('content', 'Default content')</xmp>
+      </p>
+      <div class="modal-action">
+        <label for="buildingLayouts_template" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="forms_csrf" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">CSRF Field</h3>
+      <p class="py-4">
+        Setiap kali kita mendefinisikan sebuah form HTML di aplikasi kita,
+        kita harus memasukkan sebuah field token CSRF tersembunyi di dalam
+        form sehingga CSRF protection middleware dapat memvalidasi permintaan.
+        Kita dapat menggunakan “@csrf” untuk menghasilkan field token:
+        <xmp>
+          <form method="POST" action="/profile">
+            @csrf
+
+            ...
+          </form>
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="forms_csrf" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="forms_method" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Method Field</h3>
+      <p class="py-4">
+        Sejak HTML form tidak dapat membuat “PUT”, “PATCH”, atau “DELETE”
+        request, kita perlu untuk menambahkan field “_method” tersembunyi
+        untuk menipu kata kerja HTML ini. “@metod” dapat membuat field ini
+        untuk kita:
+        <xmp>
+          <form action="/foo/bar" method="POST">
+            @method('PUT')
+
+            ...
+          </form>
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="forms_method" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="forms_validation" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Validation Errors</h3>
+      <p class="py-4">
+        @error” mungkin digunakan untuk mempercepat pemeriksaan jika
+        validation error messages ada untuk atribut yang diberikan. Di dalam
+        “@error”, kita dapat echo variabel “$message” untuk menampilkan pesan
+        eror:
+        <xmp>
+          <!-- /resources/views/post/create.blade.php -->
+
+          <label for="title">Post Title</label>
+
+          <input id="title" type="text" class="@error('title') is-invalid @enderror">
+
+          @error('title')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+        </xmp>
+        Sejak “@error” dikompilasi menjadi pernyataan “if”, kita dapat
+        menggunakan “@else” untuk merender konten ketika tidak ada eror pada
+        atribut:
+        <xmp>
+          <!-- /resources/views/auth.blade.php -->
+
+          <label for="email">Email address</label>
+
+          <input id="email" type="email" class="@error('email') is-invalid @else is-valid @enderror">
+        </xmp>
+        Kita dapat memberikan nama error bag tertentu sebagai parameter kedua
+        ke “@error” untuk mengambil validasi pesan error pada halaman yang
+        memiliki beberapa form:
+        <xmp>
+          <!-- /resources/views/auth.blade.php -->
+
+          <label for="email">Email address</label>
+
+          <input id="email" type="email" class="@error('email', 'login') is-invalid @enderror">
+
+          @error('email', 'login')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="forms_validation" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
