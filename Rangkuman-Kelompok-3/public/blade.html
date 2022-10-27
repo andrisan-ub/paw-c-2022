@@ -132,4 +132,53 @@
       <p data-aos="zoom-in" class="mt-5 text-justify">Apabila file coba.blade.php telah dibuat serta route pada web.php telah ditambahkan yaitu "/coba", maka ketika server lokal diakses kemudian /coba, maka akan menghasilkan output seperti di atas yaitu menampilkan Hello $name. Pada route kita juga harus menambahkan dan mengirimkan data name supaya file views dapat menerima variable tersebut sehingga dapat ditampilkan.</p>
      </div>
 </div>
-      
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+      <h2 class="text-m font-bold font-serif mb-5">Penerapan seleksi kondisi dengan If Else</h2>
+      <img data-aos="zoom-in" src="img/blade/blade2.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Kode program di atas merupakan impelementasi dalam penggunaan templating blade pada framework laravel yaitu penggunaan pengkondisian. Tidak seperti pada source code html biasa, dengan menggunakan templating blade, programmer dapat melakukan beberapa operasi salah satunya pengkondisian if else seperti kode program di atas. Kode program di atas bertujuan untuk mengecek apakah variable $name telah terisi. Jika telah terisi maka kode blok program di dalam statement if akan dijalankan. Penggunaan operasi if pada templating blade menggunakan tanda @if kemudian diakhiri dengan @endif.</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output If Else</h2>
+      <img data-aos="zoom-in" src="img/blade/output2.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Karena variable $name telah terisi yaitu 'budi', maka web browser akan menampilkan data yang terisi dalam variable $name. Dalam hal ini yaitu 'budi'</p>
+  </div>
+</div>
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Rendering Json</h2>
+      <img data-aos="zoom-in" src="img/blade/blade3.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Tempalting blade juga memungkinkan programmer untuk menyatukan atau melakukan kolaborasi dengan javascript untuk membuat suatu tampilan supaya blade dapat melakukan rendering terhadap suatu variable yang dikirimkan melalui controller maupun route dengan menggunakan syntax di atas.</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output Rendering Json</h2>
+      <img data-aos="zoom-in" src="img/blade/output3.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Karena sebelumnya $name hanya diisi 'budi'dan bukan berisi syntax kode program javasript, maka web browser tidak menampilkan pesan dan program dapat berjalan tanpa menampiljan pesan eror yang menandakan laravel dapat melakukan kolaborasi dengan javasript untuk melakukan rendering suatu variable yang dikirimkan.</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Inheritance views</h2>
+      <img data-aos="zoom-in" src="img/blade/blade5.1.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Kode program diatas merupakan templating blade dalam melakukan pembagian section suatu tampilan views yang terdapat pada laravel. Diawali dengan @extends dengan tujuan untuk memanggil main atau halaman utama tampilan dalam hal ini file bernama container. Kemudian dilakukan inisialisasi @section dengan nama section yaitu coba yang dimana di dalam section coba berisi tag html yaitu h1. Lalu diakhiri dengan @endsection sebagai penutup dari section yang telah dibuat.</p>
+  </div>
+</div>
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+      <img data-aos="zoom-in" src="img/blade/blade5.2.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Kode program diatas merupakan kode program yang terdapat pada file container.blade.php yang dimana di dalamnya terdapat syntax lengkap dari sebuah html. Namun pada tag body dilakukan inisialisasi bagian dengan menggunakan syntax @yield dengan nama coba. Sub bagian tersebut akan mengambil bagian atau apapun isi dari file coba yang telah dibuat sebelumnya.
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output Inheritance views</h2>
+      <img data-aos="zoom-in" src="img/blade/output5.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Gambar di atas merupakan hasil output dari penggabungan dari kedua program dengan menggunakan yield, section, dan extends pada suatu file blade pada framework laravel.
+      </p>
+  </div>
+</div>      
