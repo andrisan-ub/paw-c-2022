@@ -278,5 +278,424 @@
     </div>
 
     <!-- Put this part before </body> tag -->
+    <input type="checkbox" id="anonymous_index" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Anonymous Index Components</h3>
+      <p class="py-4">
+        Terkadang, ketika sebuah komponen terdiri dari banyak blade template,
+        kita mungkin ingin mengelompokkan komponen yang diberikan di dalam
+        satu direktori. Contohnya, bayangkan sebuah komponen “accordion”
+        dengan direktori sebagai berikut:
+        /resources/views/components/accordion.blade.php
+        /resources/views/components/accordion/item.blade.php Struktur
+        direktori ini memungkinkan kita untuk merender komponen accordion dan
+        item-nya seperti berikut:
+        <xmp>
+          <x-accordion>
+            <x-accordion.item> ... </x-accordion.item>
+          </x-accordion>
+        </xmp>
+        Namun, untuk membuat komponen accordion melalui “x-accordion”, kita
+        terpaksa untuk menempatkan template komponen accordion “index” di
+        direktori resources/views/components daripada menumpuknya di dalam
+        direktori “accordion” dengan template accordion terkait lainnya.
+        Untungnya, blade memungkinkan kita untuk menempatkan sebuah file
+        “index.blade.php” di dalam template direktori komponen. Ketika sebuah
+        template “index.blade.php” ada untuk komponen, template tersebut akan
+        dibuat sebagai node “root” dari komponen. Jadi, kita dapat terus
+        menggunakan sintaks blade yang sama yang diberikan pada contoh di
+        atas. Namun, kita akan memperbaiki struktur direktorinya seperti
+        berikut: /resources/views/components/accordion/index.blade.php
+        /resources/views/components/accordion/item.blade.php
+      </p>
+      <div class="modal-action">
+        <label for="anonymous_index" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="anonymous_data" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Data Properties / Attributes</h3>
+      <p class="py-4">
+        Karena anonymous components tidak memiliki associated class apapun,
+        kita mungkin bertanya-tanya bagaimana kita dapat membedakan data mana
+        yang harus diteruskan ke komponen sebagai variabel dan atribut mana
+        yang harus ditempatkan di dalam component’s attribute bag. Kita dapat
+        menentukan atribut mana yang harus dipertimbangkan sebagai variabel
+        data menggunakan “@props” di atas blade template komponen kita. Semua
+        atribut lainnya pada komponen akan tersedia melalui component’s
+        attribute bag. Jika kita ingin memberikan nilai default pada variabel
+        data, kita dapat menentukan nama variabelnya sebagai array key dan
+        nilai default-nya sebagai array value, seperti berikut:
+        <xmp>
+          <!-- /resources/views/components/alert.blade.php -->
+
+          @props(['type' => 'info', 'message'])
+
+          <div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}>
+            {{ $message }}
+          </div>
+        </xmp>
+        Mengingat definisi komponen di atas, kita dapat membuat komponen
+        seperti berikut:
+        <xmp>
+          <x-alert type="error" :message="$message" class="mb-4" />
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="anonymous_data" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="anonymous_accessing" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Accessing Parent Data</h3>
+      <p class="py-4">
+        Terkadang, kita mungkin ingin mengakses data dari komponen induk di
+        dalam komponen turunan. Dalam kasus ini, kita dapat menggunakan
+        “@aware”. Contohnya, bayangkan kita membuat sebuah menu komponen
+        kompleks terdiri dari induk dari tag x-menu dan turunan dari tag
+        x-menu.item seperti berikut:
+        <xmp>
+          <x-menu color="purple">
+            <x-menu.item>...</x-menu.item>
+            <x-menu.item>...</x-menu.item>
+          </x-menu>
+        </xmp>
+        Komponen dari tag x-menu dapat memiliki implementasi seperti berikut:
+        <xmp>
+          <!-- /resources/views/components/menu/index.blade.php -->
+
+          @props(['color' => 'gray'])
+
+          <ul {{ $attributes->merge(['class' => 'bg-'.$color.'-200']) }}>
+            {{ $slot }}
+          </ul>
+        </xmp>
+        Dikarenakan properti “color” hanya diteruskan ke dalam induk tag
+        x-menu, itu tidak akan tersedia di dalam tag x-menu.item. Namun, jika
+        kita menggunakan “@aware”, kita dapat membuatnya tersedia di dalam tag
+        x-menu.item seperti berikut:
+        <xmp>
+          <!-- /resources/views/components/menu/item.blade.php -->
+
+          @aware(['color' => 'gray'])
+
+          <li {{ $attributes->merge(['class' => 'text-'.$color.'-800']) }}>
+            {{ $slot }}
+          </li>
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="anonymous_accessing" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="anonymous_components" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Anonymous Components Namespaces</h3>
+      <p class="py-4">
+        Seperti yang telah dibahas sebelumnya, anonymous component biasanya
+        didefinisikan dengan menempatkan template blade di dalam direktori
+        resources/views/components kita. Namun, kita terkadang ingin
+        mendaftarkan jalur anonymous component lainnya dengan Laravel selain
+        ke jalur default. Contohnya, ketika membuat sebuah aplikasi pemesanan
+        liburan, kita ingin menempatkan pemesanan penerbangan terkait
+        anonymous components di dalam direktori
+        resources/views/flight/bookings/components. Untuk memberitahukan
+        Laravel mengenai lokasi anonymous component ini, kita dapat
+        menggunakan method “anonymousComponentNamespace” yang disediakan oleh
+        Blade facade. Method “anonymousComponentNamespace” menerima jalur ke
+        lokasi anonymous component sebagai argumen pertama dan “namespace”
+        tempat komponen harus ditempatkan sebagai argumen kedua. Seperti yang
+        akan kita lihat pada contoh di bawah, “namespace” akan diawali dengan
+        nama komponen ketika komponen dibuat. Biasanya, method ini harus
+        dipanggil dari method “boot” salah satu penyedia layanan aplikasi
+        kita:
+        <xmp>
+          /**
+          * Bootstrap any application services.
+          *
+          * @return void
+          */
+          public function boot()
+          {
+          Blade::anonymousComponentNamespace('flights.bookings.components', 'flights');
+          }
+        </xmp>
+        Mengingat contoh di atas, kita dapat membuat sebuah komponen “panel”
+        yang ada di dalam direktori komponen yang baru didaftarkan terbaru
+        seperti:
+        <xmp>
+          <x-flights::panel :flight="$flight" />
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="anonymous_components" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="buildingLayouts_components" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Layouts Using Components</h3>
+      <p class="py-4">
+        Kebanyakan aplikasi web mempertahankan layout umum yang sama di
+        berbagai halaman. Itu akan sangat merepotkan dan sulit untuk
+        mempertahankan aplikasi kita jika kita harus mengulang seluruh layout
+        HTML di setiap view yang kita buat. Untungnya, lebih mudah untuk
+        mendefinisikan layout sebagai single blade component dan kemudian
+        menggunakannya di seluruh aplikasi kita.<br />
+        <b>the Layout Component</b> <br />
+        Sebagai contoh, bayangkan kita membuat sebuah “to do” list
+        application. Kita dapat mendefinisikan “layout” yang terlihat seperti
+        berikut:
+        <xmp>
+          <!-- resources/views/components/layout.blade.php -->
+
+          <html>
+
+          <head>
+            <title>{{ $title ?? 'Todo Manager' }}</title>
+          </head>
+
+          <body>
+            <h1>Todos</h1>
+            <hr />
+            {{ $slot }}
+          </body>
+
+          </html>
+        </xmp>
+        <b>Applying The Layout Component</b> <br />
+        Sekali komponen “layout” sudah didefinisikan, kita dapat membuat
+        tampilan Blade yang memanfaatkan komponen tersebut. Pada contoh ini,
+        kita akan mendefinisikan sebuah tampilan sederhana yang menampilkan
+        daftar tugas kita:
+        <xmp>
+          <!-- resources/views/tasks.blade.php -->
+
+          <x-layout>
+            @foreach ($tasks as $task)
+            {{ $task }}
+            @endforeach
+          </x-layout>
+        </xmp>
+        Ingat, konten yang disuntikkan ke dalam sebuah komponen akan diberikan
+        ke variabel default “$slot” di dalam komponen “layout” kita. Seperti
+        yang mungkin telah kita sadari, “layout” kita juga mengikuti sebuah
+        slot “$title” jika tersedia; jika tidak, title default akan muncul.
+        Kita dapat menyuntikkan custom title dari tampilan daftar tugas kita
+        menggunakan sintaks slot standar yang dibahas pada component
+        documentation:
+        <xmp>
+          <!-- resources/views/tasks.blade.php -->
+
+          <x-layout>
+            <x-slot:title>
+              Custom Title
+            </x-slot:title>
+
+            @foreach ($tasks as $task)
+            {{ $task }}
+            @endforeach
+          </x-layout>
+        </xmp>
+        Sekarang setelah kita mendefinisikan layout kita dan tampilan daftar
+        tugas, kita hanya harus mengembalikan tampilan “task” dari sebuah
+        route:
+        <xmp>
+          use App\Models\Task;
+
+          Route::get('/tasks', function () {
+          return view('tasks', ['tasks' => Task::all()]);
+          });
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="buildingLayouts_components" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="buildingLayouts_template" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Layouts Using Template Inheritance</h3>
+      <p class="py-4">
+        Layout dapat juga dibuat melalui “template inheritance”. Ini adalah
+        langkah utama dalam membuat aplikasi sebelum pengenalan komponen.
+        Untuk memulai, mari melihat ke contoh sederhana. Pertama, kita akan
+        meneliti sebuah halaman layout. Sejak banyaknya aplikasi
+        mempertahankan layout umum yang sama di berbagai halaman, akan mudah
+        untuk mendefinisikan layout ini sebagai sebuah single Blade view:
+        <xmp>
+          <!-- resources/views/layouts/app.blade.php -->
+
+          <html>
+
+          <head>
+            <title>App Name - @yield('title')</title>
+          </head>
+
+          <body>
+            @section('sidebar')
+            This is the master sidebar.
+            @show
+
+            <div class="container">
+              @yield('content')
+            </div>
+          </body>
+
+          </html>
+        </xmp>
+        Seperti yang dapat kita lihat, file tersebut berisi mark-up HTML
+        biasa. Namun, perhatikan “@section” dan “@yield”. “@section”, sesuai
+        namanya, mendefinisikan bagian dari konten, sedangkan “@yield”
+        digunakan untuk menampilkan konten bagian tertentu. Sekarang kita
+        harus mendefinisikan layout untuk aplikasi kita, mari kita menentukan
+        halaman turunan yang mewarisi layout
+        <b>Extending A Layout</b> <br />
+        Saat mendefinisikan tampilan turunan, gunakan “@extends” untuk
+        menentukan layout mana yang harus diwariskan. Tampilan yang
+        meng-extend sebuah Blade layout akan menyuntikkan konten ke bagian
+        layout menggunakan “@section”. Ingat, seperti pada contoh di atas,
+        beberapa konten akan ditampilkan pada layout menggunakan “@yield”:
+        <xmp>
+          <!-- resources/views/child.blade.php -->
+
+          @extends('layouts.app')
+
+          @section('title', 'Page Title')
+
+          @section('sidebar')
+          @parent
+
+          <p>This is appended to the master sidebar.</p>
+          @endsection
+
+          @section('content')
+          <p>This is my body content.</p>
+          @endsection
+        </xmp>
+        Pada contoh, bagian “sidebar” memanfaatkan “@parent” untuk menambahkan
+        konten ke sidebar layout. “@parent” akan digantikan oleh konten dari
+        layout ketika tampilan digunakan. “@yield” juga menerima nilai default
+        sebagai parameter keduanya. Nilai ini akan digunakan jika bagian yang
+        dihasilkan tidak didefinisikan:
+        <xmp>
+          @yield('content', 'Default content')</xmp>
+      </p>
+      <div class="modal-action">
+        <label for="buildingLayouts_template" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="forms_csrf" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">CSRF Field</h3>
+      <p class="py-4">
+        Setiap kali kita mendefinisikan sebuah form HTML di aplikasi kita,
+        kita harus memasukkan sebuah field token CSRF tersembunyi di dalam
+        form sehingga CSRF protection middleware dapat memvalidasi permintaan.
+        Kita dapat menggunakan “@csrf” untuk menghasilkan field token:
+        <xmp>
+          <form method="POST" action="/profile">
+            @csrf
+
+            ...
+          </form>
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="forms_csrf" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="forms_method" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Method Field</h3>
+      <p class="py-4">
+        Sejak HTML form tidak dapat membuat “PUT”, “PATCH”, atau “DELETE”
+        request, kita perlu untuk menambahkan field “_method” tersembunyi
+        untuk menipu kata kerja HTML ini. “@metod” dapat membuat field ini
+        untuk kita:
+        <xmp>
+          <form action="/foo/bar" method="POST">
+            @method('PUT')
+
+            ...
+          </form>
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="forms_method" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="forms_validation" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Validation Errors</h3>
+      <p class="py-4">
+        @error” mungkin digunakan untuk mempercepat pemeriksaan jika
+        validation error messages ada untuk atribut yang diberikan. Di dalam
+        “@error”, kita dapat echo variabel “$message” untuk menampilkan pesan
+        eror:
+        <xmp>
+          <!-- /resources/views/post/create.blade.php -->
+
+          <label for="title">Post Title</label>
+
+          <input id="title" type="text" class="@error('title') is-invalid @enderror">
+
+          @error('title')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+        </xmp>
+        Sejak “@error” dikompilasi menjadi pernyataan “if”, kita dapat
+        menggunakan “@else” untuk merender konten ketika tidak ada eror pada
+        atribut:
+        <xmp>
+          <!-- /resources/views/auth.blade.php -->
+
+          <label for="email">Email address</label>
+
+          <input id="email" type="email" class="@error('email') is-invalid @else is-valid @enderror">
+        </xmp>
+        Kita dapat memberikan nama error bag tertentu sebagai parameter kedua
+        ke “@error” untuk mengambil validasi pesan error pada halaman yang
+        memiliki beberapa form:
+        <xmp>
+          <!-- /resources/views/auth.blade.php -->
+
+          <label for="email">Email address</label>
+
+          <input id="email" type="email" class="@error('email', 'login') is-invalid @enderror">
+
+          @error('email', 'login')
+          <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+        </xmp>
+      </p>
+      <div class="modal-action">
+        <label for="forms_validation" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
   </body>
 </html>
