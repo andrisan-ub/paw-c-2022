@@ -481,7 +481,70 @@
                     <img src="/kelompok 1/public/img/accesing3.png" alt="">
                     <p class="mt-5">Dengan catatan : Arahan @aware tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke komponen induk melalui atribut HTML. Nilai default @props yang tidak secara eksplisit diteruskan ke komponen induk tidak dapat diakses oleh arahan @aware.</p>
                 </div>
+                
 
+                <!-- Asyam -->
+                <div class="Anonymous Component Namespaces mt-5 text-white">
+                  <h1 class="font-bold text-xl">Anonymous Components Namespaces</h1>
+                  <p class="mt-3">Mirip dengan komponen inline, komponen anonim menyediakan mekanisme untuk mengelola komponen dengan satu file. Namun, komponen anonim menggunakan file tampilan tunggal dan tidak memiliki kelas terkait. Untuk menentukan komponen anonim, 
+                      cukup tempatkan template blade Anda  di  direktori resources/views/components. Anda cukup merendernya seperti ini:</p>
+                  <p class="mt-3">Anda dapat menggunakan . Karakter yang menunjukkan apakah komponen lebih bersarang dalam direktori komponen. Misalnya, dengan asumsi komponen Anda didefinisikan di resources/views/components/inputs/button.blade.php Anda dapat merendernya seperti ini:</p>
+                  <h1 class="font-semibold text-xl mt-3">Anonymous Index Components</h1>
+                  <p class="mt-3">Terkadang, jika komponen terdiri dari beberapa template Blade, Anda mungkin ingin mengelompokkan template komponen tertentu ke dalam satu direktori. Misalnya, bayangkan komponen "akordeon" dengan struktur direktori berikut:</p>
+                  <p class="mt-3">Struktur direktori ini mendukung Anda untuk merender komponen akordeon dan itemnya seperti:</p>
+                  <p class="mt-3">Namun, untuk merender komponen akordeon dengan x-accordion, kita perlu menempatkan templat komponen akordeon "indeks" di direktori resources/views/components alih-alih menumpuknya di dalam direktori akordeon dengan templat terkait akordeon lainnya. </p>
+                  <p class="mt-3">Untungnya, Blade memungkinkan Anda untuk menempatkan file index.blade.php di  direktori template komponen. Jika sebuah komponen memiliki template index.blade.php, itu akan dirender sebagai simpul "root" dari komponen tersebut. Jadi kita dapat terus menggunakan sintaks Blade yang sama seperti  pada contoh di atas; namun, kami mengubah struktur direktori kami sebagai berikut:</p>
+                  
+                  <h1 class="mt-3 font-semibold text-xl">Data Properties/Attributes</h1>
+                  <p class="mt-3">Komponen anonim tidak memiliki kelas terkait, jadi Anda mungkin bertanya-tanya bagaimana cara membedakan data mana yang harus diteruskan ke komponen sebagai variabel dan atribut mana yang harus ditempatkan di tas atribut komponen. Anda dapat menentukan atribut mana yang dianggap sebagai variabel data menggunakan arahan @props di bagian atas template Blade komponen anda. 
+                      Semua atribut lain pada komponen akan tersedia melalui tas atribut komponen. Jika anda ingin memberikan nilai default pada variabel data, anda bisa menentukan nama variabel sebagai kunci array dan nilai default sebagai nilai array:</p>
+                  <p class="mt-3">Mengingat definisi komponen di atas, kami dapat membuat komponen seperti ini:</p>
+
+                  <h1 class="font-semibold text-xl mt-3">Accessing Parent Data</h1>
+                  <p class="mt-3">Terkadang Anda ingin mengakses data dari komponen induk di dalam komponen turunan. Dalam hal ini Anda dapat menggunakan arahan @aware. Misalnya, Anda membuat komponen menu kompleks yang terdiri dari  <x-menu> induk dan <x-menu.item> anak:
+                      Komponen &lt;x-menu> mungkin memiliki implementasi seperti berikut:
+                      </p>
+                  <p class="mt-3">Karena prop warna hanya diteruskan ke induk (&lt;x-menu>), itu tidak akan tersedia di dalam &lt;x-menu.item>. Namun, itu juga dapat tersedia di dalam &lt;x-menu.item> menggunakan direktif @aware:</p>
+                  <p class="mt-3">Arahan @aware tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke komponen induk melalui atribut HTML. Nilai default untuk @props yang tidak secara eksplisit diteruskan ke komponen induk tidak dapat diakses oleh direktif @aware.</p>
+
+                  <h1 class="text-xl font-semibold">Anonymous Components Namespaces</h1>
+                  <p class="mt-3">Seperti disebutkan sebelumnya, komponen anonim biasanya ditentukan dengan menempatkan template Blade di direktori resources/views/components. Namun, anda mungkin ingin mendaftarkan jalur komponen anonim lainnya dengan Laravel selain jalur default.</p>
+                  <p class="mt-3">Misalnya, jika Anda membuat aplikasi pemesanan liburan, Anda dapat menempatkan komponen anonim yang terkait dengan pemesanan penerbangan di direktori resource/views/flights/books/components. Untuk memberi tahu Laravel di mana lokasi komponen anonim ini, Anda dapat menggunakan metode anonymousComponentNamespace yang disediakan oleh fasad Blade.</p>
+                  <p class="mt-3">Metode anonymousComponentNamespace menerima "jalur" ke lokasi komponen anonim sebagai argumen pertama, dan "namespace" di mana komponen harus ditempatkan sebagai argumen kedua. Seperti yang Anda lihat pada contoh di bawah, "namespace" dimulai dengan nama komponen saat komponen dirender. Biasanya, metode ini harus dipanggil dari metode boot salah satu penyedia layanan aplikasi anda:</p>
+                  <p class="mt-3">Dengan contoh di atas, Anda dapat merender komponen panel yang ada di dalam direktori komponen yang baru didaftarkan seperti:</p>
+              </div>
+
+              <div class="mt-5 text-white Building Layouts">
+                  <h1 class="text-xl font-bold">Building Layouts</h1>
+                  <h1 class="text-xl font-semibold mt-3">Layouts Using Components</h1>
+                  <p class="mt-3">Sebagian besar aplikasi web mempertahankan tata letak umum yang sama di beberapa halaman. Akan sangat merepotkan dan sulit untuk memelihara aplikasi jika saya harus membangun kembali seluruh tata letak HTML untuk setiap tampilan yang saya buat. Untungnya, lebih mudah untuk mendefinisikan tata letak ini sebagai satu Blade Component lalu menggunakannya di seluruh aplikasi anda.</p>
+                  <h1 class="text-xl font-semibold mt-3">1. Defining The Layout Components</h1>
+                  <p class="mt-3">Sebagai contoh bayangkan kita sedang membuat aplikasi to do list. Kita mungkin akan mendefinisikan tata letak yang terihat seperti berikut:</p>
+                  <h1 class="tetx-xl font-semibold mt-3">2. Applying The Layout Component</h1>
+                  <p class="mt-3">Setelah mendefinisikan tata letak, kita akan membuat tampilan Blade yang akan menggunakan komponen tersebut. Dalam contoh ini, kita akan mendefinisikan tampilan sederhana yang menampilkan daftar tugas kita:</p>
+                  <p class="mt-3">Ingat, konten yang dimasukkan ke dalam komponen akan diberikan ke variabel $slot default di dalam komponen layout kita. Seperti yang telah anda sadari, tata letak kami juga mengikuti slot $title jika tersedia; jika tidak, judul default akan ditampilkan. Kita juga bisa memasukkan custom title dari tampilan daftar tugas kita dengan menggunakan standard slot syntax yang dibahas dalam dokumentasi component:</p>
+                  <p class="mt-3">Sekarang setelah kita mendefinisikan tampilan tata letak dan daftar tugas, kita hanya perlu mengembalikan tampilan tugas dari rute:</p>
+
+                  <h1 class="text-xl font-semibold mt-3">Layout Using Template Inheritance</h1>
+                  <h1 class="text-xl font-semibold mt-3">1. Defining A Layout</h1>
+                  <p class="mt-3">Layouts juga dapat dibuat melalui ”template inheritance”. Ini adalah cara utama membangun aplikasi sebelum pengenalan komponen.</p>
+                  <h1 class="text-cl font-semibold mt-3">2.Exteding A Layout</h1>
+                  <p class="mt-3">Saat mendefinisikan tampilan anak, gunakan perintah @extends Blade untuk menentukan tata letak mana yang harus "diwarisi” atau “inherit" oleh tampilan anak. Tampilan yang memperluas tata letak Blade dapat menyuntikkan konten ke bagian tata letak menggunakan arahan @section.</p>
+              </div>
+
+              <div class="Forms mt-3 text-white">
+                  <h1 class="font-bold text-xl">Forms</h1>
+                  <h1 class="mt-3 font-semibold text-xl">CSRF Field</h1>
+                  <p class="mt-3">Setiap kali Anda mendefinisikan formulir HTML di aplikasi anda, anda harus menambahkan bidang token CSRF tersembunyi ke formulir sehingga middleware perlindungan CSRF dapat memvalidasi permintaan. Anda dapat menggunakan arahan @csrf Blade  untuk menjalankan token field.</p>
+                  <h1 class="mt-3 text-xl font-semibold">Method Field</h1>
+                  <p class="mt-3">Semenjak HTML forms tidak dapat membuat permintaan PUT, PATCH, atau DELETE, anda perlu menambahkan hidden_method fields untuk menipu kata kerja HTTP ini. @method Blade akan mengarahkan anda untuk membuat fields ini:</p>
+                  <h1 class="font-semibold text-xl">Validation Errors</h1>
+                  <p class="mt-3">Gunakan direktif @error untuk melihat pesan kesalahan validasi dengan cepat untuk atribut tertentu. Direktif @error dapat menggemakan variabel $message untuk menampilkan pesan kesalahan:</p>
+                  <p class="mt-3">Arahan @error mengkompilasi ke pernyataan "jika", jadi jika atribut tidak memiliki kesalahan, arahan @else dapat digunakan untuk merender konten:</p>
+                  <p class="mt-3">Anda mungkin dapat meneruskan nama kantong kesalahan tertentu sebagai parameter kedua ke @error directive untuk mengambil pesan kesalahan validasi pada halaman yang berisi beberapa formulir:</p>
+
+
+              </div>
 
 
               </div>
