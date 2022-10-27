@@ -375,16 +375,16 @@
               </p>
             </div>
             <!--END OF IF STATEMENT-->
-            
+
             <!--Authentication Directives-->
             <div class="ml-6 mt-10">
-                 <h2 class="text-red-900 text-2xl">Authentication Directives</h2>
-                  <p class=" text-black text-justify text-xl mb-5">
-                     Arahan @auth dan @guest dapat digunakan untuk menentukan dengan cepat apakah pengguna
-                                saat
-                                ini diautentikasi atau merupakan tamu:
-             <div class="bg-black rounded-md p-8">
-                   <code class="font-bold text-green-400 "> <br>
+              <h2 class="text-red-900 text-2xl">Authentication Directives</h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                Arahan @auth dan @guest dapat digunakan untuk menentukan dengan cepat apakah pengguna
+                saat
+                ini diautentikasi atau merupakan tamu:
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                          @auth <br>
                               // The user is authenticated... <br>
                          @endauth <br>
@@ -393,14 +393,14 @@
                               // The user is not authenticated... <br>
                          @endguest
                       </code>
-               </div>
-               <div class="my-5 text-xl text-black">
-                     Jika diperlukan, Anda dapat menentukan penjaga otentikasi yang harus diperiksa saat
-                                menggunakan arahan @auth dan @guest:
-                 </div>
+              </div>
+              <div class="my-5 text-xl text-black">
+                Jika diperlukan, Anda dapat menentukan penjaga otentikasi yang harus diperiksa saat
+                menggunakan arahan @auth dan @guest:
+              </div>
 
-                <div class="bg-black rounded-md p-8">
-                     <code class="font-bold text-green-400 "> <br>
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                            @auth('admin') <br>
                                 // The user is authenticated... <br>
                             @endauth <br>
@@ -409,21 +409,21 @@
                                 // The user is not authenticated... <br>
                             @endguest
                         </code>
-                  </div>
+              </div>
 
-                      </p>
-                  </div>
-                  <!--END OF Authentication Directives-->
-                  <!--Switch Statement-->
-                  <div class="ml-6 mt-10">
-                    <h2 class="text-red-900 text-2xl">Switch Statement</h2>
-                    <p class=" text-black text-justify text-xl mb-5">
-                        Pernyataan switch dapat dibangun menggunakan direktif @switch, @case, @break,
-                        @defaultdan
-                        :@endswitch
+              </p>
+            </div>
+            <!--END OF Authentication Directives-->
+            <!--Switch Statement-->
+            <div class="ml-6 mt-10">
+              <h2 class="text-red-900 text-2xl">Switch Statement</h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                Pernyataan switch dapat dibangun menggunakan direktif @switch, @case, @break,
+                @defaultdan
+                :@endswitch
 
-                    <div class="bg-black rounded-md p-8">
-                        <code class="font-bold text-green-400 "> <br>
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                     @switch($i) <br>
                     @case(1) <br>
                         First case... <br>
@@ -437,23 +437,23 @@
                         Default case... <br>
                 @endswitch
                 </code>
-                    </div>
+              </div>
 
-                    </p>
-                </div>
-                <!--END OF Switch Statement-->
-<!--LOOPS-->
-                        <div class="ml-6 mt-10">
-                            <h2 class="text-red-900 text-2xl">Loops</h2>
-                            <p class=" text-black text-justify text-xl mb-5">
-                                Selain pernyataan bersyarat, Blade menyediakan arahan sederhana untuk bekerja dengan
-                                struktur loop PHP. Sekali lagi, masing-masing arahan ini berfungsi identik dengan rekan
-                                PHP
-                                mereka:
+              </p>
+            </div>
+            <!--END OF Switch Statement-->
+            <!--LOOPS-->
+            <div class="ml-6 mt-10">
+              <h2 class="text-red-900 text-2xl">Loops</h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                Selain pernyataan bersyarat, Blade menyediakan arahan sederhana untuk bekerja dengan
+                struktur loop PHP. Sekali lagi, masing-masing arahan ini berfungsi identik dengan rekan
+                PHP
+                mereka:
 
 
-                            <div class="bg-black rounded-md p-8">
-                                <code class="font-bold text-green-400 "> <br>
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                                 @for ($i = 0; $i < 10; $i++) <br>
                                 The current value is {{ $i }} <br>
                             @endfor <br>
@@ -472,23 +472,23 @@
                                 <p>I'm looping forever.</p> <br>
                             @endwhile
                         </code>
-                            </div>
+              </div>
 
-                            </p>
-                        </div>
-                        <!--END OF LOOPS-->
-                        <!--Loops Variabel-->
-                        <div class="ml-6 mt-10">
-                          <h2 class="text-red-900 text-2xl">Variabel Loops</h2>
-                          <p class=" text-black text-justify text-xl mb-5">
-                              Saat melakukan iterasi melalui loop foreach, variabel $loop akan tersedia di dalam loop
-                              Anda. Variabel ini menyediakan akses ke beberapa bit informasi yang berguna seperti
-                              indeks
-                              loop saat ini dan apakah ini adalah iterasi pertama atau terakhir melalui loop:
+              </p>
+            </div>
+            <!--END OF LOOPS-->
+            <!--Loops Variabel-->
+            <div class="ml-6 mt-10">
+              <h2 class="text-red-900 text-2xl">Variabel Loops</h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                Saat melakukan iterasi melalui loop foreach, variabel $loop akan tersedia di dalam loop
+                Anda. Variabel ini menyediakan akses ke beberapa bit informasi yang berguna seperti
+                indeks
+                loop saat ini dan apakah ini adalah iterasi pertama atau terakhir melalui loop:
 
 
-                          <div class="bg-black rounded-md p-8">
-                              <code class="font-bold text-green-400 "> <br>
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                               @foreach ($users as $user) <br>
                               @if ($loop->first) <br>
                                   This is the first iteration. <br>
@@ -501,27 +501,27 @@
                               This is user {{ $user->id }}
                           @endforeach
                       </code>
-                          </div>
+              </div>
 
-                          </p>
-                          <p class="text-black md:text-xl mt-5 pb-10">
-                              Variabel $loop juga berisi berbagai properti berguna lainnya:
-                              <img src="/img/looptable.jpeg" alt="">
-                          </p>
-                      </div>
-                      <!--END OF Loops Variabel-->
-                      <!--Conditional Classes-->
-                      <div class="ml-6 mt-10">
-                        <h2 class="text-red-900 text-2xl"> Conditional Classes</h2>
-                        <p class=" text-black text-justify text-xl mb-5">
-                            Direktif @classmengkompilasi string kelas CSS secara kondisional. Arahan menerima array
-                            kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan, sedangkan
-                            nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen
-                            tersebut akan selalu disertakan dalam daftar kelas yang dirender:
+              </p>
+              <p class="text-black md:text-xl mt-5 pb-10">
+                Variabel $loop juga berisi berbagai properti berguna lainnya:
+                <img src="/img/looptable.jpeg" alt="">
+              </p>
+            </div>
+            <!--END OF Loops Variabel-->
+            <!--Conditional Classes-->
+            <div class="ml-6 mt-10">
+              <h2 class="text-red-900 text-2xl"> Conditional Classes</h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                Direktif @classmengkompilasi string kelas CSS secara kondisional. Arahan menerima array
+                kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan, sedangkan
+                nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen
+                tersebut akan selalu disertakan dalam daftar kelas yang dirender:
 
 
-                        <div class="bg-black rounded-md p-8">
-                            <code class="font-bold text-green-400 "> <br>
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                                 @php <br>
                                 $isActive = false; <br>
                                 $hasError = true; <br>
@@ -537,23 +537,23 @@
                             <span class="p-4 text-gray-500 bg-red"></span>
                             
                     </code>
-                        </div>
+              </div>
 
-                        </p>
-                    </div>
-                    <!--end of conditional clases-->
-                    <!-- Additional Attributes-->
-                    <div class="ml-6 mt-10">
-                      <h2 class="text-red-900 text-2xl"> Additional Attributes </h2>
-                      <p class=" text-black text-justify text-xl mb-5">
-                          Untuk kenyamanan, Anda dapat menggunakan @checkeddirektif untuk dengan mudah menunjukkan
-                          jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan bergema
-                          checked jika kondisi yang diberikan mengevaluasi ke true:
+              </p>
+            </div>
+            <!--end of conditional clases-->
+            <!-- Additional Attributes-->
+            <div class="ml-6 mt-10">
+              <h2 class="text-red-900 text-2xl"> Additional Attributes </h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                Untuk kenyamanan, Anda dapat menggunakan @checkeddirektif untuk dengan mudah menunjukkan
+                jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan bergema
+                checked jika kondisi yang diberikan mengevaluasi ke true:
 
 
 
-                      <div class="bg-black rounded-md p-8">
-                          <code class="font-bold text-green-400 "> <br>
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                               <--input type="checkbox" <br>
                               name="active" <br>
                               value="active" <br>
@@ -561,39 +561,39 @@
                       
                           
                   </code>
-                      </div>
+              </div>
 
-                      </p>
-                  </div>
-                  <!-- End of Additional Attributes-->
-   <!--Including Subview-->
-                        <div class="ml-6 mt-10">
-                            <h2 class="text-red-900 text-2xl"> Including Subview </h2>
-                            <p class=" text-black text-justify text-xl mb-5">
-                                Komponen blade @include berfungsi untuk memasukkan file blade.php ke dalam satu halaman
-                                yang digunakan untuk templating.
-                            <div class="bg-black rounded-md p-8">
-                                <code class="font-bold text-green-400 "> <br>
+              </p>
+            </div>
+            <!-- End of Additional Attributes-->
+            <!--Including Subview-->
+            <div class="ml-6 mt-10">
+              <h2 class="text-red-900 text-2xl"> Including Subview </h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                Komponen blade @include berfungsi untuk memasukkan file blade.php ke dalam satu halaman
+                yang digunakan untuk templating.
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                                     @include('view.name', ['status' => 'complete']) <br>
                                     @includeIf('view.name', ['status' => 'complete'])
                         </code>
-                            </div>
+              </div>
 
-                            </p>
-                        </div>
-                        <!--END OF Including Subview-->
-                        <!--The Once directives-->
-                        <div class="ml-6 mt-10">
-                          <h2 class="text-red-900 text-2xl">@once directives--</h2>
-                          <p class=" text-black text-justify text-xl mb-5">
-                              @oncememungkinkan Anda untuk menentukan bagian dari template yang hanya akan dievaluasi
-                              sekali per siklus rendering. Ini mungkin berguna untuk mendorong bagian tertentu dari
-                              JavaScript ke dalam header halaman menggunakan stacks . Misalnya, jika Anda merender
-                              komponen tertentu dalam satu lingkaran, Anda mungkin hanya ingin mendorong JavaScript ke
-                              header saat pertama kali komponen dirender:
+              </p>
+            </div>
+            <!--END OF Including Subview-->
+            <!--The Once directives-->
+            <div class="ml-6 mt-10">
+              <h2 class="text-red-900 text-2xl">@once directives--</h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                @oncememungkinkan Anda untuk menentukan bagian dari template yang hanya akan dievaluasi
+                sekali per siklus rendering. Ini mungkin berguna untuk mendorong bagian tertentu dari
+                JavaScript ke dalam header halaman menggunakan stacks . Misalnya, jika Anda merender
+                komponen tertentu dalam satu lingkaran, Anda mungkin hanya ingin mendorong JavaScript ke
+                header saat pertama kali komponen dirender:
 
-                          <div class="bg-black rounded-md p-8">
-                              <code class="font-bold text-green-400 "> <br>
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                                   @once <br>
                                   @push('scripts') <br>
                                      <p>Tambahkan java script dan isi didalamnya</p>
@@ -602,7 +602,8 @@
 
                                   @includeIf('view.name', ['status' => 'complete'])
                       </code>
-                          </div>
+              </div>
+
 
                           </p>
                       </div>
@@ -628,6 +629,34 @@
                             </p>
                         </div>
                         <!--END OF RAW PHP-->
+
+
+              </p>
+            </div>
+            <!--END OF The Once directives-->
+            <!--RENDERING VIEW FOR COLLECTION-->
+            <div class="ml-6 mt-10">
+              <h2 class="text-red-900 text-2xl">RENDERING VIEW FOR COLLECTION</h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                Komponen blade @each berfungsi untuk menggabungkan loop dan memasukkan ke dalam satu baris.
+                Directive @each pertama adalah tampilan untuk setiap elemen
+                Directive @each kedua adalah collection yang ingin diulangi
+                Directive @each ketiga adalah nama variabel yang akan ditetapkan ke dalam tampilan
+
+
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
+                  each(‘view.name’, $jobs, ‘job’) <br>
+                  each(‘view.name’, $jobs, ‘job’, ‘view.empty’)
+
+
+                    </code>
+                 
+              </div>
+              <p class=" text-black text-justify text-xl mb-5">Directive @each keempat menentukan tampilan yang akan dirender jika array yang diberikan kosong.</p>
+              </p>
+            </div>
+            <!--END OF RENDERING VIEW FOR COLLECTION-->
 
           </div>
         </section>
