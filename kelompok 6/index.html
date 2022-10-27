@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rangkuman Laravel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.33.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <div class="navbar bg-primary text-primary-content rounded-box">
+      <div class="flex-1 px-2 lg:flex-none">
+        <a class="text-lg font-bold">Rangkuman Laravel</a>
+      </div>
+      <div class="flex justify-end flex-1 px-2">
+        <div class="flex items-stretch">
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost rounded-btn">Lihat</label>
+            <ul
+              tabindex="0"
+              class="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+            >
+              <li><a>Item 1</a></li>
+              <li><a>Item 2</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex item-center py-5">
+      <div class="grid grid-cols-1 mx-auto gap-5 md:grid-cols-2 md:gap-8">
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Introduction</h2>
+            <p>
+              Blade adalah salah satu fitur yang tersedia dalam Laravel yang
+              berfungsi untuk membuat template guna pengembangan tampilan
+              halaman web. Tidak seperti fitur fitur templating PHP yang
+              lainnya, dalam fitur blade user tidak akan dibatasi dalam
+              pembuatan kode untuk tampilannya. Semua tampilan bisa diubah dalam
+              kode PHP biasa. File template PHP menggunakan ekstensi file
+              “.blade.php” yang akan tersimpan dalam direktori resource/views.
+              Tampilan blade dapat dikembalikan dari direktori route atau
+              controller dan biasanya ditampilkan pada direktori view. Untuk
+              menuju halaman yang kita inginkan, blade memiliki fungsi view
+              dengan menambahkan “ / ”
+            </p>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Displaying Data</h2>
+            <p></p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="displaydata_html"
+                class="btn btn-md modal-button btn-primary"
+                >HTML Entity Encoding</label
+              >
+              <label
+                for="displaydata_blade"
+                class="btn btn-md modal-button btn-primary"
+                >Blade & JavaScript Framework</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Blade Directive</h2>
+            <p></p>
+            <div class="card-actions justify-end columns grid">
+              <label
+                for="bladeDirective_if"
+                class="btn btn-md modal-button btn-primary"
+                >If Statements</label
+              >
+              <label
+                for="bladeDirective_switch"
+                class="btn btn-md modal-button btn-primary"
+                >Switch Statements</label
+              >
+              <label
+                for="bladeDirective_loops"
+                class="btn btn-md modal-button btn-primary"
+                >Loops</label
+              >
+              <label
+                for="bladeDirective_loopsVar"
+                class="btn btn-md modal-button btn-primary"
+                >The Loop Variable</label
+              >
+              <label
+                for="bladeDirective_conditional"
+                class="btn btn-md modal-button btn-primary"
+                >Conditional Classes</label
+              >
+              <label
+                for="bladeDirective_additional"
+                class="btn btn-md modal-button btn-primary"
+                >Additional Attributes</label
+              >
+              <label
+                for="bladeDirective_including"
+                class="btn btn-md modal-button btn-primary"
+                >Including Subviews</label
+              >
+              <label
+                for="bladeDirective_directive"
+                class="btn btn-md modal-button btn-primary"
+                >The @once Directive</label
+              >
+              <label
+                for="bladeDirective_raw"
+                class="btn btn-md modal-button btn-primary"
+                >Raw PHP</label
+              >
+              <label
+                for="bladeDirective_comments"
+                class="btn btn-md modal-button btn-primary"
+                >Comments</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Components</h2>
+            <p></p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="components_rendering"
+                class="btn btn-md modal-button btn-primary"
+                >Rendering Components</label
+              >
+              <label
+                for="components_passing"
+                class="btn btn-md modal-button btn-primary"
+                >Passing Data To Components</label
+              >
+              <label
+                for="components_attributes"
+                class="btn btn-md modal-button btn-primary"
+                >Component Attributes</label
+              >
+              <label
+                for="components_reserved"
+                class="btn btn-md modal-button btn-primary"
+                >Reserved Keywords</label
+              >
+              <label
+                for="components_slots"
+                class="btn btn-md modal-button btn-primary"
+                >Slots</label
+              >
+              <label
+                for="components_inline"
+                class="btn btn-md modal-button btn-primary"
+                >Inline Component Views</label
+              >
+              <label
+                for="components_dynamic"
+                class="btn btn-md modal-button btn-primary"
+                >Dynamic Components</label
+              >
+              <label
+                for="components_manually"
+                class="btn btn-md modal-button btn-primary"
+                >Manually Registering Components</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Anonymous Components</h2>
+            <p>
+              Mirip seperti inline components, anonymous components menyediakan
+              mekanisme untuk mengatur komponen menggunakan satu file. Namun,
+              anonymous components memanfaatkan satu single view file dan tidak
+              memiliki associated class. Untuk mendefinisikan anonymous
+              component, kita hanya perlu menempatkan blade template di dalam
+              direktori resources/views/components. Contohnya, anggaplah kita
+              sudah mendefinisikan komponen di
+              resources/views/components/alert.blade.php, kita cukup membuatnya
+              seperti berikut:
+              <xmp>
+              <x-alert />
+            </xmp>
+              Kita dapat menggunakan titik (.) untuk mengindikasikan jika sebuah
+              komponen bersarang di dalam direktori components. Misalnya, anggap
+              bahwa komponen didefinisikan di
+              resources/views/components/inputs/button.blade.php, kita dapat
+              membuatnya seperti berikut:
+              <xmp>
+              <x-inputs.button />
+            </xmp>
+            </p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="anonymous_index"
+                class="btn btn-md modal-button btn-primary"
+                >Anonymous Index Components</label
+              >
+              <label
+                for="anonymous_data"
+                class="btn btn-md modal-button btn-primary"
+                >Data Properties / Attributes</label
+              >
+              <label
+                for="anonymous_accessing"
+                class="btn btn-md modal-button btn-primary"
+                >Accessing Parent Data</label
+              >
+              <label
+                for="anonymous_components"
+                class="btn btn-md modal-button btn-primary"
+                >Anonymous Components Namespaces</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Building Layouts</h2>
+            <p></p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="buildingLayouts_components"
+                class="btn btn-md modal-button btn-primary"
+                >Layouts Using Components</label
+              >
+              <label
+                for="buildingLayouts_template"
+                class="btn btn-md modal-button btn-primary"
+                >Layouts Using Template Inheritance</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card w-96 bg-base-300 shadow-xl lg:card-side">
+          <div class="card-body">
+            <h2 class="card-title">Forms</h2>
+            <p></p>
+            <div class="card-actions justify-end grid">
+              <label
+                for="forms_csrf"
+                class="btn btn-md modal-button btn-primary"
+                >CSRF Field</label
+              >
+              <label
+                for="forms_method"
+                class="btn btn-md modal-button btn-primary"
+                >Method Field</label
+              >
+              <label
+                for="forms_validation"
+                class="btn btn-md modal-button btn-primary"
+                >Validation Errors</label
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Put this part before </body> tag -->
+  </body>
+</html>
