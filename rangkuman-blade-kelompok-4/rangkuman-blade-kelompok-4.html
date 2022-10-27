@@ -311,6 +311,52 @@
                 yang sangat bersih dan singkat untuk bekerja dengan struktur kontrol PHP sementara juga
                 tetap
                 akrab dengan rekan PHP mereka.</p>
+              !--IF STATEMENT-->
+                        <div class="ml-6">
+                            <h2 class="text-red-900 text-2xl ">IF STATEMENT</h2>
+                            <p class=" text-black text-justify text-xl mb-5">
+                                Anda dapat membuat pernyataan if menggunakan direktif @if, @elseif, @else, dan @endif.
+                                Arahan ini berfungsi identik dengan rekan-rekan PHP mereka:
+                            <div class="bg-black rounded-md p-8">
+                                <code class="font-bold text-green-400 "> <br>
+                                    @if (count($records) === 1) <br>
+                                        I have one record! <br>
+                                    @elseif (count($records) > 1) <br>
+                                        I have multiple records! <br>
+                                    @else <br>
+                                        I don't have any records! <br>
+                                    @endif
+                            </code>
+                            </div>
+                            <div class="bg-black rounded-md mt-5 p-8">
+                                <p>Untuk kebalikan dari if else</p>
+                                <code class="font-bold text-green-400 "> <br>
+                                    @unless ($isLogin) <br>
+                                    Anda tidak berhak mengakses halaman ini <br>
+                                    @endunless <br>
+                            </code>
+                            </div>
+                            <div class="my-5 text-xl text-black">
+                                Selain direktif bersyarat yang telah dibahas, direktif @isset dan @empty dapat digunakan
+                                sebagai
+                                pintasan yang nyaman untuk fungsi PHP masing-masing:
+                            </div>
+
+                            <div class="bg-black rounded-md p-8">
+                                <code class="font-bold text-green-400 "> <br>
+                                @isset($records) <br>
+                                    // $records is defined and is not null... <br>
+                                @endisset <br>
+                                
+                                @empty($records) <br>
+                                    // $records is "empty" <br>
+                                @endempty <br>
+                        </code>
+                            </div>
+
+                            </p>
+                        </div>
+                        <!--END OF IF STATEMENT-->
             </div>
           </section>
         </div>
