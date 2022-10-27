@@ -6,144 +6,144 @@
 
         <!-- Danish -->
 
-         <!-- introduction -->
-    <h3>Introduction</h3>
-    <p>
-      Blade adalah template yang disediakan oleh Laravel untuk memudahkan pemrogram dalam membuat program php. File blade memiliki extension <code>.blade.php</code> dan disimpan dalam directory <code>resources/views</code>. Blade template
-      dapat digunakan bersamaan dengan program php dan framework javascript.
-    </p>
-    <!-- displaying data -->
-    <p>Tanda kurung kurawal <code>{}</code> digunakan untuk menampilkan data di dalam file blade</p>
-    <p>Dalam program php, untuk menampilkan data digunakan keyword <code>echo</code>. Blade template dapat mempersingkat kode php, karena cukup menggunakan tanda kurung kurawal <code>{}</code></p>
-    <br />
-    <!-- blade directives -->
-    <h3>Blade Directives</h3>
-    <p>Blade template memiliki keyword yang mirip dengan keyword pada php. Setiap keyword pada blade template diawali dengan tanda <code>@</code></p>
-    <h4>Percabangan</h4>
-    <ul>
-      <li>if else</li>
-      <div>Percabangan if else pada blade template menggunakan keyword <code>@if</code>, <code>@elseif</code>, <code>@else</code>, <code>@endif</code>.</div>
+            <!-- introduction -->
+        <h3>Introduction</h3>
+        <p>
+          Blade adalah template yang disediakan oleh Laravel untuk memudahkan pemrogram dalam membuat program php. File blade memiliki extension <code>.blade.php</code> dan disimpan dalam directory <code>resources/views</code>. Blade template
+          dapat digunakan bersamaan dengan program php dan framework javascript.
+        </p>
+        <!-- displaying data -->
+        <p>Tanda kurung kurawal <code>{}</code> digunakan untuk menampilkan data di dalam file blade</p>
+        <p>Dalam program php, untuk menampilkan data digunakan keyword <code>echo</code>. Blade template dapat mempersingkat kode php, karena cukup menggunakan tanda kurung kurawal <code>{}</code></p>
+        <br />
+        <!-- blade directives -->
+        <h3>Blade Directives</h3>
+        <p>Blade template memiliki keyword yang mirip dengan keyword pada php. Setiap keyword pada blade template diawali dengan tanda <code>@</code></p>
+        <h4>Percabangan</h4>
+        <ul>
+          <li>if else</li>
+          <div>Percabangan if else pada blade template menggunakan keyword <code>@if</code>, <code>@elseif</code>, <code>@else</code>, <code>@endif</code>.</div>
 
-      <!-- @if (count($records) === 1)
-                I have one record!
-            @elseif (count($records) > 1)
-                I have multiple records!
-            @else
-                I don't have any records!
-            @endif -->
+            <!-- @if (count($records) === 1)
+                      I have one record!
+                  @elseif (count($records) > 1)
+                      I have multiple records!
+                  @else
+                      I don't have any records!
+                  @endif -->
 
-      <div>Blade template juga menyediakan keyword <code>@unless</code>. Baris kode di antara keyword <code>@unless</code> dan <code>@endunless</code> akan dijalankan jika kondisi di dalam tanda kurung tidak terpenuhi.</div>
+            <div>Blade template juga menyediakan keyword <code>@unless</code>. Baris kode di antara keyword <code>@unless</code> dan <code>@endunless</code> akan dijalankan jika kondisi di dalam tanda kurung tidak terpenuhi.</div>
 
-      <!-- @unless (Auth::check())
-                You are not signed in.
-            @endunless -->
+            <!-- @unless (Auth::check())
+                      You are not signed in.
+                  @endunless -->
 
-      <li>auth</li>
-      <div>
-        Keyword <code>@auth</code> dan <code>@endauth</code> berfungsi untuk memeriksa apakah pengguna telah terautentifikasi. Sementara itu, keyword <code>@guest</code> dan <code>@endguest</code> digunakan untuk memeriksa apakah pengguna
-        belum terautentifikasi.
-      </div>
+            <li>auth</li>
+            <div>
+              Keyword <code>@auth</code> dan <code>@endauth</code> berfungsi untuk memeriksa apakah pengguna telah terautentifikasi. Sementara itu, keyword <code>@guest</code> dan <code>@endguest</code> digunakan untuk memeriksa apakah pengguna
+              belum terautentifikasi.
+            </div>
 
-      <!-- @auth
-                // The user is authenticated...
-            @endauth
- 
-            @guest
-                // The user is not authenticated...
-            @endguest -->
+            <!-- @auth
+                      // The user is authenticated...
+                  @endauth
+      
+                  @guest
+                      // The user is not authenticated...
+                  @endguest -->
 
-      <li>enviroment</li>
-      <div>Kode di antara keyword <code>@env</code> dan <code>@endenv</code> akan dieksekusi jika aplikasi dijalankan dalam lingkungan yang sesuai dengan kondisi di dalam tanda kurung.</div>
+            <li>enviroment</li>
+            <div>Kode di antara keyword <code>@env</code> dan <code>@endenv</code> akan dieksekusi jika aplikasi dijalankan dalam lingkungan yang sesuai dengan kondisi di dalam tanda kurung.</div>
 
-      <!-- @env('staging')
-                // The application is running in "staging"...
-            @endenv
- 
-            @env(['staging', 'production'])
-                // The application is running in "staging" or "production"...
-            @endenv -->
+            <!-- @env('staging')
+                      // The application is running in "staging"...
+                  @endenv
+      
+                  @env(['staging', 'production'])
+                      // The application is running in "staging" or "production"...
+                  @endenv -->
 
-      <li>section</li>
-      <div>
-        Keyword <code>@hasSection</code> dan <code>endif</code> digunakan untuk memeriksa apakah suatu section memiliki isi. Sementara itu, keyword <code>@sectionMissing</code> dan <code>@endif</code> digunakan untuk memeriksa apakah
-        section tidak memiliki isi.
-      </div>
+            <li>section</li>
+            <div>
+              Keyword <code>@hasSection</code> dan <code>endif</code> digunakan untuk memeriksa apakah suatu section memiliki isi. Sementara itu, keyword <code>@sectionMissing</code> dan <code>@endif</code> digunakan untuk memeriksa apakah
+              section tidak memiliki isi.
+            </div>
 
-      <!-- @hasSection('navigation')
-                <div class="pull-right">
-                    @yield('navigation')
-                </div>
- 
-                <div class="clearfix"></div>
-            @endif -->
+            <!-- @hasSection('navigation')
+                      <div class="pull-right">
+                          @yield('navigation')
+                      </div>
+      
+                      <div class="clearfix"></div>
+                  @endif -->
 
-      <li>switch</li>
-      <div>
-        Percabangan switch pada blade template sama seperti percabangan switch pada program php. Keyword yang digunakan pada percabangan switch terdiri dari <code>@switch</code>, <code>@case</code>, <code>@break</code>,
-        <code>@default</code>, dan <code>@endswitch</code>
-      </div>
+            <li>switch</li>
+            <div>
+              Percabangan switch pada blade template sama seperti percabangan switch pada program php. Keyword yang digunakan pada percabangan switch terdiri dari <code>@switch</code>, <code>@case</code>, <code>@break</code>,
+              <code>@default</code>, dan <code>@endswitch</code>
+            </div>
 
-      <!--@switch($i)
-                @case(1)
-                    First case...
-                    @break
- 
-                @case(2)
-                    Second case...
-                    @break
- 
-                @default
-                    Default case...
-            @endswitch  -->
-    </ul>
-    <br />
-    <h4>Perulangan</h4>
-    <ul>
-      <li>for</li>
-      <div>Pengulangan for menggunakan keyword <code>@for</code> dan <code>endfor</code>.</div>
+            <!--@switch($i)
+                      @case(1)
+                          First case...
+                          @break
+      
+                      @case(2)
+                          Second case...
+                          @break
+      
+                      @default
+                          Default case...
+                  @endswitch  -->
+          </ul>
+          <br />
+          <h4>Perulangan</h4>
+          <ul>
+            <li>for</li>
+            <div>Pengulangan for menggunakan keyword <code>@for</code> dan <code>endfor</code>.</div>
 
-      <!--@for ($i = 0; $i < 10; $i++)
-                The current value is {{ $i }}
-            @endfor  -->
+            <!--@for ($i = 0; $i < 10; $i++)
+                      The current value is {{ $i }}
+                  @endfor  -->
 
-      <li>foreach</li>
-      <div>Pengulangan foreach menggunakan keyword <code>@foreach</code> dan <code>@endforeach</code>.</div>
+            <li>foreach</li>
+            <div>Pengulangan foreach menggunakan keyword <code>@foreach</code> dan <code>@endforeach</code>.</div>
 
-      <!--@foreach ($users as $user)
-                <p>This is user {{ $user->id }}</p>
-            @endforeach  -->
+            <!--@foreach ($users as $user)
+                      <p>This is user {{ $user->id }}</p>
+                  @endforeach  -->
 
-      <li>forelse</li>
-      <div>Pengulangan forelse menggunakan keyword <code>@forelse</code>, <code>@empty</code>, dan <code>@endforelse</code>.</div>
+            <li>forelse</li>
+            <div>Pengulangan forelse menggunakan keyword <code>@forelse</code>, <code>@empty</code>, dan <code>@endforelse</code>.</div>
 
-      <!-- @forelse ($users as $user)
-                <li>{{ $user->name }}</li>
-            @empty
-                <p>No users</p>
-            @endforelse -->
+            <!-- @forelse ($users as $user)
+                      <li>{{ $user->name }}</li>
+                  @empty
+                      <p>No users</p>
+                  @endforelse -->
 
-      <li>while</li>
-      <div>Pengulangan while menggunakan keyword <code>@while</code>, dan <code>@endwhile</code>.</div>
+            <li>while</li>
+            <div>Pengulangan while menggunakan keyword <code>@while</code>, dan <code>@endwhile</code>.</div>
 
-      <!-- @while (true)
-                <p>I'm looping forever.</p>
-            @endwhile -->
+            <!-- @while (true)
+                      <p>I'm looping forever.</p>
+                  @endwhile -->
 
-      <li>continue dan break</li>
-      <div>Keyword <code>@continue</code> digunakan untuk berhenti dari loop yang sedang berlangsung dan melanjutkan loop selanjutnya. Sementara itu, keyword <code>@break</code> digunakan untuk keluar dari loop.</div>
+            <li>continue dan break</li>
+            <div>Keyword <code>@continue</code> digunakan untuk berhenti dari loop yang sedang berlangsung dan melanjutkan loop selanjutnya. Sementara itu, keyword <code>@break</code> digunakan untuk keluar dari loop.</div>
 
-      <!--@foreach ($users as $user)
-                @if ($user->type == 1)
-                    @continue
-                @endif
- 
-                <li>{{ $user->name }}</li>
- 
-                @if ($user->number == 5)
-                    @break
-                @endif
-            @endforeach  -->
-    </ul>
+            <!--@foreach ($users as $user)
+                      @if ($user->type == 1)
+                          @continue
+                      @endif
+      
+                      <li>{{ $user->name }}</li>
+    
+                    @if ($user->number == 5)
+                        @break
+                    @endif
+                @endforeach  -->
+        </ul>
         
 
         <!-- Candra -->
@@ -162,92 +162,92 @@
     <p><code>@endif</code></p>
  
     <p>This is user {{ $user->id }}</code></p>
-<p><code>@endforeach</code></p>
-    <p>Jika Anda berada dalam loop bersarang, Anda dapat mengakses variabel $loop loop induk melalui properti induk:</p>
-<p><code>@foreach ($users as $user)</p></code>
-    <p><code>@foreach ($user->posts as $post)</p></code>
-        <p><code>@if ($loop->parent->first)</p></code>
-            <p><code>This is the first iteration of the parent loop.</p></code>
-        <p><code>@endif</p></code>
-    <p><code>@endforeach</p></code>
-<p><code>@endforeach</p></code>
-    <br />
-    <!-- Conditional Classes -->
-    <h3>Conditional Classes</h3>
-    <p>Arahan @class mengkompilasi string kelas CSS secara kondisional. Arahan menerima array kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan, sedangkan nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen tersebut akan selalu disertakan dalam daftar kelas yang dirender:</p>
- <p><code>@php</p></code>
-  <p><code>$isActive = false;</p></code>
-    <p><code>$hasError = true;</p></code>
-<p><code>@endphp</p></code>
- 
-<p><code><span @class([</p></code>
-    <p><code>'p-4',</p></code>
-    <p><code>'font-bold' => $isActive,</p></code>
-    <p><code>'text-gray-500' => ! $isActive,</p></code>
-    <p><code>'bg-red' => $hasError,</p></code>
-<p><code>])></span></p></code>
+        <p><code>@endforeach</code></p>
+            <p>Jika Anda berada dalam loop bersarang, Anda dapat mengakses variabel $loop loop induk melalui properti induk:</p>
+        <p><code>@foreach ($users as $user)</p></code>
+            <p><code>@foreach ($user->posts as $post)</p></code>
+                <p><code>@if ($loop->parent->first)</p></code>
+                    <p><code>This is the first iteration of the parent loop.</p></code>
+                <p><code>@endif</p></code>
+            <p><code>@endforeach</p></code>
+        <p><code>@endforeach</p></code>
+            <br />
+            <!-- Conditional Classes -->
+            <h3>Conditional Classes</h3>
+            <p>Arahan @class mengkompilasi string kelas CSS secara kondisional. Arahan menerima array kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan, sedangkan nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen tersebut akan selalu disertakan dalam daftar kelas yang dirender:</p>
+        <p><code>@php</p></code>
+          <p><code>$isActive = false;</p></code>
+            <p><code>$hasError = true;</p></code>
+        <p><code>@endphp</p></code>
+        
+        <p><code><span @class([</p></code>
+            <p><code>'p-4',</p></code>
+            <p><code>'font-bold' => $isActive,</p></code>
+            <p><code>'text-gray-500' => ! $isActive,</p></code>
+            <p><code>'bg-red' => $hasError,</p></code>
+        <p><code>])></span></p></code>
 
-<h3>Including Subviews</h3>
-<p>Direktif @include Blade memungkinkan Anda menyertakan tampilan Blade dari dalam tampilan lain. Semua variabel yang tersedia untuk tampilan induk akan tersedia untuk tampilan yang disertakan:</p>
-<p><code><div></p></code>
-    <p><code>@include('shared.errors')</p></code>
- 
-    <p><code><form></p></code>
-       <p><code> <!-- Form Contents --></p></code>
-    <p><code></form></p></code>
-<p><code></div></p></code>
-<p>Meskipun tampilan yang disertakan akan mewarisi semua data yang tersedia di tampilan induk, Anda juga dapat meneruskan larik data tambahan yang harus tersedia untuk tampilan yang disertakan:</p>
-<p><code>@include('view.name', ['status' => 'complete'])</p></code>
+        <h3>Including Subviews</h3>
+        <p>Direktif @include Blade memungkinkan Anda menyertakan tampilan Blade dari dalam tampilan lain. Semua variabel yang tersedia untuk tampilan induk akan tersedia untuk tampilan yang disertakan:</p>
+        <p><code><div></p></code>
+            <p><code>@include('shared.errors')</p></code>
+        
+            <p><code><form></p></code>
+              <p><code> <!-- Form Contents --></p></code>
+            <p><code></form></p></code>
+        <p><code></div></p></code>
+        <p>Meskipun tampilan yang disertakan akan mewarisi semua data yang tersedia di tampilan induk, Anda juga dapat meneruskan larik data tambahan yang harus tersedia untuk tampilan yang disertakan:</p>
+        <p><code>@include('view.name', ['status' => 'complete'])</p></code>
 
-<p>Jika Anda mencoba include tampilan yang tidak ada, Laravel akan membuat kesalahan. Jika Anda ingin menyertakan tampilan yang mungkin ada atau tidak, Anda harus menggunakan direktif @includeIf:</p>
-<p><code>@includeIf('view.name', ['status' => 'complete'])</p></code>
+        <p>Jika Anda mencoba include tampilan yang tidak ada, Laravel akan membuat kesalahan. Jika Anda ingin menyertakan tampilan yang mungkin ada atau tidak, Anda harus menggunakan direktif @includeIf:</p>
+        <p><code>@includeIf('view.name', ['status' => 'complete'])</p></code>
 
-<p>Jika Anda ingin @include tampilan jika ekspresi boolean yang diberikan bernilai benar atau salah, Anda dapat menggunakan arahan @includeWhen dan 
-@includeUnless:</p>
+        <p>Jika Anda ingin @include tampilan jika ekspresi boolean yang diberikan bernilai benar atau salah, Anda dapat menggunakan arahan @includeWhen dan 
+        @includeUnless:</p>
 
-<p><code>@includeWhen($boolean, 'view.name', ['status' => 'complete'])</p></code>
- 
-<p><code>@includeUnless($boolean, 'view.name', ['status' => 'complete'])</p></code>
+        <p><code>@includeWhen($boolean, 'view.name', ['status' => 'complete'])</p></code>
+        
+        <p><code>@includeUnless($boolean, 'view.name', ['status' => 'complete'])</p></code>
 
-<p>Untuk menyertakan tampilan pertama yang ada dari larik tampilan tertentu, Anda dapat menggunakan direktif includeFirst:pression mengevaluasi ke true atau false, Anda dapat menggunakan arahan @includeWhen dan @includeUnless:</p>
+        <p>Untuk menyertakan tampilan pertama yang ada dari larik tampilan tertentu, Anda dapat menggunakan direktif includeFirst:pression mengevaluasi ke true atau false, Anda dapat menggunakan arahan @includeWhen dan @includeUnless:</p>
 
-<p><code>@includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])</p></code>
+        <p><code>@includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])</p></code>
 
-<h3>Rendering Views For Collection</h3>
-<p>dapat menggabungkan loop dan memasukkan ke dalam satu baris dengan arahan @each Blade:</p>
-<p><code>@each('view.name', $jobs, 'job')</p></code>
-<p>Argumen pertama @each directive adalah tampilan yang akan dirender untuk setiap elemen dalam array atau koleksi. Argumen kedua adalah larik atau koleksi yang ingin Anda ulangi, sedangkan argumen ketiga adalah nama variabel yang akan ditetapkan ke iterasi saat ini dalam tampilan. Jadi, misalnya, jika Anda mengulangi array pekerjaan, biasanya Anda ingin mengakses setiap pekerjaan sebagai variabel pekerjaan dalam tampilan. Kunci array untuk iterasi saat ini akan tersedia sebagai variabel kunci dalam tampilan.
+        <h3>Rendering Views For Collection</h3>
+        <p>dapat menggabungkan loop dan memasukkan ke dalam satu baris dengan arahan @each Blade:</p>
+        <p><code>@each('view.name', $jobs, 'job')</p></code>
+        <p>Argumen pertama @each directive adalah tampilan yang akan dirender untuk setiap elemen dalam array atau koleksi. Argumen kedua adalah larik atau koleksi yang ingin Anda ulangi, sedangkan argumen ketiga adalah nama variabel yang akan ditetapkan ke iterasi saat ini dalam tampilan. Jadi, misalnya, jika Anda mengulangi array pekerjaan, biasanya Anda ingin mengakses setiap pekerjaan sebagai variabel pekerjaan dalam tampilan. Kunci array untuk iterasi saat ini akan tersedia sebagai variabel kunci dalam tampilan.
 
-Anda juga dapat meneruskan argumen keempat ke @each directive. Argumen ini menentukan tampilan yang akan dirender jika array yang diberikan kosong.</p>
-<p><code>@each('view.name', $jobs, 'job', 'view.empty')</p></code>
+        Anda juga dapat meneruskan argumen keempat ke @each directive. Argumen ini menentukan tampilan yang akan dirender jika array yang diberikan kosong.</p>
+        <p><code>@each('view.name', $jobs, 'job', 'view.empty')</p></code>
 
-<!-- Additional Attribut-->
-    <h3>Conditional Classes</h3>
-<p>Untuk kenyamanan, Anda dapat menggunakan @checked directive untuk dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan diperiksa kembali jika kondisi yang diberikan bernilai benar:</p>
-<p><code><input type="checkbox"</p></code>
-       <p><code> name="active"</p></code>
-        <p><code>value="active"</p></code>
-        <p><code>@checked(old('active', $user->active)) /></p></code>
-<p>demikian pula, arahan @selected dapat digunakan untuk menunjukkan apakah opsi pilih yang diberikan harus "dipilih":</p>
-<p><code><select name="version"></p></code>
-    <p><code>@foreach ($product->versions as $version)</p></code>
-        <p><code><option value="{{ $version }}" @selected(old('version') == $version)></p></code>
-            <p><code>{{ $version }}</p></code>
-        <p><code></option></p></code>
-    <p><code>@endforeach</p></code>
-<p><code></select></p></code>
-<p>Selain itu, arahan @disabled dapat digunakan untuk menunjukkan apakah elemen tertentu harus "dinonaktifkan":</p>
-	<p><code><button type="submit" @disabled($errors->isNotEmpty())>Submit</button></p></code>
-<p>Selain itu, direktif @readonly dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus "readonly":</p>
-<p><code><input type="email"/<p></code>
-        <p><code>name="email"</p></code>
-        <p><code>value="email@laravel.com"</p></code>
-        <p><code>@readonly($user->isNotAdmin()) /></p></code>
-<p>Selain itu, arahan @required dapat digunakan untuk menunjukkan apakah elemen tertentu harus "diperlukan":</p>
-<p><code><input type="text"</p></code>
-        <p><code>name="title"</p></code>
-        <p><code>value="title"</p></code>
-        <p><code>@required($user->isAdmin()) /></p></code>
+        <!-- Additional Attribut-->
+            <h3>Conditional Classes</h3>
+        <p>Untuk kenyamanan, Anda dapat menggunakan @checked directive untuk dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan diperiksa kembali jika kondisi yang diberikan bernilai benar:</p>
+        <p><code><input type="checkbox"</p></code>
+              <p><code> name="active"</p></code>
+                <p><code>value="active"</p></code>
+                <p><code>@checked(old('active', $user->active)) /></p></code>
+        <p>demikian pula, arahan @selected dapat digunakan untuk menunjukkan apakah opsi pilih yang diberikan harus "dipilih":</p>
+        <p><code><select name="version"></p></code>
+            <p><code>@foreach ($product->versions as $version)</p></code>
+                <p><code><option value="{{ $version }}" @selected(old('version') == $version)></p></code>
+                    <p><code>{{ $version }}</p></code>
+                <p><code></option></p></code>
+            <p><code>@endforeach</p></code>
+        <p><code></select></p></code>
+        <p>Selain itu, arahan @disabled dapat digunakan untuk menunjukkan apakah elemen tertentu harus "dinonaktifkan":</p>
+          <p><code><button type="submit" @disabled($errors->isNotEmpty())>Submit</button></p></code>
+        <p>Selain itu, direktif @readonly dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus "readonly":</p>
+        <p><code><input type="email"/<p></code>
+                <p><code>name="email"</p></code>
+                <p><code>value="email@laravel.com"</p></code>
+                <p><code>@readonly($user->isNotAdmin()) /></p></code>
+        <p>Selain itu, arahan @required dapat digunakan untuk menunjukkan apakah elemen tertentu harus "diperlukan":</p>
+        <p><code><input type="text"</p></code>
+                <p><code>name="title"</p></code>
+                <p><code>value="title"</p></code>
+                <p><code>@required($user->isAdmin()) /></p></code>
 
 
         <!-- Hanif -->
