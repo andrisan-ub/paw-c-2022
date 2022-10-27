@@ -705,7 +705,24 @@
             app/View/Components/FormS dan tampilan akan ditempatkan di direktori
             resources/views/components.forms
           </p>
+            <!--RENDERING COMPONENT-->
+        <div class="renderingcomponent">
+          <div class="ml-6 mt-10">
+            <h2 class="text-red-900 text-2xl">RENDERING COMPONENT</h2>
+            <p class=" text-black text-justify text-xl mb-5">
+              Untuk menampilkan komponen dapat menggunakan tag komponen Blade dalam salah satu
+              template Blade. Tag komponen blade dimulai dengan string x- diikuti dengan Kebab Case dari
+              kelas komponen menggunakan x-alert atau x-userprofile <br>
+              Jika kelas komponen bersarang lebih dalam di dalam direktori app/View/Components, anda
+              dapat menggunakan karakter untuk menunjukan direktori bersarang. Misalnya, jika kita
+              mengasumsikan sebuah komponen terletak di app/View/Components/Inputs/Button.php, kita
+              dapat merendernya seperti ini :
+              <br> x-input-buttons
+          </div>
         </div>
+        <!--END OF RENDERING COMPONENT-->
+        </div>
+      
       </div>
     </section>
   </div>
