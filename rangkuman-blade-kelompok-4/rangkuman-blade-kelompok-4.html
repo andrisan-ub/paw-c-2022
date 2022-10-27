@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style2.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>Laravel Rangkuman</title>
 </head>
 <style>
@@ -71,11 +73,11 @@
   </header>
   <!--end of header-->
   <!--Anggota Kelompok-->
-  <div id="anggota">
+  <div id="anggota" >
     <div>
-      <h1 class="text-4xl text-center pt-10">PERKENALKAN KAMI KELOMPOK 4</h1>
+      <h1 class="text-4xl text-center pt-10" data-aos="fade-down">PERKENALKAN KAMI KELOMPOK 4</h1>
     </div>
-    <div class="containers">
+    <div class="containers" data-aos="zoom-in">
       <div class="cards">
         <figure class="cards__thumb">
           <img src="img/nabil1.jpeg" class="cards__image">
@@ -751,7 +753,9 @@
   <!--End Of component-->
 
 
-
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 
