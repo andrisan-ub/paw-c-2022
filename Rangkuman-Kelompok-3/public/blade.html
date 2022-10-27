@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://kit.fontawesome.com/3eeab2f4f4.js" crossorigin="anonymous"></script>
+  <title>Penjelasan Blade 2 | Kelompok 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+</head>
+<body class="bg-gray-300">
+
+  <nav
+  class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 "
+>
+  <div
+    class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+  >
+    <div
+      class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
+    >
+      <a
+        class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-black"
+        href="index.html"
+        >Review Code PHP</a
+      ><button
+        class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+        type="button"
+        onclick="toggleNavbar('example-collapse-navbar')"
+      >
+        <i class="text-black fas fa-bars"></i>
+      </button>
+    </div>
+    <div
+      class="lg:flex flex-grow items-center bg-black lg:bg-transparent lg:shadow-none hidden"
+      id="example-collapse-navbar"
+    >
+    <ul class="flex flex-col lg:flex-row list-none mr-auto">
+      <li class="flex items-center">
+        <a
+          class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+          href="index.html"
+          ><i class="fa-solid fa-house px-2"></i>
+          Home</a
+        >
+      </li>
+    </ul>
+      <ul class="flex flex-col lg:flex-row list-none mr-auto">
+        <li class="flex items-center">
+          <a
+            class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            href=""
+            ><i
+              class="lg:text-black text-gray-500 far fa-file-alt text-lg leading-lg mr-2"
+            ></i>
+            Pilihan Materi</a
+          >
+        </li>
+      </ul>
+      <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+        <li class="flex items-center">
+          <a
+            class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            href="#pablo"
+            ><i
+              class="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg "
+            ></i
+            ><span class="lg:hidden inline-block ml-2">Share</span></a
+          >
+        </li>
+        <li class="flex items-center">
+          <a
+            class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            href="#pablo"
+            ><i
+              class="lg:text-gray-300 text-gray-500 fab fa-twitter text-lg leading-lg "
+            ></i
+            ><span class="lg:hidden inline-block ml-2">Tweet</span></a
+          >
+        </li>
+        <li class="flex items-center">
+          <a
+            class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            href="#pablo"
+            ><i
+              class="lg:text-gray-300 text-gray-500 fab fa-github text-lg leading-lg "
+            ></i
+            ><span class="lg:hidden inline-block ml-2">Star</span></a
+          >
+        </li>
+        <li class="flex items-center">
+          <button
+            class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+            type="button"
+            style="transition: all 0.15s ease 0s;"
+            >
+            <a href="login.php">
+            <i class="fas fa-arrow-alt-circle-down">Login</i> </a>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class=" px-24 pb-10">
+  <div class="lg:gap-5 lg:gap-y-0 mt-28 px-10">
+      <div class="bg-white p-10 w-full">
+          <h1 class="text-4xl font-bold font-serif mb-5">Laravel Blade Template</h1>
+          <h2 class="text-m font-bold font-serif mb-5">Definisi Blade</h2>
+          <p data-aos="zoom-in" class="mt-5 text-justify">Blade adalah fitur yang disediakan Laravel untuk proses templating sederhana namun sangat bermanfaat dalam proses pengembangan tampilan halaman web. Tidak seperti fitur templating PHP populer lainnya, Blade tidak membatasi programmer untuk menggunakan kode PHP biasa dalam membuat kode untuk tampilan. File template blade menggunakan ekstensi file .blade.php dan biasanya disimpan di direktori resources/views.</p> <br>
+          <h2 class="text-m font-bold font-serif mb-5">Routing Blade</h2>
+          <p data-aos="zoom-in" class="mt-5 text-justify">Tampilan blade dapat dikembalikan dari rute atau pengontrol menggunakan bantuan tampilan global. Tentu saja, seperti yang disebutkan dalam dokumentasi tentang tampilan, data dapat diteruskan ke tampilan Blade menggunakan argumen kedua pembantu tampilan</p>
+          <img data-aos="zoom-in" src="img/blade/code1.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas menununjukkan implementasi route yang terdapat pada laravel. Route di atas terdapat pada folder routes dan file bernama web.php. Pada file tersebut, kita dapat membuat route-route baru sesuai keinginan supaya link URL dapat diakses melalui browser.</p>
+      </div>
+  </div>
+  <div class=" lg:gap-5 gap-y-10 lg:gap-y-0 px-10">
+    <div class="bg-white p-10 w-full">
+      <h2 class="text-m font-bold font-serif mb-5">Menampilkan data yang tidak terhapus pada Blade</h2>
+        <img data-aos="zoom-in"src="img/blade/blade.png" alt="">
+        <p data-aos="zoom-in" class="mt-5 text-justify">Kode program di atas merupakan impelementasi dalam penggunaan templating blade pada framework laravel yaitu menampilkan data yang telah dikirimkan melalui controller maupun route. Templating blade {!! !!} memiliki arti yaitu php echo apabila diterjemahkan ke dalam bahasa pemrograman vanila php biasa. </p>
+    </div>
+</div>
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output data yang tidak terhapus pada Blade</h2>
+      <img data-aos="zoom-in" src="img/blade/output1.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Apabila file coba.blade.php telah dibuat serta route pada web.php telah ditambahkan yaitu "/coba", maka ketika server lokal diakses kemudian /coba, maka akan menghasilkan output seperti di atas yaitu menampilkan Hello $name. Pada route kita juga harus menambahkan dan mengirimkan data name supaya file views dapat menerima variable tersebut sehingga dapat ditampilkan.</p>
+     </div>
+</div>
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+      <h2 class="text-m font-bold font-serif mb-5">Penerapan seleksi kondisi dengan If Else</h2>
+      <img data-aos="zoom-in" src="img/blade/blade2.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Kode program di atas merupakan impelementasi dalam penggunaan templating blade pada framework laravel yaitu penggunaan pengkondisian. Tidak seperti pada source code html biasa, dengan menggunakan templating blade, programmer dapat melakukan beberapa operasi salah satunya pengkondisian if else seperti kode program di atas. Kode program di atas bertujuan untuk mengecek apakah variable $name telah terisi. Jika telah terisi maka kode blok program di dalam statement if akan dijalankan. Penggunaan operasi if pada templating blade menggunakan tanda @if kemudian diakhiri dengan @endif.</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output If Else</h2>
+      <img data-aos="zoom-in" src="img/blade/output2.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Karena variable $name telah terisi yaitu 'budi', maka web browser akan menampilkan data yang terisi dalam variable $name. Dalam hal ini yaitu 'budi'</p>
+  </div>
+</div>
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Rendering Json</h2>
+      <img data-aos="zoom-in" src="img/blade/blade3.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Tempalting blade juga memungkinkan programmer untuk menyatukan atau melakukan kolaborasi dengan javascript untuk membuat suatu tampilan supaya blade dapat melakukan rendering terhadap suatu variable yang dikirimkan melalui controller maupun route dengan menggunakan syntax di atas.</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output Rendering Json</h2>
+      <img data-aos="zoom-in" src="img/blade/output3.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Karena sebelumnya $name hanya diisi 'budi'dan bukan berisi syntax kode program javasript, maka web browser tidak menampilkan pesan dan program dapat berjalan tanpa menampiljan pesan eror yang menandakan laravel dapat melakukan kolaborasi dengan javasript untuk melakukan rendering suatu variable yang dikirimkan.</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Inheritance views</h2>
+      <img data-aos="zoom-in" src="img/blade/blade5.1.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Kode program diatas merupakan templating blade dalam melakukan pembagian section suatu tampilan views yang terdapat pada laravel. Diawali dengan @extends dengan tujuan untuk memanggil main atau halaman utama tampilan dalam hal ini file bernama container. Kemudian dilakukan inisialisasi @section dengan nama section yaitu coba yang dimana di dalam section coba berisi tag html yaitu h1. Lalu diakhiri dengan @endsection sebagai penutup dari section yang telah dibuat.</p>
+  </div>
+</div>
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+      <img data-aos="zoom-in" src="img/blade/blade5.2.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Kode program diatas merupakan kode program yang terdapat pada file container.blade.php yang dimana di dalamnya terdapat syntax lengkap dari sebuah html. Namun pada tag body dilakukan inisialisasi bagian dengan menggunakan syntax @yield dengan nama coba. Sub bagian tersebut akan mengambil bagian atau apapun isi dari file coba yang telah dibuat sebelumnya.
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output Inheritance views</h2>
+      <img data-aos="zoom-in" src="img/blade/output5.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Gambar di atas merupakan hasil output dari penggabungan dari kedua program dengan menggunakan yield, section, dan extends pada suatu file blade pada framework laravel.
+      </p>
+  </div>
+</div>      
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Penerapan seleksi kondisi Switch Case</h2>
+      <img data-aos="zoom-in" src="img/blade/blade6.jpg" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Perintah Switch digunakan untuk memeriksa kebenaran suatu nilai dengan memiliki banyak pemilihan atau nilai pengecekannya. Switch case ini akan berjalan saat nilai variable dipanggil atau bernilai true. Apabila ada syntax “break” maka kode blok program akan berhenti. Pada contoh diatas, terdapat sebuah variabel $name yang dikondisikan sama dengan 'budi'. Pada parameter Switch diatas kita mengisikan variabel $name, yang berarti nilai variabel yang ingin diperiksa adalah variabel$name. Jika variable $name sama dengan 'budi' maka ditampilkan “namanya Budi”.
+      </p>
+  </div>
+</div>
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output Switch Case</h2>
+      <img data-aos="zoom-in"src="img/blade/output6.jpg" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">$name sebeulmnya didefinisikan dengan isi nilai yaotu 'budi'. Oleh karena itu, case 1 akan bernilai true sehingga kode blok program didalamnya dijalankan sehingga mengeluarkan output tulisan "namanya Budi".
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Penerapan looping For</h2>
+      <img data-aos="zoom-in" src="img/blade/blade7.jpg" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Pada templating blade yang terdapat pada laravel juga memungkinkan untuk melakukan looping dalam hal ini yaitu for loop dengan di awali keyword @forloop dan diakhiri dengan @endfor. Start adalah kondisi pada saat awal perulangan. Biasanya kondisi awal ini berisi perintah untuk memberikan nilai kepada variabel $i. Variabel $i sendiri adalah sebuah variabel yang menentukan berapa banyak perulangan dilakukan. Kebanyakan programmer menggunakan variabel i sebagai variabel counter (ini tidak harus, boleh juga memakai variabel lain). Condition adalah kondisi yang harus dipenuhi agar perulangan berjalan. Selama kondisi ini terpenuhi, maka blade akan terus melakukan perulangan. Misalnya condition ini berisi perintah $i < 10, maka selama variabel $i berisi angka yang kurang dari 10, terus lakukan perulangan.Increment adalah bagian yang dipakai untuk memproses variabel counter agar bisa memenuhi kondisi akhir perulangan. Bagian ini akan selalu di eksekusi di setiap perulangan. Disebut increment karena biasanya berisi operasi increment seperti $i++, yang sebenarnya sama dengan $i = $i + 1. Maksudnya, dalam setiap perulangan naikkan variabel $i sebanyak 1 angka.
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output looping For</h2>
+      <img data-aos="zoom-in" src="img/blade/output7.jpg" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify"> DI atas merupakan output dari program sebelumnya dengan menggunakan pengulangan forloop.
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Penerapan looping Foreach</h2>
+      <img data-aos="zoom-in" src="img/blade/blade8.1.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Di atas merupakan kode program pada route yang terdapat pada file web.php. Pada kode program tersebut kami membuat route dengan return view dari file yang bernama coba. Namun berbeda dengan sebelumnya, pada file tersebut, membuat array baru yang berisi data mahasiswa meliputi nim dan nama yang dikirimkan kepada file views yang bernama file coba.
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+      <img data-aos="zoom-in" src="img/blade/blade8.2.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Di atas merupakan kode program yang terdapat pada file coba.blade.php yang terdapat pada folder views gunja implementasi dari program looping data menggunakan for each. Setelah sebelumnya data mahasiswa dilirimkan melalui file route, maka file coba akan menerima data tersebut dengan langsung menggunakan looping dengan jenis for each untuk menampilkan ke dalam web browser. Syntax dasar dari penggunaan foreach pada templating blade diawali dengan @foreach lalu menggunakan nama v ariable ayang telah dikirimkan melalui route yaitu $mahasiswa yang diasumsikan dengan keyword as menjadi $mhs. Kemudian di dalam kode blok for each memanggil array nim dan nama dari data mhs dengan cara array. Hal ini dikarenakan pada file route kami mengirimkan datanya dengan menggunakan array, bukan dengan objek,JSON, atau yang lainnya. 
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output Foreach</h2>
+      <img data-aos="zoom-in" src="img/blade/output8.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Di atas merupakan output dari kedua program sebelumnya yaitu menampilkan data mahasiswa yang telah dikirimkan pada route/coba yang dapat diakses karena kami telah membuat route /coba pada web.php.</p>
+  </div> 
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Implementasi Required </h2>
+      <img data-aos="zoom-in" src="img/blade/blade9.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Arahan @required dapat digunakan untuk menunjukkan apakah elemen tertentu harus "diperlukan".</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Menyisipkan code PHP</h2>
+      <img data-aos="zoom-in" src="img/blade/blade10.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Dalam beberapa situasi, sangat berguna untuk menyematkan kode PHP ke dalam tampilan Anda. Anda dapat menggunakan direktif Blade @php untuk mengeksekusi blok PHP biasa di dalam template anda.</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Komen pada Blade PHP</h2>
+      <img data-aos="zoom-in" src="img/blade/blade11.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Pada gambar diatas menunjukkan bahwa templating blade memiliki cara tersendiri untuk membuat baris kode menjadi comment sehingga tidak di compile.</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Menyisipkan Atribut Komponen</h2>
+      <img data-aos="zoom-in" src="img/blade/blade12.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Anda dapat menentukan atribut mana yang harus dianggap sebagai variabel data menggunakan arahan @props di bagian atas template Blade komponen Anda. Semua atribut lain pada komponen akan tersedia melalui tas atribut komponen. Jika Anda ingin memberikan nilai default pada variabel data, Anda dapat menentukan nama variabel sebagai kunci array dan nilai default sebagai nilai array</p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Kemanan Form pada Blade PHP</h2>
+      <img data-aos="zoom-in" src="img/blade/blade13.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">
+        Setiap kali Anda mendefinisikan formulir HTML di aplikasi Anda, Anda harus menyertakan bidang token CSRF tersembunyi di formulir sehingga middleware perlindungan CSRF dapat memvalidasi permintaan. Anda dapat menggunakan @csrf Blade directive untuk menghasilkan bidang token</p>
+  </div>
+</div>
+</section>
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</html>
