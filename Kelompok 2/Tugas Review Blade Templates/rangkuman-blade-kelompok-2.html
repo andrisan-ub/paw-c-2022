@@ -542,307 +542,284 @@
                 </div>
               </div>
       
-              <div class="card w-100 bg-base-100 shadow-xl">
-                <div class="card-body">       
-                  <h3 class="text-2xl"><strong>Dynamic Components</strong></h3>  <!-- judul -->
-                  <p>Terkadang kita mungkin perlu merender <em>component</em> tetapi tidak tahu <em>component</em> mana yang harus dirender hingga <em>runtime</em>.
-                    Maka dari itu kita dapat menggunakan <code>dynamic-component</code> bawaan Laravel untuk merender berdasarkan nilai atau variabel <em>runtime</em>.</p>
-                  <figure>
-                    <div class="mockup-code">
-                        <pre data-prefix="1" class="text-success"><code>&lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;</code></pre>
-                      </div>
-                  </figure>
-                </div>
-              </div>
               
-              <div class="card w-100 bg-base-100 shadow-xl">
-                <div class="card-body">       
-                  <h3 class="text-2xl"><strong>Manually Registering Components</strong></h3>  <!-- judul -->
-                  <p>Saat menulis <em>component</em> untuk aplikasi kita sendiri, 
-                    <em>component</em> secara otomatis ditemukan dalam <em>directory</em> <code>app/View/Components</code> dan <em>directory</em> <code>resources/views/components</code>.</p>
-                <p>Namun, jika kita membuat <em>package</em> yang menggunakan <em>Blade components</em>. 
-                    Kita perlu mendaftarkan <em>component class</em> atau tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan <em>component</em> tersebut.
-                    Biasanya kita harus mendaftarkan <em>component</em> dalam <code>boot</code> <em>method</em> dari <em>package's service provider</em> kita.</p>
-                  <figure>
-                    <div class="mockup-code">
-                      <pre data-prefix="1" class="text-success"><code>use Illuminate\Support\Facades\Blade;</code></pre>
-                      <pre data-prefix="2" class="text-success"><code>use VendorPackage\View\Components\AlertComponent;</code></pre>
-                      <pre data-prefix="3" class="text-success"><code>/**</code></pre>
-                      <pre data-prefix="4" class="text-success"><code>* Bootstrap your package's services.</code></pre>
-                      <pre data-prefix="5" class="text-success"><code>*</code></pre>
-                      <pre data-prefix="6" class="text-success"><code>* @return void</code></pre>
-                      <pre data-prefix="7" class="text-success"><code>*/</code></pre>
-                      <pre data-prefix="8" class="text-success"><code>public function boot()</code></pre>
-                      <pre data-prefix="9" class="text-success"><code>{</code></pre>
-                      <pre data-prefix="10" class="text-success"><code>Blade::component('package-alert', AlertComponent::class);</code></pre>
-                      <pre data-prefix="11" class="text-success"><code>}</code></pre>
-                    </div>
-                  </figure>
-                  <p>Setelah <em>component</em> terdaftar, <em>component</em> tersebut dapat dirender menggunakan tag-nya.</p>
-                  <figure>
-                    <div class="mockup-code">
-                      <pre data-prefix="1" class="text-success"><code>&lt;x-package-alert/></code></pre>
-                    </div>
-                  </figure>
-                </div>
-              </div>
-      
-              <div class="card w-100 bg-base-100 shadow-xl">
-                <div class="card-body">       
-                  <h2><strong>Autoloading Package Components</strong></h2>  <!-- judul -->
-                  <p>Kita dapat menggunakan <code>componentNamespace</code> <em>method</em> untuk memuat <em>component</em> kelas secara otomatis berdasarkan konvensi.
-                    Misalnya <em>package</em> <code>Nightsade</code> mungkin memiliki <em>component</em> <code>calender</code> dan <code>colorPicker</code> yang berada pada <code>Package\Views\Components</code> <em>namespace</em>.</p>
-                  <figure>
-                    <div class="mockup-code">
-                      <pre data-prefix="1" class="text-success"><code>use Illuminate\Support\Facades\Blade;</code></pre>
-                      <pre data-prefix="2" class="text-success"><code>/**</code></pre>
-                      <pre data-prefix="3" class="text-success"><code>* Bootstrap your package's services.</code></pre>
-                      <pre data-prefix="5" class="text-success"><code>*</code></pre>
-                      <pre data-prefix="6" class="text-success"><code>* @return void</code></pre>
-                      <pre data-prefix="7" class="text-success"><code>*/</code></pre>
-                      <pre data-prefix="8" class="text-success"><code>public function boot()</code></pre>
-                      <pre data-prefix="9" class="text-success"><code>{</code></pre>
-                      <pre data-prefix="10" class="text-success"><code>Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');</code></pre>
-                      <pre data-prefix="11" class="text-success"><code>}</code></pre>
-                    </div>
-                  </figure>
-                  <p>Ini akan memungkinkan penggunaan komponen paket oleh namespace vendor mereka menggunakan <code>package-name::</code> <em>syntax</em></p>
-                  <figure>
-                    <div class="mockup-code">
-                      <pre data-prefix="1" class="text-success"><code>&lt;x-nightshade::calendar /></code></pre>
-                      <pre data-prefix="2" class="text-success"><code>&lt;x-nightshade::color-picker /></code></pre>
-                    </div>
-                  </figure>
-                  <p>Blade akan secara otomatis mendeteksi kelas yang ditautkan ke <em>component</em> dengan <em>pascal-casing</em> dari <em>component name</em>. Subdirektori juga didukung menggunakan <em>"dot" notation</em>.</p>
-                </div>
-              </div>
-      
-              <div class="card w-100 bg-base-100 shadow-xl">
-                <div class="card-body">       
-                  <h3><strong>Anonymous Components</strong></h3>  <!-- judul -->
-                  <p>Mirip dengan <em>component</em> inline, <em>component</em> anonim menyediakan mekanisme untuk mengelola <em>component</em> melalui satu file. Namun, <em>component</em> anonim menggunakan file tampilan tunggal dan tidak memiliki kelas terkait.
-                    <em>component</em> anonim hanya perlu menempatkan <em>Blade template</em> di dalam <em>directory</em> <code>resources/views/components</code>. Misalnya, dengan asumsi kita telah mendefinisikan sebuah <em>component</em> di <code>resources/views/components/inputs/button.blade.php</code>
-                    kita dapat merendernya dengan</p> 
-                <p><code>&lt;x-alert/></code></p>
-                <p>Gunakan "." jika <em>component</em> bereda dalam <em>directory component</em>. Misalnya <em>component</em> didefinisikan di <code>resources/views/components/inputs/button.blade.php</code>
-                    kita dapat merendernya dengan</p>
-                <p><code>&lt;x-inputs.button/></code></p>   <!-- penjelasan -->
-                  <figure>
-                  </figure>
-                </div>
-              </div>
-
-              <div class="card w-100 bg-base-100 shadow-xl">
-                <div class="card-body">       
-                    <h2><strong>Anonymous Components Namespaces</strong></h2>
-            
-                    <p>Komponen anonim biasanya ditentukan dengan menempatkan template Blade di dalam direktori <em>resource/views/components</em>. Namun, sesuai kebutuhan yang mungkin ingin mendaftarkan jalur komponen anonim lainnya dengan Laravel selain jalur default.</p>
-                    <p>Untuk memberi tahu Laravel tentang lokasi komponen anonim ini, Anda dapat menggunakan metode <em>anonymousComponentNamespace</em> yang disediakan oleh fasad Blade. Metode <em>anonymousComponentNamespace</em> menerima "jalur" ke lokasi komponen anonim sebagai argumen pertama dan <em>"namespace"</em> yang komponennya harus ditempatkan sebagai argumen kedua. Seperti pada contoh di bawah, "namespace" akan diawali dengan nama komponen saat komponen dirender.</p>
-                    <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>/**</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>* Bootstrap any application services.</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>*</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>* @return void</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>*</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>public function boot()</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>{<code></pre>
-                          <pre data-prefix=">" class="text-success"><code>Blade::anonymousComponentNamespace('flights.bookings.components', 'flights'); }</code></pre>
-                        </div>
-                      </figure>
-                
-                      <h3 class="text-2xl"><strong>BUILDING LAYOUTS</h3>
-                      <h2><strong>Layouts Using Components</strong></h2>
-                      <p>Sebagian besar aplikasi web mempertahankan tata letak umum yang sama di berbagai halaman. Akan sangat merepotkan dan sulit untuk memelihara aplikasi jika harus mengulang seluruh tata letak HTML di setiap tampilan yang di buat. Untungnya, lebih mudah untuk mendefinisikan tata letak ini sebagai satu komponen Blade dan kemudian menggunakannya di seluruh tampilan.</p>
-            
-                      <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>&lt;html&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;head&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;title&gt;{{ $title ?? 'Todo Manager' }}&lt;/title&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;/head&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;body&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;h1&gt;Todos&lt;/h1&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;/hr&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>{{ $slot }}<code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;/body&gt;</code></pre>
-                          <pre data-prefix="$" class="text-success"><code>&lt;/html&gt;</code></pre>
-                        </div>
-                      </figure>
-            
-                      <p>Setelah komponen tata letak ditentukan, dapat membuat tampilan Blade yang menggunakan komponen tersebut. Ingat, konten yang disuntikkan ke dalam komponen akan diberikan ke variabel $slot default di dalam komponen layout. Seperti yang mungkin telah diperhatikan, tata letak juga menghormati slot $title jika disediakan; jika tidak, judul default akan ditampilkan. Ini dapat menyuntikkan judul khusus dari tampilan daftar tugas menggunakan sintaks slot standar yang dibahas dalam dokumentasi komponen:</p>
-            
-                      <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>&lt;x-layout&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;x-slot;title&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>Custom Title</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;/x-slot&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;body&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>@foreach ($tasks as $task)</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>{{ $task }}</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>@endforeach<code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;/x-layout&gt;</code></pre>
-                        </div>
-                      </figure>
-            
-                      <p>Sekarang setelah menentukan tampilan tata letak dan daftar tugas, sekarang hanya perlu mengembalikan tampilan tugas dari rute:</p>
-            
-                      <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>use App\Models\Task;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>      </code></pre>
-                          <pre data-prefix=">" class="text-success"><code>Route::get('/tasks', function () {</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    return view('tasks', ['tasks' => Task::all()]);</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>});</code></pre>
-                        </div>
-                      </figure>
-            
-                      <h2><strong>Layouts Using Templates Inheritance</strong></h2>
-                      <p>Tata letak juga dapat dibuat melalui <em>"Templates Inheritance"</em>. Ini adalah cara utama membangun aplikasi sebelum pengenalan komponen.
-            
-                         Untuk memulai, mari klihat contoh sederhana. Pertama, kita akan memeriksa tata letak halaman. Karena sebagian besar aplikasi web mempertahankan tata letak umum yang sama di berbagai halaman, lebih mudah untuk mendefinisikan tata letak ini sebagai tampilan <em>Single Blade</em>:</p>
-            
-                      <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>&lt;html&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    &lt;head&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>        &lt;title&gt;App Name - @yield('title')&lt;/title&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    &lt;/head&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    &lt;body&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>        @section('sidebar')</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>            This is the master sidebar.</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>        @show<code></pre>
-                          <pre data-prefix=">" class="text-success"><code>        </code></pre>
-                          <pre data-prefix="$" class="text-success"><code>        &lt;div class="container"&gt;</code></pre>
-                          <pre data-prefix="$" class="text-success"><code>            @yield('content')</code></pre>
-                          <pre data-prefix="$" class="text-success"><code>        &lt;/div&gt;</code></pre>
-                          <pre data-prefix="$" class="text-success"><code>    &lt;/body&gt;</code></pre>
-                          <pre data-prefix="$" class="text-success"><code>&lt;/html&gt;</code></pre>
-                        </div>
-                      </figure>
-            
-                      <p>File ini berisi mark-up HTML biasa. Namun, perhatikan arahan <em>@bagian</em> dan <em>@yield</em>. Direktif <em>@section</em>, seperti namanya, mendefinisikan bagian konten, sedangkan arahan <em>@yield</em> digunakan untuk menampilkan konten bagian tertentu.</p>
-            
-                      <p>Saat mendefinisikan <em>child view</em>, gunakan perintah <em>@extends</em> Blade untuk menentukan tata letak mana yang harus <em> "inherit"</em>  oleh <em>child view</em>. Tampilan yang memperluas tata letak Blade dapat diinjeksi konten ke bagian layout menggunakan arahan <em>@section</em>. Ingat, seperti yang terlihat pada contoh di atas, konten bagian ini akan ditampilkan dalam layout menggunakan <em>@yield</em>:</p>
-            
-                      <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>@extends('layouts.app')</code></pre>
-                          <pre data-prefix=">" class="text-success"><code> </code></pre>
-                          <pre data-prefix=">" class="text-success"><code>@section('title', 'Page Title')</code></pre>
-                          <pre data-prefix=">" class="text-success"><code> </code></pre>
-                          <pre data-prefix=">" class="text-success"><code>@section('sidebar')</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    @parent</code></pre>
-                          <pre data-prefix=">" class="text-success"><code> </code></pre>
-                          <pre data-prefix="$" class="text-success"><code>    &lt;p&gt;This is appended to the master sidebar.&lt;p&gt;</code></pre>
-                          <pre data-prefix="$" class="text-success"><code>@endsection</code></pre>
-                          <pre data-prefix="$" class="text-success"><code> </code></pre>
-                          <pre data-prefix="$" class="text-success"><code>@section('content')</code></pre>
-                          <pre data-prefix="$" class="text-success"><code>    &lt;p&gt;This is my body content.&lt;p&gt;</code></pre>
-                          <pre data-prefix="$" class="text-success"><code>@endsection</code></pre>
-                        </div>
-                      </figure>
-            
-                      <p>Arahan <em>@yield</em> juga menerima nilai default sebagai parameter kedua. Nilai ini akan diberikan jika bagian yang dihasilkan tidak ditentukan:</p>
-            
-                      <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code></code>@yield('content', 'Default content')</code></pre>
-                        </div>
-                    </figure>
-            
-                    <h3 class="text-2xl"><strong>FORMS</h3>
-                    <h2><strong>CSRF Field</strong></h2>
-                    <p>Setiap kali mendefinisikan formulir HTML di aplikasi, harus menyertakan <em>hidden CSRF token field</em> di formulir sehingga <em>CSRF protection middleware</em> dapat memvalidasi permintaan. Ini dapat menggunakan <em>@csrf Blade directive</em> untuk menghasilkan bidang token:</p>
-                    <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>&lt;form method="POST" action="/profile"&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code    @csrf></code></pre>
-                          <pre data-prefix=">" class="text-success"><code> </code></pre>
-                          <pre data-prefix=">" class="text-success"><code>   . . .</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;/form&gt;</code></pre>
-                        </div>
-                      </figure>
-            
-                      <h2><strong>Method Field</strong></h2>
-                      <p>Karena formulir HTML tidak dapat membuat permintaan <em>PUT, PATCH, atau DELETE,</em>, perlu menambahkan <em>hidden _method</em> untuk menipu HTTP ini. Arahan <em>@method Blade</em> dapat membuat bidang ini.</p>
-                      <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>&lt;form action="/foo/bar" method="POST"&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    @method('PUT') </code></pre>
-                          <pre data-prefix=">" class="text-success"><code> </code></pre>
-                          <pre data-prefix=">" class="text-success"><code>   . . .</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;/form&gt;</code></pre>
-                        </div>
-                      </figure>
-                
-                      <h2><strong>Validation Errors</strong></h2>
-                      <p>Arahan <em>@error</em> dapat digunakan untuk memeriksa dengan cepat apakah ada pesan kesalahan validasi untuk atribut tertentu. Dalam direktif <em>@error</em>, Anda dapat <em>echo</em> variabel <em>$message</em> untuk menampilkan pesan kesalahan:</p>
-                      <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>&lt;label for="title"&gt;Post Title&lt;/label&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code> </code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;input id="title"</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    type="text"</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    class="@error('title') is-invalid @enderror"&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code> </code></pre>
-                          <pre data-prefix=">" class="text-success"><code>@error('title')</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    &lt;div class="alert alert-danger"&gt;{{ $message }}&lt;/div&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>@enderror</code></pre>
-                        </div>
-                      </figure>
-                
-                      <p>Karena <em>@error directive</em> dikompilasi ke <em>statement "if"</em>, dapat menggunakan <em>@else directive</em> untuk merender ketika tidak ada kesalahan untuk atribut. Lalu dapat meneruskan nama <em>error bag</em> tertentu sebagai parameter kedua ke <em>@error directive</em> untuk mengambil pesan kesalahan validasi pada halaman yang berisi beberapa formulir:</p>
-                      <figure>
-                        <div class="mockup-code">
-                          <pre data-prefix="$" class="text-success"><code>&lt;label for="email"&gt;Email Address&lt;/label&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code> </code></pre>
-                          <pre data-prefix=">" class="text-success"><code>&lt;input id="email"</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    type="email"</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    class="@error('email', 'login') is-invalid @enderror"&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code> </code></pre>
-                          <pre data-prefix=">" class="text-success"><code>@error('email', 'login')</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>    &lt;div class="alert alert-danger"&gt;{{ $message }}&lt;/div&gt;</code></pre>
-                          <pre data-prefix=">" class="text-success"><code>@enderror</code></pre>
-                        </div>
-                      </figure>
-                </div>
-              </div>
-      
-
-              <!-- footer -->
-              <footer class="footer p-10 bg-neutral text-neutral-content">
-                <div>
-                  <span class="footer-title">Kelompok 2</span>
-                </div>
-                <div>
-                  <span class="footer-title">NIM</span>
-                  <a class="link link-hover">215150700111023</a>
-                  <a class="link link-hover">215150700111024</a>
-                  <a class="link link-hover">215150700111056</a>
-                  <a class="link link-hover">215150701111005</a>
-                  <a class="link link-hover">215150701111025</a>
-                </div>
-                <div>
-                  <span class="footer-title">Nama</span>
-                  <a class="link link-hover">Fauzan Zakaria Hermansah </a>
-                  <a class="link link-hover">Candra Setiawan</a>
-                  <a class="link link-hover">Aditya Permana Heriansyah</a>
-                  <a class="link link-hover">Danish Alif Arsan</a>
-                  <a class="link link-hover">Irfan Hanif Habibi</a>
-                </div>
-              </footer>
       
           </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3 class="text-2xl"><strong>Dynamic Components</strong></h3>  <!-- judul -->
+              <p>Terkadang kita mungkin perlu merender <em>component</em> tetapi tidak tahu <em>component</em> mana yang harus dirender hingga <em>runtime</em>.
+                Maka dari itu kita dapat menggunakan <code>dynamic-component</code> bawaan Laravel untuk merender berdasarkan nilai atau variabel <em>runtime</em>.</p>
+              <figure>
+                <div class="mockup-code">
+                    <pre data-prefix="1" class="text-success"><code>&lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;</code></pre>
+                  </div>
+              </figure>
+            </div>
+          </div>
+          
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3 class="text-2xl"><strong>Manually Registering Components</strong></h3>  <!-- judul -->
+              <p>Saat menulis <em>component</em> untuk aplikasi kita sendiri, 
+                <em>component</em> secara otomatis ditemukan dalam <em>directory</em> <code>app/View/Components</code> dan <em>directory</em> <code>resources/views/components</code>.</p>
+            <p>Namun, jika kita membuat <em>package</em> yang menggunakan <em>Blade components</em>. 
+                Kita perlu mendaftarkan <em>component class</em> atau tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan <em>component</em> tersebut.
+                Biasanya kita harus mendaftarkan <em>component</em> dalam <code>boot</code> <em>method</em> dari <em>package's service provider</em> kita.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>use Illuminate\Support\Facades\Blade;</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>use VendorPackage\View\Components\AlertComponent;</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>/**</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>* Bootstrap your package's services.</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>*</code></pre>
+                  <pre data-prefix="6" class="text-success"><code>* @return void</code></pre>
+                  <pre data-prefix="7" class="text-success"><code>*/</code></pre>
+                  <pre data-prefix="8" class="text-success"><code>public function boot()</code></pre>
+                  <pre data-prefix="9" class="text-success"><code>{</code></pre>
+                  <pre data-prefix="10" class="text-success"><code>Blade::component('package-alert', AlertComponent::class);</code></pre>
+                  <pre data-prefix="11" class="text-success"><code>}</code></pre>
+                </div>
+              </figure>
+              <p>Setelah <em>component</em> terdaftar, <em>component</em> tersebut dapat dirender menggunakan tag-nya.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-package-alert/></code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+  
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h2><strong>Autoloading Package Components</strong></h2>  <!-- judul -->
+              <p>Kita dapat menggunakan <code>componentNamespace</code> <em>method</em> untuk memuat <em>component</em> kelas secara otomatis berdasarkan konvensi.
+                Misalnya <em>package</em> <code>Nightsade</code> mungkin memiliki <em>component</em> <code>calender</code> dan <code>colorPicker</code> yang berada pada <code>Package\Views\Components</code> <em>namespace</em>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>use Illuminate\Support\Facades\Blade;</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>/**</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>* Bootstrap your package's services.</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>*</code></pre>
+                  <pre data-prefix="6" class="text-success"><code>* @return void</code></pre>
+                  <pre data-prefix="7" class="text-success"><code>*/</code></pre>
+                  <pre data-prefix="8" class="text-success"><code>public function boot()</code></pre>
+                  <pre data-prefix="9" class="text-success"><code>{</code></pre>
+                  <pre data-prefix="10" class="text-success"><code>Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');</code></pre>
+                  <pre data-prefix="11" class="text-success"><code>}</code></pre>
+                </div>
+              </figure>
+              <p>Ini akan memungkinkan penggunaan komponen paket oleh namespace vendor mereka menggunakan <code>package-name::</code> <em>syntax</em></p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-nightshade::calendar /></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>&lt;x-nightshade::color-picker /></code></pre>
+                </div>
+              </figure>
+              <p>Blade akan secara otomatis mendeteksi kelas yang ditautkan ke <em>component</em> dengan <em>pascal-casing</em> dari <em>component name</em>. Subdirektori juga didukung menggunakan <em>"dot" notation</em>.</p>
+            </div>
+          </div>
+  
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3><strong>Anonymous Components</strong></h3>  <!-- judul -->
+              <p>Mirip dengan <em>component</em> inline, <em>component</em> anonim menyediakan mekanisme untuk mengelola <em>component</em> melalui satu file. Namun, <em>component</em> anonim menggunakan file tampilan tunggal dan tidak memiliki kelas terkait.
+                <em>component</em> anonim hanya perlu menempatkan <em>Blade template</em> di dalam <em>directory</em> <code>resources/views/components</code>. Misalnya, dengan asumsi kita telah mendefinisikan sebuah <em>component</em> di <code>resources/views/components/inputs/button.blade.php</code>
+                kita dapat merendernya dengan</p>
+                <figure>
+                  <div class="mockup-code">
+                    <pre data-prefix="1" class="text-success"><code>&lt;x-alert/>></code></pre>
+                  </div>
+                </figure> 
+            <p>Gunakan "." jika <em>component</em> bereda dalam <em>directory component</em>. Misalnya <em>component</em> didefinisikan di <code>resources/views/components/inputs/button.blade.php</code>
+                kita dapat merendernya dengan</p>  <!-- penjelasan -->
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-inputs.button/></code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3><strong>Anonymous Index Components</strong></h3>  <!-- judul -->
+              <p>Ketika <em>component</em> terdiri dari bari <em>Blade template</em>, kita ingin mengelompokkan <em>component</em> yang ada dalam satu <em>directory</em>.
+                Misal <em>component</em> "accordion" dengan struktur direktori.</p>
+          <!-- penjelasan -->
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>/resources/views/components/accordion.blade.php</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>/resources/views/components/accordion/item.blade.php</code></pre>
+                </div>
+              </figure>
+              <p>Struktur <em>directory</em> ini memungkinkan kita untuk merender <em>component</em> accordion dan itemnya seperti</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-accordion></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>&lt;x-accordion.item></code></pre>
+                  <pre data-prefix="3" class="text-success"><code>...</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>&lt;x-accordion.item></code></pre>
+                  <pre data-prefix="5" class="text-success"><code>&lt;x-accordion></code></pre>
+                </div>
+              </figure>
+              <p>Namun untuk merender accordion melalui <code>x-accordion</code>, kita harus menempatkan template <em>component</em> akordeon "indeks" di <em>directory</em> <code>resources/views/components</code>
+                dari pada menumpuk di dalam <em>directory</em> <code>accordion</code> dengan template terkait accordion lainnya.</p>
+                <p>Blade memungkinkan kita menempatkan file <code>index.blade.php</code> dalam <em>directory template component</em>. Ketika <code>index.blade.php</code> ada untuk <em>component</em>itu akan dirender sebagai simpul "root" dari komponen. 
+                    Jadi, kita dapat terus menggunakan sintaks Blade yang sama seperti yang diberikan. Namun, kita akan menyesuaikan struktur direktori kami seperti</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>/resources/views/components/accordion/index.blade.php</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>/resources/views/components/accordion/item.blade.php</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3><strong>Data Properties/Attributes</strong></h3>  <!-- judul -->
+              <p>Karena <em>component</em> anonim tidak memiliki kelas terkait, bagaimana dapat membedakan data mana yang harus diteruskan ke <em>component</em> sebagai variabel dan <em>arrtibute</em> mana yang harus ditempatkan di <em>component arrtibute bag</em>.</p>
+              <p>Kita dapat menentukan <em>arrtibutes</em> mana yang dianggap variabel data menggunakan <code>@props</code> dibagian atas <em>Blade templat</em>. Jika ingin memberikan nilai default pada variabel data, kita dapat menentukan nama variabel sebagai kunci array dan nilai default sebagai nilai array</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;!-- /resources/views/components/alert.blade.php --></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>@props(['type' => 'info', 'message'])</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>&lt;div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}></code></pre>
+                  <pre data-prefix="4" class="text-success"><code>{{ $message }}</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>&lt;/div></code></pre>
+                </div>
+              </figure>
+              <p>Mengingat definisi komponen di atas, kita dapat membuat <em>component</em> seperti</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-alert type="error" :message="$message" class="mb-4"/></code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3><strong>Accessing Parent Data</strong></h3>  <!-- judul -->
+              <p>Saat kita ingin mengakses data dari komponen <em>parent</em> di dalam komponen turunan, kita dapat menggunakan <code>@aware</code>. Misal <em>component</em> menu kompleks yang terdiri dari &lt;x-menu> <em>parent</em> dan &lt;x-menu.item> <em>child</em>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-menu color="purple">&lt;/x-menu></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>&lt;x-menu.item>...&lt;/x-menu.item></code></pre>
+                  <pre data-prefix="3" class="text-success"><code>&lt;x-menu.item>...&lt;/x-menu.item></code></pre>
+                  <pre data-prefix="4" class="text-success"><code>&lt;/x-menu></code></pre>
+                </div>
+              </figure>
+              <p>Komponen &lt;x-menu> memiliki implementasi</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;!-- /resources/views/components/menu/index.blade.php --></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>@props(['color' => 'gray'])</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>&lt;ul {{ $attributes->merge(['class' => 'bg-'.$color.'-200']) }}></code></pre>
+                  <pre data-prefix="4" class="text-success"><code>{{ $slot }}</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>&lt;/ul></code></pre>
+                </div>
+              </figure>
+              <p>Karena <code>color</code> prop hanya diteruskan ke <em>parent</em> (&lt;x-menu>), maka tidak akan ada di &lt;x-menu.item> Namun, jika kita menggunakan direktif <code>@aware</code>, kita juga dapat membuatnya ada di &lt;x-menu.item></x-menu.item></p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;!-- /resources/views/components/menu/item.blade.php --></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>@aware(['color' => 'gray'])</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>&lt;li {{ $attributes->merge(['class' => 'text-'.$color.'-800']) }}></code></pre>
+                  <pre data-prefix="4" class="text-success"><code>{{ $slot }}</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>&lt;/li></code></pre>
+                </div>
+              </figure>
+              <p><code>@aware</code> tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke <em>component</em> induk melalui atribut HTML. Nilai <code>@props</code> default yang tidak secara eksplisit diteruskan ke <em>component</em> induk tidak dapat diakses oleh <code>@aware</code>.</p>
+            </div>
+          </div>
+  
+          <!-- footer -->
+          <footer class="footer p-10 bg-neutral text-neutral-content">
+            <div>
+              <span class="footer-title">Kelompok 2</span>
+            </div>
+            <div>
+              <span class="footer-title">NIM</span>
+              <a class="link link-hover">215150700111023</a>
+              <a class="link link-hover">215150700111024</a>
+              <a class="link link-hover">215150700111056</a>
+              <a class="link link-hover">215150701111005</a>
+              <a class="link link-hover">215150701111025</a>
+            </div>
+            <div>
+              <span class="footer-title">Nama</span>
+              <a class="link link-hover">Fauzan Zakaria Hermansah </a>
+              <a class="link link-hover">Candra Setiawan</a>
+              <a class="link link-hover">Aditya Permana Heriansyah</a>
+              <a class="link link-hover">Danish Alif Arsan</a>
+              <a class="link link-hover">Irfan Hanif Habibi</a>
+            </div>
+          </footer>
         </div>
           <div class="drawer-side">
             <label for="my-drawer" class="drawer-overlay"></label>
             <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
               <!-- Sidebar content here -->
-              <h2 class="card-title"><strong>Anggota Kelompok</strong></h2>
-              <!-- <li><a>Sidebar Item 1</a></li>
-              <li><a>Sidebar Item 2</a></li> -->
+              <h2 class="card-title text-2xl"><strong>Anggota Kelompok</strong></h2>
+              <br>
+              
+              <div class="card w-100 bg-base-100 shadow-xl">
+                  
+                  <h2><strong>Fauzan Zakaria Hermansah</strong></h2>       <!-- subjudul -->
+                  <p>215150700111023</p>   <!-- penjelasan -->
+                  <figure>
+
+                  </figure>
+                  <br>
+          
+              </div>
+              <br>
+              <div class="card w-100 bg-base-100 shadow-xl">
+               
+                  <h2><strong>Candra Setiawan</strong></h2>       <!-- subjudul -->
+                  <p>215150700111024</p>   <!-- penjelasan -->
+                  <figure>
+
+                  </figure>
+      
+                  <br>
+              </div>
+              <br>
+              <div class="card w-100 bg-base-100 shadow-xl">
+                
+                  <h2><strong>Aditya Permana Heriansyah</strong></h2>       <!-- subjudul -->
+                  <p>215150700111056</p>   <!-- penjelasan -->
+                  <figure>
+
+                  </figure>
+      
+                    <br>
+              </div>
+              <br>
+              <div class="card w-100 bg-base-100 shadow-xl">
+                  
+                  <h2><strong>Danish Alif Arsan</strong></h2>       <!-- subjudul -->
+                  <p>215150701111005</p>   <!-- penjelasan -->
+                 <figure>
+                    
+                  </figure>
+                  <br>
+          
+              </div>
+              <br>
+              <div class="card w-100 bg-base-100 shadow-xl">
+           
+                  <h2><strong>Irfan Hanif Habibi</strong></h2>       <!-- subjudul -->
+                  <p>215150701111025</p>   <!-- penjelasan -->
+                  <figure>
+      
+                  </figure>
+
+              <br>
+              </div>
             </ul>
           </div>
           <!-- close drawer -->
@@ -950,66 +927,6 @@
                 <p><code>name="title"</p></code>
                 <p><code>value="title"</p></code>
                 <p><code>@required($user->isAdmin()) /></p></code>
-
-        <!-- Fauzan -->
-
-        <h3>#Anonymous Index Components</h3>
-            <p>Ketika <em>component</em> terdiri dari bari <em>Blade template</em>, kita ingin mengelompokkan <em>component</em> yang ada dalam satu <em>directory</em>.
-                Misal <em>component</em> "accordion" dengan struktur direktori.</p>
-            <p><code>/resources/views/components/accordion.blade.php</code></p> 
-            <p><code>/resources/views/components/accordion/item.blade.php</code></p>
-
-            <p>Struktur <em>directory</em> ini memungkinkan kita untuk merender <em>component</em> accordion dan itemnya seperti</p>
-            <p><code>&lt;x-accordion></code></p>
-            <p><code>&lt;x-accordion.item></code></p>        
-            <p><code>...</code></p>            
-            <p><code>&lt;/x-accordion.item></code></p>        
-            <p><code>&lt;/x-accordion></code></p>
-
-            <p>Namun untuk merender accordion melalui <code>x-accordion</code>, kita harus menempatkan template <em>component</em> akordeon "indeks" di <em>directory</em> <code>resources/views/components</code>
-            dari pada menumpuk di dalam <em>directory</em> <code>accordion</code> dengan template terkait accordion lainnya.</p>
-            <p>Blade memungkinkan kita menempatkan file <code>index.blade.php</code> dalam <em>directory template component</em>. Ketika <code>index.blade.php</code> ada untuk <em>component</em>itu akan dirender sebagai simpul "root" dari komponen. 
-                Jadi, kita dapat terus menggunakan sintaks Blade yang sama seperti yang diberikan. Namun, kita akan menyesuaikan struktur direktori kami seperti</p>
-            <p><code>/resources/views/components/accordion/index.blade.php</code></p>
-            <p><code>/resources/views/components/accordion/item.blade.php</code></p>
-            <br>
-
-        <h3>#Data Properties/Attributes</h3>
-            <p>Karena <em>component</em> anonim tidak memiliki kelas terkait, bagaimana dapat membedakan data mana yang harus diteruskan ke <em>component</em> sebagai variabel dan <em>arrtibute</em> mana yang harus ditempatkan di <em>component arrtibute bag</em>.</p>
-            <p>Kita dapat menentukan <em>arrtibutes</em> mana yang dianggap variabel data menggunakan <code>@props</code> dibagian atas <em>Blade templat</em>. Jika ingin memberikan nilai default pada variabel data, kita dapat menentukan nama variabel sebagai kunci array dan nilai default sebagai nilai array</p>
-            <p><code>&lt;!-- /resources/views/components/alert.blade.php --></code></p>
-            <p><code>@props(['type' => 'info', 'message'])</code></p>
-            <p><code>&lt;div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}></code></p>
-            <p><code>{{ $message }}</code></p>
-            <p><code>&lt;/div></code></p>
-
-            <p>Mengingat definisi komponen di atas, kita dapat membuat <em>component</em> seperti</p>
-            <p><code>&lt;x-alert type="error" :message="$message" class="mb-4"/></code></p>
-            <br>
-
-        <h3>#Accessing Parent Data</h3>
-            <p>Saat kita ingin mengakses data dari komponen <em>parent</em> di dalam komponen turunan, kita dapat menggunakan <code>@aware</code>. Misal <em>component</em> menu kompleks yang terdiri dari &lt;x-menu> <em>parent</em> dan &lt;x-menu.item> <em>child</em>.</p>
-            <p><code>&lt;x-menu color="purple">&lt;/x-menu></code></p>
-            <p><code>&lt;x-menu.item>...&lt;/x-menu.item></code></p>
-            <p><code>&lt;x-menu.item>...&lt;/x-menu.item></code></p>
-            <p><code>&lt;/x-menu></code></p>
-
-            <p>Komponen &lt;x-menu> memiliki implementasi</p>
-            <p><code>&lt;!-- /resources/views/components/menu/index.blade.php --></code></p>
-            <p><code>@props(['color' => 'gray'])</code></p>
-            <p><code>&lt;ul {{ $attributes->merge(['class' => 'bg-'.$color.'-200']) }}></code></p>
-            <p><code>{{ $slot }}</code></p>
-            <p><code>&lt;/ul></code></p>
-
-            <p>Karena <code>color</code> prop hanya diteruskan ke <em>parent</em> (&lt;x-menu>), maka tidak akan ada di &lt;x-menu.item> Namun, jika kita menggunakan direktif <code>@aware</code>, kita juga dapat membuatnya ada di &lt;x-menu.item></x-menu.item></p>
-            <p><code>&lt;!-- /resources/views/components/menu/item.blade.php --></code></p>
-            <p><code>@aware(['color' => 'gray'])</code></p>
-            <p><code>&lt;li {{ $attributes->merge(['class' => 'text-'.$color.'-800']) }}></code></p>
-            <p><code>{{ $slot }}</code></p>
-            <p><code>&lt;/li></code></p>
-
-            <p><code>@aware</code> tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke <em>component</em> induk melalui atribut HTML. Nilai <code>@props</code> default yang tidak secara eksplisit diteruskan ke <em>component</em> induk tidak dapat diakses oleh <code>@aware</code>.</p>
-            
 
         <!-- David -->
         <h3>Anonymous Components Namespaces</h3>
