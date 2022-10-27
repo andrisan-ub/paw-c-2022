@@ -278,6 +278,206 @@
     </div>
 
     <!-- Put this part before </body> tag -->
+
+    <input type="checkbox" id="displaydata_html" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">HTML Entity Encoding</h3>
+        <p class="py-4">
+          Cara menampilkan data yang akan diteruskan ke tampilan Blade dengan
+          menuliskan :
+          <xmp>
+            Route::get('/', function () {
+            return view('welcome', ['name' => 'Samantha']);
+            })
+          </xmp>
+          Atau saat kita akan menampilkan ( contoh : nama) kita juga dapat
+          menuliskan seperti ini
+          <xmp>Hello, {{$name}}</xmp>
+          Statement {{}} blade akan secara otomatis terkirim melalui fungsi html
+          special chars PHP. Tidak ada batasan untuk menampilkan konten yang
+          akan ditampilkan dalam Blade. <br />
+          <b>Displaying Unescaped Data</b><br />
+          Secara default, pernyataan Blade {{}} secara otomatis dikirim melalui
+          fungsi htmlspecialchars PHP untuk mencegah serangan XSS. Jika Anda
+          tidak ingin data Anda di-escape, Anda dapat menggunakan sintaks
+          berikut:
+          <xmp>Halo, {!! $name!!}.</xmp>
+        </p>
+        <div class="modal-action">
+          <label for="displaydata_html" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="displaydata_blade" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Blade & Javascript Framework</h3>
+        <p class="py-4">
+          Karena dalam JS juga banyak menggunakan tanda “{}” maka dalam blade
+          kita harus menggunakan tanda “@” untuk memberi tahu mesin rendering
+          blade Contoh :
+          <xmp>
+            <h1>Laravel</h1>
+            Hello, @{{ name }}.
+          </xmp>
+          Dalam contoh ini, simbol @ akan dihapus oleh Blade; namun, ekspresi {{
+            name }} akan tetap tidak tersentuh oleh mesin Blade, memungkinkannya
+          dirender oleh kerangka kerja JavaScript Anda. Simbol @ juga dapat
+          digunakan untuk menghindari arahan Blade: Contoh :
+          <xmp> {{-- Blade template --}}
+            @@if()
+            <!-- HTML output -->
+            @if()
+          </xmp>
+          <b>Rendering JSON</b><br />
+          Rendering JSON digunakan untuk menginisialisasi variabel JS yang ada
+          pada file “.json”. bisa berupa format data number, String, Boolean,
+          Array, Object, NULL Contoh :
+          <xmp>
+            <script>
+              var app = <?php echo json_encode($array); ?>;
+            </script>
+          </xmp>
+          Namun, alih-alih memanggil json_encode secara manual, Anda dapat
+          menggunakan arahan metode Illuminate\Support\Js::from. Metode from
+          menerima argumen yang sama dengan fungsi json_encode PHP; namun, ini
+          akan memastikan bahwa JSON yang dihasilkan diloloskan dengan benar
+          untuk dimasukkan dalam tanda kutip HTML. Metode from akan
+          mengembalikan pernyataan JavaScript string JSON.parse yang akan
+          mengubah objek atau larik yang diberikan menjadi objek JavaScript yang
+          valid:
+          <xmp>
+            <script>
+              var app = {
+                {
+                  Illuminate\ Support\ Js::from($array)
+                }
+              };
+            </script>
+          </xmp>
+          <b>The @verbatim Directive</b><br />
+          ika Anda menampilkan variabel JavaScript di sebagian besar template
+          Anda, Anda dapat membungkus HTML di direktif @verbatim sehingga Anda
+          tidak perlu mengawali setiap pernyataan gema Blade dengan simbol @ :
+          Contoh :
+          <xmp> @verbatim
+            <div class="container">
+              Hello, {{ name }}.
+            </div>
+            @endverbatim
+          </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="displaydata_blade" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_if" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">if Statements</h3>
+        <p class="py-4">
+          Anda dapat membuat pernyataan if menggunakan direktif @if, @elseif,
+          @else, dan @endif.
+          <xmp>
+            @if (count($records) === 1)
+            I have one record!
+            @elseif (count($records) > 1)
+            I have multiple records!
+            @else
+            I don't have any records!
+            @endif
+          </xmp>
+          Untuk kenyamanan, Blade juga menyediakan @unless directive:
+          <xmp>
+            @unless (Auth::check())
+            You are not signed in.
+            @endunless
+          </xmp>
+          Selain direktif bersyarat yang telah dibahas, direktif @isset dan
+          @empty dapat digunakan sebagai pintasan yang nyaman untuk fungsi PHP
+          masing-masing:
+          <xmp>
+            @isset($records)
+            // $records is defined and is not null...
+            @endisset
+  
+            @empty($records)
+            // $records is "empty"...
+            @endempty
+          </xmp>
+          <b>Authentication Directives</b><br />
+          @auth dan @guest dapat digunakan untuk menentukan dengan cepat apakah
+          pengguna saat ini diautentikasi atau merupakan guest:
+          <xmp>
+            @auth
+            // The user is authenticated...
+            @endauth
+  
+            @guest
+            // The user is not authenticated...
+            @endguest
+          </xmp>
+          Jika diperlukan, Anda dapat menentukan penjaga otentikasi yang harus
+          diperiksa saat menggunakan arahan @auth dan @guest:
+          <xmp>
+            @guest directives:
+  
+            @auth('admin')
+            // The user is authenticated...
+            @endauth
+  
+            @guest('admin')
+            // The user is not authenticated…
+            @endguest
+          </xmp>
+          <b>Environment Directives</b><br />
+          Anda dapat memeriksa apakah aplikasi berjalan di lingkungan produksi
+          menggunakan arahan @production:
+          <xmp>
+            @production
+            // Production specific content...
+            @endproduction
+          </xmp>
+          Atau, Anda dapat menentukan apakah aplikasi berjalan di lingkungan
+          tertentu menggunakan direktif @env:
+          <xmp>
+            @env('staging')
+            // The application is running in "staging"...
+            @endenv
+  
+            @env(['staging', 'production'])
+            // The application is running in "staging" or "production"...
+            @endenv
+          </xmp>
+          <b>Section Directives</b><br />
+          Anda dapat menentukan apakah bagian pewarisan templat memiliki konten
+          menggunakan arahan @hasSection:
+          <xmp>
+            @hasSection('navigation')
+            <div class="pull-right">
+              @yield('navigation')
+            </div>
+  
+            <div class="clearfix"></div>
+            @endif
+            Anda dapat menggunakan arahan section Missing untuk menentukan apakah suatu bagian tidak memiliki konten:
+            @sectionMissing('navigation')
+            <div class="pull-right">
+              @include('default-navigation')
+            </div>
+            @endif
+          </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_if" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+
     <input type="checkbox" id="components_rendering" class="modal-toggle" />
   <div class="modal">
     <div class="modal-box w-11/12 max-w-5xl">
