@@ -376,10 +376,302 @@
                     <img src="/kelompok 1/public/img/raw.png" alt="" class="">
                 </div>
 
+                 <!-- Fingka -->
+                 <div class="mt-5 Comments text-white">
+                    <h1 class="font-bold text-xl">Comments</h1>
+                    <p class="mt-3">Blade memungkinkan anda untuk menentukan komentar dalam pandangan anda. Namun,
+                        berbeda dengan komentar pada HTML, komentar blade tidak disertakan dalam HTML yang
+                        dikembalikan oleh aplikasi anda:</p>
+                    <p class="w-fit px-3 bg-black text-white">{{-- This comment will not be present in the rendered HTML --}}</p>
+                </div>
+
+                <div class="mt-5 text-white Components">
+                    <h1 class="font-bold text-xl">Components</h1>
+                    <p class="mt-3">Komponen dan slot memberikan manfaat yang serupa dengan sections, layouts, dan includes.
+                        Namun, beberapa orang mungkin menganggap model komponen dan slot lebih mudah dipahami.
+                        Untuk menulis komponen, terdapat dua pendekatan, yaitu komponen berbasis kelas dan
+                        komponen anonim.
+                        </p>
+                    <h1 class="mt-3 text-xl font-semibold">Komponen Berbasis Kelas</h1>
+                    <p class="mt-3">untuk menggunakan pendekatan ini anda dapat menggunakan perintah make:component
+                        artisan. Untuk mengilustrasikan cara menggunakan komponen, kita akan membuat komponen
+                        Alert sederhana. Maka, perintah make:component akan menaruh komponen tersebut pada
+                        direktori app/View/Components.</p>
+                    <p class="w-fit px-3 bg-black text-white">php artisan make:component Alert</p>
+                    <p class="mt-3">Perintah make:component juga akan membuat tampilan untuk komponen tersebut. Tampilan
+                        akan ditempatkan di direktori resources/views/components. Saat menulis komponen
+                        untuk aplikasi anda sendiri, komponen secara otomatis ditemukan dalam direktori
+                        app/View/Components dan direktori resources/views/components, jadi biasanya
+                        tidak diperlukan registrasi komponen lebih lanjut.</p>
+                    <p class="mt-3">Anda juga dapat membuat komponen di dalam sub direktori berikut:</p>
+                    <p class="w-fit px-3 bg-black text-white">php artisan make:component forms.input --view</p>
+                    <p class="mt-3">Perintah di atas akan membuat komponen Input di direktori
+                        app/View/Components/FormS dan tampilan akan ditempatkan di direktori
+                        resources/views/components.forms.
+                        </p>
+                    <h1 class="mt-3 text-xl font-semibold">Komponen Anonim</h1>
+                    <p class="mt-3">Jika anda ingin membuat komponen anonim (komponen dengan hanya template Blade dan tanpa
+                        kelas). Anda dapat menggunakan --view flag saat menjalankan perintah
+                        make:component:</p>
+                    <p class="w-fit px-3 bg-black text-white">php artisan make:component forms.input --view</p>
+                    <p class="mt-3">Perintah di atas akan membuat file Blade di
+                        resources/views/components.forms/input.blade.php yang dapat di render
+                        sebagai komponen melalui <x-forms.input />.</p>
+                    
+
+                </div>
+
+                <div class="Rendering Components mt-5 text-white">
+                    <h1 class="font-bold text-xl">Rendering Cmponents</h1>
+                    <p class="mt-3">Untuk menampilkan komponen dapat menggunakan tag komponen Blade dalam salah satu
+                        template Blade. Tag komponen blade dimulai dengan string x- diikuti dengan Kebab Case dari
+                        kelas komponen :</p>
+                    <p class="w-fit px-3 bg-black text-white">&lt;x-alert/&gt;</p>
+                    <p class="w-fit px-3 bg-black text-white">&lt;x-user-profile/&gt;</p>
+                    <p class="mt-3">Jika kelas komponen bersarang lebih dalam di dalam direktori app/View/Components, anda
+                        dapat menggunakan karakter untuk menunjukan direktori bersarang. Misalnya, jika kita
+                        mengasumsikan sebuah komponen terletak di app/View/Components/Inputs/Button.php, kita
+                        dapat merendernya seperti ini </p>
+                    <p class="w-fit px-3 bg-black text-white">&lt;x-inputs.button/&gt;</p>
+                    
+                </div>
+
+                <div class="Passing Data mt-5 text-white">
+                    <h1 class="font-bold text-xl">Passing Data To Components</h1>
+                    <p class="mt-3">Anda dapat meneruskan data ke komponen blade menggunakan atribut HTML. Hard-coded, nilai
+                        primitif dapat diteruskan ke komponen menggunakan string atribut HTML sederhana. Ekspresi
+                        dan variabel PHP harus diteruskan ke komponen melalui atribut yang menggunakan karakter
+                        sebagai awalan :</p>
+                    <p class="w-fit bg-black px-3">&lt; x-alert type="error" :message="$message"/ &gt;</p>
+                    <p class="mt-3 mb-5">Anda harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua
+                        properti publik pada komponen akan secara otomatis tersedia untuk tampilan komponen. Tidak
+                        perlu meneruskan data ke tampilan dari metode render. Saat komponen anda dirender, anda
+                        dapat menampilkan konten variabel publik komponen anda dengan menggunakan variabel
+                        berdasarkan nama :</p>
+                    <img src="/kelompok 1/public/img/passing.png" alt="" class="">
+                </div>
+
+                <div class="Component Attributes text-white mt-5">
+                    <h1 class="text-xl font-bold">Component Attributes</h1>
+                    <p class="mt-3">Kami telah memeriksa cara meneruskan atribut data ke komponen; namun, terkadang Anda
+                        mungkin perlu menentukan atribut HTML tambahan, seperti class, yang bukan merupakan
+                        bagian dari data yang diperlukan agar komponen berfungsi. Biasanya, Anda ingin meneruskan
+                        atribut tambahan ini ke elemen root template komponen. Misalnya, bayangkan kita ingin
+                        merender komponen alert seperti ini:
+                        </p>
+                    <p class="px-3 bg-black w-fit">&lt; x-alert type="error" :message="$message" class="mt-4"/ &gt;</p>
+                    <p class="mt-3">Semua atribut yang bukan bagian dari konstruktor komponen akan secara otomatis ditambahkan
+                        ke "tas atribut" komponen. Tas atribut ini secara otomatis tersedia untuk komponen melalui
+                        variabel $attributes. Semua atribut dapat dirender dalam komponen dengan menggunakan
+                        variabel ini:</p>
+                    <img src="/kelompok 1/public/img/compattr.png" alt="">
+                </div>
+
+                <div class="text-white mt-5 Reserved Keywords">
+                    <h1 class="font-bold text-xl">Reserved Keywords</h1>
+                    <p class="mt-3">Secara default, beberapa kata kunci dicadangkan untuk penggunaan internal Blade untuk
+                        merender komponen. Kata kunci berikut tidak dapat didefinisikan sebagai properti publik atau
+                        nama metode dalam komponen Anda:
+                        </p>
+                    <p>
+                        <ul>
+                            <li>1. data</li>
+                            <li>2. render</li>
+                            <li>3. resolveView</li>
+                            <li>4. shouldRender</li>
+                            <li>5. View</li>
+                            <li>6. withAttributes</li>
+                            <li>7. withName</li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="Slots mt-5 text-white">
+                    <h1 class="font-bold text-xl">Slots</h1>
+                    <p class="mt-3 mb-5">Anda akan sering diharuskan untuk meneruskan konten tambahan ke komponen anda melalui
+                        slot. Slot komponen dirender dengan memanggil variabel $slot. Untuk menjelajahi konsep ini,
+                        mari kita bayangkan bahwa komponen alert memiliki markup berikut:</p>
+                    <img src="/kelompok 1/public/img/slots.png" alt="">
+                    <p class="mt-5 mb-5">Kita dapat meneruskan konten ke slot dengan memasukan konten ke dalam komponen:</p>
+                    <img src="/kelompok 1/public/img/slots2.png" alt="">
+                    <p class="mt-5 mb-5">Terkadang komponen mungkin perlu membuat beberapa slot berbeda di lokasi berbeda di dalam
+                        komponen. Mari kita ubah komponen alert kita untuk memungkinkan untuk memasukan slot
+                        “judul” :</p>
+                    <img src="/kelompok 1/public/img/slots3.png" alt="" class="">
+                    <p class="mt-5 mb-5">Anda dapat menentukan konten slot bernama menggunakan tag x-slot. Konten apa pun yang
+                        tidak berada dalam tag x-slot eksplisit akan diteruskan ke komponen dalam variabel $slot:</p>
+                        <img src="/kelompok 1/public/img/slots4.png" alt="" class="">
+                    </div>
 
 
+
+                <!-- Kevin -->
+                <div class="Inline Component Views mt-5 text-white">
+                    <h1 class="text-xl font-bold">Inline Component Views</h1>
+                    <p class="mt-5 mb-5">
+                        Untuk komponen yang sangat kecil, mungkin terasa rumit untuk mengelola kelas komponen dan template komponen view. Untuk alasan ini, 
+                        Kita bisa return markup komponen langsung dari render method:
+                    </p>
+                    <img src="/kelompok 1/public/img/inline.png" alt="">
+
+                    <h1 class="text-xl font-semibold #generating inline view components">
+                        Generating Inline View Components
+                    </h1>
+
+                    <p class="mt-3 mb-5">Untuk membuat komponen yang merender inline view, kita dapat menggunakan opsi inline saat menjalankan perintah make:component</p>
+                    <img src="/kelompok 1/public/img/generating.png" alt="">
+                </div>
+
+                <div class="Dynamic Components text-white mt-5">
+                    <h1 class="font-bold text-xl">Dynamic Components</h1>
+                    <p class="mt-3 mb-5">Terkadang kita mungkin perlu merender komponen tetapi tidak tahu komponen mana yang harus dirender sampai runtime. 
+                        Dalam situasi ini, kita dapat menggunakan komponen bawaan Laravel yakni dynamic-component untuk merender komponen berdasarkan nilai runtime atau variable</p>
+                    <img src="/kelompok 1/public/img/dynamic.png" alt="">
+                </div>
+
+                <div class="mt-5 text-white Manualy Registering Components">
+                    <h1 class="font-bold text-xl">Manually Registering Components</h1>
+                    <p class="mt-3 mb-5">Saat menulis komponen untuk aplikasi kita sendiri, komponen secara otomatis ditemukan dalam direktori app/View/Components dan direktori resources/views/components.
+                        Namun, jika kita membuat package yang menggunakan komponen Blade atau menempatkan komponen di direktori non-konvensional, kita perlu meregister atau mendaftarkan kelas komponen dan alias tag HTML-nya secara manual sehingga Laravel tahu di mana tempat menemukan komponen tersebut. Kita biasanya harus meregister atau mendaftarkan komponen kita dalam boot method dari penyedia layanan package kita
+                        </p>
+                    <img src="/kelompok 1/public/img/Manually.png" alt="" class="">
+                    <p class="mt-5 mb-5">
+                        Setelah komponen kita terdaftar, komponen tersebut dapat dirender menggunakan alias tag-nya:
+                    </p>
+                    <img src="/kelompok 1/public/img/alert.png" alt="" class="">
+
+                    <h1 class="font-semibold text-xl">Autoloading Package Components</h1>
+                    <p class="mt-3 mb-5">Atau, kita dapat menggunakan componentNamespace method untuk memuat kelas komponen secara otomatis berdasarkan konvensi. Misalnya, package Nightshade 
+                        mungkin memiliki komponen Calendar dan ColorPicker yang berada dalam namespace Package\Views\Components</p>
+                    <img src="/kelompok 1/public/img/Autoloading.png" alt="" class="">
+                    <p class="mt-5 mb-5">
+                        Ini akan memungkinkan penggunaan package komponen oleh vendor namespace mereka menggunakan syntax package-name::
+                    </p>
+                    <img src="/kelompok 1/public/img/package.png" alt="" class="">
+                    <p class="mt-5">
+                        Blade akan secara otomatis mendeteksi kelas yang dihubungkan ke komponen ini dengan pascal-casing nama komponen. Subdirektori juga didukung menggunakan notasi "dot".
+                    </p>
+                </div>
+
+                <div class="mt-5 Anonymous Components">
+                    <h1 class="font-bold text-xl">Anonymous Components</h1>
+                    <p class="mt-3 mb-5">
+                        Mirip dengan komponen inline, komponen anonymous menyediakan mekanisme untuk mengelola komponen melalui satu file. Namun, komponen anonymous menggunakan satu view file 
+                        dan tidak memiliki kelas yang terkait. Untuk mendefinisikan komponen anonymous, kita hanya perlu menempatkan template Blade di dalam direktori resources/views/components. 
+                        Misalnya, dengan asumsi kita telah mendefinisikan sebuah komponen di resources/views/components/alert.blade.php, kita cukup merendernya seperti ini:
+                    </p>
+                    <img src="/kelompok 1/public/img/alert2.png" alt="" class="">
+                    <p class="mt-5 mb-5">
+                        Kita dapat menggunakan karakter [.] untuk menunjukkan jika komponen berada lebih dalam di dalam direktori components. Misalnya, dengan asumsi komponen didefinisikan di 
+                        resources/views/components/inputs/button.blade.php, kita dapat merendernya seperti ini:
+                    </p>
+                    <img src="/kelompok 1/public/img/inputs.png" alt="" class="">
+                </div>
+
+                <div class="mt-5 text-white Anonymous Index Components">
+                    <h1 class="text-xl font-bold">Anonymous Index Components</h1>
+                    <p class="mt-3 mb-5">
+                        Terkadang, ketika sebuah komponen terdiri dari banyak template Blade, kita mungkin ingin mengelompokkan template komponen yang diberikan dalam satu direktori. 
+                        Misalnya, bayangkan komponen "accordion" dengan struktur direktori berikut:
+                    </p>
+                    <p class="bg-black text-white px-2 w-fit">/resources/views/components/accordion.blade.php</p>
+                    <p class="mt-2 bg-black text-white px-2 w-fit">/resources/views/components/accordion/item.blade.php</p>
+                    <p class="mt-2 mb-5">
+                        Struktur direktori ini memungkinkan kita untuk merender komponen accordion dan itemnya seperti:
+                    </p>
+                    <img src="/kelompok 1/public/img/accordion.png" alt="">
+                    <p class="mt-5">Namun, untuk merender komponen accordion melalui x-accordion, kita terpaksa menempatkan “index” template komponen accordion di direktori 
+                        resources/views/components daripada menumpuknya di dalam direktori accordion dengan template terkait accordion lainnya.</p>
+                    <p class="mt-5">Untungnya, Blade memungkinkan kita untuk menempatkan file index.blade.php di dalam direktori template komponen. Ketika template index.blade.php ada untuk komponen, 
+                        itu akan dirender sebagai node "root" dari komponen. Jadi, kita dapat terus menggunakan syntax Blade yang sama seperti yang diberikan pada contoh di atas; namun, kita akan menyesuaikan struktur direktori kita seperti ini:</p>
+                        <p class="bg-black text-white px-2 w-fit">/resources/views/components/accordion/index.blade.php</p>
+                        <p class="mt-2 bg-black text-white px-2 w-fit">/resources/views/components/accordion/item.blade.php</p>
+                </div>
+                
+                <div class="mt-5 text-white Data Properties">
+                    <h1 class="font-bold text-xl">Data Properties/Attributes</h1>
+                    <p class="mt-3">Karena komponen anonymous tidak memiliki kelas terkait, kita mungkin bertanya-tanya bagaimana kita dapat membedakan data mana yang harus diteruskan ke komponen sebagai variabel dan atribut mana yang harus ditempatkan di komponen attribute bag.</p>
+                    <p class="mt-3 mb-5">Kita mungkin bisa menentukan atribut mana yang harus dianggap sebagai variable data menggunakan arahan @props di bagian atas komponen template Blade kita. Semua atribut lain pada komponen akan tersedia melalui komponen attribute bag. Jika kita 
+                        ingin memberikan nilai default pada variabel data, kita dapat menentukan nama variabel sebagai kunci array dan nilai default sebagai nilai array:</p>
+                    <img src="/kelompok 1/public/img/props.png" alt="" class="">
+                    <p class="mt-5 mb-5">Dengan definisi komponen di atas, kita dapat merender komponen seperti ini:</p>
+                    <img src="/kelompok 1/public/img/props2.png" alt="" class="">
+                </div>  
+
+                <div class="mt-5 text-white Accesing Parent Data">
+                    <h1 class="font-bold text-xl">Accesing Parent Data</h1>
+                    <p class="mt-3 mb-5">Terkadang kita mungkin ingin mengakses data dari komponen induk di dalam komponen turunan. Dalam kasus ini, kita dapat menggunakan arahan @aware. Misalnya, bayangkan kita sedang membangun komponen menu kompleks yang terdiri dari &lt;x-menu> sebagai induk dan &lt;x-menu.item> sebagai turunan:</p>
+                    <img src="/kelompok 1/public/img/accesing.png" alt="" class="">
+                    <p class="mt-5 mb-5">Komponen &lt;x-menu> mungkin memiliki implementasi seperti berikut:</p>
+                    <img src="/kelompok 1/public/img/accesing2.png" alt="" class="">
+                    <p class="mt-5 mb-5">Karena prop color hanya diteruskan ke induk (&lt;x-menu>), itu tidak akan tersedia di dalam &lt;x-menu.item>. Namun, jika kita menggunakan arahan @aware, kita juga dapat membuatnya tersedia di dalam &lt;x-menu.item>:</p>
+                    <img src="/kelompok 1/public/img/accesing3.png" alt="">
+                    <p class="mt-5">Dengan catatan : Arahan @aware tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke komponen induk melalui atribut HTML. Nilai default @props yang tidak secara eksplisit diteruskan ke komponen induk tidak dapat diakses oleh arahan @aware.</p>
+                </div>
                 
 
+                <!-- Asyam -->
+                <div class="Anonymous Component Namespaces mt-5 text-white">
+                  <h1 class="font-bold text-xl">Anonymous Components Namespaces</h1>
+                  <p class="mt-3">Mirip dengan komponen inline, komponen anonim menyediakan mekanisme untuk mengelola komponen dengan satu file. Namun, komponen anonim menggunakan file tampilan tunggal dan tidak memiliki kelas terkait. Untuk menentukan komponen anonim, 
+                      cukup tempatkan template blade Anda  di  direktori resources/views/components. Anda cukup merendernya seperti ini:</p>
+                  <p class="mt-3">Anda dapat menggunakan . Karakter yang menunjukkan apakah komponen lebih bersarang dalam direktori komponen. Misalnya, dengan asumsi komponen Anda didefinisikan di resources/views/components/inputs/button.blade.php Anda dapat merendernya seperti ini:</p>
+                  <h1 class="font-semibold text-xl mt-3">Anonymous Index Components</h1>
+                  <p class="mt-3">Terkadang, jika komponen terdiri dari beberapa template Blade, Anda mungkin ingin mengelompokkan template komponen tertentu ke dalam satu direktori. Misalnya, bayangkan komponen "akordeon" dengan struktur direktori berikut:</p>
+                  <p class="mt-3">Struktur direktori ini mendukung Anda untuk merender komponen akordeon dan itemnya seperti:</p>
+                  <p class="mt-3">Namun, untuk merender komponen akordeon dengan x-accordion, kita perlu menempatkan templat komponen akordeon "indeks" di direktori resources/views/components alih-alih menumpuknya di dalam direktori akordeon dengan templat terkait akordeon lainnya. </p>
+                  <p class="mt-3">Untungnya, Blade memungkinkan Anda untuk menempatkan file index.blade.php di  direktori template komponen. Jika sebuah komponen memiliki template index.blade.php, itu akan dirender sebagai simpul "root" dari komponen tersebut. Jadi kita dapat terus menggunakan sintaks Blade yang sama seperti  pada contoh di atas; namun, kami mengubah struktur direktori kami sebagai berikut:</p>
+                  
+                  <h1 class="mt-3 font-semibold text-xl">Data Properties/Attributes</h1>
+                  <p class="mt-3">Komponen anonim tidak memiliki kelas terkait, jadi Anda mungkin bertanya-tanya bagaimana cara membedakan data mana yang harus diteruskan ke komponen sebagai variabel dan atribut mana yang harus ditempatkan di tas atribut komponen. Anda dapat menentukan atribut mana yang dianggap sebagai variabel data menggunakan arahan @props di bagian atas template Blade komponen anda. 
+                      Semua atribut lain pada komponen akan tersedia melalui tas atribut komponen. Jika anda ingin memberikan nilai default pada variabel data, anda bisa menentukan nama variabel sebagai kunci array dan nilai default sebagai nilai array:</p>
+                  <p class="mt-3">Mengingat definisi komponen di atas, kami dapat membuat komponen seperti ini:</p>
+
+                  <h1 class="font-semibold text-xl mt-3">Accessing Parent Data</h1>
+                  <p class="mt-3">Terkadang Anda ingin mengakses data dari komponen induk di dalam komponen turunan. Dalam hal ini Anda dapat menggunakan arahan @aware. Misalnya, Anda membuat komponen menu kompleks yang terdiri dari  <x-menu> induk dan <x-menu.item> anak:
+                      Komponen &lt;x-menu> mungkin memiliki implementasi seperti berikut:
+                      </p>
+                  <p class="mt-3">Karena prop warna hanya diteruskan ke induk (&lt;x-menu>), itu tidak akan tersedia di dalam &lt;x-menu.item>. Namun, itu juga dapat tersedia di dalam &lt;x-menu.item> menggunakan direktif @aware:</p>
+                  <p class="mt-3">Arahan @aware tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke komponen induk melalui atribut HTML. Nilai default untuk @props yang tidak secara eksplisit diteruskan ke komponen induk tidak dapat diakses oleh direktif @aware.</p>
+
+                  <h1 class="text-xl font-semibold">Anonymous Components Namespaces</h1>
+                  <p class="mt-3">Seperti disebutkan sebelumnya, komponen anonim biasanya ditentukan dengan menempatkan template Blade di direktori resources/views/components. Namun, anda mungkin ingin mendaftarkan jalur komponen anonim lainnya dengan Laravel selain jalur default.</p>
+                  <p class="mt-3">Misalnya, jika Anda membuat aplikasi pemesanan liburan, Anda dapat menempatkan komponen anonim yang terkait dengan pemesanan penerbangan di direktori resource/views/flights/books/components. Untuk memberi tahu Laravel di mana lokasi komponen anonim ini, Anda dapat menggunakan metode anonymousComponentNamespace yang disediakan oleh fasad Blade.</p>
+                  <p class="mt-3">Metode anonymousComponentNamespace menerima "jalur" ke lokasi komponen anonim sebagai argumen pertama, dan "namespace" di mana komponen harus ditempatkan sebagai argumen kedua. Seperti yang Anda lihat pada contoh di bawah, "namespace" dimulai dengan nama komponen saat komponen dirender. Biasanya, metode ini harus dipanggil dari metode boot salah satu penyedia layanan aplikasi anda:</p>
+                  <p class="mt-3">Dengan contoh di atas, Anda dapat merender komponen panel yang ada di dalam direktori komponen yang baru didaftarkan seperti:</p>
+              </div>
+
+              <div class="mt-5 text-white Building Layouts">
+                  <h1 class="text-xl font-bold">Building Layouts</h1>
+                  <h1 class="text-xl font-semibold mt-3">Layouts Using Components</h1>
+                  <p class="mt-3">Sebagian besar aplikasi web mempertahankan tata letak umum yang sama di beberapa halaman. Akan sangat merepotkan dan sulit untuk memelihara aplikasi jika saya harus membangun kembali seluruh tata letak HTML untuk setiap tampilan yang saya buat. Untungnya, lebih mudah untuk mendefinisikan tata letak ini sebagai satu Blade Component lalu menggunakannya di seluruh aplikasi anda.</p>
+                  <h1 class="text-xl font-semibold mt-3">1. Defining The Layout Components</h1>
+                  <p class="mt-3">Sebagai contoh bayangkan kita sedang membuat aplikasi to do list. Kita mungkin akan mendefinisikan tata letak yang terihat seperti berikut:</p>
+                  <h1 class="tetx-xl font-semibold mt-3">2. Applying The Layout Component</h1>
+                  <p class="mt-3">Setelah mendefinisikan tata letak, kita akan membuat tampilan Blade yang akan menggunakan komponen tersebut. Dalam contoh ini, kita akan mendefinisikan tampilan sederhana yang menampilkan daftar tugas kita:</p>
+                  <p class="mt-3">Ingat, konten yang dimasukkan ke dalam komponen akan diberikan ke variabel $slot default di dalam komponen layout kita. Seperti yang telah anda sadari, tata letak kami juga mengikuti slot $title jika tersedia; jika tidak, judul default akan ditampilkan. Kita juga bisa memasukkan custom title dari tampilan daftar tugas kita dengan menggunakan standard slot syntax yang dibahas dalam dokumentasi component:</p>
+                  <p class="mt-3">Sekarang setelah kita mendefinisikan tampilan tata letak dan daftar tugas, kita hanya perlu mengembalikan tampilan tugas dari rute:</p>
+
+                  <h1 class="text-xl font-semibold mt-3">Layout Using Template Inheritance</h1>
+                  <h1 class="text-xl font-semibold mt-3">1. Defining A Layout</h1>
+                  <p class="mt-3">Layouts juga dapat dibuat melalui ”template inheritance”. Ini adalah cara utama membangun aplikasi sebelum pengenalan komponen.</p>
+                  <h1 class="text-cl font-semibold mt-3">2.Exteding A Layout</h1>
+                  <p class="mt-3">Saat mendefinisikan tampilan anak, gunakan perintah @extends Blade untuk menentukan tata letak mana yang harus "diwarisi” atau “inherit" oleh tampilan anak. Tampilan yang memperluas tata letak Blade dapat menyuntikkan konten ke bagian tata letak menggunakan arahan @section.</p>
+              </div>
+
+              <div class="Forms mt-3 text-white">
+                  <h1 class="font-bold text-xl">Forms</h1>
+                  <h1 class="mt-3 font-semibold text-xl">CSRF Field</h1>
+                  <p class="mt-3">Setiap kali Anda mendefinisikan formulir HTML di aplikasi anda, anda harus menambahkan bidang token CSRF tersembunyi ke formulir sehingga middleware perlindungan CSRF dapat memvalidasi permintaan. Anda dapat menggunakan arahan @csrf Blade  untuk menjalankan token field.</p>
+                  <h1 class="mt-3 text-xl font-semibold">Method Field</h1>
+                  <p class="mt-3">Semenjak HTML forms tidak dapat membuat permintaan PUT, PATCH, atau DELETE, anda perlu menambahkan hidden_method fields untuk menipu kata kerja HTTP ini. @method Blade akan mengarahkan anda untuk membuat fields ini:</p>
+                  <h1 class="font-semibold text-xl">Validation Errors</h1>
+                  <p class="mt-3">Gunakan direktif @error untuk melihat pesan kesalahan validasi dengan cepat untuk atribut tertentu. Direktif @error dapat menggemakan variabel $message untuk menampilkan pesan kesalahan:</p>
+                  <p class="mt-3">Arahan @error mengkompilasi ke pernyataan "jika", jadi jika atribut tidak memiliki kesalahan, arahan @else dapat digunakan untuk merender konten:</p>
+                  <p class="mt-3">Anda mungkin dapat meneruskan nama kantong kesalahan tertentu sebagai parameter kedua ke @error directive untuk mengambil pesan kesalahan validasi pada halaman yang berisi beberapa formulir:</p>
+
+
+              </div>
 
 
               </div>
