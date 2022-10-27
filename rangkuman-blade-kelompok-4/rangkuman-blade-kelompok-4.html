@@ -721,6 +721,28 @@
           </div>
         </div>
         <!--END OF RENDERING COMPONENT-->
+        <!--Passing data to components-->
+        <div class="passingdatatocomponent">
+          <div class="ml-6 mt-10 pb-10">
+            <h2 class="text-red-900 text-2xl">PASSING DATA TO COMPONENTS</h2>
+            <p class=" text-black text-justify text-xl mb-5">
+              Anda dapat meneruskan data ke komponen blade menggunakan atribut HTML. Hard-coded, nilai
+              primitif dapat diteruskan ke komponen menggunakan string atribut HTML sederhana. Ekspresi
+              dan variabel PHP harus diteruskan ke komponen melalui atribut yang menggunakan karakter
+              sebagai awalan :
+              <br> <code>x-alert type="error" :message="$message"/>
+              </code>      <br>    
+              Anda harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua
+              properti publik pada komponen akan secara otomatis tersedia untuk tampilan komponen. Tidak
+              perlu meneruskan data ke tampilan dari metode render. Saat komponen anda dirender, anda
+              dapat menampilkan konten variabel publik komponen anda dengan menggunakan variabel
+              berdasarkan nama :
+              <br>
+              <code> div class="alert alert-{{ $type }}">
+                {{ $message     
+            div></code>
+        </div>
+        <!--End of Passing data to components-->
         </div>
       
       </div>
