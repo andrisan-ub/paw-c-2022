@@ -510,7 +510,38 @@
                           </p>
                       </div>
                       <!--END OF Loops Variabel-->
+                      <!--Conditional Classes-->
+                      <div class="ml-6 mt-10">
+                        <h2 class="text-red-900 text-2xl"> Conditional Classes</h2>
+                        <p class=" text-black text-justify text-xl mb-5">
+                            Direktif @classmengkompilasi string kelas CSS secara kondisional. Arahan menerima array
+                            kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan, sedangkan
+                            nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen
+                            tersebut akan selalu disertakan dalam daftar kelas yang dirender:
 
+
+                        <div class="bg-black rounded-md p-8">
+                            <code class="font-bold text-green-400 "> <br>
+                                @php <br>
+                                $isActive = false; <br>
+                                $hasError = true; <br>
+                            @endphp <br>
+                             
+                            <span @class([ 
+                                'p-4',
+                                'font-bold' => $isActive,
+                                'text-gray-500' => ! $isActive,
+                                'bg-red' => $hasError,
+                            ])></span>
+                             
+                            <span class="p-4 text-gray-500 bg-red"></span>
+                            
+                    </code>
+                        </div>
+
+                        </p>
+                    </div>
+                    <!--end of conditional clases-->
           </div>
         </section>
       </div>
