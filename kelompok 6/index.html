@@ -429,6 +429,357 @@ Blade akan secara otomatis mendeteksi kelas yang ditautkan ke komponen ini denga
   </div>
 
 
+    <input type="checkbox" id="bladeDirective_switch" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Switch Statements</h3>
+        <p class="py-4">
+          Switch statements dapat dibuat menggunakan direktif @switch, @case,
+          @break, @default dan @endswitch:
+          <xmp>
+            @switch($i)
+            @case(1)
+            First case...
+            @break
+            @case(2)
+            Second case...
+            @break
+            @default
+            Default case...
+            @endswitch
+          </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_switch" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_loops" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Loops</h3>
+        <p class="py-4">
+          Selain pernyataan bersyarat, Blade menyediakan arahan sederhana untuk
+          bekerja dengan struktur loop PHP. Sekali lagi, masing-masing arahan
+          ini berfungsi identik dengan rekan PHP mereka:
+          <xmp>
+            @for ($i = 0; $i < 10; $i++) The current value is {{ $i }} @endfor @foreach ($users as $user) <p>This is user {{ $user->id }}
+        </p>
+        @endforeach
+  
+        @forelse ($users as $user)
+        <li>{{ $user->name }}</li>
+        @empty
+        <p>No users</p>
+        @endforelse
+  
+        @while (true)
+        <p>I'm looping forever.</p>
+        @endwhile
+        </xmp>
+  
+        When using loops you may also skip the current iteration or end the
+        loop using the @continue and @break directives:
+        <xmp>
+          @foreach ($users as $user)
+          @if ($user->type == 1)
+          @continue
+          @endif
+  
+          <li>{{ $user->name }}</li>
+  
+          @if ($user->number == 5)
+          @break
+          @endif
+          @endforeach
+        </xmp>
+  
+        You may also include the continuation or break condition within the
+        directive declaration:
+        <xmp>
+          @foreach ($users as $user)
+          @continue($user->type == 1)
+  
+          <li>{{ $user->name }}</li>
+  
+          @break($user->number == 5)
+          @endforeach
+        </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_loops" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_loopsVar" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Loops Variable</h3>
+        <p class="py-4">
+          Saat melakukan iterasi melalui loop foreach, variabel $loop akan
+          tersedia di dalam loop Anda. Variabel ini menyediakan akses ke
+          beberapa bit informasi yang berguna seperti indeks loop saat ini dan
+          apakah ini adalah iterasi pertama atau terakhir melalui loop:
+          <xmp>
+            @foreach ($users as $user)
+            @if ($loop->first)
+            This is the first iteration.
+            @endif
+  
+            @if ($loop->last)
+            This is the last iteration.
+            @endif
+  
+            <p>This is user {{ $user->id }}</p>
+            @endforeach
+          </xmp>
+  
+          Jika Anda berada dalam loop bersarang, Anda dapat mengakses variabel
+          $loop loop induk melalui properti induk:
+          <xmp>
+            @foreach ($users as $user)
+            @foreach ($user->posts as $post)
+            @if ($loop->parent->first)
+            This is the first iteration of the parent loop.
+            @endif
+            @endforeach
+            @endforeach
+          </xmp>
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_loopsVar" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_conditional" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Conditional Classes</h3>
+        <p class="py-4">
+          Arahan @class mengkompilasi string kelas CSS secara kondisional.
+          Arahan menerima array kelas di mana kunci array berisi kelas atau
+          kelas yang ingin Anda tambahkan, sedangkan nilainya adalah ekspresi
+          boolean. Jika elemen array memiliki kunci numerik, elemen tersebut
+          akan selalu disertakan dalam daftar kelas yang dirender:
+          <xmp>
+  @php
+     $isActive = false;
+     $hasError = true;
+  @endphp
+  
+  @php
+     $isActive = false;
+     $hasError = true;
+  @endphp
+   
+  <span @class([
+     'p-4',
+     'font-bold' => $isActive,
+     'text-gray-500' => ! $isActive,
+     'bg-red' => $hasError,
+  ])></span>
+   
+  <span class="p-4 text-gray-500 bg-red"></span>
+   
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_conditional" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_additional" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Additional Classes</h3>
+        <p class="py-4">
+          Untuk kenyamanan, Anda dapat menggunakan @checked directive untuk dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan diperiksa kembali jika kondisi yang diberikan bernilai benar:
+  <xmp>
+  <input type="checkbox"
+         name="active"
+         value="active"
+         @checked(old('active', $user->active)) />
+  </xmp>
+  
+  Demikian juga, arahan @selected dapat digunakan untuk menunjukkan apakah opsi pilih yang diberikan harus "dipilih":
+  <xmp>
+  <select name="version">
+     @foreach ($product->versions as $version)
+         <option value="{{ $version }}" @selected(old('version') == $version)>
+             {{ $version }}
+         </option>
+     @endforeach
+  </select>
+  </xmp>
+  
+  Selain itu, arahan @disabled dapat digunakan untuk menunjukkan apakah elemen tertentu harus "dinonaktifkan":
+  <xmp>
+  <button type="submit" @disabled($errors->isNotEmpty())>Submit</button>
+  </xmp>
+  
+  Selain itu, direktif @readonly dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus "readonly":
+  <xmp>
+  <input type="email"
+         name="email"
+         value="email@laravel.com"
+         @readonly($user->isNotAdmin()) />
+  </xmp>
+  
+  Selain itu, arahan @required dapat digunakan untuk menunjukkan apakah elemen tertentu harus "diperlukan":
+  <xmp>
+  <input type="text"
+         name="title"
+         value="title"
+         @required($user->isAdmin()) />
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_additional" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_including" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Including Subviews</h3>
+        <p class="py-4">
+          Meskipun Anda bebas menggunakan direktif @include, komponen Blade menyediakan fungsionalitas serupa dan menawarkan beberapa manfaat dibandingkan direktif @include seperti pengikatan data dan atribut.
+  
+  Direktif @include Blade memungkinkan Anda menyertakan tampilan Blade dari dalam tampilan lain. Semua variabel yang tersedia untuk tampilan induk akan tersedia untuk tampilan yang disertakan:
+  <xmp>
+  <div>
+     @include('shared.errors')
+   
+     <form>
+         <!-- Form Contents -->
+     </form>
+  </div>
+  </xmp>
+  
+  Meskipun tampilan yang disertakan akan mewarisi semua data yang tersedia di tampilan induk, Anda juga dapat meneruskan larik data tambahan yang harus tersedia untuk tampilan yang disertakan:
+  <xmp>
+  @include('view.name', ['status' => 'complete'])
+  </xmp>
+  Jika Anda mencoba @menyertakan tampilan yang tidak ada, Laravel akan membuat kesalahan. Jika Anda ingin menyertakan tampilan yang mungkin ada atau tidak, Anda harus menggunakan direktif @includeIf:
+  <xmp>
+  @includeIf('view.name', ['status' => 'complete'])
+  </xmp>
+  Jika Anda ingin @menyertakan tampilan jika ekspresi boolean yang diberikan bernilai benar atau salah, Anda dapat menggunakan arahan @includeWhen dan @includeUnless:
+  <xmp>
+  @includeWhen($boolean, 'view.name', ['status' => 'complete'])
+   
+  @includeUnless($boolean, 'view.name', ['status' => 'complete'])
+  </xmp>
+  Untuk menyertakan tampilan pertama yang ada dari larik tampilan tertentu, Anda dapat menggunakan direktif includeFirst:
+  <xmp>
+  @includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])
+  </xmp>
+  
+  Notes!!	:	Anda harus menghindari penggunaan konstanta __DIR__ dan __FILE__ dalam tampilan Blade Anda, karena keduanya akan merujuk ke lokasi tampilan yang di-cache dan dikompilasi.
+  <br>
+  <br>
+  <b>Rendering Views For Collections</b><br>
+  Anda dapat menggabungkan loop dan memasukkan ke dalam satu baris dengan @each directive Blade:
+  <xmp>
+  @each('view.name', $jobs, 'job')
+  </xmp>
+  Argumen pertama @each directive adalah tampilan yang akan dirender untuk setiap elemen dalam array atau koleksi. Argumen kedua adalah larik atau koleksi yang ingin Anda ulangi, sedangkan argumen ketiga adalah nama variabel yang akan ditetapkan ke iterasi saat ini dalam tampilan. Jadi, misalnya, jika Anda mengulangi array pekerjaan, biasanya Anda ingin mengakses setiap pekerjaan sebagai variabel pekerjaan dalam tampilan. Kunci array untuk iterasi saat ini akan tersedia sebagai variabel kunci dalam tampilan.
+  
+  Anda juga dapat meneruskan argumen keempat ke @each directive. Argumen ini menentukan tampilan yang akan dirender jika array yang diberikan kosong.
+  <xmp>
+  @each('view.name', $jobs, 'job', 'view.empty')
+  </xmp>
+  
+  Notes!!	:	Tampilan yang dirender melalui @each tidak mewarisi variabel dari tampilan induk. Jika tampilan anak memerlukan variabel-variabel ini, Anda harus menggunakan arahan @foreach dan @include sebagai gantinya.
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_including" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_directive" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">The @ONCE Directive</h3>
+        <p class="py-4">
+          Arahan @once memungkinkan Anda untuk menentukan bagian dari template yang hanya akan dievaluasi sekali per siklus rendering. Ini mungkin berguna untuk mendorong bagian tertentu dari JavaScript ke dalam header halaman menggunakan tumpukan. Misalnya, jika Anda merender komponen tertentu dalam satu lingkaran, Anda mungkin hanya ingin mendorong JavaScript ke header saat pertama kali komponen dirender:
+  <xmp>
+  @once
+     @push('scripts')
+         <script>
+             // Your custom JavaScript...
+         </script>
+     @endpush
+  @endonce
+  </xmp>
+  
+  Karena direktif @once sering digunakan bersama dengan direktif @push atau @prepend, direktif @pushOnce dan @prependOnce tersedia untuk kenyamanan Anda:
+  <xmp>
+  @pushOnce('scripts')
+     <script>
+         // Your custom JavaScript...
+     </script>
+  @endPushOnce
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_directive" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_raw" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">RAW PHP</h3>
+        <p class="py-4">
+          Dalam beberapa situasi, sangat berguna untuk menyematkan kode PHP ke dalam tampilan Anda. Anda dapat menggunakan direktif Blade @php untuk mengeksekusi blok PHP biasa di dalam template Anda:
+  <xmp>
+  @php
+     $counter = 1;
+  @endphp
+  </xmp>
+  
+  Jika Anda hanya perlu menulis satu pernyataan PHP, Anda dapat menyertakan pernyataan tersebut dalam direktif @php:
+  <xmp>
+  @php($counter = 1)
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_raw" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+    <input type="checkbox" id="bladeDirective_comments" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box w-11/12 max-w-5xl">
+        <h3 class="font-bold text-lg">Comments</h3>
+        <p class="py-4">
+          Blade juga memungkinkan Anda untuk menentukan komentar dalam pandangan Anda. Namun, tidak seperti komentar HTML, komentar Blade tidak disertakan dalam HTML yang dikembalikan oleh aplikasi Anda:
+  <xmp>
+  {{-- This comment will not be present in the rendered HTML --}}
+  </xmp>
+  
+        </p>
+        <div class="modal-action">
+          <label for="bladeDirective_comments" class="btn btn-sm">Close</label>
+        </div>
+      </div>
+    </div>
+  
+
     <input type="checkbox" id="anonymous_index" class="modal-toggle" />
   <div class="modal">
     <div class="modal-box w-11/12 max-w-5xl">
