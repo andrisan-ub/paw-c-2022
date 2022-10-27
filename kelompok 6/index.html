@@ -278,6 +278,145 @@
     </div>
 
     <!-- Put this part before </body> tag -->
+    <input type="checkbox" id="components_rendering" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Rendering Components</h3>
+      <p class="py-4">
+        Untuk menampilkan komponen, bisa kita gunakan dengan Blade component tag dalam satu Blade templates. Blade component tag dimulai dengan string “x-” diikuti oleh nama case kebab dari komponen kelas:
+<xmp>
+<x-alert/>
+ 
+<x-user-profile/>
+</xmp>
+Jika component class ber-nested lebih dalam di dalam app/View/Components directory, kita dapat menggunakan “.” karakter untuk menunjukkan directory nesting. Misalnya, jika kita menganggap bahwa component terletak pada app/View/Component/Inputs/Button.php, kita mungkin bisa meng-render seperti:
+<xmp>
+<x-inputs.button/>
+</xmp>
+
+      </p>
+      <div class="modal-action">
+        <label for="components_rendering" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="components_passing" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Passing Data to Components</h3>
+      <p class="py-4">
+        Kita dapat melempar atau memberikan data ke Blade components menggunakan atribut HTML. Hard-coded, nilai primitif mungkin akan dioper ke component menggunakan atribut string HTML sederhana. PHP expressions dan variable harus melewati component melalui atribut yang menggunakan “:” karakter sebagai:
+<xmp>
+<x-alert type="error" :message="$message"/>
+</xmp>
+	Kita harus menentukan semua component data atribut yang ada di dalam class constructor. Semua properti public pada component secara otomatis akan tersedia untuk view component. Hal ini tidak perlu untuk mengoper data ke view dari method component’s render:
+<xmp>
+<?php
+ 
+namespace App\View\Components;
+ 
+use Illuminate\View\Component;
+ 
+class Alert extends Component
+{
+   /**
+    * The alert type.
+    *
+    * @var string
+    */
+   public $type;
+ 
+   /**
+    * The alert message.
+    *
+    * @var string
+    */
+   public $message;
+ 
+   /**
+    * Create the component instance.
+    *
+    * @param  string  $type
+    * @param  string  $message
+    * @return void
+    */
+   public function __construct($type, $message)
+   {
+       $this->type = $type;
+       $this->message = $message;
+   }
+ 
+   /**
+    * Get the view / contents that represent the component.
+    *
+    * @return \Illuminate\View\View|\Closure|string
+    */
+   public function render()
+   {
+       return view('components.alert');
+   }
+}
+</xmp>
+	Ketika component kita telah ter-render, kita bisa menampilkan isi dari component public variabel dengan memanggil variable dengan nama:
+<xmp>
+<div class="alert alert-{{ $type }}">
+   {{ $message }}
+</div>
+</xmp>
+
+      </p>
+      <div class="modal-action">
+        <label for="components_passing" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="components_attributes" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Component Attributes</h3>
+      <p class="py-4">
+        Kita sudah membahas bagaimana cara untuk mengoper data atribut ke component. Namun, terkadang kita mungkin membutuhkan untuk menentukan atribut tambahan HTML, seperti class, yang bukan merupakan bagian dari kebutuhan data untuk suatu component ke fungsi. Biasanya, kita ingin mengoper tambahan atribut ini ke bawah menuju akar elemen dari component template. Contohnya, bayangkan bahwa kita ingin me-render peringatan component seperti:
+<xmp>
+<x-alert type="error" :message="$message" class="mt-4"/>
+</xmp>
+	Seluruh atribut yang bukan merupakan bagian dari component constructor akan ditambahkan sendirinya ke component ‘attribute bag’. Atribut bag ini secara otomatis yang tersedia untuk component melalui $attribute variable. Semua atribut akan ter-render di dalam component dengan meng-echo variable ini:
+<xmp>
+<div {{ $attributes }}>
+   <!-- Component content -->
+</div>
+</xmp>
+
+      </p>
+      <div class="modal-action">
+        <label for="components_attributes" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="components_reserved" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Reserved Keywords</h3>
+      <p class="py-4">
+        Pada saat default, beberapa kata kunci disediakan untuk user Blade's internal dalam rangka untuk me-render components. Berikut ini merupakan kata kunci yang tidak dapat didefinisikan sebagai sifat properti public atau method nama di dalam components kita: <br>
+        </p>
+        <ul>
+          <li>Data</li>
+          <li>Render</li>
+          <li>resolveView</li>
+          <li>shouldRender</li>
+          <li>view</li>
+          <li>withAttributes</li>
+          <li>withName</li>
+        </ul>
+      <div class="modal-action">
+        <label for="components_reserved" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
     <input type="checkbox" id="anonymous_index" class="modal-toggle" />
   <div class="modal">
     <div class="modal-box w-11/12 max-w-5xl">
