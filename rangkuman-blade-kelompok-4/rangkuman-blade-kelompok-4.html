@@ -6,11 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <script src="https://kit.fontawesome.com/3eeab2f4f4.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat&display=swap" rel="stylesheet">
   <title>Laravel Rangkuman</title>
 </head>
 <style>
@@ -23,8 +28,22 @@
     color: white;
   }
 
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
   .halawal {
     background: linear-gradient(2.24deg, #FF2B21 -12%, #2227B1 80.95%);
+  }
+
+  p {
+    font-family: 'Lato', sans-serif;
+  }
+
+  #pengertian {
+    background: #2227B1;
+    background-repeat: no-repeat;
+    border-radius: 1%;
   }
 </style>
 
@@ -171,13 +190,13 @@
           </div>
         </div>
 
-            <div class="card">
-                <div class="face face1">
-                    <div class="content">
-                        <span class="stars"></span>
-                        <p class="kelebihan2 m-auto" style="font-size: 11px;">Laravel adalah salah satu framework
-                            yang didukung oleh MVC. Namun, apa
-                            itu MVC?
+        <div class="card">
+          <div class="face face1">
+            <div class="content">
+              <span class="stars"></span>
+              <p class="kelebihan2 m-auto" style="font-size: 11px;">Laravel adalah salah satu framework
+                yang didukung oleh MVC. Namun, apa
+                itu MVC?
 
                 MVC adalah singkatan dari Model, View, Controller. Ini adalah sebuah desain arsitektur
                 yang membagi pengembangan website menjadi tiga bagian.
@@ -195,7 +214,7 @@
             <h2>Didukung oleh MVC</h2>
           </div>
         </div>
-    
+
 
         <div class="card">
           <div class="face face1">
@@ -238,87 +257,86 @@
       Blade Template Laravel
     </h1>
     <!--Pengertian BLade Template-->
+    <section class="pengertian">
+      <div class="md:mx-40 mt-10 bg-red-400 rounded-lg md:px-20 px-8">
+        <h1 class="pt-10 text-3xl text-black" style="font-family: 'Montserrat',sans serif;">PENGERTIAN</h1>
+        <p class="pt-5 text-xl text-white text-justify pb-10">Blade adalah template engine yang disediakan
+          Laravel
+          untuk proses
+          templating pada laravel dan sangat
+          bermanfaat dalam proses pengembangan tampilan halaman website.Tidak seperti fitur templating PHP
+          populer lainnya, Blade tidak membatasi developer untuk menggunakan kode PHP biasa dalam membuat kode
+          untuk tampilan. Semua tampilan Blade dikompilasi ke dalam kode PHP biasa dan kemudian disimpan dalam
+          cache hingga diubah, yang berarti Blade pada dasarnya tidak menambahkan beban atau overhead pada
+          saat aplikasi dijalankan. Blade pada laravel menggunakan ekstensi file .blade.php dan biasanya
+          disimpan di direktori resources / views. Dalam hal ini Blade pada Laravel menggunakan basis template
+          inheritance dan sections.</p>
+      </div>
+    </section>
+    <!--END of Pengertian Blade Template-->
+    <!--Kegunaan Blade Template-->
+    <section class="kegunaan">
+      <div class="md:mx-40 mt-8 bg-red-400 rounded-lg md:px-20 px-8">
+        <h1 class="pt-10 text-3xl text-black" style="font-family: 'Montserrat',sans serif;">Kegunaan</h1>
+        <p class="pt-5 pb-5 text-xl text-white text-justify">Salah satu kegunaan dari Blade Template Engine
+          Laravel
+          adalah penggunaan layout, agar tampilan yang berulang misalnya header, footer, sidebar dan
+          sebagainya tidak perlu dibuat berulang kali sehingga rawan inkonsistensi. Pada umumnya layout
+          ditempatkan dalam sebuah folder yang bernama layout dalam folder views, namun demikian developer
+          tidak dibatasi apabila ingin menggunakan nama lain.</p>
+      </div>
+    </section>
+    <!--END OF KEGUNAAN BLADE TEMPLATE-->
+    <!--Menampilkan Data-->
+    <section class="menampilkan_data">
+      <div class="md:mx-40 mt-8 bg-red-400 rounded-lg md:px-20 px-8">
+        <h1 class="pt-10 text-3xl text-black" style="font-family: 'Montserrat',sans serif;">Menampilkan Data
+        </h1>
+        <p class="pt-5 pb-5 text-xl text-white text-justify">Untuk menampilkan data yang diteruskan ke Blade
+          view,
+          caranya adalah dengan memasukkannya ke dalam kurung kurawal seperti berikut ini :
+        </p>
+        <div class=" pb-10">
+          <img src="/img/display1.jpeg" class="" alt="">
+          <p class="text-white ml-10 text-2xl text-justify"> - Variable "nama" pada kode diatas dapat
+            ditampilkan dengan cara membuatkannya
+            seperti array dengan menggunakan
+            <br> <span class="font-extrabold text-black" style="font-family: 'Montserrat',sans serif;">Hello,
+              {{$nama}}</span>
+            <br> - Pada laravel Tidak ada pembatasan untuk menampilkan konten dari variable yang diteruskan
+            ke
+            view. Output dari fungsi PHP juga dapat ditampilkan. Bahkan, kode PHP apapun dapat dimasukkan ke
+            dalam Blade echo statement.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!--END OF Menampilkan Data-->
+    <!--Blade Directives-->
+    <section class="bladedirectives">
+      <div class="bladedirectives">
         <section class="pengertian">
-            <div class="md:mx-40 mt-10 bg-red-400 rounded-lg md:px-20 px-8">
-                <h1 class="pt-10 text-3xl text-black" style="font-family: 'Montserrat',sans serif;">PENGERTIAN</h1>
-                <p class="pt-5 text-xl text-white text-justify pb-10">Blade adalah template engine yang disediakan
-                    Laravel
-                    untuk proses
-                    templating pada laravel dan sangat
-                    bermanfaat dalam proses pengembangan tampilan halaman website.Tidak seperti fitur templating PHP
-                    populer lainnya, Blade tidak membatasi developer untuk menggunakan kode PHP biasa dalam membuat kode
-                    untuk tampilan. Semua tampilan Blade dikompilasi ke dalam kode PHP biasa dan kemudian disimpan dalam
-                    cache hingga diubah, yang berarti Blade pada dasarnya tidak menambahkan beban atau overhead pada
-                    saat aplikasi dijalankan. Blade pada laravel menggunakan ekstensi file .blade.php dan biasanya
-                    disimpan di direktori resources / views. Dalam hal ini Blade pada Laravel menggunakan basis template
-                    inheritance dan sections.</p>
-            </div>
-        </section>
-        <!--END of Pengertian Blade Template-->
-                <!--Kegunaan Blade Template-->
-                <section class="kegunaan">
-                  <div class="md:mx-40 mt-8 bg-red-400 rounded-lg md:px-20 px-8">
-                      <h1 class="pt-10 text-3xl text-black" style="font-family: 'Montserrat',sans serif;">Kegunaan</h1>
-                      <p class="pt-5 pb-5 text-xl text-white text-justify">Salah satu kegunaan dari Blade Template Engine
-                          Laravel
-                          adalah penggunaan layout, agar tampilan yang berulang misalnya header, footer, sidebar dan
-                          sebagainya tidak perlu dibuat berulang kali sehingga rawan inkonsistensi. Pada umumnya layout
-                          ditempatkan dalam sebuah folder yang bernama layout dalam folder views, namun demikian developer
-                          tidak dibatasi apabila ingin menggunakan nama lain.</p>
-                  </div>
-              </section>
-              <!--END OF KEGUNAAN BLADE TEMPLATE-->
-              <!--Menampilkan Data-->
-        <section class="menampilkan_data">
-          <div class="md:mx-40 mt-8 bg-red-400 rounded-lg md:px-20 px-8">
-              <h1 class="pt-10 text-3xl text-black" style="font-family: 'Montserrat',sans serif;">Menampilkan Data
-              </h1>
-              <p class="pt-5 pb-5 text-xl text-white text-justify">Untuk menampilkan data yang diteruskan ke Blade
-                  view,
-                  caranya adalah dengan memasukkannya ke dalam kurung kurawal seperti berikut ini :
-              </p>
-              <div class=" pb-10">
-                  <img src="/img/display1.jpeg" class="" alt="">
-                  <p class="text-white ml-10 text-2xl text-justify"> - Variable "nama" pada kode diatas dapat
-                      ditampilkan dengan cara membuatkannya
-                      seperti array dengan menggunakan
-                      <br> <span class="font-extrabold text-black"
-                          style="font-family: 'Montserrat',sans serif;">Hello,
-                          {{$nama}}</span>
-                      <br> - Pada laravel Tidak ada pembatasan untuk menampilkan konten dari variable yang diteruskan
-                      ke
-                      view. Output dari fungsi PHP juga dapat ditampilkan. Bahkan, kode PHP apapun dapat dimasukkan ke
-                      dalam Blade echo statement.
-                  </p>
-              </div>
-          </div>
-      </section>
-      <!--END OF Menampilkan Data-->
-      <!--Blade Directives-->
-      <section class="bladedirectives">
-        <div class="bladedirectives">
-          <section class="pengertian">
-            <div class="md:mx-40 mt-10 bg-red-400 rounded-lg md:px-20 px-6">
-              <h1 class="pt-10 text-3xl  text-black" style="font-family: 'Montserrat',sans serif;">Blade
-                Directives
+          <div class="md:mx-40 mt-10 bg-red-400 rounded-lg md:px-20 px-6">
+            <h1 class="pt-10 text-3xl  text-black" style="font-family: 'Montserrat',sans serif;">Blade
+              Directives
             </h1>
             <p class="pt-5 text-xl text-white text-justify pb-10">Blade adalah template engine yang
-                disediakan
-                Selain pewarisan template dan tampilan data, Blade juga menyediakan pintasan yang nyaman
-                untuk
-                struktur kontrol PHP umum, seperti pernyataan bersyarat dan loop. Pintasan ini menyediakan
-                cara
-                yang sangat bersih dan singkat untuk bekerja dengan struktur kontrol PHP sementara juga
-                tetap
-                akrab dengan rekan PHP mereka.</p>
-              !--IF STATEMENT-->
-                        <div class="ml-6">
-                            <h2 class="text-red-900 text-2xl ">IF STATEMENT</h2>
-                            <p class=" text-black text-justify text-xl mb-5">
-                                Anda dapat membuat pernyataan if menggunakan direktif @if, @elseif, @else, dan @endif.
-                                Arahan ini berfungsi identik dengan rekan-rekan PHP mereka:
-                            <div class="bg-black rounded-md p-8">
-                                <code class="font-bold text-green-400 "> <br>
+              disediakan
+              Selain pewarisan template dan tampilan data, Blade juga menyediakan pintasan yang nyaman
+              untuk
+              struktur kontrol PHP umum, seperti pernyataan bersyarat dan loop. Pintasan ini menyediakan
+              cara
+              yang sangat bersih dan singkat untuk bekerja dengan struktur kontrol PHP sementara juga
+              tetap
+              akrab dengan rekan PHP mereka.</p>
+            !--IF STATEMENT-->
+            <div class="ml-6">
+              <h2 class="text-red-900 text-2xl ">IF STATEMENT</h2>
+              <p class=" text-black text-justify text-xl mb-5">
+                Anda dapat membuat pernyataan if menggunakan direktif @if, @elseif, @else, dan @endif.
+                Arahan ini berfungsi identik dengan rekan-rekan PHP mereka:
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                                     @if (count($records) === 1) <br>
                                         I have one record! <br>
                                     @elseif (count($records) > 1) <br>
@@ -327,23 +345,23 @@
                                         I don't have any records! <br>
                                     @endif
                             </code>
-                            </div>
-                            <div class="bg-black rounded-md mt-5 p-8">
-                                <p>Untuk kebalikan dari if else</p>
-                                <code class="font-bold text-green-400 "> <br>
+              </div>
+              <div class="bg-black rounded-md mt-5 p-8">
+                <p>Untuk kebalikan dari if else</p>
+                <code class="font-bold text-green-400 "> <br>
                                     @unless ($isLogin) <br>
                                     Anda tidak berhak mengakses halaman ini <br>
                                     @endunless <br>
                             </code>
-                            </div>
-                            <div class="my-5 text-xl text-black">
-                                Selain direktif bersyarat yang telah dibahas, direktif @isset dan @empty dapat digunakan
-                                sebagai
-                                pintasan yang nyaman untuk fungsi PHP masing-masing:
-                            </div>
+              </div>
+              <div class="my-5 text-xl text-black">
+                Selain direktif bersyarat yang telah dibahas, direktif @isset dan @empty dapat digunakan
+                sebagai
+                pintasan yang nyaman untuk fungsi PHP masing-masing:
+              </div>
 
-                            <div class="bg-black rounded-md p-8">
-                                <code class="font-bold text-green-400 "> <br>
+              <div class="bg-black rounded-md p-8">
+                <code class="font-bold text-green-400 "> <br>
                                 @isset($records) <br>
                                     // $records is defined and is not null... <br>
                                 @endisset <br>
@@ -352,16 +370,16 @@
                                     // $records is "empty" <br>
                                 @endempty <br>
                         </code>
-                            </div>
+              </div>
 
-                            </p>
-                        </div>
-                        <!--END OF IF STATEMENT-->
+              </p>
             </div>
-          </section>
-        </div>
-      </section>
-      <!--End Of Blade Directives-->
+            <!--END OF IF STATEMENT-->
+          </div>
+        </section>
+      </div>
+    </section>
+    <!--End Of Blade Directives-->
   </div>
   <!--End Of Blade Template-->
 
