@@ -278,6 +278,157 @@
     </div>
 
     <!-- Put this part before </body> tag -->
+    <input type="checkbox" id="components_slots" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Slots</h3>
+      <p class="py-4">
+        Kita akan sering meneruskan konten tambahan ke komponen Anda melalui "slot". Slot komponen dirender dengan melakukan echo pada variabel $slot. Untuk menjelajahi konsep ini, mari kita bayangkan bahwa komponen peringatan memiliki markup berikut:
+<xmp>
+<!-- /resources/views/components/alert.blade.php -->
+ 
+<div class="alert alert-danger">
+   {{ $slot }}
+</div>
+</xmp>
+Kita dapat meneruskan konten ke slot dengan mengisikan konten ke dalam komponen:
+<xmp>
+<x-alert>
+   <strong>Whoops!</strong> Something went wrong!
+</x-alert>
+</xmp>
+Terkadang komponen mungkin perlu membuat beberapa slot berbeda di lokasi berbeda di dalam komponen. Mari kita ubah komponen peringatan kita untuk memungkinkan injeksi slot "title":
+<xmp>
+<!-- /resources/views/components/alert.blade.php -->
+ 
+<span class="alert-title">{{ $title }}</span>
+ 
+<div class="alert alert-danger">
+   {{ $slot }}
+</div>
+</xmp>
+Kita juga dapat menentukan konten slot bernama menggunakan tag x-slot. Konten apa pun yang tidak berada dalam tag slot-x eksplisit akan diteruskan ke komponen dalam variabel $slot:
+<xmp>
+<x-alert>
+   <x-slot:title>
+       Server Error
+   </x-slot>
+ 
+   <strong>Whoops!</strong> Something went wrong!
+</x-alert>
+</xmp>
+      </p>
+      <div class="modal-action">
+        <label for="components_slots" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="components_inline" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Inline Component Views</h3>
+      <p class="py-4">
+        Untuk komponen yang sangat kecil, mungkin terasa rumit untuk mengelola kelas komponen dan template tampilan komponen. Untuk alasan ini, Anda dapat mengembalikan markup komponen langsung dari metode render:
+<xmp>
+/**
+* Get the view / contents that represent the component.
+*
+* @return \Illuminate\View\View|\Closure|string
+*/
+public function render()
+{
+   return <<<'blade'
+       <div class="alert alert-danger">
+           {{ $slot }}
+       </div>
+   blade;
+}
+</xmp>
+<b>Generate Inline View Components</b><br> 
+Untuk membuat komponen yang merender tampilan sebaris, Anda dapat menggunakan opsi sebaris saat menjalankan perintah make:component:
+
+<xmp>
+php artisan make:component Alert --inline
+</xmp>
+      </p>
+      <div class="modal-action">
+        <label for="components_inline" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="components_dynamic" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Dyamic Components</h3>
+      <p class="py-4">
+        Terkadang Anda mungkin perlu merender komponen tetapi tidak tahu komponen mana yang harus dirender hingga runtime. Dalam situasi ini, Anda dapat menggunakan komponen komponen dinamis bawaan Laravel untuk merender komponen berdasarkan nilai atau variabel runtime:
+<xmp>
+<x-dynamic-component :component="$componentName" class="mt-4" />
+</xmp>
+      </p>
+      <div class="modal-action">
+        <label for="components_dynamic" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="components_manually" class="modal-toggle" />
+  <div class="modal">
+    <div class="modal-box w-11/12 max-w-5xl">
+      <h3 class="font-bold text-lg">Manually Registering Components</h3>
+      <p class="py-4">
+        Saat menulis komponen untuk aplikasi Anda sendiri, komponen secara otomatis ditemukan dalam direktori app/View/Components dan direktori resources/views/components.
+
+Namun, jika Anda membuat paket yang menggunakan komponen Blade atau menempatkan komponen di direktori non-konvensional, Anda perlu mendaftarkan kelas komponen dan alias tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan komponen tersebut. Anda biasanya harus mendaftarkan komponen Anda dalam metode boot dari penyedia layanan paket Anda:
+<xmp>
+use Illuminate\Support\Facades\Blade;
+use VendorPackage\View\Components\AlertComponent;
+ 
+/**
+* Bootstrap your package's services.
+*
+* @return void
+*/
+public function boot()
+{
+   Blade::component('package-alert', AlertComponent::class);
+}
+</xmp>
+Setelah komponen Anda terdaftar, komponen tersebut dapat dirender menggunakan alias tag-nya:
+<xmp>
+<x-package-alert/>
+</xmp>
+<b>Autoloading Package Components</b> <br>
+Atau, Anda dapat menggunakan metode componentNamespace untuk memuat kelas komponen secara otomatis berdasarkan konvensi. Misalnya, paket Nightshade mungkin memiliki komponen Kalender dan ColorPicker yang berada di dalam namespace Package\Views\Components:
+<xmp>
+use Illuminate\Support\Facades\Blade;
+ 
+/**
+* Bootstrap your package's services.
+*
+* @return void
+*/
+public function boot()
+{
+   Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');
+}
+</xmp>
+Ini akan memungkinkan penggunaan komponen paket oleh namespace vendor mereka menggunakan sintaks package-name::
+<xmp>
+<x-nightshade::calendar />
+<x-nightshade::color-picker />
+</xmp>
+Blade akan secara otomatis mendeteksi kelas yang ditautkan ke komponen ini dengan pascal-casing nama komponen. Subdirektori juga didukung menggunakan notasi "titik".
+      </p>
+      <div class="modal-action">
+        <label for="components_manually" class="btn btn-sm">Close</label>
+      </div>
+    </div>
+  </div>
+
+
     <input type="checkbox" id="anonymous_index" class="modal-toggle" />
   <div class="modal">
     <div class="modal-box w-11/12 max-w-5xl">
