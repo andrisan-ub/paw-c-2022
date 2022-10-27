@@ -144,6 +144,110 @@
               <div class="Keterangan pb-10">
                 <h1 class="text-white text-2xl font-bold text-center">Blade Template</h1>
 
+                <!-- Dio -->
+                <div class="Pengenalan text-white text-justify">
+                  <h1 class="text-xl font-bold">Introduction</h1>
+                  <p>
+                      Blade adalah mesin templating sederhana namun kuat yang disertakan dengan Laravel. Tidak seperti 
+                      beberapa mesin templating PHP, Blade tidak membatasi Anda untuk menggunakan kode PHP biasa 
+                      di templat Anda. Faktanya, semua template Blade dikompilasi ke dalam kode PHP biasa dan di-cache 
+                      sampai dimodifikasi, yang berarti Blade pada dasarnya menambahkan nol overhead ke aplikasi Anda. 
+                      File template blade menggunakan ekstensi file .blade.php dan biasanya disimpan di direktori 
+                      resources/views.
+                  </p>
+                  <p class="mt-3">
+                      Tampilan blade dapat dikembalikan dari rute atau pengontrol menggunakan bantuan tampilan 
+                      global. Tentu saja, seperti yang disebutkan dalam dokumentasi tentang tampilan, data dapat 
+                      diteruskan ke tampilan Blade menggunakan argumen kedua pembantu tampilan.
+                  </p>
+                  <p class="mt-3">
+                      Semua file konfigurasi untuk framework Laravel disimpan di direktori config. Setiap opsi 
+                      didokumentasikan, jadi jangan ragu untuk melihat-lihat file dan membiasakan diri dengan opsi yang 
+                      tersedia untuk Anda
+                  </p>
+                  <p class="mt-3">
+                      File konfigurasi ini memungkinkan Anda untuk mengonfigurasi hal-hal seperti informasi koneksi 
+                      database, informasi server email, serta berbagai nilai konfigurasi inti lainnya seperti zona waktu 
+                      aplikasi dan kunci enkripsi
+                  </p>
+                </div>
+
+                <div class="text-white mt-5 displayingdata text-justify">
+                  <h1 class="text-xl font-bold">Displaying Data</h1>
+                  <p class="mt-5 mb-5 text-justify">
+                      Menampilkan Data, anda dapat menampilkan data yang diteruskan ke tampilan Blade Anda dengan 
+                      membungkus variabel dalam kurung kurawal. Misalnya, diberikan rute berikut:
+                  </p>
+                  <img src="/kelompok 1/public/img/display1.png" alt="">
+                  <p class="mt-5 mb-5">Anda dapat menampilkan isi dari variabel nama seperti:
+                  </p>
+                  <img src="/kelompok 1/public/img/display2.png" alt="">
+                  <p class="mt-3">Pernyataan gema {{}} Blade secara otomatis dikirim melalui fungsi htmlspecialchars PHP untuk 
+                      mencegah serangan XSS.</p>
+                  <p class="mt-3 mb-5">
+                      Anda tidak dibatasi untuk menampilkan konten variabel yang diteruskan ke tampilan. Anda juga 
+                      dapat menggemakan hasil fungsi PHP apa pun. Bahkan, Anda dapat memasukkan kode PHP apa pun 
+                      yang Anda inginkan ke dalam pernyataan gema Blade:
+                  </p>
+                  <img src="/kelompok 1/public/img/display3.png" alt="">
+                </div>
+
+                <div class="text-white Encoding mt-5 text-justify">
+
+                  <h1 class="text-xl font-bold">HTML Entity Encoding</h1>
+                  <p class="mt-5 mb-5">
+                      Secara default, Blade (dan Laravel e helper) akan menggandakan encode entitas HTML. Jika Anda 
+                      ingin menonaktifkan penyandian ganda, panggil metode Blade::withoutDoubleEncoding dari metode 
+                      boot AppServiceProvider Anda:
+                  </p>
+                  <img src="/kelompok 1/public/img/encoding.png" alt="">
+                  <p class="mt-5 mb-5">Menampilkan Data yang Tidak Terhapus
+                      Secara default, pernyataan Blade {{}} secara otomatis dikirim melalui fungsi htmlspecialchars PHP 
+                      untuk mencegah serangan XSS. Jika Anda tidak ingin data Anda di-escape, Anda dapat menggunakan 
+                      sintaks berikut:</p>
+                  <img src="/kelompok 1/public/img/encoding2.png" alt="">
+
+                </div>
+
+                <div class="text-white Javascript mt-5 text-justify">
+                  <h1 class="font-bold text-xl">Blade & Javascript Framework</h1>
+                  <p class="mt-3">Karena banyak kerangka kerja JavaScript juga menggunakan kurung kurawal untuk menunjukkan 
+                      ekspresi yang diberikan harus ditampilkan di browser, Anda dapat menggunakan simbol @ untuk 
+                      memberi tahu mesin rendering Blade bahwa ekspresi harus tetap tidak tersentuh. Sebagai contoh:
+                      </p>
+
+                  <img src="/kelompok 1/public/img/js.png" alt="">
+
+                  <p class="mt-5 ">Dalam contoh ini, simbol @ akan dihapus oleh Blade; namun, ekspresi {{ name }} akan tetap tidak 
+                      tersentuh oleh mesin Blade, memungkinkannya dirender oleh kerangka kerja JavaScript Anda</p>
+
+                  <p class="mt-5 mb-5">Simbol @ juga dapat digunakan untuk menghindari arahan Blade:</p>
+                  <img src="/kelompok 1/public/img/js2.png" alt="">
+                </div>
+
+                <div class="Blade Directive text-white mt-5 text-justify">
+                  <h1 class="text-xl font-bold">
+                      Blade Directive
+                  </h1>
+                  <p class="mt-3">Selain pewarisan template dan tampilan data, Blade juga menyediakan pintasan yang nyaman untuk 
+                      struktur kontrol PHP umum, seperti pernyataan bersyarat dan loop. Pintasan ini menyediakan cara 
+                      yang sangat bersih dan singkat untuk bekerja dengan struktur kontrol PHP sementara juga tetap 
+                      akrab dengan rekan PHP mereka.</p>
+                </div>
+
+                <div class="If Statements text-white mt-5 text-justify">
+                  <h1 class="font-bold text-xl">If Statements</h1>
+                  <p class="mt-3">Anda dapat membuat pernyataan if menggunakan direktif @if, @elseif, @else, dan @endif. Arahan 
+                      ini berfungsi identik dengan rekan-rekan PHP mereka:</p>
+                  <img src="/kelompok 1/public/img/ifstatements.png" alt="">
+                </div>
+
+                <div class="Switch Statement text-white mt-5 text-justify">
+                  <h1 class="text-xl font-bold">Switch Statement</h1>
+                  <p class="mt-3 mb-5">Pernyataan sakelar dapat dibuat menggunakan direktif @switch, @case, @break, @default dan 
+                      @endswitch</p>
+                  <img src="/kelompok 1/public/img/switch1.png" alt="">
+                </div>
                 
 
                 <!-- Farid -->
