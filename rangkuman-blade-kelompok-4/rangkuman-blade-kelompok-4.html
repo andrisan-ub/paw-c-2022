@@ -375,6 +375,45 @@
               </p>
             </div>
             <!--END OF IF STATEMENT-->
+            
+            <!--Authentication Directives-->
+            <div class="ml-6 mt-10">
+                 <h2 class="text-red-900 text-2xl">Authentication Directives</h2>
+                  <p class=" text-black text-justify text-xl mb-5">
+                     Arahan @auth dan @guest dapat digunakan untuk menentukan dengan cepat apakah pengguna
+                                saat
+                                ini diautentikasi atau merupakan tamu:
+             <div class="bg-black rounded-md p-8">
+                   <code class="font-bold text-green-400 "> <br>
+                         @auth <br>
+                              // The user is authenticated... <br>
+                         @endauth <br>
+                                
+                         @guest <br>
+                              // The user is not authenticated... <br>
+                         @endguest
+                      </code>
+               </div>
+               <div class="my-5 text-xl text-black">
+                     Jika diperlukan, Anda dapat menentukan penjaga otentikasi yang harus diperiksa saat
+                                menggunakan arahan @auth dan @guest:
+                 </div>
+
+                <div class="bg-black rounded-md p-8">
+                     <code class="font-bold text-green-400 "> <br>
+                           @auth('admin') <br>
+                                // The user is authenticated... <br>
+                            @endauth <br>
+                             
+                            @guest('admin') <br>
+                                // The user is not authenticated... <br>
+                            @endguest
+                        </code>
+                  </div>
+
+                      </p>
+                  </div>
+                  <!--END OF Authentication Directives-->
           </div>
         </section>
       </div>
