@@ -375,14 +375,14 @@
                   <p>Contoh:</p>
                   <figure>
                     <div class="mockup-code">
-                      <pre data-prefix="1" class="text-success"><code>&lt;x-alert type="error" :message="$message" class="mt-4"/&gt;</code></pre>
+                      <pre data-prefix="1" class="text-success"><code>
+                        &lt;div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}&gt;<br>
+                        &emsp;&emsp;{{ $message }} <br>
+                        &lt;/div&gt; <br>
+                      </code></pre>
                     </div>
                   </figure>
-                  <pre data-prefix="1" class="text-success"><code>
-                    &lt;div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}&gt;<br>
-                    &emsp;&emsp;{{ $message }} <br>
-                    &lt;/div&gt; <br>
-                  </code></pre>
+                  
                   
                   <li>Penggabungan Kondisional Kelas</li>
                   <p>Contoh:</p>
