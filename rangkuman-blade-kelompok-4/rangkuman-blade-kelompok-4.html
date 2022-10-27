@@ -582,6 +582,31 @@
                             </p>
                         </div>
                         <!--END OF Including Subview-->
+                        <!--The Once directives-->
+                        <div class="ml-6 mt-10">
+                          <h2 class="text-red-900 text-2xl">@once directives--</h2>
+                          <p class=" text-black text-justify text-xl mb-5">
+                              @oncememungkinkan Anda untuk menentukan bagian dari template yang hanya akan dievaluasi
+                              sekali per siklus rendering. Ini mungkin berguna untuk mendorong bagian tertentu dari
+                              JavaScript ke dalam header halaman menggunakan stacks . Misalnya, jika Anda merender
+                              komponen tertentu dalam satu lingkaran, Anda mungkin hanya ingin mendorong JavaScript ke
+                              header saat pertama kali komponen dirender:
+
+                          <div class="bg-black rounded-md p-8">
+                              <code class="font-bold text-green-400 "> <br>
+                                  @once <br>
+                                  @push('scripts') <br>
+                                     <p>Tambahkan java script dan isi didalamnya</p>
+                                  @endpush <br>
+                                  @endonce <br>
+
+                                  @includeIf('view.name', ['status' => 'complete'])
+                      </code>
+                          </div>
+
+                          </p>
+                      </div>
+                      <!--END OF The Once directives-->
           </div>
         </section>
       </div>
