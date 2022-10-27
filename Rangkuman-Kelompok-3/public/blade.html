@@ -182,3 +182,50 @@
       </p>
   </div>
 </div>      
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Penerapan seleksi kondisi Switch Case</h2>
+      <img data-aos="zoom-in" src="img/blade/blade6.jpg" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Perintah Switch digunakan untuk memeriksa kebenaran suatu nilai dengan memiliki banyak pemilihan atau nilai pengecekannya. Switch case ini akan berjalan saat nilai variable dipanggil atau bernilai true. Apabila ada syntax “break” maka kode blok program akan berhenti. Pada contoh diatas, terdapat sebuah variabel $name yang dikondisikan sama dengan 'budi'. Pada parameter Switch diatas kita mengisikan variabel $name, yang berarti nilai variabel yang ingin diperiksa adalah variabel$name. Jika variable $name sama dengan 'budi' maka ditampilkan “namanya Budi”.
+      </p>
+  </div>
+</div>
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output Switch Case</h2>
+      <img data-aos="zoom-in"src="img/blade/output6.jpg" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">$name sebeulmnya didefinisikan dengan isi nilai yaotu 'budi'. Oleh karena itu, case 1 akan bernilai true sehingga kode blok program didalamnya dijalankan sehingga mengeluarkan output tulisan "namanya Budi".
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Penerapan looping For</h2>
+      <img data-aos="zoom-in" src="img/blade/blade7.jpg" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Pada templating blade yang terdapat pada laravel juga memungkinkan untuk melakukan looping dalam hal ini yaitu for loop dengan di awali keyword @forloop dan diakhiri dengan @endfor. Start adalah kondisi pada saat awal perulangan. Biasanya kondisi awal ini berisi perintah untuk memberikan nilai kepada variabel $i. Variabel $i sendiri adalah sebuah variabel yang menentukan berapa banyak perulangan dilakukan. Kebanyakan programmer menggunakan variabel i sebagai variabel counter (ini tidak harus, boleh juga memakai variabel lain). Condition adalah kondisi yang harus dipenuhi agar perulangan berjalan. Selama kondisi ini terpenuhi, maka blade akan terus melakukan perulangan. Misalnya condition ini berisi perintah $i < 10, maka selama variabel $i berisi angka yang kurang dari 10, terus lakukan perulangan.Increment adalah bagian yang dipakai untuk memproses variabel counter agar bisa memenuhi kondisi akhir perulangan. Bagian ini akan selalu di eksekusi di setiap perulangan. Disebut increment karena biasanya berisi operasi increment seperti $i++, yang sebenarnya sama dengan $i = $i + 1. Maksudnya, dalam setiap perulangan naikkan variabel $i sebanyak 1 angka.
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output looping For</h2>
+      <img data-aos="zoom-in" src="img/blade/output7.jpg" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify"> DI atas merupakan output dari program sebelumnya dengan menggunakan pengulangan forloop.
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Penerapan looping Foreach</h2>
+      <img data-aos="zoom-in" src="img/blade/blade8.1.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Di atas merupakan kode program pada route yang terdapat pada file web.php. Pada kode program tersebut kami membuat route dengan return view dari file yang bernama coba. Namun berbeda dengan sebelumnya, pada file tersebut, membuat array baru yang berisi data mahasiswa meliputi nim dan nama yang dikirimkan kepada file views yang bernama file coba.
+      </p>
+  </div>
+</div>
+<div class="lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+      <img data-aos="zoom-in" src="img/blade/blade8.2.png" alt="">
+      <p data-aos="zoom-in"class="mt-5 text-justify">Di atas merupakan kode program yang terdapat pada file coba.blade.php yang terdapat pada folder views gunja implementasi dari program looping data menggunakan for each. Setelah sebelumnya data mahasiswa dilirimkan melalui file route, maka file coba akan menerima data tersebut dengan langsung menggunakan looping dengan jenis for each untuk menampilkan ke dalam web browser. Syntax dasar dari penggunaan foreach pada templating blade diawali dengan @foreach lalu menggunakan nama v ariable ayang telah dikirimkan melalui route yaitu $mahasiswa yang diasumsikan dengan keyword as menjadi $mhs. Kemudian di dalam kode blok for each memanggil array nim dan nama dari data mhs dengan cara array. Hal ini dikarenakan pada file route kami mengirimkan datanya dengan menggunakan array, bukan dengan objek,JSON, atau yang lainnya. 
+      </p>
+  </div>
+</div>
