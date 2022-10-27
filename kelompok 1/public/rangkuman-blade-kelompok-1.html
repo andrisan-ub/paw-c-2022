@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="/src/input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="https://kit.fontawesome.com/3eeab2f4f4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.28.0/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <section  >
+        <nav class=" px-4 sm:px-4 py-2.5 w-full top-0 left-0 fixed dark:border-gray-600"style="z-index: 1000; position: fixed;" >
+        <div class="flex flex-wrap justify-between  items-center mx-auto ">
+        <a href="https://flowbite.com/" class=" flex items-center">
+            <span class="self-center text-xl md:ml-14 font-semibold z-30 flex mt-5 ">
+              <img src="img/logo (2).png" class="w-14  md:w-16" alt="">
+              <h1 href=""class="text-white mt-3" > KODE<strong>CITA</strong> </h1>
+              
+            </span>
+        </a>
+    
+    
+        <div class="flex">
+            <button id="hamburger" type="button" name="hamburger" class="z-20 items-center p-2 text-sm right-4 text-white rounded-lg md:hidden hover:bg-opacity-80     bg-[#58020B]">
+              <span class="w-[30px] h-[2px] my-1 block bg-white transition duration-500 ease-in-out origin-top-left"></span>
+              <span class="w-[30px] h-[2px] my-2 block bg-white transition duration-500 ease-in-out"></span>
+              <span class="w-[30px] h-[2px] my-1 block bg-white transition duration-500 ease-in-out origin-bottom-left"></span>
+            </button>
+          </div>
+    
+          
+    
+    <nav id="nav-menu" class="-translate-y-72 lg:translate-y-0 transition duration-500 z-10 absolute py-5 left-0 bg-[#134E4A] w-full top-full  lg:-mt-16 lg:block lg:static lg:bg-transparent" >
+      <ul  class=" block lg:flex lg:justify-center text-white md:space-x-20 lg:ml-32">
+      <li>
+          <a href="index.html" class="underlined md:mr-10 md:text-lg block py-2 pr-4 pl-3  decoration-0 text-white  focus:bg-[#8E3C38] md:focus:bg-transparent rounded md:bg-transparent  md:hover:text-white md:p-0 " aria-current="page">Beranda</a>
+      </li>
+      <li>
+          <a href="#" class="underlined md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white  dark:hover:text-white">Tentang Kami</a>
+      </li>
+      <li>
+          <a href="#" class="underlined md:[underline-none] md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white ">Materi</a>
+      </li>
+      <li>
+        <a href="#" class="underlined md:[underline-none] md:mr-10 md:text-lg block py-2 pr-4 pl-3 md:text-white rounded focus:bg-[#8E3C38] md:hover:bg-transparent  md:p-0 md:dark:hover:text-white ">Referensi</a>
+    </li>
+    
+      </ul>
+    
+    </nav>
+    
+          
+          
+            
+        </div>
+        
+        </div>
+        </nav>
+    
+        <script>
+          $(window).scroll(function(){
+              $('nav').toggleClass('scrolled', $(this).scrollTop()>15);
+          })
+        </script>
+        <style>
+          .scrolled{
+            background-color: #134E4A;
+          }
+            .underlined{
+            position:relative;
+            color: white;
+            letter-spacing: 0.5px;
+            color:#fff;
+            }
+            .underlined:after{
+                content: '';
+              position: absolute;
+              width: 100%;
+              transform: scaleX(0);
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: #F3CF0E;
+              transform-origin: bottom right;
+              transition: transform 0.25s ease-out;
+            }
+            .underlined:hover:after{
+                transform: scaleX(1);
+              transform-origin: bottom left;
+              text-decoration:none;
+              color:#000;
+            }
+        </style>
+    
+    <style>
+      .hamburger-active > span:nth-child(1){
+        transform: rotate(45deg) translate(4px, -3px);
+        transform-origin: top left;
+        
+      }
+      .hamburger-active > span:nth-child(2){
+        scale: 0;
+      }
+      .hamburger-active > span:nth-child(3){
+        transform: rotate(-45deg) translate(3px, 4px);
+        transform-origin: bottom left;
+      }
+      
+    </style>
+    
+    <script>
+      
+      const hamburger = document.querySelector('#hamburger');
+      const navMenu = document.querySelector('#nav-menu');
+    
+      hamburger.addEventListener('click', function(){
+        hamburger.classList.toggle('hamburger-active')
+        navMenu.classList.toggle('-translate-y-72')
+      });
+    
+      window.addEventListener('click', function (e){
+        if(e.target != hamburger && e.target != navMenu){
+          hamburger.classList.remove('hamburger-active');
+          navMenu.classList.add('-translate-y-72');
+        }
+      });
+    
+      </script>
+    
+    </section>
+
+    <section>
+        <div class="lg:flex p-5 lg:p-12 mt-20 lg:space-x-10 space-y-10 lg:space-y-0 ">
+            <div class="lg:w-2/3 bg-slate-700 rounded-lg p-10 ">
+              <div class="Keterangan pb-10">
+                <h1 class="text-white text-2xl font-bold text-center">Blade Template</h1>
+
+                
+
+                <!-- Farid -->
+                <div class="loops text-white">
+                    <h2 class="text-xl font-bold">Loops</h2>
+
+                    <p class="">Blade menyediakan directive perulangan selayaknya syntax PHP,
+                    looping dalam blade bisa menggunakan for i, for each, dan while.</p>
+                    
+
+                        <div class="fori">
+                            <p>
+                                1. Contoh penggunaan For i pada blade
+                            </p>
+                            <img class="mt-10" src="/kelompok 1/public/img/loop1.png" alt="">
+                            <p>Hasil output pada website akan seperti ini</p>
+                            <img src="/kelompok 1/public/img/outloop1.png" alt="">
+                        </div>
+
+                        <div class="foreach">
+                            <p>
+                                2. Contoh penggunaan for each pada blade
+                            </p>
+                            <p class="mt-5 mb-5">Membuat data pada file web.php</p>
+                            <img src="/kelompok 1/public/img/loop2.png" alt="">
+                            <p class="mt-5 mb-5">Menampilkan data menggunakan foreach pada folder views</p>
+                            <img src="/kelompok 1/public/img/loop2(1).png" alt="">
+                            <p class="mt-5 mb-5">Hasil output pada website akan seperti ini</p>
+                            <img src="/kelompok 1/public/img/outloop2.png" alt="">
+                        </div>
+
+                        <div class="for else">
+                            <p class="mt-5 mb-5">
+                                3. For Else, digunakan untuk mengecek apakah data yang dilooping tersedia atau kosong, contoh penggunaan
+                                for else pada blade adalah sebagai berikut
+                            </p>
+                            <p class="mt-5 mb-5">Mengosongkan data pada web.php</p>
+                            <img src="/kelompok 1/public/img/loop3.png" alt="">
+                            <p class="mt-5 mb-5">Menggunakan for else dalam looping data</p>
+                            <img src="/kelompok 1/public/img/loop3(1).png" alt="">
+                            <p class="mt-5 mb-5">Hasil output pada website akan seperti ini</p>
+                            <img src="/kelompok 1/public/img/outloop3.png" alt="">
+                        </div>
+
+                        <div class="continue">
+                            <p class="mt-5 mb-5">
+                                4. Continue, berfungsi sebagai seleksi kondisi pada sebuah looping data, ketika kondisi bernilai true, maka data yang ditampilkan adalah data selanjutnya,
+                                contoh penggunaan continue pada blade adalah sebagai berikut
+                            </p>
+                            <img src="/kelompok 1/public/img/loop4.png" alt="">
+                            <p class="mt-5 mb-5">Berdasarkan kode di atas, maka data dengan nama "Farid Efendi" tidak ditampilkan langsung dilanjutkan Menampilkan data yang lain</p>
+                            <img src="/kelompok 1/public/img/outloop4.png" alt="">
+                        </div>
+                    
+                </div>
+
+                <div class="Variable Loop text-white mt-10">
+                <h1 class="text-xl font-bold">Variable Loop</h1>
+                <p class="mt-5 mb-5">
+                    Blade juga menyediakan variabel loop yang berfungsi untuk memberikan informasi data looping seperti mendapatkan index, menampilkan index, menghitung data, dll.
+                    Variabel loop ada beberapa macam, yaitu index, iteration, remaining, count, first, last, even, odd, depth, parent. Berikut merupakan contoh penggunaan variabel loop:
+                </p>
+                <img src="/kelompok 1/public/img/variabelloop.png" alt="">
+                <p class="mt-5 mb-5">
+                    Pada syntax di atas, kami menggunakan contoh penggunaan $loop->iteration yang berfungsi untuk mendapatkan urutan index yang diawali dari angka 1, dan penggunaan syntax $loop->count
+                    untuk mendapatkan total keseluruhan data. Hasil output pada website akan seperti ini
+                </p>
+                <img src="/kelompok 1/public/img/outvariabelloop.png" alt="">
+
+                </div>
+
+                <div class="text-white Conditional Classes">
+                    <h1 class="text-xl font-bold">Conditional Classes</h1>
+                    <p class="mt-5 mb-5">Blade menyediakan directive class yang berfungsi untuk menambahkan css berdasarkan index array yang ingin ditambahkan stylenya. Berikut ini merupakan contoh penggunaan Conditional
+                        class pada blade.
+                    </p>
+                    <img src="/kelompok 1/public/img/Conditionalclass.png" alt="">
+                    <p class="mt-5 mb-5">Pada syntax di atas, kami menambahkan class baru untuk index pertama pada datayang telah dilooping, style yang diberikan berupa warna text yaitu biru.</p>
+                    <img src="/kelompok 1/public/img/outputconditional.png" alt="">
+
+                </div>
+
+                <div class="text-white mt-5 Additional Attribute">
+                    <h1 class="font-bold text-xl">Additional Attribute</h1>
+                    <p class="mt-5 mb-5">Blade menyediakan atribut tambahan directive yang berfungsi untuk beberapa macam kebutuhan, seperti menyimpan data yang dipilih user,
+                        enable-disable button, edit-readonly data, dll. Contoh atribut yang disediakan blade seperti, checked, selected, disabled, required, readonly. Berikut
+                        merupakan salah satu contoh penggunaan additional attribute pada blade:
+                    </p>
+                    <img src="/kelompok 1/public/img/attribut.png" alt="">
+                    <p class="mt-5 mb-5">Pada syntax di atas, penggunaan disabled pada button berfungsi untuk menonaktifkan button pada kondisi true. Sehingga user tidak dapat 
+                        mengeklik tombol submit jika data yang diisikan masih kosong. Berikut merupakan output perbedaan antara button dengan attribut disabled dan tidak disabled
+                    </p>
+                    <img src="/kelompok 1/public/img/outattribut.png" alt="">
+                </div>
+
+                <div class="Including Subviews mt-5 text-white">
+                    <h1 class="font-bold text-xl">Including Subviews</h1>
+                    <p class="mt-5">Including subviews merupakan directive yang disediakan blade untuk mengambil tampilan dari file blade lain. Contoh penggunaan
+                        including subviews seperti berikut.
+                    </p>
+                    <p class="mt-3">Membuat components navbar dan footer</p>
+                    <img src="/kelompok 1/public/img/navbar.png" alt="">
+                    <img src="/kelompok 1/public/img/footer.png" alt="">
+                    <img src="/kelompok 1/public/img/welcome.png" alt="">
+                    <p class="mt-5 mb-5">Berdasarkan syntax yang telah dibuat di atas, maka output pada website adalah seperti ini:</p>
+                    <img src="/kelompok 1/public/img/include.png" alt="">
+                </div>
+
+                <div class="mt-5 text-white Rendering Views For Collection">
+                    <h1 class="font-bold text-xl">Rendering Views For Collection</h1>
+                    <p class="mt-5 mb-5">Argumen pertama @each directive adalah tampilan yang akan dirender untuk setiap elemen dalam array atau koleksi. 
+                        Argumen kedua adalah larik atau koleksi yang ingin Anda ulangi, sedangkan argumen ketiga adalah nama variabel yang akan ditetapkan 
+                        ke iterasi saat ini dalam tampilan. Jadi, misalnya, jika Anda mengulangi array pekerjaan, biasanya Anda ingin mengakses setiap pekerjaan 
+                        sebagai variabel pekerjaan dalam tampilan. Kunci array untuk iterasi saat ini akan tersedia sebagai variabel kunci dalam tampilan.</p>
+                    <img src="/kelompok 1/public/img/rendering.png" alt="" class="">
+                    <img src="/kelompok 1/public/img/rendering2.png" alt="" class="">
+                    <img src="/kelompok 1/public/img/rendering3.png" alt="" class="">
+
+                    <p class="mt-5 mb-5">Output yang ditampilkan pada website</p>
+                    <img src="/kelompok 1/public/img/outrender.png" alt="">
+                </div>
+
+                <div class="mt-5 text-white RAW PHP">
+                    <h1 class="text-xl font-bold">RAW PHP</h1>
+                    <p class="mt-5 mb-5">Dalam blade, syntax tag php dapat diganti menjadi sebuah directive @php. Contoh penggunaan seperti berikut</p>
+                    <img src="/kelompok 1/public/img/raw.png" alt="" class="">
+                </div>
+
+
+
+                
+
+
+
+              </div>
+               
+            </div>
+            <div class="lg:w-1/3 bg-slate-700 rounded-lg p-5 h-fit">
+
+              <div class="mt-5">
+                <h1 class="text-white text-2xl font-bold">Daftar Materi</h1>
+                <ul class="mt-5">
+                  <li><a href="" class="underlined text-white">1. PHP Client - Server</a></li>
+                  <li><a href="" class="underlined text-white">2. Syntax Dasar PHP</a></li>
+                  <li><a href="" class="underlined text-white">3. Penerapan Seleksi Kondisi, Looping, Array PHP</a></li>
+                  <li><a href="" class="underlined text-white">4. Studi Kasus Konversi Nilai Mahasiswa</a></li>
+                  <li><a href="" class="underlined text-white">5. Studi Kasus Form Login PHP</a></li>
+                  <li><a href="" class="underlined text-white">6. Studi Kasus Ajax</a></li>
+                  
+                </ul>
+              </div>
+
+              <div class="mt-5 ">
+                <h1 class="text-2xl text-white font-bold">Developer</h1>
+                <ul class="space-y-5 mt-5">
+                  <li class="flex my-auto justify-around  items-center">
+                    <img src="img/FARCHAN SURYADIO.JPG" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white  w-full ml-2 font-semibold underlined">Farchan Suryadio Rizki <br> 215150700111005 </a>
+                  </li>
+                  <li class=" flex my-auto justify-around  items-center">
+                    <img src="img/asyam.jpg" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white  w-full ml-2 font-semibold underlined">Ahmad Asyam Adil <br> 215150700111005 </a>
+                  </li>
+                  <li class=" flex my-auto justify-around  items-center">
+                    <img src="img/Fingka Aprilia Efendy.jpeg" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white  w-full ml-2 font-semibold underlined">Fingka Aprilia Effendy <br> 215150700111005 </a>
+                  </li>
+                  <li class="flex my-auto justify-around items-center">
+                    <img src="img/Kevn.jpg" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white ml-2 w-full font-semibold underlined">Kevin Leonardo Julianto <br> 215150700111005 </a>
+                  </li>
+                  <li class="flex my-auto justify-around items-center">
+                    <img src="img/farid.jpeg" class="w-20 h-20 rounded-full border-2" alt="">
+                    <a href="" class="text-white ml-2 w-full font-semibold underlined">Akhmad Farid Nur Efendi <br> 215150700111005 </a>
+                  </li>
+                </ul>
+              </div>
+                
+             
+
+                
+            </div>
+        </div>
+    </section>
+
+
+
+   
+    
+</body>
+</html>
