@@ -11,7 +11,7 @@
           <!-- Page content here -->
   
           <!-- navbar -->
-          <div class="navbar bg-primary text-primary-content" id="navigator">
+          <div class="navbar bg-primary text-primary-content" id="home">
             <div class="flex-none">
               <label for="my-drawer" class="btn btn-square btn-ghost drawer-button">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current">
@@ -20,7 +20,7 @@
               </label>
             </div>
             <div class="flex-1">
-              <a class="btn btn-ghost normal-case text-xl" href="#navigator">Kelompok 2</a>
+              <a class="btn btn-ghost normal-case text-xl" href="#home">Kelompok 2</a>
             </div>
             <!-- <div class="flex-none">
               <button class="btn btn-square btn-ghost">
@@ -34,7 +34,7 @@
           <!-- judul -->
           <div class="hero min-h-screen bg-base-100">
             <div class="hero-content flex-col lg:flex-row">
-              <img src="https://placeimg.com/260/400/arch" class="max-w-sm rounded-lg shadow-2xl" />
+              <img src="https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg?w=740&t=st=1666853345~exp=1666853945~hmac=05979bd82f02e0cea8dfc24a59acd30464e77f357e953516c6143ca772ddfafb" class="max-w-sm rounded-lg shadow-2xl" />
               <div>
                 <h1 class="text-5xl font-bold">
                   Rangkuman Blade Template <br />
@@ -505,6 +505,130 @@
               </figure>
             </div>
           </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3 class="text-2xl"><strong>Inline Component Views</strong></h3>  <!-- judul -->
+              <p> Akan terasa rumit untuk mengelola kelas <em>component</em> dan template tampilan <em>component</em> yang sangat kecil.
+                Oleh karena itu, kita dapat mengembalikan <em>markup</em> <em>component</em> langsung dari <em>method</em> <code>render</code></p>   <!-- penjelasan -->
+              <figure>
+                <div class="mockup-code">
+                  <pre data-previx="1" class="text-success"><code>/**</code> </pre>
+                  <pre data-previx="2" class="text-success"><code>* Get the view / contents that represent the component.</code>   </pre>
+                  <pre data-previx="3" class="text-success"><code>*</code></p></pre>
+                  <pre data-previx="4" class="text-success"><code>* @return \Illuminate\View\View|\Closure|string</code>   </pre>
+                  <pre data-previx="5" class="text-success"><code>*/</code>   </pre>
+                  <pre data-previx="6" class="text-success"><code>public function render()</code>    </pre>
+                  <pre data-previx="7" class="text-success"><code>{</code>    </pre>
+                  <pre data-previx="8" class="text-success"><code>return &lt;&lt;&lt;'blade'</code>   </pre>
+                  <pre data-previx="9" class="text-success"><code>&lt;div class="alert alert-danger">&lt;/div></code>         </pre>
+                  <pre data-previx="10" class="text-success"><code>{{ $slot }}</code>            </pre>
+                  <pre data-previx="11" class="text-success"><code></div></code>           </pre>
+                  <pre data-previx="12" class="text-success"><code>blade;</code>       </pre>
+                  <pre data-previx="13" class="text-success"><code>}</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+  
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h2><strong>Generating Inline View Components</strong></h2>  <!-- judul -->
+              <p>Untuk membuat komponen yang merender tampilan sebaris, 
+                kita dapat menggunakan perintah <code>make:component</code> pada terminal</p>
+                <p><code>php artisan make:component Alert --inline</code></p>   <!-- penjelasan -->
+              <figure>
+              </figure>
+            </div>
+          </div>
+  
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3 class="text-2xl"><strong>Dynamic Components</strong></h3>  <!-- judul -->
+              <p>Terkadang kita mungkin perlu merender <em>component</em> tetapi tidak tahu <em>component</em> mana yang harus dirender hingga <em>runtime</em>.
+                Maka dari itu kita dapat menggunakan <code>dynamic-component</code> bawaan Laravel untuk merender berdasarkan nilai atau variabel <em>runtime</em>.</p>
+                <p><code>&lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;</code></p>   <!-- penjelasan -->
+              <figure>
+              </figure>
+            </div>
+          </div>
+          
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3 class="text-2xl"><strong>Manually Registering Components</strong></h3>  <!-- judul -->
+              <p>Saat menulis <em>component</em> untuk aplikasi kita sendiri, 
+                <em>component</em> secara otomatis ditemukan dalam <em>directory</em> <code>app/View/Components</code> dan <em>directory</em> <code>resources/views/components</code>.</p>
+            <p>Namun, jika kita membuat <em>package</em> yang menggunakan <em>Blade components</em>. 
+                Kita perlu mendaftarkan <em>component class</em> atau tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan <em>component</em> tersebut.
+                Biasanya kita harus mendaftarkan <em>component</em> dalam <code>boot</code> <em>method</em> dari <em>package's service provider</em> kita.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-previx="1" class="text-success"><code>use Illuminate\Support\Facades\Blade;</code></pre>
+                  <pre data-previx="2" class="text-success"><code>use VendorPackage\View\Components\AlertComponent;</code></pre>
+                  <pre data-previx="3" class="text-success"><code>/**</code></pre>
+                  <pre data-previx="4" class="text-success"><code>* Bootstrap your package's services.</code></pre>
+                  <pre data-previx="5" class="text-success"><code>*</code></pre>
+                  <pre data-previx="6" class="text-success"><code>* @return void</code></pre>
+                  <pre data-previx="7" class="text-success"><code>*/</code></pre>
+                  <pre data-previx="8" class="text-success"><code>public function boot()</code></pre>
+                  <pre data-previx="9" class="text-success"><code>{</code></pre>
+                  <pre data-previx="10" class="text-success"><code>Blade::component('package-alert', AlertComponent::class);</code></pre>
+                  <pre data-previx="11" class="text-success"><code>}</code></pre>
+                </div>
+              </figure>
+              <p>Setelah <em>component</em> terdaftar, <em>component</em> tersebut dapat dirender menggunakan tag-nya.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-previx="1" class="text-success"><code>&lt;x-package-alert/></code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+  
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h2><strong>Autoloading Package Components</strong></h2>  <!-- judul -->
+              <p>Kita dapat menggunakan <code>componentNamespace</code> <em>method</em> untuk memuat <em>component</em> kelas secara otomatis berdasarkan konvensi.
+                Misalnya <em>package</em> <code>Nightsade</code> mungkin memiliki <em>component</em> <code>calender</code> dan <code>colorPicker</code> yang berada pada <code>Package\Views\Components</code> <em>namespace</em>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-previx="1" class="text-success"><code>use Illuminate\Support\Facades\Blade;</code></pre>
+                  <pre data-previx="2" class="text-success"><code>/**</code></pre>
+                  <pre data-previx="3" class="text-success"><code>* Bootstrap your package's services.</code></pre>
+                  <pre data-previx="5" class="text-success"><code>*</code></pre>
+                  <pre data-previx="6" class="text-success"><code>* @return void</code></pre>
+                  <pre data-previx="7" class="text-success"><code>*/</code></pre>
+                  <pre data-previx="8" class="text-success"><code>public function boot()</code></pre>
+                  <pre data-previx="9" class="text-success"><code>{</code></pre>
+                  <pre data-previx="10" class="text-success"><code>Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');</code></pre>
+                  <pre data-previx="11" class="text-success"><code>}</code></pre>
+                </div>
+              </figure>
+              <p>Ini akan memungkinkan penggunaan komponen paket oleh namespace vendor mereka menggunakan <code>package-name::</code> <em>syntax</em></p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-previx="1" class="text-success"><code>&lt;x-nightshade::calendar /></code></pre>
+                  <pre data-previx="2" class="text-success"><code>&lt;x-nightshade::color-picker /></code></pre>
+                </div>
+              </figure>
+              <p>Blade akan secara otomatis mendeteksi kelas yang ditautkan ke <em>component</em> dengan <em>pascal-casing</em> dari <em>component name</em>. Subdirektori juga didukung menggunakan <em>"dot" notation</em>.</p>
+            </div>
+          </div>
+  
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3><strong>Anonymous Components</strong></h3>  <!-- judul -->
+              <p>Mirip dengan <em>component</em> inline, <em>component</em> anonim menyediakan mekanisme untuk mengelola <em>component</em> melalui satu file. Namun, <em>component</em> anonim menggunakan file tampilan tunggal dan tidak memiliki kelas terkait.
+                <em>component</em> anonim hanya perlu menempatkan <em>Blade template</em> di dalam <em>directory</em> <code>resources/views/components</code>. Misalnya, dengan asumsi kita telah mendefinisikan sebuah <em>component</em> di <code>resources/views/components/inputs/button.blade.php</code>
+                kita dapat merendernya dengan</p> 
+            <p><code>&lt;x-alert/></code></p>
+            <p>Gunakan "." jika <em>component</em> bereda dalam <em>directory component</em>. Misalnya <em>component</em> didefinisikan di <code>resources/views/components/inputs/button.blade.php</code>
+                kita dapat merendernya dengan</p>
+            <p><code>&lt;x-inputs.button/></code></p>   <!-- penjelasan -->
+              <figure>
+              </figure>
+            </div>
+          </div>
   
           <!-- footer -->
           <footer class="footer p-10 bg-neutral text-neutral-content">
@@ -541,7 +665,7 @@
           </ul>
         </div>
       </div>
-
+    </div>
       <!-- Candra -->
     <h3>The Loop Variable</h3>
     <p>
@@ -646,88 +770,6 @@
                 <p><code>@required($user->isAdmin()) /></p></code>
 
         <!-- Fauzan -->
-        <h3>#Inline Component Views</h3>
-        <p>Akan terasa rumit untuk mengelola kelas <em>component</em> dan template tampilan <em>component</em> yang sangat kecil.
-            Oleh karena itu, kita dapat mengembalikan <em>markup</em> <em>component</em> langsung dari <em>method</em> <code>render</code></p>
-            <p><code>/**</code></p> 
-            <p><code>* Get the view / contents that represent the component.</code></p>    
-            <p><code>*</code></p>
-            <p><code>* @return \Illuminate\View\View|\Closure|string</code></p>    
-            <p><code>*/</code></p>    
-            <p><code>public function render()</code></p>    
-            <p><code>{</code></p>    
-            <p><code>return <<<'blade'</code></p>        
-            <p><code>&lt;div class="alert alert-danger">&lt;/div></code></p>            
-            <p><code>{{ $slot }}</code></p>                
-            <p><code></div></code></p>            
-            <p><code>blade;</code></p>        
-            <p><code>}</code></p>
-            <br>     
-
-        <h4>Generating Inline View Components</h4>
-        <p>Untuk membuat komponen yang merender tampilan sebaris, 
-            kita dapat menggunakan perintah <code>make:component</code> pada terminal</p>
-            <p><code>php artisan make:component Alert --inline</code></p>
-            <br>
-            
-        <h3>#Dynamic Components</h3>
-        <p>Terkadang kita mungkin perlu merender <em>component</em> tetapi tidak tahu <em>component</em> mana yang harus dirender hingga <em>runtime</em>.
-            Maka dari itu kita dapat menggunakan <code>dynamic-component</code> bawaan Laravel untuk merender berdasarkan nilai atau variabel <em>runtime</em>.</p>
-            <p><code>&lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;</code></p>
-            <br>
-
-        <h3>#Manually Registering Components</h3>
-            <p>Saat menulis <em>component</em> untuk aplikasi kita sendiri, 
-                <em>component</em> secara otomatis ditemukan dalam <em>directory</em> <code>app/View/Components</code> dan <em>directory</em> <code>resources/views/components</code>.</p>
-            <p>Namun, jika kita membuat <em>package</em> yang menggunakan <em>Blade components</em>. 
-                Kita perlu mendaftarkan <em>component class</em> atau tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan <em>component</em> tersebut.
-                Biasanya kita harus mendaftarkan <em>component</em> dalam <code>boot</code> <em>method</em> dari <em>package's service provider</em> kita.</p>
-            <p><code>use Illuminate\Support\Facades\Blade;</code></p> 
-            <p><code>use VendorPackage\View\Components\AlertComponent;</code></p>     
-            <p><code>/**</code></p>     
-            <p><code>* Bootstrap your package's services.</code></p>     
-            <p><code>*</code></p>     
-            <p><code>* @return void</code></p>     
-            <p><code>*/</code></p>     
-            <p><code>public function boot()</code></p>     
-            <p><code>{</code></p>     
-            <p><code>Blade::component('package-alert', AlertComponent::class);</code></p>       
-            <p><code>}</code></p>
-
-            <p>Setelah <em>component</em> terdaftar, <em>component</em> tersebut dapat dirender menggunakan tag-nya.</p>
-            <p><code>&lt;x-package-alert/></code></p>
-            <br>
-
-        <h5>Autoloading Package Components</h5>
-            <p>Kita dapat menggunakan <code>componentNamespace</code> <em>method</em> untuk memuat <em>component</em> kelas secara otomatis berdasarkan konvensi.
-            Misalnya <em>package</em> <code>Nightsade</code> mungkin memiliki <em>component</em> <code>calender</code> dan <code>colorPicker</code> yang berada pada <code>Package\Views\Components</code> <em>namespace</em>.</p>
-            <p><code>use Illuminate\Support\Facades\Blade;</code></p>
-            <p><code>/**</code></p>
-            <p><code>* Bootstrap your package's services.</code></p>
-            <p><code>*</code></p>
-            <p><code>* @return void</code></p>
-            <p><code>*/</code></p>
-            <p><code>public function boot()</code></p>
-            <p><code>{</code></p>
-            <p><code>Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');</code></p>
-            <p><code>}</code></p>
-
-            <p>Ini akan memungkinkan penggunaan komponen paket oleh namespace vendor mereka menggunakan <code>package-name::</code> <em>syntax</em></p>
-            <p><code>&lt;x-nightshade::calendar /></code></p> 
-            <p><code>&lt;x-nightshade::color-picker /></code></p>
-            <p>Blade akan secara otomatis mendeteksi kelas yang ditautkan ke <em>component</em> dengan <em>pascal-casing</em> dari <em>component name</em>. Subdirektori juga didukung menggunakan <em>"dot" notation</em>.</p>
-            <br>
-            <br>
-
-        <h2>#Anonymous Components</h2>
-            <p>Mirip dengan <em>component</em> inline, <em>component</em> anonim menyediakan mekanisme untuk mengelola <em>component</em> melalui satu file. Namun, <em>component</em> anonim menggunakan file tampilan tunggal dan tidak memiliki kelas terkait.
-                <em>component</em> anonim hanya perlu menempatkan <em>Blade template</em> di dalam <em>directory</em> <code>resources/views/components</code>. Misalnya, dengan asumsi kita telah mendefinisikan sebuah <em>component</em> di <code>resources/views/components/inputs/button.blade.php</code>
-                kita dapat merendernya dengan</p> 
-            <p><code>&lt;x-alert/></code></p>
-            <p>Gunakan "." jika <em>component</em> bereda dalam <em>directory component</em>. Misalnya <em>component</em> didefinisikan di <code>resources/views/components/inputs/button.blade.php</code>
-                kita dapat merendernya dengan</p>
-            <p><code>&lt;x-inputs.button/></code></p>
-            <br>
 
         <h3>#Anonymous Index Components</h3>
             <p>Ketika <em>component</em> terdiri dari bari <em>Blade template</em>, kita ingin mengelompokkan <em>component</em> yang ada dalam satu <em>directory</em>.
@@ -785,6 +827,7 @@
             <p><code>&lt;/li></code></p>
 
             <p><code>@aware</code> tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke <em>component</em> induk melalui atribut HTML. Nilai <code>@props</code> default yang tidak secara eksplisit diteruskan ke <em>component</em> induk tidak dapat diakses oleh <code>@aware</code>.</p>
+            
 
         <!-- David -->
         <h3>Anonymous Components Namespaces</h3>
