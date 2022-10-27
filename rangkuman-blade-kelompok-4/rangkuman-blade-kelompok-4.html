@@ -477,6 +477,39 @@
                             </p>
                         </div>
                         <!--END OF LOOPS-->
+                        <!--Loops Variabel-->
+                        <div class="ml-6 mt-10">
+                          <h2 class="text-red-900 text-2xl">Variabel Loops</h2>
+                          <p class=" text-black text-justify text-xl mb-5">
+                              Saat melakukan iterasi melalui loop foreach, variabel $loop akan tersedia di dalam loop
+                              Anda. Variabel ini menyediakan akses ke beberapa bit informasi yang berguna seperti
+                              indeks
+                              loop saat ini dan apakah ini adalah iterasi pertama atau terakhir melalui loop:
+
+
+                          <div class="bg-black rounded-md p-8">
+                              <code class="font-bold text-green-400 "> <br>
+                              @foreach ($users as $user) <br>
+                              @if ($loop->first) <br>
+                                  This is the first iteration. <br>
+                              @endif <br>
+                          
+                              @if ($loop->last) <br>
+                                  This is the last iteration. <br>
+                              @endif <br>
+                          
+                              This is user {{ $user->id }}
+                          @endforeach
+                      </code>
+                          </div>
+
+                          </p>
+                          <p class="text-black md:text-xl mt-5 pb-10">
+                              Variabel $loop juga berisi berbagai properti berguna lainnya:
+                              <img src="/img/looptable.jpeg" alt="">
+                          </p>
+                      </div>
+                      <!--END OF Loops Variabel-->
 
           </div>
         </section>
