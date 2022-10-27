@@ -329,7 +329,7 @@
               yang sangat bersih dan singkat untuk bekerja dengan struktur kontrol PHP sementara juga
               tetap
               akrab dengan rekan PHP mereka.</p>
-            !--IF STATEMENT-->
+            <!--IF STATEMENT-->
             <div class="ml-6">
               <h2 class="text-red-900 text-2xl ">IF STATEMENT</h2>
               <p class=" text-black text-justify text-xl mb-5">
@@ -605,66 +605,111 @@
               </div>
 
 
-                          </p>
-                      </div>
-                      <!--END OF The Once directives-->
 
-                        <!--RAW PHP-->
-                        <div class="ml-6 mt-10">
-                            <h2 class="text-red-900 text-2xl">RAW PHP</h2>
-                            <p class=" text-black text-justify text-xl mb-5">
-                                Dalam beberapa situasi, sangat berguna untuk menyematkan kode PHP ke dalam tampilan
-                                Anda. Anda dapat menggunakan arahan Blade @phpuntuk mengeksekusi blok PHP biasa di dalam
-                                template Anda:
+              <!--END OF The Once directives-->
 
-                            <div class="bg-black rounded-md p-8">
-                                <code class="font-bold text-green-400 "> <br>
+              <!--RAW PHP-->
+              <div class="ml-6 mt-10">
+                <h2 class="text-red-900 text-2xl">RAW PHP</h2>
+                <p class=" text-black text-justify text-xl mb-5">
+                  Dalam beberapa situasi, sangat berguna untuk menyematkan kode PHP ke dalam tampilan
+                  Anda. Anda dapat menggunakan arahan Blade @phpuntuk mengeksekusi blok PHP biasa di dalam
+                  template Anda:
+
+                <div class="bg-black rounded-md p-8">
+                  <code class="font-bold text-green-400 "> <br>
                                     @php <br>
                                     $counter = 1; <br>
                                     @endphp <br>
 
                         </code>
-                            </div>
+                </div>
 
-                            </p>
-                        </div>
-                        <!--END OF RAW PHP-->
-
-
-              </p>
-            </div>
-            <!--END OF The Once directives-->
-            <!--RENDERING VIEW FOR COLLECTION-->
-            <div class="ml-6 mt-10">
-              <h2 class="text-red-900 text-2xl">RENDERING VIEW FOR COLLECTION</h2>
-              <p class=" text-black text-justify text-xl mb-5">
-                Komponen blade @each berfungsi untuk menggabungkan loop dan memasukkan ke dalam satu baris.
-                Directive @each pertama adalah tampilan untuk setiap elemen
-                Directive @each kedua adalah collection yang ingin diulangi
-                Directive @each ketiga adalah nama variabel yang akan ditetapkan ke dalam tampilan
-
-
-              <div class="bg-black rounded-md p-8">
-                <code class="font-bold text-green-400 "> <br>
-                  each(‘view.name’, $jobs, ‘job’) <br>
-                  each(‘view.name’, $jobs, ‘job’, ‘view.empty’)
-
-
-                    </code>
-                 
+                </p>
               </div>
-              <p class=" text-black text-justify text-xl mb-5">Directive @each keempat menentukan tampilan yang akan dirender jika array yang diberikan kosong.</p>
+              <!--END OF RAW PHP-->
+              <!--RENDERING VIEW FOR COLLECTION-->
+              <div class="ml-6 mt-10">
+                <h2 class="text-red-900 text-2xl">RENDERING VIEW FOR COLLECTION</h2>
+                <p class=" text-black text-justify text-xl mb-5">
+                  Komponen blade @each berfungsi untuk menggabungkan loop dan memasukkan ke dalam satu baris.
+                  Directive @each pertama adalah tampilan untuk setiap elemen
+                  Directive @each kedua adalah collection yang ingin diulangi
+                  Directive @each ketiga adalah nama variabel yang akan ditetapkan ke dalam tampilan
+
+
+                <div class="bg-black rounded-md p-8">
+                  <code class="font-bold text-green-400 "> <br>
+                each(‘view.name’, $jobs, ‘job’) <br>
+                each(‘view.name’, $jobs, ‘job’, ‘view.empty’)
+
+
+                </code>
+
+                </div>
+                <p class=" text-black text-justify text-xl mb-5">Directive @each keempat menentukan tampilan yang akan
+                  dirender jika array yang diberikan kosong.</p>
+                </p>
+              </div>
+              <!--END OF RENDERING VIEW FOR COLLECTION-->
+
               </p>
             </div>
-            <!--END OF RENDERING VIEW FOR COLLECTION-->
+
+
 
           </div>
         </section>
       </div>
     </section>
     <!--End Of Blade Directives-->
+    <!--Component-->
+    <section class="component">
+      <div class="componet">
+        <div class="md:mx-40 mt-10 bg-red-400 rounded-lg md:px-20 px-6">
+          <h1 class="pt-10 text-3xl  text-black" style="font-family: 'Montserrat',sans serif;">Component
+          </h1>
+          <p class="pt-5 text-xl text-white text-justify pb-10">- Komponen dan slot memberikan manfaat yang serupa
+            dengan
+            sections, layouts, dan includes.
+            Namun, beberapa orang mungkin menganggap model komponen dan slot lebih mudah dipahami.
+            Untuk menulis komponen, terdapat dua pendekatan, yaitu komponen berbasis kelas dan
+            komponen anonim. <br>
+            - Komponen berbasis kelas
+            untuk menggunakan pendekatan ini anda dapat menggunakan perintah make:component
+            artisan. Untuk mengilustrasikan cara menggunakan komponen, kita akan membuat komponen
+            Alert sederhana. Maka, perintah make:component akan menaruh komponen tersebut pada
+            direktori app/View/Components.
+          </p>
+          <div class="bg-black rounded-md p-8">
+            <code class="font-bold text-green-400">
+            php artisan make:component Alert
+          </code>
+          </div>
+          <p class="pt-5 text-xl text-white text-justify pb-10">Perintah make:component juga akan membuat tampilan untuk
+            komponen tersebut. Tampilan
+            akan ditempatkan di direktori resources/views/components. Saat menulis komponen
+            untuk aplikasi anda sendiri, komponen secara otomatis ditemukan dalam direktori
+            app/View/Components dan direktori resources/views/components, jadi biasanya
+            tidak diperlukan registrasi komponen lebih lanjut. <br>
+            Anda juga dapat membuat komponen di dalam sub direktori berikut:
+
+          </p>
+          <div class="bg-black rounded-md p-8">
+            <code class="font-bold text-green-400">
+              php artisan make:component Forms/Input
+          </code>
+          </div>
+          <p class="pt-5 text-xl text-white text-justify pb-10">Perintah di atas akan membuat komponen Input di
+            direktori
+            app/View/Components/FormS dan tampilan akan ditempatkan di direktori
+            resources/views/components.forms
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
-  <!--End Of Blade Template-->
+  <!--End Of component-->
 
 
 
