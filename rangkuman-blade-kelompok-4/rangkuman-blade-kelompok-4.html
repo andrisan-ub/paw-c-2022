@@ -442,6 +442,42 @@
                     </p>
                 </div>
                 <!--END OF Switch Statement-->
+<!--LOOPS-->
+                        <div class="ml-6 mt-10">
+                            <h2 class="text-red-900 text-2xl">Loops</h2>
+                            <p class=" text-black text-justify text-xl mb-5">
+                                Selain pernyataan bersyarat, Blade menyediakan arahan sederhana untuk bekerja dengan
+                                struktur loop PHP. Sekali lagi, masing-masing arahan ini berfungsi identik dengan rekan
+                                PHP
+                                mereka:
+
+
+                            <div class="bg-black rounded-md p-8">
+                                <code class="font-bold text-green-400 "> <br>
+                                @for ($i = 0; $i < 10; $i++) <br>
+                                The current value is {{ $i }} <br>
+                            @endfor <br>
+                             
+                            @foreach ($users as $user) <br>
+                                <p>This is user {{ $user->id }}</p> <br>
+                            @endforeach <br>
+                              
+                            @forelse ($users as $user) <br>
+                               <li>{{ $user->name }}</li> <br>
+                            @empty <br>
+                                <p>No users</p> <br>
+                            @endforelse <br>
+                             
+                            @while (true) <br>
+                                <p>I'm looping forever.</p> <br>
+                            @endwhile
+                        </code>
+                            </div>
+
+                            </p>
+                        </div>
+                        <!--END OF LOOPS-->
+
           </div>
         </section>
       </div>
