@@ -60,4 +60,76 @@
           >
         </li>
       </ul>
+      <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+        <li class="flex items-center">
+          <a
+            class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            href="#pablo"
+            ><i
+              class="lg:text-gray-300 text-gray-500 fab fa-facebook text-lg leading-lg "
+            ></i
+            ><span class="lg:hidden inline-block ml-2">Share</span></a
+          >
+        </li>
+        <li class="flex items-center">
+          <a
+            class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            href="#pablo"
+            ><i
+              class="lg:text-gray-300 text-gray-500 fab fa-twitter text-lg leading-lg "
+            ></i
+            ><span class="lg:hidden inline-block ml-2">Tweet</span></a
+          >
+        </li>
+        <li class="flex items-center">
+          <a
+            class="lg:text-black lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
+            href="#pablo"
+            ><i
+              class="lg:text-gray-300 text-gray-500 fab fa-github text-lg leading-lg "
+            ></i
+            ><span class="lg:hidden inline-block ml-2">Star</span></a
+          >
+        </li>
+        <li class="flex items-center">
+          <button
+            class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
+            type="button"
+            style="transition: all 0.15s ease 0s;"
+            >
+            <a href="login.php">
+            <i class="fas fa-arrow-alt-circle-down">Login</i> </a>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class=" px-24 pb-10">
+  <div class="lg:gap-5 lg:gap-y-0 mt-28 px-10">
+      <div class="bg-white p-10 w-full">
+          <h1 class="text-4xl font-bold font-serif mb-5">Laravel Blade Template</h1>
+          <h2 class="text-m font-bold font-serif mb-5">Definisi Blade</h2>
+          <p data-aos="zoom-in" class="mt-5 text-justify">Blade adalah fitur yang disediakan Laravel untuk proses templating sederhana namun sangat bermanfaat dalam proses pengembangan tampilan halaman web. Tidak seperti fitur templating PHP populer lainnya, Blade tidak membatasi programmer untuk menggunakan kode PHP biasa dalam membuat kode untuk tampilan. File template blade menggunakan ekstensi file .blade.php dan biasanya disimpan di direktori resources/views.</p> <br>
+          <h2 class="text-m font-bold font-serif mb-5">Routing Blade</h2>
+          <p data-aos="zoom-in" class="mt-5 text-justify">Tampilan blade dapat dikembalikan dari rute atau pengontrol menggunakan bantuan tampilan global. Tentu saja, seperti yang disebutkan dalam dokumentasi tentang tampilan, data dapat diteruskan ke tampilan Blade menggunakan argumen kedua pembantu tampilan</p>
+          <img data-aos="zoom-in" src="img/blade/code1.png">
+          <p data-aos="zoom-in"class="mt-5 text-justify">Kode program di atas menununjukkan implementasi route yang terdapat pada laravel. Route di atas terdapat pada folder routes dan file bernama web.php. Pada file tersebut, kita dapat membuat route-route baru sesuai keinginan supaya link URL dapat diakses melalui browser.</p>
+      </div>
+  </div>
+  <div class=" lg:gap-5 gap-y-10 lg:gap-y-0 px-10">
+    <div class="bg-white p-10 w-full">
+      <h2 class="text-m font-bold font-serif mb-5">Menampilkan data yang tidak terhapus pada Blade</h2>
+        <img data-aos="zoom-in"src="img/blade/blade.png" alt="">
+        <p data-aos="zoom-in" class="mt-5 text-justify">Kode program di atas merupakan impelementasi dalam penggunaan templating blade pada framework laravel yaitu menampilkan data yang telah dikirimkan melalui controller maupun route. Templating blade {!! !!} memiliki arti yaitu php echo apabila diterjemahkan ke dalam bahasa pemrograman vanila php biasa. </p>
+    </div>
+</div>
+<div class=" lg:gap-5 gap-y-10 lg:gap-y-0  px-10">
+  <div class="bg-white p-10 w-full">
+    <h2 class="text-m font-bold font-serif mb-5">Output data yang tidak terhapus pada Blade</h2>
+      <img data-aos="zoom-in" src="img/blade/output1.png" alt="">
+      <p data-aos="zoom-in" class="mt-5 text-justify">Apabila file coba.blade.php telah dibuat serta route pada web.php telah ditambahkan yaitu "/coba", maka ketika server lokal diakses kemudian /coba, maka akan menghasilkan output seperti di atas yaitu menampilkan Hello $name. Pada route kita juga harus menambahkan dan mengirimkan data name supaya file views dapat menerima variable tersebut sehingga dapat ditampilkan.</p>
+     </div>
+</div>
       
