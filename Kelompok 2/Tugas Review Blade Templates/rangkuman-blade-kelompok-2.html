@@ -1,0 +1,1159 @@
+<html data-theme="lofi">
+    <head> 
+        <title>Review Blade Template</title>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@2.33.0/dist/full.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script></head>
+    <body>
+           <!-- drawer -->
+    <div class="drawer">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content">
+          <!-- Page content here -->
+  
+          <!-- navbar -->
+          <div class="navbar bg-primary text-primary-content" id="">
+            <div class="flex-none">
+              <label for="my-drawer" class="btn btn-square btn-ghost drawer-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </label>
+            </div>
+            <div class="flex-1">
+              <a class="btn btn-ghost normal-case text-xl" href="#home">Kelompok 2</a>
+            </div>
+            <!-- <div class="flex-none">
+              <button class="btn btn-square btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
+                </svg>
+              </button>
+            </div> -->
+          </div>
+  
+          <!-- judul -->
+          <div class="hero min-h-screen bg-base-100">
+            <div class="hero-content flex-col lg:flex-row">
+              <img src="https://img.freepik.com/free-vector/laptop-with-program-code-isometric-icon-software-development-programming-applications-dark-neon_39422-971.jpg?w=740&t=st=1666853345~exp=1666853945~hmac=05979bd82f02e0cea8dfc24a59acd30464e77f357e953516c6143ca772ddfafb" class="max-w-sm rounded-lg shadow-2xl" />
+              <div>
+                <h1 class="text-5xl font-bold">
+                  Rangkuman Blade Template <br />
+                  Laravel
+                </h1>
+                <p class="py-6">Kelompok 2</p>
+                <button class="btn btn-primary"><a href="#introduction">Get Started</a></button>
+              </div>
+            </div>
+          </div>
+  
+          <br />
+  
+          <!-- introduction -->
+          <div class="card w-100 bg-base-100 shadow-xl" id="introduction">
+            <div class="card-body">
+              <h1 class="card-title text-3xl"><strong>Introduction</strong></h1>
+              <p>
+                Blade adalah template yang disediakan oleh Laravel untuk memudahkan pemrogram dalam membuat program php. File blade memiliki extension <code>.blade.php</code> dan disimpan dalam directory <code>resources/views</code>. Blade template
+                dapat digunakan bersamaan dengan program php dan framework javascript.
+              </p>
+              <!-- displaying data -->
+              <p>Tanda kurung kurawal <code>{}</code> digunakan untuk menampilkan data di dalam file blade</p>
+              <p>Dalam program php, untuk menampilkan data digunakan keyword <code>echo</code>. Blade template dapat mempersingkat kode php, karena cukup menggunakan tanda kurung kurawal <code>{}</code></p>
+            </div>
+          </div>
+
+            <!-- blade directives -->
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h1 class="card-title text-3xl"><strong>Blade Directives</strong></h1>
+              <p>Blade template memiliki keyword yang mirip dengan keyword pada php. Setiap keyword pada blade template diawali dengan tanda <code>@</code></p>
+              <h3 class="text-2xl"><strong>Percabangan</strong></h3>
+              <h2><strong>if else</strong></h2>
+              <p>Percabangan if else pada blade template menggunakan keyword <code>@if</code>, <code>@elseif</code>, <code>@else</code>, <code>@endif</code>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@if (count($records) === 1)</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>      I have one record!</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>   @elseif (count($records) > 1)</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>I have multiple records!</code></pre>
+                  <pre data-prefix="5" class="text-success"><code> @else</code></pre>
+                  <pre data-prefix="6" class="text-success"><code>I don't have any records!</code></pre>
+                  <pre data-prefix="7" class="text-success"><code> @endif</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <p>Blade template juga menyediakan keyword <code>@unless</code>. Baris kode di antara keyword <code>@unless</code> dan <code>@endunless</code> akan dijalankan jika kondisi di dalam tanda kurung tidak terpenuhi.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@unless (Auth::check())</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>You are not signed in.</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>@endunless</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h1 class="card-title text-3xl"><strong> </strong></h1>
+              <p> </p>
+              <h3 class="text-2xl"><strong> </strong></h3>
+              <h2><strong>auth</strong></h2>
+              <p> Keyword <code>@auth</code> dan <code>@endauth</code> berfungsi untuk memeriksa apakah pengguna telah terautentifikasi. Sementara itu, keyword <code>@guest</code> dan <code>@endguest</code> digunakan untuk memeriksa apakah pengguna
+                belum terautentifikasi.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@auth</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>// The user is authenticated...</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>@endauth</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>@guest</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>// The user is not authenticated...</code></pre>
+                  <pre data-prefix="6" class="text-success"><code>@endguest</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2><strong>enviroment</strong></h2>
+              <p>Kode di antara keyword <code>@env</code> dan <code>@endenv</code> akan dieksekusi jika aplikasi dijalankan dalam lingkungan yang sesuai dengan kondisi di dalam tanda kurung.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@env('staging')</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>// The application is running in "staging"...</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>@endenv</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>@env(['staging', 'production'])</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>// The application is running in "staging" or "production"...</code></pre>
+                  <pre data-prefix="6" class="text-success"><code>@endenv</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2><strong>section</strong></h2>
+              <p>Keyword <code>@hasSection</code> dan <code>endif</code> digunakan untuk memeriksa apakah suatu section memiliki isi. Sementara itu, keyword <code>@sectionMissing</code> dan <code>@endif</code> digunakan untuk memeriksa apakah
+                section tidak memiliki isi.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@hasSection('navigation')</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>&lt;div class="pull-right"&gt;</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>@yield('navigation')</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>&lt;div&gt;</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>&lt;div class="clearfix">&lt;/div&gt;</code></pre>
+                  <pre data-prefix="6" class="text-success"><code>@endif</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2><strong>switch</strong></h2>
+              <p>Percabangan switch pada blade template sama seperti percabangan switch pada program php. Keyword yang digunakan pada percabangan switch terdiri dari <code>@switch</code>, <code>@case</code>, <code>@break</code>,
+                <code>@default</code>, dan <code>@endswitch</code></p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@switch($i)</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>@case(1)</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>First case...</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>@break</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>@case(2)</code></pre>
+                  <pre data-prefix="6" class="text-success"><code>Second case...</code></pre>
+                  <pre data-prefix="7" class="text-success"><code>@break</code></pre>
+                  <pre data-prefix="8" class="text-success"><code>@default</code></pre>
+                  <pre data-prefix="9" class="text-success"><code>Default case...</code></pre>
+                  <pre data-prefix="10" class="text-success"><code>@endswitch </code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h3 class="text-2xl"><strong>Perulangan</strong></h3>
+              <h2><strong>for</strong></h2>
+              <p>Perulangan for menggunakan keyword <code>@for</code> dan <code>endfor</code>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@for ($i = 0; $i &lt; 10; $i++)</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>The current value is {{ $i }}</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>@endfor</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2><strong>foreach</strong></h2>
+              <p>Perulangan foreach menggunakan keyword <code>@foreach</code> dan <code>@endforeach</code>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@foreach ($users as $user)</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>&lt;p>This is user {{ $user->id }}&lt;/p></code></pre>
+                  <pre data-prefix="3" class="text-success"><code>@endforeach</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2><strong>forelse</strong></h2>
+              <p>Perulangan forelse menggunakan keyword <code>@forelse</code>, <code>@empty</code>, dan <code>@endforelse</code>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@forelse ($users as $user)</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>     &lt;li>{{ $user->name }}&lt;/li></code></pre>
+                  <pre data-prefix="3" class="text-success"><code>@empty</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>&lt;p>No users&lt;/p></code></pre>
+                  <pre data-prefix="5" class="text-success"><code>@endforelse</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2><strong>while</strong></h2>
+              <p>Pengulangan while menggunakan keyword <code>@while</code>, dan <code>@endwhile</code>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@while (true)</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>&lt;p>I'm looping forever.&lt;/p></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>@endwhile</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+        <!-- Candra -->
+
+        <div class="card w-100 bg-base-100 shadow-xl">
+          <div class="card-body">       
+            <h3 class="text-2xl"><strong>The Loop Variabel</strong></h3>  <!-- judul -->
+            <p>
+              Saat melakukan iterasi melalui loop foreach, variabel $loop akan tersedia di dalam loop Anda. Variabel ini menyediakan akses ke beberapa bit informasi yang berguna seperti indeks loop saat ini dan apakah ini adalah iterasi pertama atau terakhir melalui loop:
+            </p>  <!-- penjelasan -->
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>@foreach ($users as $user)</code></pre>      <!-- kode -->
+                <pre data-prefix="2" class="text-success"><code>@if ($loop->first)</code></pre>
+                <pre data-prefix="3" class="text-success"><code>This is the first iteration.</code></pre>
+                <pre data-prefix="4" class="text-success"><code>@endif</code></pre>
+                <pre data-prefix="5" class="text-success"><code>@if ($loop->last)</code></pre>
+                <pre data-prefix="6" class="text-success"><code>This is the last iteration.</code></pre>
+                <pre data-prefix="7" class="text-success"><code>@endif</code></pre>
+                <pre data-prefix="8" class="text-success"><code>This is user {{ $user->id }}</code></pre>
+                <pre data-prefix="9" class="text-success"><code>@endforeach</code></pre>
+              </div>
+            </figure>
+            <p>Jika Anda berada dalam loop bersarang, Anda dapat mengakses variabel $loop loop induk melalui properti induk:</p>
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>@foreach ($users as $user)</code></pre>      <!-- kode -->
+                <pre data-prefix="2" class="text-success"><code>  @foreach ($user->posts as $post)</code></pre>
+                <pre data-prefix="3" class="text-success"><code>    @if ($loop->parent->first)</code></pre>
+                <pre data-prefix="4" class="text-success"><code>      This is the first iteration of the parent loop.</code></pre>
+                <pre data-prefix="5" class="text-success"><code>    @endif</code></pre>
+                <pre data-prefix="6" class="text-success"><code>  @endforeach</code></pre>
+                <pre data-prefix="7" class="text-success"><code>@endforeach</code></pre>
+              </div>
+            </figure>
+          </div>
+        </div>
+        
+        
+        <div class="card w-100 bg-base-100 shadow-xl">
+          <div class="card-body">       
+            <h3 class="text-2xl"><strong>Conditional Classes</strong></h3>  <!-- judul -->
+            <p>Arahan @class mengkompilasi string kelas CSS secara kondisional. Arahan menerima array kelas di mana kunci array berisi kelas atau kelas yang ingin Anda tambahkan, sedangkan nilainya adalah ekspresi boolean. Jika elemen array memiliki kunci numerik, elemen tersebut akan selalu disertakan dalam daftar kelas yang dirender:</p>  <!-- penjelasan -->
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>@php</code></pre>      <!-- kode -->
+                <pre data-prefix="2" class="text-success"><code>$isActive = false;</code></pre>
+                <pre data-prefix="3" class="text-success"><code>$hasError = true;</code></pre>
+                <pre data-prefix="4" class="text-success"><code>@endphp</code></pre>
+                <pre data-prefix="5" class="text-success"><code>&lt;span @class([</code></pre>
+                <pre data-prefix="6" class="text-success"><code>'p-4',</code></pre>
+                <pre data-prefix="7" class="text-success"><code>'font-bold' => $isActive,</code></pre>
+                <pre data-prefix="8" class="text-success"><code>'text-gray-500' => ! $isActive,</code></pre>
+                <pre data-prefix="9" class="text-success"><code>'bg-red' => $hasError,</code></pre>
+                <pre data-prefix="10" class="text-success"><code>])></code></pre>
+              </div>
+            </figure>
+          </div>
+        </div>
+        
+        <div div class="card w-100 bg-base-100 shadow-xl">
+          <div class="card-body">       
+             <h2><strong>Additional Attribut--</strong></h2>       <!-- subjudul -->
+             <p>Untuk kenyamanan, Anda dapat menggunakan @checked directive untuk dengan mudah menunjukkan jika input kotak centang HTML yang diberikan "dicentang". Arahan ini akan diperiksa kembali jika kondisi yang diberikan bernilai benar:</p> <!-- penjelasan -->
+             <figure>
+               <div class="mockup-code">
+                 <pre data-prefix="1" class="text-success"><code>&lt;input type="checkbox"</code></pre>      <!-- kode -->
+                 <pre data-prefix="2" class="text-success"><code>name="active"</code></pre>
+                 <pre data-prefix="3" class="text-success"><code>value="active"</code></pre>
+                 <pre data-prefix="4" class="text-success"><code>@checked(old('active', $user->active)) /></code></pre>
+               </div>
+             </figure>
+             <p>demikian pula, arahan @selected dapat digunakan untuk menunjukkan apakah opsi pilih yang diberikan harus "dipilih":</p>
+             <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>&lt;select name="version"></code></pre>      <!-- kode -->
+                <pre data-prefix="2" class="text-success"><code>  @foreach ($product->versions as $version)</code></pre>
+                <pre data-prefix="3" class="text-success"><code>    &lt;option value="{{ $version }}" @selected(old('version') == $version)></code></pre>
+                <pre data-prefix="4" class="text-success"><code>      {{ $version }}</code></pre>
+                <pre data-prefix="5" class="text-success"><code>    &lt;/option></code></pre>
+                <pre data-prefix="6" class="text-success"><code>  @endforeach</code></pre>
+                <pre data-prefix="7" class="text-success"><code>&lt;/select></code></pre>
+              </div>
+            </figure>
+            <p>Selain itu, arahan @disabled dapat digunakan untuk menunjukkan apakah elemen tertentu harus "dinonaktifkan":</p>
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>&lt;button type="submit" @disabled($errors->isNotEmpty())>Submit</button></p></code></pre>      <!-- kode -->
+              </div>
+            </figure>
+            <p>Selain itu, direktif @readonly dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus "readonly":</p>
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>&lt;input type="email"<p></code></pre>      <!-- kode -->
+                <pre data-prefix="2" class="text-success"><code>name="email"</code></pre>
+                <pre data-prefix="3" class="text-success"><code>value="email@laravel.com"</code></pre>
+                <pre data-prefix="4" class="text-success"><code>@readonly($user->isNotAdmin()) /></code></pre>
+              </div>
+            </figure>
+            <p>Selain itu, arahan @required dapat digunakan untuk menunjukkan apakah elemen tertentu harus "diperlukan":</p>
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>&lt;input type="text"<p></code></pre>      <!-- kode -->
+                <pre data-prefix="2" class="text-success"><code>name="title"</code></pre>
+                <pre data-prefix="3" class="text-success"><code>value="title"</code></pre>
+                <pre data-prefix="4" class="text-success"><code>@required($user->isAdmin()) /></code></pre>
+              </div>
+            </figure>
+           </div>
+         </div>
+        
+        <div class="card w-100 bg-base-100 shadow-xl">
+          <div class="card-body">       
+            <h3 class="text-2xl"><strong>Including Subviews</strong></h3>  <!-- judul -->
+            <p>Direktif @include Blade memungkinkan Anda menyertakan tampilan Blade dari dalam tampilan lain. Semua variabel yang tersedia untuk tampilan induk akan tersedia untuk tampilan yang disertakan:</p>   <!-- penjelasan -->
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>&lt;div></code></pre>      <!-- kode -->
+                <pre data-prefix="2" class="text-success"><code>@include('shared.errors')</code></pre>
+                <pre data-prefix="3" class="text-success"><code>&lt;form></code></pre>
+                <pre data-prefix="4" class="text-success"><code>&lt;!-- Form Contents --></code></pre>
+                <pre data-prefix="5" class="text-success"><code>&lt;/form></code></pre>
+                <pre data-prefix="6" class="text-success"><code>&lt;/div></code></pre>
+              </div>
+            </figure>
+            <p>Meskipun tampilan yang disertakan akan mewarisi semua data yang tersedia di tampilan induk, Anda juga dapat meneruskan larik data tambahan yang harus tersedia untuk tampilan yang disertakan:</p>
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>@include('view.name', ['status' => 'complete'])</code></pre>      <!-- kode -->
+              </div>
+            </figure>
+            <p>Jika Anda mencoba include tampilan yang tidak ada, Laravel akan membuat kesalahan. Jika Anda ingin menyertakan tampilan yang mungkin ada atau tidak, Anda harus menggunakan direktif @includeIf:</p>
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>@includeIf('view.name', ['status' => 'complete'])</code></pre>      <!-- kode -->
+              </div>
+            </figure>
+            <p>Jika Anda ingin @include tampilan jika ekspresi boolean yang diberikan bernilai benar atau salah, Anda dapat menggunakan arahan @includeWhen dan 
+              @includeUnless:</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@includeWhen($boolean, 'view.name', ['status' => 'complete'])</code></pre>      <!-- kode -->
+                  <pre data-prefix="2" class="text-success"><code>@includeUnless($boolean, 'view.name', ['status' => 'complete'])</code></pre>      <!-- kode -->
+                </div>
+              </figure>
+              <p>Untuk menyertakan tampilan pertama yang ada dari larik tampilan tertentu, Anda dapat menggunakan direktif includeFirst:pression mengevaluasi ke true atau false, Anda dapat menggunakan arahan @includeWhen dan @includeUnless:</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>@includeWhen($boolean, 'view.name', ['status' => 'complete'])@includeFirst(['custom.admin', 'admin'], ['status' => 'complete'])</code></pre>      <!-- kode -->
+                </div>
+              </figure>
+          </div>
+        </div>
+        
+        <div class="card w-100 bg-base-100 shadow-xl">
+          <div class="card-body">       
+            <h2><strong>Rendering Views For Collection</strong></h2>       <!-- subjudul -->
+            <p>dapat menggabungkan loop dan memasukkan ke dalam satu baris dengan arahan @each Blade:</p> <!-- penjelasan -->
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>@each('view.name', $jobs, 'job')</code></pre>      <!-- kode -->
+              </div>
+            </figure>
+            <p>Argumen pertama @each directive adalah tampilan yang akan dirender untuk setiap elemen dalam array atau koleksi. Argumen kedua adalah larik atau koleksi yang ingin Anda ulangi, sedangkan argumen ketiga adalah nama variabel yang akan ditetapkan ke iterasi saat ini dalam tampilan. Jadi, misalnya, jika Anda mengulangi array pekerjaan, biasanya Anda ingin mengakses setiap pekerjaan sebagai variabel pekerjaan dalam tampilan. Kunci array untuk iterasi saat ini akan tersedia sebagai variabel kunci dalam tampilan.
+        
+              Anda juga dapat meneruskan argumen keempat ke @each directive. Argumen ini menentukan tampilan yang akan dirender jika array yang diberikan kosong.</p>
+            <figure>
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-success"><code>@each('view.name', $jobs, 'job', 'view.empty')</code></pre>      <!-- kode -->
+              </div>
+            </figure>
+          </div>
+        </div>        
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h1 class="text-3xl"><strong>Component</strong></h1>  <!-- judul -->
+              <h2><strong></strong></h2>       <!-- subjudul -->
+              <p>Components memiliki manfaat yang mirip dengan <em>sections, 
+                Layouts,</em> dan <em>Includes</em> sehingga dapat digunakan untuk
+                membangun sistem yang dapa diandalkan dan <em>extensible</em>.</p>
+        
+                <p>Ada dua pendekatan untuk menulis <em>component</em>:</p>
+                <ul>
+                    <li><em>Class based components</em></li>
+                    <li><em>Anonymous components</em></li>
+                </ul>
+                
+                <p>Untuk membuat <em>component</em> berbasis kelas, Anda dapat menggunakan perintah Artisan <code>make:component</code>.</p>
+                <p>Contoh:</p>
+                <p>Perintah <code>make:component</code> juga akan membuat template <em>view</em> untuk <em>component</em>. <em>View</em> akan ditempatkan di direktori <code>resources/views/components</code>. 
+                  Saat menulis <em>component</em> untuk aplikasi Anda sendiri, <em>component</em> secara otomatis ditemukan dalam direktori <code>app/View/Components</code> dan direktori 
+                  <code>resources/views/components</code>, jadi biasanya tidak diperlukan registrasi <em>component</em> lebih lanjut.</p>   <!-- penjelasan -->
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>php artisan make:component Alert</code></pre>
+                </div>
+              </figure>
+              <p>Jika ingin membuat <em>component</em> anonim (<em>component</em> dengan hanya template Blade dan tanpa kelas), bisa menggunakan flag <code>--view</code> saat menjalankan perintah <code>make:component</code>.</p> 
+              <p>Contoh:</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>php artisan make:component forms.input --view</code></pre>
+                </div>
+              </figure>
+              <h2><strong>Mendaftarkan <em>Package Component</em> Secara Manual</strong></h2>
+              <p>Saat menulis <em>component</em> untuk aplikasi Anda sendiri, <em>component</em> secara otomatis ditemukan dalam direktori <code>app/View/Components</code> dan direktori <code>resources/views/components</code>.
+                Namun, jika Anda membuat <em>package</em> yang menggunakan <em>component</em> Blade, Anda perlu mendaftarkan kelas <em>component</em> dan alias tag HTML-nya secara manual.</p>
+              <p>Contoh:</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>
+                    use Illuminate\Support\Facades\Blade;<br>
+                    <br>
+                    /**<br>
+                    * Bootstrap your package's services.<br>
+                    */<br>
+                    <br>
+                    public function boot()<br>
+                    {<br>
+                    &emsp;&emsp;Blade::component('package-alert', Alert::class);<br>
+                    }<br>
+                </code></pre>      <!-- kode -->
+                </div>
+              </figure>
+              <p>Setelah <em>component</em> terdaftar, <em>component</em> tersebut dapat dirender menggunakan alias tagnya</p>
+              <p>Contoh:</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-package-alert/&gt;</code></pre>
+                </div>
+              </figure>
+
+              <h3 class="text-2xl"><strong>Render Components</strong></h3> 
+              <p>Untuk me-<em>render component</em>, dapat menggunakan tag <em>component</em> Blade dalam salah satu template Blade Anda. Tag <em>component</em> blade dimulai dengan string <code>x-</code> diikuti dengan 
+                nama <em>kebab-case</em> dari kelas <em>component</em>.</p>
+              <p>Contoh:</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>
+                    &lt;x-alert/&gt;<br>
+                    <br>
+                    &lt;x-user-profile&gt;
+                </code></pre>
+                </div>
+              </figure>
+              
+              <h3 class="text-2xl"><strong>Pass Data ke <em>Components</em></strong></h3>
+              <p>Data di-<em>pass</em> ke <em>component</em> Blade menggunakan atribut HTML. Nilai primitif yang <em>hard-code</em> dapat diteruskan ke <em>component</em> menggunakan string atribut HTML sederhana. 
+                <em>Expression</em> dan <em>variable</em> PHP harus diteruskan ke <em>component</em> melalui atribut yang menggunakan karakter <code>:</code> sebagai awalan.</p>
+              <p>Contoh:</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-alert type="error" :message="$message"/&gt;</code></pre></pre>
+                </div>
+              </figure>
+              
+              <p>Semua atribut data <em>component</em> harus didefinisikan di dalam konstruktor kelasnya.</p>
+              
+              <p>Fitur: </p>
+              <ul>
+                  <li><em>Casing</em></li>
+                  <li>Sintaks Atribut Pendek</li>
+                  <li><em>Escape</em> Ketika <em>Render</em> Atribut</li>
+                  <li>Metode dalam <em>Components</em></li>
+                  <li>Mengakses Atribut dan <em>Slot</em> dalam <em>Components</em></li>
+                  <li>Dependensi Tambahan</li>
+                  <li>Menyembunyikan Atribut atau Metode dari <em>Components</em></li>
+              </ul>
+
+              <h3 class="text-2xl"><strong>Atribut <em>Components</em></strong></h3>
+              <p>Atribut <em>component</em> adalah <em>typed fields</em> yang ditetapkan pada instance dari suatu <em>component</em>, dan dapat direferensikan dari dalam markup <em>component</em> menggunakan sintaks <em>expression</em>. 
+                  Atribut memungkinkan untuk membuat <em>component</em> lebih dinamis.</p>
+              <p>Contoh:</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-alert type="error" :message="$message" class="mt-4"/&gt;</code></pre>
+                </div>
+              </figure>
+              
+              <p>Render atribut dalam <em>view</em>:</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>
+                    &lt;div {{ $attributes }}&gt;<br>
+                    &emsp;&emsp;Component content <br>
+                    &lt;/div&gt;<br>
+                  </code></pre>
+                </div>
+              </figure>
+
+              <p>Ketentuan: </p>
+              <ul>
+                  <li>Atribut <em>Default/Merged</em></li>
+                  <p>Contoh:</p>
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="1" class="text-success"><code>
+                        &lt;div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}&gt;<br>
+                        &emsp;&emsp;{{ $message }} <br>
+                        &lt;/div&gt; <br>
+                      </code></pre>
+                    </div>
+                  </figure>
+                  
+                  
+                  <li>Penggabungan Kondisional Kelas</li>
+                  <p>Contoh:</p>
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="1" class="text-success"><code>
+                        &lt;button {{ $attributes->class(['p-4'])->merge(['type' => 'button']) }}&gt; <br>
+                        &emsp;&emsp;{{ $slot }} <br>
+                        &lt;/button&gt; <br>
+                      </code></pre>
+                    </div>
+                  </figure>
+                      
+                  <li>Penggabungan Atribut Non-Kelas</li>
+                  <p>Contoh:</p>
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="1" class="text-success"><code>
+                        &lt;button {{ $attributes->merge(['type' => 'button']) }}&gt; <br>
+                        &emsp;&emsp;{{ $slot }} <br>
+                        &lt;/button&gt; <br>
+                      </code></pre>
+                    </div>
+                  </figure>
+                  
+                  
+                  <li>Pengambilan dan Filter Atribut</li>
+                  <p>Contoh:</p>
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="1" class="text-success"><code>
+                        {{ $attributes->get('class') }} <br>
+                        <br>
+                        {{ $attributes->filter(fn ($value, $key) => $key == 'foo') }} 
+                      </code></pre>
+                    </div>
+                  </figure>
+                  
+              </ul>
+
+              <h3 class="text-2xl"><strong>Reserved Keyword</strong></h3>
+                  <p>Secara default, beberapa kata kunci disimpan untuk penggunaan internal Blade untuk merender komponen. 
+                      Kata kunci berikut tidak dapat didefinisikan sebagai properti publik atau nama metode dalam komponen:</p>
+                  <ul>
+                      <li>data</li>
+                      <li>render</li>
+                      <li>resolveView</li>
+                      <li>shouldRender</li>
+                      <li>view</li>
+                      <li>withAttributes</li>
+                      <li>withName</li>
+                  </ul>
+
+                  <h4></h4>
+                  <h2 class="text-2xl"><strong><em>Slots</em></strong></h2>
+                  <p>Seringkali, kita harus meneruskan konten tambahan ke komponen Anda melalui "slot". Slot komponen dirender 
+                      dengan <code>echo</code> variabel <code>$slot</code>.</p>
+                  
+                  <p>Contoh:</p>
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="1" class="text-success"><code>
+                        &lt;div class="alert alert-danger"&gt; <br>
+                        &emsp;&emsp;{{ $slot }} <br>
+                        &lt;/div&gt; <br>
+                    </code></pre>
+                    </div>
+                  </figure>
+        
+                <h2><strong>Scoped Slots</strong></h2>
+                <p>Scoped Slots digunakan untuk mengakses data atau metode dari komponen dengan "scoped slots".</p>
+                <p>Contoh:</p>
+                <figure>
+                  <div class="mockup-code">
+                    <pre data-prefix="1" class="text-success"><code>
+                      &lt;x-alert&gt;<br>
+                      &emsp;&emsp;&lt;x-slot:title&gt;<br>
+                          &emsp;&emsp;&emsp;&emsp;{{ $component->formatAlert('Server Error') }} <br>
+                      &emsp;&emsp;&lt;/x-slot&gt; <br>
+                      
+                      &emsp;&emsp;&lt;strong&gt;Whoops!&lt;/strong&gt; Something went wrong! <br>
+                      &lt;/x-alert&gt; <br>
+                  </code></pre>
+                  </div>
+                </figure>
+
+                <p><strong>Atribut Slot</strong></p>
+                <p>Contoh:</p>
+                <figure>
+                  <div class="mockup-code">
+                    <pre data-prefix="1" class="text-success"><code>
+                      &lt;x-card class="shadow-sm"&gt; <br>
+                          &emsp;&emsp;&lt;x-slot:heading class="font-bold"&gt; <br>
+                              &emsp;&emsp;&emsp;&emsp;Heading <br>
+                          &emsp;&emsp;&lt;/x-slot&gt; <br>
+                          <br>
+                          &emsp;&emsp;Content <br>
+                          <br>
+                          &emsp;&emsp;&lt;x-slot:footer class="text-sm"&gt; <br>
+                              &emsp;&emsp;&emsp;&emsp;Footer <br>
+                          &emsp;&emsp;&lt;/x-slot&gt; <br>
+                      &lt;/x-card&gt; <br>
+                  </code></pre>
+                  </div>
+                </figure>
+
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3 class="text-2xl"><strong> </strong></h3>  <!-- judul -->
+              <h2><strong> </strong></h2>       <!-- subjudul -->
+              <p> </p>   <!-- penjelasan -->
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code> </code></pre>      <!-- kode -->
+                  <pre data-prefix="2" class="text-success"><code> </code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3 class="text-2xl"><strong>Inline Component Views</strong></h3>  <!-- judul -->
+              <p> Akan terasa rumit untuk mengelola kelas <em>component</em> dan template tampilan <em>component</em> yang sangat kecil.
+                Oleh karena itu, kita dapat mengembalikan <em>markup</em> <em>component</em> langsung dari <em>method</em> <code>render</code></p>   <!-- penjelasan -->
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>/**</code> </pre>
+                  <pre data-prefix="2" class="text-success"><code>* Get the view / contents that represent the component.</code>   </pre>
+                  <pre data-prefix="3" class="text-success"><code>*</code></p></pre>
+                  <pre data-prefix="4" class="text-success"><code>* @return \Illuminate\View\View|\Closure|string</code>   </pre>
+                  <pre data-prefix="5" class="text-success"><code>*/</code>   </pre>
+                  <pre data-prefix="6" class="text-success"><code>public function render()</code>    </pre>
+                  <pre data-prefix="7" class="text-success"><code>{</code>    </pre>
+                  <pre data-prefix="8" class="text-success"><code>return &lt;&lt;&lt;'blade'</code>   </pre>
+                  <pre data-prefix="9" class="text-success"><code>&lt;div class="alert alert-danger">&lt;/div></code>         </pre>
+                  <pre data-prefix="10" class="text-success"><code>{{ $slot }}</code></pre>
+                  <pre data-prefix="11" class="text-success"><code>&lt;/div></code></pre>
+                  <pre data-prefix="12" class="text-success"><code>blade;</code></pre>
+                  <pre data-prefix="13" class="text-success"><code>}</code></pre>
+                </div>
+              </figure>
+            </div>
+            <div class="card w-100 bg-base-100 shadow-xl">
+                <div class="card-body">       
+                  <h2><strong>Generating Inline View Components</strong></h2>  <!-- judul -->
+                  <p>Untuk membuat komponen yang merender tampilan sebaris, 
+                    kita dapat menggunakan perintah <code>make:component</code> pada terminal</p>
+                  <figure>
+                    <div class="mockup-code">
+                        <pre data-prefix="1" class="text-success"><code>php artisan make:component Alert --inline</code></pre>
+                      </div>
+                  </figure>
+                </div>
+              </div>
+      
+              
+      
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3 class="text-2xl"><strong>Dynamic Components</strong></h3>  <!-- judul -->
+              <p>Terkadang kita mungkin perlu merender <em>component</em> tetapi tidak tahu <em>component</em> mana yang harus dirender hingga <em>runtime</em>.
+                Maka dari itu kita dapat menggunakan <code>dynamic-component</code> bawaan Laravel untuk merender berdasarkan nilai atau variabel <em>runtime</em>.</p>
+              <figure>
+                <div class="mockup-code">
+                    <pre data-prefix="1" class="text-success"><code>&lt;x-dynamic-component :component="$componentName" class="mt-4" /&gt;</code></pre>
+                  </div>
+              </figure>
+            </div>
+          </div>
+          
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3 class="text-2xl"><strong>Manually Registering Components</strong></h3>  <!-- judul -->
+              <p>Saat menulis <em>component</em> untuk aplikasi kita sendiri, 
+                <em>component</em> secara otomatis ditemukan dalam <em>directory</em> <code>app/View/Components</code> dan <em>directory</em> <code>resources/views/components</code>.</p>
+            <p>Namun, jika kita membuat <em>package</em> yang menggunakan <em>Blade components</em>. 
+                Kita perlu mendaftarkan <em>component class</em> atau tag HTML-nya secara manual sehingga Laravel tahu di mana menemukan <em>component</em> tersebut.
+                Biasanya kita harus mendaftarkan <em>component</em> dalam <code>boot</code> <em>method</em> dari <em>package's service provider</em> kita.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>use Illuminate\Support\Facades\Blade;</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>use VendorPackage\View\Components\AlertComponent;</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>/**</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>* Bootstrap your package's services.</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>*</code></pre>
+                  <pre data-prefix="6" class="text-success"><code>* @return void</code></pre>
+                  <pre data-prefix="7" class="text-success"><code>*/</code></pre>
+                  <pre data-prefix="8" class="text-success"><code>public function boot()</code></pre>
+                  <pre data-prefix="9" class="text-success"><code>{</code></pre>
+                  <pre data-prefix="10" class="text-success"><code>Blade::component('package-alert', AlertComponent::class);</code></pre>
+                  <pre data-prefix="11" class="text-success"><code>}</code></pre>
+                </div>
+              </figure>
+              <p>Setelah <em>component</em> terdaftar, <em>component</em> tersebut dapat dirender menggunakan tag-nya.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-package-alert/></code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+  
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h2><strong>Autoloading Package Components</strong></h2>  <!-- judul -->
+              <p>Kita dapat menggunakan <code>componentNamespace</code> <em>method</em> untuk memuat <em>component</em> kelas secara otomatis berdasarkan konvensi.
+                Misalnya <em>package</em> <code>Nightsade</code> mungkin memiliki <em>component</em> <code>calender</code> dan <code>colorPicker</code> yang berada pada <code>Package\Views\Components</code> <em>namespace</em>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>use Illuminate\Support\Facades\Blade;</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>/**</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>* Bootstrap your package's services.</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>*</code></pre>
+                  <pre data-prefix="6" class="text-success"><code>* @return void</code></pre>
+                  <pre data-prefix="7" class="text-success"><code>*/</code></pre>
+                  <pre data-prefix="8" class="text-success"><code>public function boot()</code></pre>
+                  <pre data-prefix="9" class="text-success"><code>{</code></pre>
+                  <pre data-prefix="10" class="text-success"><code>Blade::componentNamespace('Nightshade\\Views\\Components', 'nightshade');</code></pre>
+                  <pre data-prefix="11" class="text-success"><code>}</code></pre>
+                </div>
+              </figure>
+              <p>Ini akan memungkinkan penggunaan komponen paket oleh namespace vendor mereka menggunakan <code>package-name::</code> <em>syntax</em></p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-nightshade::calendar /></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>&lt;x-nightshade::color-picker /></code></pre>
+                </div>
+              </figure>
+              <p>Blade akan secara otomatis mendeteksi kelas yang ditautkan ke <em>component</em> dengan <em>pascal-casing</em> dari <em>component name</em>. Subdirektori juga didukung menggunakan <em>"dot" notation</em>.</p>
+            </div>
+          </div>
+  
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3><strong>Anonymous Components</strong></h3>  <!-- judul -->
+              <p>Mirip dengan <em>component</em> inline, <em>component</em> anonim menyediakan mekanisme untuk mengelola <em>component</em> melalui satu file. Namun, <em>component</em> anonim menggunakan file tampilan tunggal dan tidak memiliki kelas terkait.
+                <em>component</em> anonim hanya perlu menempatkan <em>Blade template</em> di dalam <em>directory</em> <code>resources/views/components</code>. Misalnya, dengan asumsi kita telah mendefinisikan sebuah <em>component</em> di <code>resources/views/components/inputs/button.blade.php</code>
+                kita dapat merendernya dengan</p>
+                <figure>
+                  <div class="mockup-code">
+                    <pre data-prefix="1" class="text-success"><code>&lt;x-alert/>></code></pre>
+                  </div>
+                </figure> 
+            <p>Gunakan "." jika <em>component</em> bereda dalam <em>directory component</em>. Misalnya <em>component</em> didefinisikan di <code>resources/views/components/inputs/button.blade.php</code>
+                kita dapat merendernya dengan</p>  <!-- penjelasan -->
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-inputs.button/></code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3><strong>Anonymous Index Components</strong></h3>  <!-- judul -->
+              <p>Ketika <em>component</em> terdiri dari bari <em>Blade template</em>, kita ingin mengelompokkan <em>component</em> yang ada dalam satu <em>directory</em>.
+                Misal <em>component</em> "accordion" dengan struktur direktori.</p>
+          <!-- penjelasan -->
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>/resources/views/components/accordion.blade.php</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>/resources/views/components/accordion/item.blade.php</code></pre>
+                </div>
+              </figure>
+              <p>Struktur <em>directory</em> ini memungkinkan kita untuk merender <em>component</em> accordion dan itemnya seperti</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-accordion></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>&lt;x-accordion.item></code></pre>
+                  <pre data-prefix="3" class="text-success"><code>...</code></pre>
+                  <pre data-prefix="4" class="text-success"><code>&lt;x-accordion.item></code></pre>
+                  <pre data-prefix="5" class="text-success"><code>&lt;x-accordion></code></pre>
+                </div>
+              </figure>
+              <p>Namun untuk merender accordion melalui <code>x-accordion</code>, kita harus menempatkan template <em>component</em> akordeon "indeks" di <em>directory</em> <code>resources/views/components</code>
+                dari pada menumpuk di dalam <em>directory</em> <code>accordion</code> dengan template terkait accordion lainnya.</p>
+                <p>Blade memungkinkan kita menempatkan file <code>index.blade.php</code> dalam <em>directory template component</em>. Ketika <code>index.blade.php</code> ada untuk <em>component</em>itu akan dirender sebagai simpul "root" dari komponen. 
+                    Jadi, kita dapat terus menggunakan sintaks Blade yang sama seperti yang diberikan. Namun, kita akan menyesuaikan struktur direktori kami seperti</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>/resources/views/components/accordion/index.blade.php</code></pre>
+                  <pre data-prefix="2" class="text-success"><code>/resources/views/components/accordion/item.blade.php</code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3><strong>Data Properties/Attributes</strong></h3>  <!-- judul -->
+              <p>Karena <em>component</em> anonim tidak memiliki kelas terkait, bagaimana dapat membedakan data mana yang harus diteruskan ke <em>component</em> sebagai variabel dan <em>arrtibute</em> mana yang harus ditempatkan di <em>component arrtibute bag</em>.</p>
+              <p>Kita dapat menentukan <em>arrtibutes</em> mana yang dianggap variabel data menggunakan <code>@props</code> dibagian atas <em>Blade templat</em>. Jika ingin memberikan nilai default pada variabel data, kita dapat menentukan nama variabel sebagai kunci array dan nilai default sebagai nilai array</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;!-- /resources/views/components/alert.blade.php --></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>@props(['type' => 'info', 'message'])</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>&lt;div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }}></code></pre>
+                  <pre data-prefix="4" class="text-success"><code>{{ $message }}</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>&lt;/div></code></pre>
+                </div>
+              </figure>
+              <p>Mengingat definisi komponen di atas, kita dapat membuat <em>component</em> seperti</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-alert type="error" :message="$message" class="mb-4"/></code></pre>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+              <h3><strong>Accessing Parent Data</strong></h3>  <!-- judul -->
+              <p>Saat kita ingin mengakses data dari komponen <em>parent</em> di dalam komponen turunan, kita dapat menggunakan <code>@aware</code>. Misal <em>component</em> menu kompleks yang terdiri dari &lt;x-menu> <em>parent</em> dan &lt;x-menu.item> <em>child</em>.</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;x-menu color="purple">&lt;/x-menu></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>&lt;x-menu.item>...&lt;/x-menu.item></code></pre>
+                  <pre data-prefix="3" class="text-success"><code>&lt;x-menu.item>...&lt;/x-menu.item></code></pre>
+                  <pre data-prefix="4" class="text-success"><code>&lt;/x-menu></code></pre>
+                </div>
+              </figure>
+              <p>Komponen &lt;x-menu> memiliki implementasi</p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;!-- /resources/views/components/menu/index.blade.php --></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>@props(['color' => 'gray'])</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>&lt;ul {{ $attributes->merge(['class' => 'bg-'.$color.'-200']) }}></code></pre>
+                  <pre data-prefix="4" class="text-success"><code>{{ $slot }}</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>&lt;/ul></code></pre>
+                </div>
+              </figure>
+              <p>Karena <code>color</code> prop hanya diteruskan ke <em>parent</em> (&lt;x-menu>), maka tidak akan ada di &lt;x-menu.item> Namun, jika kita menggunakan direktif <code>@aware</code>, kita juga dapat membuatnya ada di &lt;x-menu.item></x-menu.item></p>
+              <figure>
+                <div class="mockup-code">
+                  <pre data-prefix="1" class="text-success"><code>&lt;!-- /resources/views/components/menu/item.blade.php --></code></pre>
+                  <pre data-prefix="2" class="text-success"><code>@aware(['color' => 'gray'])</code></pre>
+                  <pre data-prefix="3" class="text-success"><code>&lt;li {{ $attributes->merge(['class' => 'text-'.$color.'-800']) }}></code></pre>
+                  <pre data-prefix="4" class="text-success"><code>{{ $slot }}</code></pre>
+                  <pre data-prefix="5" class="text-success"><code>&lt;/li></code></pre>
+                </div>
+              </figure>
+              <p><code>@aware</code> tidak dapat mengakses data induk yang tidak secara eksplisit diteruskan ke <em>component</em> induk melalui atribut HTML. Nilai <code>@props</code> default yang tidak secara eksplisit diteruskan ke <em>component</em> induk tidak dapat diakses oleh <code>@aware</code>.</p>
+            </div>
+          </div>
+
+          <div class="card w-100 bg-base-100 shadow-xl">
+            <div class="card-body">       
+                <h2><strong>Anonymous Components Namespaces</strong></h2>
+        
+                <p>Komponen anonim biasanya ditentukan dengan menempatkan template Blade di dalam direktori <em>resource/views/components</em>. Namun, sesuai kebutuhan yang mungkin ingin mendaftarkan jalur komponen anonim lainnya dengan Laravel selain jalur default.</p>
+                <p>Untuk memberi tahu Laravel tentang lokasi komponen anonim ini, Anda dapat menggunakan metode <em>anonymousComponentNamespace</em> yang disediakan oleh fasad Blade. Metode <em>anonymousComponentNamespace</em> menerima "jalur" ke lokasi komponen anonim sebagai argumen pertama dan <em>"namespace"</em> yang komponennya harus ditempatkan sebagai argumen kedua. Seperti pada contoh di bawah, "namespace" akan diawali dengan nama komponen saat komponen dirender.</p>
+                <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>/**</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>* Bootstrap any application services.</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>*</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>* @return void</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>*</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>public function boot()</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>{<code></pre>
+                      <pre data-prefix=">" class="text-success"><code>Blade::anonymousComponentNamespace('flights.bookings.components', 'flights'); }</code></pre>
+                    </div>
+                  </figure>
+            
+                  <h3 class="text-2xl"><strong>BUILDING LAYOUTS</h3>
+                  <h2><strong>Layouts Using Components</strong></h2>
+                  <p>Sebagian besar aplikasi web mempertahankan tata letak umum yang sama di berbagai halaman. Akan sangat merepotkan dan sulit untuk memelihara aplikasi jika harus mengulang seluruh tata letak HTML di setiap tampilan yang di buat. Untungnya, lebih mudah untuk mendefinisikan tata letak ini sebagai satu komponen Blade dan kemudian menggunakannya di seluruh tampilan.</p>
+        
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>&lt;html&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;head&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;title&gt;{{ $title ?? 'Todo Manager' }}&lt;/title&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;/head&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;body&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;h1&gt;Todos&lt;/h1&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;/hr&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>{{ $slot }}<code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;/body&gt;</code></pre>
+                      <pre data-prefix="$" class="text-success"><code>&lt;/html&gt;</code></pre>
+                    </div>
+                  </figure>
+        
+                  <p>Setelah komponen tata letak ditentukan, dapat membuat tampilan Blade yang menggunakan komponen tersebut. Ingat, konten yang disuntikkan ke dalam komponen akan diberikan ke variabel $slot default di dalam komponen layout. Seperti yang mungkin telah diperhatikan, tata letak juga menghormati slot $title jika disediakan; jika tidak, judul default akan ditampilkan. Ini dapat menyuntikkan judul khusus dari tampilan daftar tugas menggunakan sintaks slot standar yang dibahas dalam dokumentasi komponen:</p>
+        
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>&lt;x-layout&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;x-slot;title&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>Custom Title</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;/x-slot&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;body&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>@foreach ($tasks as $task)</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>{{ $task }}</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>@endforeach<code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;/x-layout&gt;</code></pre>
+                    </div>
+                  </figure>
+        
+                  <p>Sekarang setelah menentukan tampilan tata letak dan daftar tugas, sekarang hanya perlu mengembalikan tampilan tugas dari rute:</p>
+        
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>use App\Models\Task;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>      </code></pre>
+                      <pre data-prefix=">" class="text-success"><code>Route::get('/tasks', function () {</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    return view('tasks', ['tasks' => Task::all()]);</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>});</code></pre>
+                    </div>
+                  </figure>
+        
+                  <h2><strong>Layouts Using Templates Inheritance</strong></h2>
+                  <p>Tata letak juga dapat dibuat melalui <em>"Templates Inheritance"</em>. Ini adalah cara utama membangun aplikasi sebelum pengenalan komponen.
+        
+                     Untuk memulai, mari klihat contoh sederhana. Pertama, kita akan memeriksa tata letak halaman. Karena sebagian besar aplikasi web mempertahankan tata letak umum yang sama di berbagai halaman, lebih mudah untuk mendefinisikan tata letak ini sebagai tampilan <em>Single Blade</em>:</p>
+        
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>&lt;html&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    &lt;head&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>        &lt;title&gt;App Name - @yield('title')&lt;/title&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    &lt;/head&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    &lt;body&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>        @section('sidebar')</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>            This is the master sidebar.</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>        @show<code></pre>
+                      <pre data-prefix=">" class="text-success"><code>        </code></pre>
+                      <pre data-prefix="$" class="text-success"><code>        &lt;div class="container"&gt;</code></pre>
+                      <pre data-prefix="$" class="text-success"><code>            @yield('content')</code></pre>
+                      <pre data-prefix="$" class="text-success"><code>        &lt;/div&gt;</code></pre>
+                      <pre data-prefix="$" class="text-success"><code>    &lt;/body&gt;</code></pre>
+                      <pre data-prefix="$" class="text-success"><code>&lt;/html&gt;</code></pre>
+                    </div>
+                  </figure>
+        
+                  <p>File ini berisi mark-up HTML biasa. Namun, perhatikan arahan <em>@bagian</em> dan <em>@yield</em>. Direktif <em>@section</em>, seperti namanya, mendefinisikan bagian konten, sedangkan arahan <em>@yield</em> digunakan untuk menampilkan konten bagian tertentu.</p>
+        
+                  <p>Saat mendefinisikan <em>child view</em>, gunakan perintah <em>@extends</em> Blade untuk menentukan tata letak mana yang harus <em> "inherit"</em>  oleh <em>child view</em>. Tampilan yang memperluas tata letak Blade dapat diinjeksi konten ke bagian layout menggunakan arahan <em>@section</em>. Ingat, seperti yang terlihat pada contoh di atas, konten bagian ini akan ditampilkan dalam layout menggunakan <em>@yield</em>:</p>
+        
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>@extends('layouts.app')</code></pre>
+                      <pre data-prefix=">" class="text-success"><code> </code></pre>
+                      <pre data-prefix=">" class="text-success"><code>@section('title', 'Page Title')</code></pre>
+                      <pre data-prefix=">" class="text-success"><code> </code></pre>
+                      <pre data-prefix=">" class="text-success"><code>@section('sidebar')</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    @parent</code></pre>
+                      <pre data-prefix=">" class="text-success"><code> </code></pre>
+                      <pre data-prefix="$" class="text-success"><code>    &lt;p&gt;This is appended to the master sidebar.&lt;p&gt;</code></pre>
+                      <pre data-prefix="$" class="text-success"><code>@endsection</code></pre>
+                      <pre data-prefix="$" class="text-success"><code> </code></pre>
+                      <pre data-prefix="$" class="text-success"><code>@section('content')</code></pre>
+                      <pre data-prefix="$" class="text-success"><code>    &lt;p&gt;This is my body content.&lt;p&gt;</code></pre>
+                      <pre data-prefix="$" class="text-success"><code>@endsection</code></pre>
+                    </div>
+                  </figure>
+        
+                  <p>Arahan <em>@yield</em> juga menerima nilai default sebagai parameter kedua. Nilai ini akan diberikan jika bagian yang dihasilkan tidak ditentukan:</p>
+        
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code></code>@yield('content', 'Default content')</code></pre>
+                    </div>
+                </figure>
+        
+                <h3 class="text-2xl"><strong>FORMS</h3>
+                <h2><strong>CSRF Field</strong></h2>
+                <p>Setiap kali mendefinisikan formulir HTML di aplikasi, harus menyertakan <em>hidden CSRF token field</em> di formulir sehingga <em>CSRF protection middleware</em> dapat memvalidasi permintaan. Ini dapat menggunakan <em>@csrf Blade directive</em> untuk menghasilkan bidang token:</p>
+                <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>&lt;form method="POST" action="/profile"&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code    @csrf></code></pre>
+                      <pre data-prefix=">" class="text-success"><code> </code></pre>
+                      <pre data-prefix=">" class="text-success"><code>   . . .</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;/form&gt;</code></pre>
+                    </div>
+                  </figure>
+        
+                  <h2><strong>Method Field</strong></h2>
+                  <p>Karena formulir HTML tidak dapat membuat permintaan <em>PUT, PATCH, atau DELETE,</em>, perlu menambahkan <em>hidden _method</em> untuk menipu HTTP ini. Arahan <em>@method Blade</em> dapat membuat bidang ini.</p>
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>&lt;form action="/foo/bar" method="POST"&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    @method('PUT') </code></pre>
+                      <pre data-prefix=">" class="text-success"><code> </code></pre>
+                      <pre data-prefix=">" class="text-success"><code>   . . .</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;/form&gt;</code></pre>
+                    </div>
+                  </figure>
+            
+                  <h2><strong>Validation Errors</strong></h2>
+                  <p>Arahan <em>@error</em> dapat digunakan untuk memeriksa dengan cepat apakah ada pesan kesalahan validasi untuk atribut tertentu. Dalam direktif <em>@error</em>, Anda dapat <em>echo</em> variabel <em>$message</em> untuk menampilkan pesan kesalahan:</p>
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>&lt;label for="title"&gt;Post Title&lt;/label&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code> </code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;input id="title"</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    type="text"</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    class="@error('title') is-invalid @enderror"&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code> </code></pre>
+                      <pre data-prefix=">" class="text-success"><code>@error('title')</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    &lt;div class="alert alert-danger"&gt;{{ $message }}&lt;/div&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>@enderror</code></pre>
+                    </div>
+                  </figure>
+            
+                  <p>Karena <em>@error directive</em> dikompilasi ke <em>statement "if"</em>, dapat menggunakan <em>@else directive</em> untuk merender ketika tidak ada kesalahan untuk atribut. Lalu dapat meneruskan nama <em>error bag</em> tertentu sebagai parameter kedua ke <em>@error directive</em> untuk mengambil pesan kesalahan validasi pada halaman yang berisi beberapa formulir:</p>
+                  <figure>
+                    <div class="mockup-code">
+                      <pre data-prefix="$" class="text-success"><code>&lt;label for="email"&gt;Email Address&lt;/label&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code> </code></pre>
+                      <pre data-prefix=">" class="text-success"><code>&lt;input id="email"</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    type="email"</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    class="@error('email', 'login') is-invalid @enderror"&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code> </code></pre>
+                      <pre data-prefix=">" class="text-success"><code>@error('email', 'login')</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>    &lt;div class="alert alert-danger"&gt;{{ $message }}&lt;/div&gt;</code></pre>
+                      <pre data-prefix=">" class="text-success"><code>@enderror</code></pre>
+                    </div>
+                  </figure>
+            </div>
+          </div>
+  
+          <!-- footer -->
+          <footer class="footer p-10 bg-neutral text-neutral-content">
+            <div>
+              <span class="footer-title">Kelompok 2</span>
+            </div>
+            <div>
+              <span class="footer-title">NIM</span>
+              <a class="link link-hover">215150700111023</a>
+              <a class="link link-hover">215150700111024</a>
+              <a class="link link-hover">215150700111056</a>
+              <a class="link link-hover">215150701111005</a>
+              <a class="link link-hover">215150701111025</a>
+            </div>
+            <div>
+              <span class="footer-title">Nama</span>
+              <a class="link link-hover">Fauzan Zakaria Hermansah </a>
+              <a class="link link-hover">Candra Setiawan</a>
+              <a class="link link-hover">Aditya Permana Heriansyah</a>
+              <a class="link link-hover">Danish Alif Arsan</a>
+              <a class="link link-hover">Irfan Hanif Habibi</a>
+            </div>
+          </footer>
+        </div>
+          <div class="drawer-side">
+            <label for="my-drawer" class="drawer-overlay"></label>
+            <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+              <!-- Sidebar content here -->
+              <h2 class="card-title text-2xl"><strong>Anggota Kelompok</strong></h2>
+              <br>
+              
+              <div class="card w-100 bg-base-100 shadow-xl">
+                  
+                  <h2><strong>Fauzan Zakaria Hermansah</strong></h2>       <!-- subjudul -->
+                  <p>215150700111023</p>   <!-- penjelasan -->
+                  <figure>
+
+                  </figure>
+                  <br>
+          
+              </div>
+              <br>
+              <div class="card w-100 bg-base-100 shadow-xl">
+               
+                  <h2><strong>Candra Setiawan</strong></h2>       <!-- subjudul -->
+                  <p>215150700111024</p>   <!-- penjelasan -->
+                  <figure>
+
+                  </figure>
+      
+                  <br>
+              </div>
+              <br>
+              <div class="card w-100 bg-base-100 shadow-xl">
+                
+                  <h2><strong>Aditya Permana Heriansyah</strong></h2>       <!-- subjudul -->
+                  <p>215150700111056</p>   <!-- penjelasan -->
+                  <figure>
+
+                  </figure>
+      
+                    <br>
+              </div>
+              <br>
+              <div class="card w-100 bg-base-100 shadow-xl">
+                  
+                  <h2><strong>Danish Alif Arsan</strong></h2>       <!-- subjudul -->
+                  <p>215150701111005</p>   <!-- penjelasan -->
+                 <figure>
+                    
+                  </figure>
+                  <br>
+          
+              </div>
+              <br>
+              <div class="card w-100 bg-base-100 shadow-xl">
+           
+                  <h2><strong>Irfan Hanif Habibi</strong></h2>       <!-- subjudul -->
+                  <p>215150701111025</p>   <!-- penjelasan -->
+                  <figure>
+      
+                  </figure>
+
+              <br>
+              </div>
+            </ul>
+          </div>
+          <!-- close drawer -->
+        </div>
