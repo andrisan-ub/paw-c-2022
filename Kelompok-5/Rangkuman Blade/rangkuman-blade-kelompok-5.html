@@ -122,7 +122,36 @@
       </div>
       <!-- Akhir Our Team -->
 
-      <!-- Judul -->
+      <!-- 1. Introduction -->
+      <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
+        <h1 class="font-bold text-3xl">Introduction</h1>
+      </div>
+      <!-- Akhir judul -->
+
+      <!-- Isi konten -->
+      <div class="container">
+        <div class="flex flex-wrap justify-center">
+          <!-- 1. Introduction -->
+          <div data-aos="fade-up" data-aos-duration="2000" class="card w-max bg-primary shadow-xl my-8">
+            
+            <div class="card-body">
+              <!-- <h2 class="card-title text-neutral">Blade & JavaScript Frameworks</h2> -->
+              <p>
+                Blade merupakan mesin pembuat template sederhana yang memuat Laravel. Semua template Blade akan dikompilasi ke dalam kode PHP biasa dan di-cache sampai dimodifikasi. Hal tersebut menandakan bahwa Blade tidak membuat aplikasi overhead. Adapun file template Blade dinamai menggunakan “.Blade.php” dan biasanya disimpan dalam direktori Resources/Views.
+                Tampilan Blade dapat dikembalikan dari rute atau pengontrol menggunakan Global View Helper. Data diteruskan ke tampilan Blade menggunakan View Helper’s Second Argument. Contoh:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>Route::get('/', function () {</code></pre>
+                <pre data-prefix="2"><code>return view('greeting', ['name' =&gt 'Finn']);</code></pre>
+                <pre data-prefix="3"><code>});</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ----------------------------------------------------------------------------------------------------------------- -->
+      <!-- 2. Displaying Data -->
       <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
         <h1 class="font-bold text-3xl">Displaying Data</h1>
       </div>
@@ -131,37 +160,68 @@
       <!-- Isi konten -->
       <div class="container">
         <div class="flex flex-wrap justify-center">
-          <!-- Judul Materi -->
+          <!-- 2. Displaying Data -->
           <div data-aos="fade-up" data-aos-duration="2000" class="card w-max bg-primary shadow-xl my-8">
-            
             <div class="card-body">
-              <!-- <h2 class="card-title text-neutral">Blade & JavaScript Frameworks</h2> -->
               <p>
-                Since many JavaScript frameworks also use "curly" braces to indicate a given expression should be displayed in the browser, you may use the @ symbol to inform the Blade rendering engine an expression should remain untouched. For example:
+                Data yang diteruskan ke tampilan Blade dapat ditampilkan dengan menggunakan kurung kurawal. Contoh:
               </p>
               <div class="mockup-code m-4 bg-primary-content text-secondary">
-                <pre data-prefix="1"><code>&lth1&gtLaravel&lth1&gt</code></pre>
+                <pre data-prefix="1"><code>Route::get('/', function () {</code></pre>
+                <pre data-prefix="2"><code>return view('welcome', ['name' =&gt 'Samantha']);</code></pre>
+                <pre data-prefix="3"><code>});</code></pre>
+              </div>
+              <p>
+                Nama variabel dapat dituliskan seperti berikut:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>Hello, {{ $name }}.</code></pre>
+              </div>
+              <p>
+                Pernyataan gema Blade {{ }} secara otomatis dikirim melalui fungsi PHP htmlspecialchars untuk mencegah serangan XSS.
+                Pengguna tidak dibatasi untuk menampilkan konten variabel yang diteruskan ke tampilan. Pengguna juga dapat menggemakan hasil fungsi PHP apa pun. Bahkan, pengguna dapat memasukkan kode PHP apa pun yang diinginkan ke dalam pernyataan gema Blade:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>The current UNIX timestamp is {{ time() }}.</code></pre>
+              </div>
+              <!-- 3. HTML Entity Coding -->
+              <h2 class="card-title text-neutral mt-4 font-bold">HTML Entity Coding</h2>
+              <p>
+                Blade (dan Laravel e helper) akan menggandakan encode entitas HTML secara default. Jika ingin menonaktifkan penyandian ganda, pengguna dapat memanggil metode Blade::withoutDoubleEncoding dari metode boot AppServiceProvider:              
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&lt?php</code></pre>
                 <pre data-prefix="2"><code></code></pre>
-                <pre data-prefix="3"><code>Hello, @{{ <span class="text-warning">name</span> }}.</code></pre>
+                <pre data-prefix="3"><code>namespace App/Providers;</code></pre>
+                <pre data-prefix="4"><code></code></pre>
+                <pre data-prefix="5"><code>use Illuminate\Support\Facades\Blade;</code></pre>
+                <pre data-prefix="6"><code>use Illuminate\Support\ServiceProvider;</code></pre>
+                <pre data-prefix="7"><code></code></pre>
+                <pre data-prefix="8"><code>class ApppServiceProvider extends ServiceProvider</code></pre>
+                <pre data-prefix="9"><code>{</code></pre>
+                <pre data-prefix="10"><code>/**</code></pre>
+                <pre data-prefix="11"><code>* Bootstrap any application services.</code></pre>
+                <pre data-prefix="12"><code>*</code></pre>
+                <pre data-prefix="13"><code>* @return void</code></pre>
+                <pre data-prefix="14"><code>*/</code></pre>
+                <pre data-prefix="15"><code>public function boot()</code></pre>
+                <pre data-prefix="16"><code>{</code></pre>
+                <pre data-prefix="17"><code>Blade::withoutDoubleEncoding();</code></pre>
+                <pre data-prefix="18"><code>}</code></pre>
+                <pre data-prefix="19"><code>}</code></pre>
               </div>
+              <!-- 3. Displaying Unescaped Data (sub sub judul) -->
+              <h2 class="card-title text-neutral mt-4 font-semibold">Displaying Unescaped Data</h2>
               <p>
-                In this example, the @ symbol will be removed by Blade; however, {{ name }} expression will remain untouched by the Blade engine, allowing it to be rendered by your JavaScript framework.
-              </p>
-              <p></p>
-              <p>
-                The @ symbol may also be used to escape Blade directives:
+                Pernyataan Blade {{ }} secara otomatis dikirim melalui fungsi PHP htmlspecialchars untuk mencegah serangan XSS. Jika pengguna tidak ingin datanya di-escape, pengguna dapat menggunakan sintaks berikut:
               </p>
               <div class="mockup-code m-4 bg-primary-content text-secondary">
-                <pre class="" data-prefix="1"><code><span class="text-secondary-focus">{{-- Blade template --}}</span></code></pre>
-                <pre data-prefix="2"><code>@@if()</code></pre>
-                <pre data-prefix="3"><code></code></pre>
-                <pre data-prefix="4"><code><span class="text-secondary-focus">{{-- HTML Output --}}</span></code></pre>
-                <pre data-prefix="5"><code><span class="text-warning">@if</span>()</code></pre>
+                <pre data-prefix="1"><code>Hello, {!! $name !!}.</code></pre>
               </div>
-              <!-- Sub Judul -->
+              <!-- 4. Blade & Javascript Framework -->
               <h2 class="card-title text-neutral mt-4 font-bold">Blade & JavaScript Frameworks</h2>
               <p>
-                Since many JavaScript frameworks also use "curly" braces to indicate a given expression should be displayed in the browser, you may use the @ symbol to inform the Blade rendering engine an expression should remain untouched. For example:
+                Karena banyak framework JavaScript juga menggunakan kurung kurawal "{}" untuk menunjukkan ekspresi yang diberikan harus ditampilkan di browser, kita dapat menggunakan simbol “@” untuk memberi tahu compiler Blade bahwa ekspresi harus tetap tidak tersentuh. Sebagai contoh:
               </p>
               <div class="mockup-code m-4 bg-primary-content text-secondary">
                 <pre data-prefix="1"><code>&lth1&gtLaravel&lth1&gt</code></pre>
@@ -169,27 +229,38 @@
                 <pre data-prefix="3"><code>Hello, @{{ <span class="text-warning">name</span> }}.</code></pre>
               </div>
               <p>
-                In this example, the @ symbol will be removed by Blade; however, {{ name }} expression will remain untouched by the Blade engine, allowing it to be rendered by your JavaScript framework.
+                Dalam contoh ini, @simbol akan dihapus oleh Blade; namun, {{ name }}ekspresi akan tetap tidak tersentuh oleh compiler Blade, memungkinkannya untuk di render oleh framework JavaScript kita.
               </p>
               <p></p>
               <p>
-                The @ symbol may also be used to escape Blade directives:
+                Simbol “@” juga dapat digunakan untuk menghindari Blade directive:
               </p>
               <div class="mockup-code m-4 bg-primary-content text-secondary">
-                <pre class="" data-prefix="1"><code><span class="text-secondary-focus">{{-- Blade template --}}</span></code></pre>
+                <pre data-prefix="1"><code>{{-- Blade template --}}</code></pre>
                 <pre data-prefix="2"><code>@@if()</code></pre>
-                <pre data-prefix="3"><code></code></pre>
-                <pre data-prefix="4"><code><span class="text-secondary-focus">{{-- HTML Output --}}</span></code></pre>
-                <pre data-prefix="5"><code><span class="text-warning">@if</span>()</code></pre>
+                <pre data-prefix="2"><code></code></pre>
+                <pre data-prefix="3"><code>{{-- HTML output --}}</code></pre>
+                <pre data-prefix="2"><code>@if()</code></pre>
+              </div>
+              <!-- 4. @verbatim Directives (sub sub judul) -->
+              <h2 class="card-title text-neutral mt-4 font-semibold">@verbatim Directives</h2>
+              <p>
+                Jika kita menampilkan variabel JavaScript di sebagian besar template kita, kita dapat membungkus HTML di @verbatim Directive sehingga kita tidak harus mengawali setiap pernyataan gema Blade dengan simbol “@”:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>@verbatim</code></pre>
+                <pre data-prefix="1"><code>   &ltdiv class="container"&gt</code></pre>
+                <pre data-prefix="2"><code>      Hello, {{ name }}</code></pre>
+                <pre data-prefix="3"><code>   &lt/div&gt</code></pre>
+                <pre data-prefix="1"><code>@endverbatim</code></pre>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
       <!-- ----------------------------------------------------------------------------------------------------------------- -->
-      <!-- Judul -->
+      <!-- Blade Directives -->
       <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
         <h1 class="font-bold text-3xl">Blade Directives</h1>
       </div>
@@ -197,62 +268,395 @@
 
       <div class="container">
         <div class="flex flex-wrap justify-center">
-          <!-- Judul Materi -->
+          <!-- 6. Switch Statements -->
           <div data-aos="fade-up" data-aos-duration="2000" class="card w-max bg-primary shadow-xl my-8">
             
             <div class="card-body">
-              <!-- <h2 class="card-title text-neutral">Blade & JavaScript Frameworks</h2> -->
+              <h2 class="card-title text-neutral mt-4 font-bold">Switch Statements</h2>
               <p>
-                Since many JavaScript frameworks also use "curly" braces to indicate a given expression should be displayed in the browser, you may use the @ symbol to inform the Blade rendering engine an expression should remain untouched. For example:
+                Pernyataan switch dapat dibangun menggunakan direktif @switch, @case, @break, @default dan @endswitch. Contoh:
               </p>
               <div class="mockup-code m-4 bg-primary-content text-secondary">
-                <pre data-prefix="1"><code>&lth1&gtLaravel&lth1&gt</code></pre>
-                <pre data-prefix="2"><code></code></pre>
-                <pre data-prefix="3"><code>Hello, @{{ <span class="text-warning">name</span> }}.</code></pre>
+                <pre data-prefix="1"><code>@switch($i)</code></pre>
+                <pre data-prefix="2"><code>   @case(1)</code></pre>
+                <pre data-prefix="3"><code>       First case...</code></pre>
+                <pre data-prefix="4"><code>       @break</code></pre>
+                <pre data-prefix="5"><code></code></pre>
+                <pre data-prefix="6"><code>   @case(2)</code></pre>
+                <pre data-prefix="7"><code>       Second case...</code></pre>
+                <pre data-prefix="8"><code>       @break</code></pre>
+                <pre data-prefix="9"><code></code></pre>
+                <pre data-prefix="10"><code>  @default</code></pre>
+                <pre data-prefix="11"><code>      Default case...</code></pre>
+                <pre data-prefix="12"><code>@endswitch</code></pre>
+              </div>
+              <!-- 7. Loops -->
+              <h2 class="card-title text-neutral mt-4 font-bold">Loops</h2>
+              <p>
+                Selain pernyataan bersyarat, Blade juga menyediakan arahan sederhana untuk bekerja dengan struktur loop PHP. Contoh:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>@for ($i = 0; $i &lt 10; $i++)</code></pre>
+                <pre data-prefix="2"><code>   The current value is {{ $i }}</code></pre>
+                <pre data-prefix="3"><code>@endfor</code></pre>
+                <pre data-prefix="4"><code></code></pre>
+                <pre data-prefix="5"><code>@foreach ($users as $user)</code></pre>
+                <pre data-prefix="6"><code>   &ltp&gtThis is user {{ $user->id }}&lt/p&gt</code></pre>
+                <pre data-prefix="7"><code>@endforeach</code></pre>
+                <pre data-prefix="8"><code></code></pre>
+                <pre data-prefix="9"><code>@forelse ($users as $user)</code></pre>
+                <pre data-prefix="10"><code>    &ltli&gt{{ $user->name }}&lt/li&gt</code></pre>
+                <pre data-prefix="11"><code>@empty</code></pre>
+                <pre data-prefix="12"><code>    &ltp&gtNo users&lt/p&gt</code></pre>
+                <pre data-prefix="13"><code>@endforelse</code></pre>
+                <pre data-prefix="14"><code></code></pre>
+                <pre data-prefix="15"><code>@while (true)</code></pre>
+                <pre data-prefix="16"><code>    &ltp&gtI'm looping forever.&lt/p&gt</code></pre>
+                <pre data-prefix="17"><code>@endwhile</code></pre>
               </div>
               <p>
-                In this example, the @ symbol will be removed by Blade; however, {{ name }} expression will remain untouched by the Blade engine, allowing it to be rendered by your JavaScript framework.
-              </p>
-              <p></p>
-              <p>
-                The @ symbol may also be used to escape Blade directives:
+                Pengguna dapat menggunakan variabel loop untuk mendapatkan informasi berharga tentang loop saat melakukan iterasi melalui loop @foreach.
+                Saat menggunakan loop, pengguna juga dapat melewati iterasi saat ini atau mengakhiri loop menggunakan arahan @continue dan @break. Contoh:
               </p>
               <div class="mockup-code m-4 bg-primary-content text-secondary">
-                <pre class="" data-prefix="1"><code><span class="text-secondary-focus">{{-- Blade template --}}</span></code></pre>
-                <pre data-prefix="2"><code>@@if()</code></pre>
+                <pre data-prefix="1"><code>@foreach ($users as $user)</code></pre>
+                <pre data-prefix="2"><code>   @if ($user->type == 1)</code></pre>
+                <pre data-prefix="3"><code>       @continue</code></pre>
+                <pre data-prefix="4"><code>   @endif</code></pre>
+                <pre data-prefix="5"><code></code></pre>
+                <pre data-prefix="6"><code>   &ltli&gt{{ $user->name }}&lt/li&gt</code></pre>
+                <pre data-prefix="7"><code></code></pre>
+                <pre data-prefix="8"><code>   @if ($user->number == 5)</code></pre>
+                <pre data-prefix="9"><code>       @break</code></pre>
+                <pre data-prefix="10"><code>  @endif</code></pre>
+                <pre data-prefix="11"><code>@endforeach</code></pre>
+              </div>
+              <p>
+                Pengguna dapat menyertakan kondisi kelanjutan atau pemutusan dalam deklarasi direktif:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>@foreach ($users as $user)</code></pre>
+                <pre data-prefix="2"><code>   @continue($user-&gttype == 1)</code></pre>
                 <pre data-prefix="3"><code></code></pre>
-                <pre data-prefix="4"><code><span class="text-secondary-focus">{{-- HTML Output --}}</span></code></pre>
-                <pre data-prefix="5"><code><span class="text-warning">@if</span>()</code></pre>
+                <pre data-prefix="4"><code>   &ltli&gt{{ $user->name }}&lt/li&gt</code></pre>
+                <pre data-prefix="5"><code></code></pre>
+                <pre data-prefix="6"><code>   @break($user-&gtnumber == 5)</code></pre>
+                <pre data-prefix="7"><code>@endforeach</code></pre>
               </div>
-              <!-- Sub Judul -->
-              <h2 class="card-title text-neutral mt-4 font-bold">Blade & JavaScript Frameworks</h2>
-              <p>
-                Since many JavaScript frameworks also use "curly" braces to indicate a given expression should be displayed in the browser, you may use the @ symbol to inform the Blade rendering engine an expression should remain untouched. For example:
-              </p>
-              <div class="mockup-code m-4 bg-primary-content text-secondary">
-                <pre data-prefix="1"><code>&lth1&gtLaravel&lth1&gt</code></pre>
-                <pre data-prefix="2"><code></code></pre>
-                <pre data-prefix="3"><code>Hello, @{{ <span class="text-warning">name</span> }}.</code></pre>
-              </div>
-              <p>
-                In this example, the @ symbol will be removed by Blade; however, {{ name }} expression will remain untouched by the Blade engine, allowing it to be rendered by your JavaScript framework.
-              </p>
               <p></p>
+              <!-- 13. RAW PHP -->
+              <h2 class="card-title text-neutral font-bold">Raw PHP</h2>
               <p>
-                The @ symbol may also be used to escape Blade directives:
+                Dalam beberapa situasi, sangat berguna untuk menyematkan kode PHP ke dalam tampilan kita. Kita dapat menggunakan Blade Directive @php untuk mengeksekusi blok PHP biasa di dalam template kita:
               </p>
               <div class="mockup-code m-4 bg-primary-content text-secondary">
-                <pre data-prefix="1"><code><span class="text-secondary-focus">{{-- Blade template --}}</span></code></pre>
-                <pre data-prefix="2"><code>@@if()</code></pre>
-                <pre data-prefix="3"><code></code></pre>
-                <pre data-prefix="4"><code><span class="text-secondary-focus">{{-- HTML Output --}}</span></code></pre>
-                <pre data-prefix="5"><code><span class="text-warning">@if</span>()</code></pre>
+                <pre data-prefix="1"><code><span class="text-warning">@php</span></code></pre>
+                <pre data-prefix="2"><code>   $counter = 1;</code></pre>
+                <pre data-prefix="3"><code><span class="text-warning">@endphp</span></code></pre>
+              </div>
+              <p>
+                Jika kita hanya perlu menulis satu pernyataan PHP, kita dapat memasukkan pernyataan tersebut dalam @php Directive:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code><span class="text-warning">@php</span>($counter = 1)</code></pre>
+              </div>
+              <p></p>
+              <!-- 14. Comments -->
+              <h2 class="card-title text-neutral font-bold">Comments</h2>
+              <p>
+                Blade memungkinkan pengguna untuk menuliskan komentar di dalam template. Namun, tidak seperti komentar HTML, komentar Blade tidak disertakan dalam HTML yang dikembalikan oleh aplikasi. Contoh:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code><span class="text-secondary-focus">{{-- This comment will not be present in the rendered HTML --}}</span></code></pre>
               </div>
             </div>
           </div>
-
         </div>
       </div>
+
+      <!-- ----------------------------------------------------------------------------------------------------------------- -->
+      <!-- Components -->
+      <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
+        <h1 class="font-bold text-3xl">Components</h1>
+      </div>
+      <!-- Akhir judul -->
+
+      <div class="container">
+        <div class="flex flex-wrap justify-center">
+          <!-- 15. Components -->
+          <div data-aos="fade-up" data-aos-duration="2000" class="card w-max bg-primary shadow-xl my-8">
+            <div class="card-body">
+              <p>
+                Component dan slot memberikan manfaat yang serupa dengan bagian, tata letak, dan termasuk; namun, beberapa mungkin menganggap model component dan slot lebih mudah dipahami. Ada dua pendekatan untuk menulis component: component berbasis kelas dan component anonim.
+              </p>
+              <p></p>
+              <p>
+                Untuk membuat komponen berbasis kelas, kita dapat menggunakan perintah artisan “make:component”. Untuk mengilustrasikan cara menggunakan component, kita akan membuat component “Alert” sederhana. Perintah “make:component” akan menempatkan component di direktori “app/View/Components”:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code><span class="text-secondary-focus">php artisan make:component Alert</span></code></pre>
+              </div>
+              <p>
+                Perintah “make:component” juga akan membuat template tampilan untuk komponen. Tampilan akan ditempatkan di direktori “resources/views/components”. Saat menulis komponen untuk aplikasi kita sendiri, komponen secara otomatis ditemukan di dalam direktori “app/View/Components” dan direktori “resources/views/components”, jadi biasanya tidak diperlukan pendaftaran komponen lebih lanjut.
+              </p>
+              <p></p>
+              <p>
+                Kita juga dapat membuat component di subdirektori:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code><span class="text-secondary-focus">php artisan make:component Forms/Input</span></code></pre>
+              </div>
+              <p>
+                Perintah di atas akan membuat component “Input” di direktori “app/View/Components/Forms” dan tampilan akan ditempatkan di direktori resources/views/components/forms”.
+              </p>
+              <p></p>
+              <!-- 15. Mendaftarkan Paket Component Secara Manual (sub sub judul)) -->
+              <h2 class="card-title text-neutral font-semibold">#Mendaftarkan Paket Component Secara Manual</h2>
+              <p>
+                Saat menulis component untuk aplikasi kita sendiri, component secara otomatis ditemukan di dalam direktori  “app/View/Components” dan direktori “resources/views/components”.
+              </p>
+              <p></p>
+              <p>
+                Namun, jika kita membuat paket yang menggunakan komponen Blade, Anda perlu mendaftarkan kelas component dan alias tag HTML-nya secara manual. Anda biasanya harus mendaftarkan komponen Anda dalam metode “boot” penyedia layanan paket Anda:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code><span class="text-warning">use</span> Illuminate\Support\Facades\Blade;</code></pre>
+                <pre data-prefix="2"><code></code></pre>
+                <pre data-prefix="3"><code><span class="text-secondary-focus">/**</span></code></pre>
+                <pre data-prefix="4"><code><span class="text-secondary-focus"> * Bootstrap your package's services.</span></code></pre>
+                <pre data-prefix="5"><code><span class="text-secondary-focus"> */</span></code></pre>
+                <pre data-prefix="6"><code><span class="text-warning">public function</span> boot()</code></pre>
+                <pre data-prefix="7"><code>{</code></pre>
+                <pre data-prefix="8"><code><span class="text-warning">    Blade</span>::component('package-alert', Alert::class);</code></pre>
+                <pre data-prefix="9"><code>}</code></pre>
+              </div>
+              <p></p>
+              <!-- 16. Rendering components -->
+              <h2 class="card-title text-neutral mt-4 font-bold">Rendering components</h2>
+              <p>
+                Untuk menampilkan suatu komponen, meggunakan salah satu komponen tag dari tamplate blade. Dimulai dengan string x dan disusul dengan kebab case (-) dari komponen kelas seperti contoh:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&ltx-alert/&gt</code></pre>
+                <pre data-prefix="2"><code></code></pre>
+                <pre data-prefix="3"><code>&ltx-user-profile/&gt</code></pre>
+              </div>
+              <p></p>
+              <!-- 18. Component Attributes -->
+              <h2 class="card-title text-neutral font-bold">Component Attributes</h2>
+              <p>
+                Terkadang kita mungkin perlu menentukan atribut HTML tambahan, seperti “class”, yang bukan merupakan bagian dari data yang diperlukan agar component berfungsi. Biasanya, kita ingin meneruskan atribut tambahan ini ke elemen root template komponen. Misalnya, bayangkan kita ingin me-render component “alert” seperti ini:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&lt;<span class="text-warning">x-alert </span>type="error" :message="$message" class="mt-4"/&gt;</code></pre>
+              </div>
+              <p>
+                Semua atribut yang bukan bagian dari konstruktor komponen akan secara otomatis ditambahkan ke "tas atribut" component. Tas atribut ini secara otomatis tersedia untuk komponen melalui variabel “$attributes”. Semua atribut dapat di-render dalam komponen dengan menggunakan variabel ini:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&lt;<span class="text-warning">div </span>{{ $attributes }}&gt;</code></pre>
+                <pre data-prefix="2"><code><span class="text-secondary-focus">   &lt;!-- Component content --&gt;</span></code></pre>
+                <pre data-prefix="3"><code>&lt;<span class="text-warning">/div</span>&gt;</code></pre>
+              </div>
+              <p></p>
+              <h2 class="card-title text-neutral font-semibold">Default/Merged Attributes</h2>
+              <p>
+                Terkadang kita mungkin perlu menentukan nilai default untuk atribut atau menggabungkan nilai tambahan ke dalam beberapa atribut component. Untuk mencapai ini, kita dapat menggunakan metode tas atribut “merge”. Metode ini sangat berguna untuk mendefinisikan satu set kelas CSS default yang harus selalu diterapkan ke component:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&lt;<span class="text-warning">div </span>{{ $attributes->merge(['class' => 'alert alert-'.$type]) }}&gt;</code></pre>
+                <pre data-prefix="2"><code>   {{ $message }}<span class="text-secondary-focus"></span></code></pre>
+                <pre data-prefix="3"><code>&lt;<span class="text-warning">/div</span>&gt;</code></pre>
+              </div>
+              <p>
+                Jika kita menganggap component  ini digunakan seperti ini:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&lt;<span class="text-warning">x-alert</span> type="error" :message="$message" class="mb-4"/&gt;</code></pre>
+              </div>
+              <p>
+                HTML akhir yang dirender dari komponen akan muncul seperti berikut:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&lt;<span class="text-warning">div </span>class="alert alert-error mb-4"&gt;</code></pre>
+                <pre data-prefix="2"><code><span class="text-secondary-focus">    &lt;!-- Contents of the $message variable --&gt;</span></code></pre>
+                <pre data-prefix="3"><code>&lt;<span class="text-warning">/div</span>&gt;</code></pre>
+              </div>
+              <p></p>
+              <!-- 19. Reserved Keyword -->
+              <h2 class="card-title text-neutral mt-4 font-bold">Reserved Keyword</h2>
+              <p>
+                Beberapa kata kunci sudah disediakan secara bawaan sistem untuk merender komponen. Beberapa kata kunci ini tidak bisa dideskripsikan sebagai properti publik atau nama method selain komponen kita yaitu:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>-data</code></pre>
+                <pre data-prefix="2"><code>-render</code></pre>
+                <pre data-prefix="3"><code>-resolveView</code></pre>
+                <pre data-prefix="4"><code>-shouldRender</code></pre>
+                <pre data-prefix="5"><code>-view</code></pre>
+                <pre data-prefix="6"><code>-withAttributes</code></pre>
+                <pre data-prefix="7"><code>-withName</code></pre>
+              </div>
+              <p></p>
+              <!-- 20. Slots -->
+              <h2 class="card-title text-neutral mt-4 font-bold">Slots</h2>
+              <p>
+                Pengguna akan sering diminta meneruskan konten tambahan ke komponen melalui "slot". Slot komponen dirender dengan menggemakan variabel $slot. Contoh komponen alert:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&lt!-- /resources/views/components/alert.blade.php --&gt</code></pre>
+                <pre data-prefix="2"><code></code></pre>
+                <pre data-prefix="3"><code>&ltdiv class="alert alert-danger"&gt</code></pre>
+                <pre data-prefix="4"><code>   {{ $slot }}</code></pre>
+                <pre data-prefix="5"><code>&lt/div&gt</code></pre>
+              </div>
+              <p>
+                Konten diteruskan ke slot dengan menyuntikkan konten ke dalam komponen:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&ltx-alert&gt</code></pre>
+                <pre data-prefix="2"><code>   &ltstrong&gtWhoops!&lt/strong&gt Something went wrong!</code></pre>
+                <pre data-prefix="3"><code>&lt/x-alert&gt</code></pre>
+              </div>
+              <p>
+                Terkadang komponen mungkin perlu membuat beberapa slot berbeda di lokasi berbeda di dalam komponen. Contoh:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&lt!-- /resources/views/components/alert.blade.php --&gt</code></pre>
+                <pre data-prefix="2"><code></code></pre>
+                <pre data-prefix="3"><code>&ltspan class="alert-title"&gt{{ $title }}&lt/span&gt</code></pre>
+                <pre data-prefix="4"><code></code></pre>
+                <pre data-prefix="5"><code>&ltdiv class="alert alert-danger"&gt</code></pre>
+                <pre data-prefix="6"><code>   {{ $slot }}</code></pre>
+                <pre data-prefix="7"><code>&lt/div&gt</code></pre>
+              </div>
+              <p>
+                Pengguna dapat menentukan konten slot yang memiliki nama menggunakan tag x-slot. Konten apa pun yang tidak berada dalam tag x-slot akan diteruskan ke komponen dalam variabel $slot:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&ltx-alert&gt</code></pre>
+                <pre data-prefix="2"><code>   &ltx-slot:title&gt</code></pre>
+                <pre data-prefix="3"><code>       Server Error</code></pre>
+                <pre data-prefix="4"><code>   &lt/x-slot&gt</code></pre>
+                <pre data-prefix="5"><code></code></pre>
+                <pre data-prefix="6"><code>   &ltstrong&gtWhoops!&lt/strong&gt Something went wrong!</code></pre>
+                <pre data-prefix="7"><code>&lt/x-alert&gt</code></pre>
+              </div>
+              <p></p>
+              <!-- 20. Scoped Slots (sub sub judul) -->
+              <h2 class="card-title text-neutral mt-4 font-semibold">Scoped Slots</h2>
+              <p>
+                Pengguna dapat menggunakan framework JavaScript yang memungkinkan untuk mengakses data atau metode dari komponen yang ada di dalam slot. Pengguna juga dapat mendefinisikan metode atau properti publik pada komponen dan mengakses komponen di dalam slot Anda melalui variabel $component. Dalam contoh ini, komponen x-alert akan diasumsikan memiliki metode formatAlert yang didefinisikan pada kelas komponennya:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&ltx-alert&gt</code></pre>
+                <pre data-prefix="2"><code>   &ltx-slot:title&gt</code></pre>
+                <pre data-prefix="3"><code>       {{ $component->formatAlert('Server Error') }}</code></pre>
+                <pre data-prefix="4"><code>   &lt/x-slot&gt</code></pre>
+                <pre data-prefix="5"><code></code></pre>
+                <pre data-prefix="6"><code>   &ltstrong&gtWhoops!&lt/strong&gt Something went wrong!</code></pre>
+                <pre data-prefix="7"><code>&lt/x-alert&gt</code></pre>              
+              </div>
+              <p></p>
+              <!-- 20. Slot Attributes (sub sub judul) -->
+              <h2 class="card-title text-neutral mt-4 font-semibold">Slot Attributes</h2>
+              <p>
+                Pengguna dapat menetapkan atribut tambahan ke slot seperti nama kelas CSS:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&ltx-card class="shadow-sm"&gt&lt/x-card&gt</code></pre>          
+                <pre data-prefix="2"><code>   &ltx-slot:heading class="font-bold"&gt&lt/x-slot:heading&gt</code></pre>          
+                <pre data-prefix="3"><code>       Heading</code></pre>          
+                <pre data-prefix="4"><code>   &lt/x-slot&gt</code></pre>          
+                <pre data-prefix="5"><code></code></pre>          
+                <pre data-prefix="6"><code>   Content</code></pre>          
+                <pre data-prefix="7"><code></code></pre>          
+                <pre data-prefix="8"><code>   &ltx-slot:footer class="text-sm"&gt&lt/x-slot:footer&gt</code></pre>          
+                <pre data-prefix="9"><code>       Footer</code></pre>          
+                <pre data-prefix="10"><code>  &lt/x-slot&gt&lt/code&gt</pre>          
+                <pre data-prefix="11"><code>&lt/x-card&gt</code></pre>          
+              </div>
+              <p>
+                Untuk berinteraksi dengan atribut slot, pengguna dapat mengakses properti attributes variabel slot. Contoh kode atribut komponen:
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>@props([</code></pre>          
+                <pre data-prefix="2"><code>     'heading',</code></pre>          
+                <pre data-prefix="3"><code>     'footer',</code></pre>          
+                <pre data-prefix="4"><code>])</code></pre>          
+                <pre data-prefix="5"><code></code></pre>          
+                <pre data-prefix="6"><code>&ltdiv {{ $attributes-&gtclass(['border']) }}&gt</code></pre>          
+                <pre data-prefix="7"><code>     &lth1 {{ $heading-&gtattributes-&gtclass(['text-lg']) }}&gt</code></pre>          
+                <pre data-prefix="8"><code>         {{ $heading }}</code></pre>          
+                <pre data-prefix="9"><code>     &lt/h1&gt</code></pre>          
+                <pre data-prefix="10"><code></code></pre>          
+                <pre data-prefix="11"><code>    {{ $slot }}</code></pre>              
+                <pre data-prefix="12"><code></code></pre>          
+                <pre data-prefix="13"><code>    &ltfooter {{ $footer-&gtattributes-&gtclass(['text-gray-700']) }}&gt</code></pre>          
+                <pre data-prefix="14"><code>        {{ $footer }}</code></pre>          
+                <pre data-prefix="15"><code>    &lt/footer&gt</code></pre>              
+                <pre data-prefix="16"><code>&lt/div&gt</code></pre>              
+              </div>
+              <p></p>
+              <!-- 21. Inline Components Views -->
+              <h2 class="card-title text-neutral mt-4 font-bold">Inline Component views</h2>
+              <p>
+                Untuk komponen paling kecil, kita bisa mengembalikan markup komponen dengan metode render :
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>/**</code></pre>
+                <pre data-prefix="2"><code>* Get the view / contents that represent the component.</code></pre>
+                <pre data-prefix="3"><code>*</code></pre>
+                <pre data-prefix="4"><code>* @return \Illuminate\View\View|\Closure|string</code></pre>
+                <pre data-prefix="5"><code>*/</code></pre>
+                <pre data-prefix="6"><code>public function render()</code></pre>
+                <pre data-prefix="7"><code>&ltdiv class="alert alert-danger"&gt</code></pre>
+                <pre data-prefix="8"><code>{{ $slot }}</code></pre>
+                <pre data-prefix="9"><code>&ltdiv&gt</code></pre>
+                <pre data-prefix="10"><code>blade;</code></pre>
+                <pre data-prefix="11"><code>}</code></pre>
+              </div>
+              <p></p>
+              <!-- 22. Dynamic Components -->
+              <h2 class="card-title text-neutral mt-4 font-bold">Dynamic Components</h2>
+              <p>
+                Kadang kita juga harus merender komponen tapi tidak tahu komponen mana yang harus dirender hingga runtime. untuk itu, bisa menggunakan dynamic-component untuk merender komponen berdasarkan isi runtime/variabel.
+              </p>
+              <div class="mockup-code m-4 bg-primary-content text-secondary">
+                <pre data-prefix="1"><code>&ltx-dynamic-component :component="$componentName" class="mt-4" /&gt</code></pre>
+              </div>
+              <p></p>
+              <!-- 23. Manually Registering Components -->
+              <h2 class="card-title text-neutral mt-4 font-bold">Manually Registering Components</h2>
+                <p>
+                  Saat penulisan komponen, komponen dapat ditemukan pada direktori app/View/Components dan resources/views/components. Saat membangun package yang memanfaatkan komponen Blade diperlukan registrasi kelas komponen dan tag HTML secara manual agar Laravel mengetahui
+                  letak dari komponen. Untuk melakukan register komponen dilakukan pada method boot pada package service provider.
+                </p>
+                <div class="mockup-code m-4 bg-primary-content text-secondary">
+                  <pre data-prefix="1">use Illuminate\Support\Facades\Blade;</pre>
+                  <pre data-prefix="2"><code>use VendorPackage\View\Components\AlertComponent;</code></pre>
+                  <pre data-prefix="3"><code></code></pre>
+                  <pre data-prefix="4"><code>/**</code></pre>
+                  <pre data-prefix="5"><code> * Bootstrap your package's services.</code></pre>
+                  <pre data-prefix="6"><code> *</code></pre>
+                  <pre data-prefix="7"><code> * @return void</code></pre>
+                  <pre data-prefix="8"><code> */</code></pre>
+                  <pre data-prefix="9"><code>public function boot()</code></pre>
+                  <pre data-prefix="10"><code>{</code></pre>
+                  <pre data-prefix="11"><code>    Blade::component('package-alert', AlertComponent::class);</code></pre>
+                  <pre data-prefix="12"><code>}</code></pre>
+                </div>
+                <p>
+                  Saat komponen telah teregistrasi dapat dirender menggunakan tag alias :
+                </p>
+                <div class="mockup-code m-4 bg-primary-content text-secondary">
+                  <pre data-prefix="1"><code>&ltx-package-alert/&gt</code></pre>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Akhir Konten -->
     </div>
     
