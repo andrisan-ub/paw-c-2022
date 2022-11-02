@@ -14,24 +14,40 @@
 <body>
   <!-- Navbar -->
   <div class="navbar p-4 bg-primary">
-    <div class="dropdown text-primary-content">
-      <label tabindex="0" class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-        </svg>
-      </label>
-      <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52">
-        <li><a href="/Kelompok-5/Nomor 1/Nomor1.html">Server and Client-Server Scripting</a></li>
-        <li><a href="/Kelompok-5/Nomor 2/Nomor2.html">PHP Basics</a></li>
-        <li><a href="/Kelompok-5/Nomor 3/Nomor3.html">Penerapan Seleksi Kondisi, Looping, Array</a></li>
-        <li><a href="/Kelompok-5/Nomor 4/Nomor4.html">Penerapan Materi Terhadap Nilai Konversi Mahasiswa</a></li>
-        <li><a href="/Kelompok-5/Nomor 5/Nomor5.html">Uji Coba Source Code</a></li>
-        <li><a href="/Kelompok-5/Rangkuman Blade/rangkuman-blade-kelompok-5.html">Rangkuman Blade</a></li>
-      </ul>
+    <div class="navbar-start">
+      <div class="dropdown text-primary-content">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary-content text-primary rounded-box w-52">
+          <li><a href="/Kelompok-5/Nomor 1/Nomor1.html">Server and Client-Server Scripting</a></li>
+          <li><a href="/Kelompok-5/Nomor 2/Nomor2.html">PHP Basics</a></li>
+          <li><a href="/Kelompok-5/Nomor 3/Nomor3.html">Penerapan Seleksi Kondisi, Looping, Array</a></li>
+          <li><a href="/Kelompok-5/Nomor 4/Nomor4.html">Penerapan Materi Terhadap Nilai Konversi Mahasiswa</a></li>
+          <li><a href="/Kelompok-5/Nomor 5/Nomor5.html">Uji Coba Source Code</a></li>
+          <li><a href="/Kelompok-5/Rangkuman Blade/rangkuman-blade-kelompok-5.html">Rangkuman Blade</a></li>
+        </ul>
+      </div>
     </div>
     <div class="navbar-center">
       <a class="uppercase font-bold text-xl text-primary-content" href="/Kelompok-5/index.html">Kelompok 5 Pengembangan
         Aplikasi Web</a>
+    </div>
+    <div class="navbar-end">
+      <div class="dropdown dropdown-end dropdown-bottom text-primary">
+        <label tabindex="0" class="btn btn-ghost m-1 font-bold text-primary-content">Daftar Isi</label>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-primary-content rounded-box w-52">
+          <li><a href="#Introduction">Introduction</a></li>
+          <li><a href="#Displaying Data">Displaying Data</a></li>
+          <li><a href="#Blade Directives">Blade Directives</a></li>
+          <li><a href="#Components">Components</a></li>
+          <li><a href="#Anonymous Components">Anonymous Components</a></li>
+          <li><a href="#Building Layouts">Building Layouts</a></li>
+          <li><a href="#Forms">Forms</a></li>
+        </ul>
+      </div>
     </div>
   </div>
   <!-- Navbar -->
@@ -131,7 +147,7 @@
     <!-- Akhir Our Team -->
 
     <!-- 1. Introduction -->
-    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
+    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10" id="Introduction">
       <h1 class="font-bold text-3xl">Introduction</h1>
     </div>
     <!-- Akhir judul -->
@@ -164,7 +180,7 @@
 
     <!-- ----------------------------------------------------------------------------------------------------------------- -->
     <!-- 2. Displaying Data -->
-    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
+    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10" id="Displaying Data">
       <h1 class="font-bold text-3xl">Displaying Data</h1>
     </div>
     <!-- Akhir judul -->
@@ -283,7 +299,7 @@
 
     <!-- ----------------------------------------------------------------------------------------------------------------- -->
     <!-- Blade Directives -->
-    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
+    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10" id="Blade Directives">
       <h1 class="font-bold text-3xl">Blade Directives</h1>
     </div>
     <!-- Akhir judul -->
@@ -305,8 +321,7 @@
               <pre
                 data-prefix="4"><code><span class="text-secondary-focus">   I have multiple records!</span></code></pre>
               <pre data-prefix="5"><code>@else</code></pre>
-              <pre
-                data-prefix="6"><code><span class="text-secondary-focus">   I don't have any records!</span></code></pre>
+              <pre data-prefix="6"><code><span class="text-secondary-focus">   I don't have any records!</span></code></pre>
               <pre data-prefix="7"><code>@endif</code></pre>
             </div>
             <p>
@@ -315,8 +330,7 @@
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre class="" data-prefix="1"><code>@unless (Auth::check())</code></pre>
-              <pre
-                data-prefix="2"><code><span class="text-secondary-focus">    You are not signed in.</span></code></pre>
+              <pre data-prefix="2"><code><span class="text-secondary-focus">    You are not signed in.</span></code></pre>
               <pre data-prefix="3"><code>@endunless</code></pre>
             </div>
             <p>
@@ -326,12 +340,10 @@
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre class="" data-prefix="1"><code>@isset($records)</code></pre>
-              <pre
-                data-prefix="2"><code><span class="text-secondary-focus">    // $records is defined and is not null...</span></code></pre>
+              <pre data-prefix="2"><code><span class="text-secondary-focus">    // $records is defined and is not null...</span></code></pre>
               <pre data-prefix="3"><code>@endisset</code></pre><br>
               <pre class="" data-prefix="4"><code>@empty($records)</code></pre>
-              <pre
-                data-prefix="5"><code><span class="text-secondary-focus">    // $records is defined and is not null...</span></code></pre>
+              <pre data-prefix="5"><code><span class="text-secondary-focus">    // $records is defined and is not null...</span></code></pre>
               <pre data-prefix="6"><code>@endisset</code></pre>
             </div>
           </div>
@@ -503,7 +515,7 @@
               mengevaluasi ke true
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
-              <pre data-prefix="1"><code><'input</code></pre>
+              <pre data-prefix="1"><code>&ltinput</code></pre>
               <pre data-prefix="2"><code><span class="text-secondary-focus">    type="checkbox"</span></code></pre>
               <pre data-prefix="3"><code><span class="text-secondary-focus">    name="active"</span></code></pre>
               <pre data-prefix="4"><code><span class="text-secondary-focus">    value="active"</span></code></pre>
@@ -514,14 +526,14 @@
               "dipilih":
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
-              <pre data-prefix="1"><code><'select name="version"</code></pre>
+              <pre data-prefix="1"><code>&ltselect name="version"</code></pre>
               <pre data-prefix="2"><code>   @foreach ($product->versions as $version)</code></pre>
               <pre
-                data-prefix="3"><code><span class="text-secondary-focus">     <'option value="{{ $version }}" @selected(old('version') == $version)></span></code></pre>
+                data-prefix="3"><code><span class="text-secondary-focus">     &ltoption value="{{ $version }}" @selected(old('version') == $version)></span></code></pre>
               <pre data-prefix="4"><code><span class="text-secondary-focus">        {{ $version }}</span></code></pre>
-              <pre data-prefix="5"><code><span class="text-secondary-focus">    <'/option></code></span></pre>
+              <pre data-prefix="5"><code><span class="text-secondary-focus">    &lt/option></code></span></pre>
               <pre data-prefix="6"><code>   @endforeach</code></pre>
-              <pre data-prefix="7"><code><'/select></code></pre>
+              <pre data-prefix="7"><code>&lt/select></code></pre>
             </div>
             <p>
               Selain itu, @disabled arahan dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus
@@ -529,14 +541,14 @@
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre
-                data-prefix="1"><code><' button type="submit" @disabled($errors->isNotEmpty())>Submit<'/button></code></pre>
+                data-prefix="1"><code>&lt button type="submit" @disabled($errors->isNotEmpty())>Submit&lt/button></code></pre>
             </div>
             <p>
               Selain itu, @readonly arahan dapat digunakan untuk menunjukkan apakah elemen yang diberikan harus
               "hanya-baca":
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
-              <pre data-prefix="1"><code><'input</code></pre>
+              <pre data-prefix="1"><code>&ltinput</code></pre>
               <pre data-prefix="2"><code><span class="text-secondary-focus">    type="email"</span></code></pre>
               <pre data-prefix="3"><code><span class="text-secondary-focus">    name="email"</span></code></pre>
               <pre
@@ -549,7 +561,7 @@
               "diperlukan"
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
-              <pre data-prefix="1"><code><'input</code></pre>
+              <pre data-prefix="1"><code>&ltinput</code></pre>
               <pre data-prefix="2"><code><span class="text-secondary-focus">    type="text"</span></code></pre>
               <pre data-prefix="3"><code><span class="text-secondary-focus">    name="title"</span></code></pre>
               <pre data-prefix="4"><code><span class="text-secondary-focus">    value="title"</span></code></pre>
@@ -567,9 +579,9 @@
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre data-prefix="1"><code>@once</code></pre>
               <pre data-prefix="2"><code>   @push('scripts')</code></pre>
-              <pre data-prefix="3"><code><span class="text-secondary-focus">    <'script></span></code></pre>
+              <pre data-prefix="3"><code><span class="text-secondary-focus">    &ltscript></span></code></pre>
               <pre data-prefix="4"><code>     (custom javascript)</code></pre>
-              <pre data-prefix="5"><code><span class="text-secondary-focus">    <'/script></span></code></pre>
+              <pre data-prefix="5"><code><span class="text-secondary-focus">    &lt/script></span></code></pre>
               <pre data-prefix="6"><code>   @endpush</code></pre>
               <pre data-prefix="7"><code>@endonce</code></pre>
             </div>
@@ -579,9 +591,9 @@
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre data-prefix="1"><code>@pushOnce('scripts')</code></pre>
-              <pre data-prefix="2"><code><span class="text-secondary-focus">    <'script></span></code></pre>
+              <pre data-prefix="2"><code><span class="text-secondary-focus">    &ltscript></span></code></pre>
               <pre data-prefix="3"><code>     (custom javascript)</code></pre>
-              <pre data-prefix="4"><code><span class="text-secondary-focus">    <'/script></span></code></pre>
+              <pre data-prefix="4"><code><span class="text-secondary-focus">    &lt/script></span></code></pre>
               <pre data-prefix="5"><code>@endPushOnce</code></pre>
             </div>
 
@@ -623,7 +635,7 @@
 
     <!-- ----------------------------------------------------------------------------------------------------------------- -->
     <!-- Components -->
-    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
+    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10" id="Components">
       <h1 class="font-bold text-3xl">Components</h1>
     </div>
     <!-- Akhir judul -->
@@ -714,7 +726,7 @@
               diteruskan ke komponen melalui atribut yang menggunakan : karakter sebagai awalan:
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
-              <pre data-prefix="1"><code><'x-alert type="error" :message="$message"/></code></pre>
+              <pre data-prefix="1"><code>&ltx-alert type="error" :message="$message"/></code></pre>
             </div>
             <p>
               Anda harus mendefinisikan semua atribut data komponen dalam konstruktor kelasnya. Semua properti publik
@@ -722,7 +734,7 @@
               tampilan dari metode komponen render:
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
-              <pre data-prefix="1"><code><span class="text-secondary-focus"><'?php</span></code></pre>
+              <pre data-prefix="1"><code><span class="text-secondary-focus">&lt?php</span></code></pre>
               <pre
                 data-prefix="2"><code><span class="text-secondary-focus">namespace App\View\Components;</span></code></pre>
               <pre
@@ -767,9 +779,9 @@
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre
-                data-prefix="1"><code><span class="text-secondary-focus"><'div class="alert alert-{{ $type }}"></span></code></pre>
+                data-prefix="1"><code><span class="text-secondary-focus">&ltdiv class="alert alert-{{ $type }}"></span></code></pre>
               <pre data-prefix="2"><code>   {{ $message }}</span></code></pre>
-              <pre data-prefix="3"><code><span class="text-secondary-focus"><'/div></span></code></pre>
+              <pre data-prefix="3"><code><span class="text-secondary-focus">&lt/div></span></code></pre>
             </div>
             <h2 class="card-title text-neutral mt-4 font-bold">Casing</h2>
             <p>
@@ -793,7 +805,7 @@
               Argumen $alertTypedapat diberikan ke komponen seperti:
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
-              <pre data-prefix="1"><code><'x-alert alert-type="danger" /></code></pre>
+              <pre data-prefix="1"><code>&ltx-alert alert-type="danger" /></code></pre>
             </div>
             <h2 class="card-title text-neutral mt-4 font-bold">Short Attribute Syntax</h2>
             <p>
@@ -803,11 +815,11 @@
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre data-prefix="1"><code>{{-- Short attribute syntax... --}}</code></pre>
               <pre
-                data-prefix="2"><code><span class="text-secondary-focus"><'x-profile :$userId :$name /></span></code></pre>
+                data-prefix="2"><code><span class="text-secondary-focus">&ltx-profile :$userId :$name /></span></code></pre>
               <br>
               <pre data-prefix="3"><code>{{-- Short attribute syntax... --}}</code></pre>
               <pre
-                data-prefix="4"><code><span class="text-secondary-focus"><'x-profile :user-id="$userId" :name="$name" /></span></code></pre>
+                data-prefix="4"><code><span class="text-secondary-focus">&ltx-profile :user-id="$userId" :name="$name" /></span></code></pre>
             </div>
             <h2 class="card-title text-neutral mt-4 font-bold">Escaping Attribute Rendering</h2>
             <p>
@@ -817,18 +829,18 @@
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre
-                data-prefix="1"><code><span class="text-secondary-focus"><'x-button ::class="{ danger: isDeleting }"></span></code></pre>
+                data-prefix="1"><code><span class="text-secondary-focus">&ltx-button ::class="{ danger: isDeleting }"></span></code></pre>
               <pre data-prefix="2"><code>   Submit</code></pre>
-              <pre data-prefix="3"><code><span class="text-secondary-focus"><'/x-button></span></code></pre>
+              <pre data-prefix="3"><code><span class="text-secondary-focus">&lt/x-button></span></code></pre>
             </div>
             <p>
               HTML berikut akan dirender oleh Blade:
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre
-                data-prefix="1"><code><span class="text-secondary-focus"><'button :class="{ danger: isDeleting }"></span></code></pre>
+                data-prefix="1"><code><span class="text-secondary-focus">&ltbutton :class="{ danger: isDeleting }"></span></code></pre>
               <pre data-prefix="2"><code>   Submit</code></pre>
-              <pre data-prefix="3"><code><span class="text-secondary-focus"><'/button></span></code></pre>
+              <pre data-prefix="3"><code><span class="text-secondary-focus">&lt/button></span></code></pre>
             </div>
             <h2 class="card-title text-neutral mt-4 font-bold">Component Methods</h2>
             <p>
@@ -855,9 +867,9 @@
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
               <pre
-                data-prefix="1"><code><span class="text-secondary-focus"><'option {{ $isSelected($value) ? 'selected' : '' }} value="{{ $value }}"></span></code></pre>
+                data-prefix="1"><code><span class="text-secondary-focus">&ltoption {{ $isSelected($value) ? 'selected' : '' }} value="{{ $value }}"></span></code></pre>
               <pre data-prefix="2"><code>   {{ $label }}</code></pre>
-              <pre data-prefix="3"><code><span class="text-secondary-focus"><'/option></span></code></pre>
+              <pre data-prefix="3"><code><span class="text-secondary-focus">&lt/option></span></code></pre>
             </div>
             <h2 class="card-title text-neutral mt-4 font-bold">Accessing Attributes & Slots Within Component Classes
             </h2>
@@ -878,13 +890,13 @@
                 data-prefix="7"><code><span class="text-secondary-focus"> public function render()</span></code></pre>
               <pre data-prefix="8"><code><span class="text-secondary-focus">   {</span></code></pre>
               <pre data-prefix="9"><code>      return function (array $data) {</code></pre>
-              <pre data-prefix="10"><code>         return '<'div>Components content<'/div>';</code></pre>
+              <pre data-prefix="10"><code>         return '&ltdiv>Components content&lt/div>';</code></pre>
               <pre data-prefix="11"><code>      };</code></pre>
               <pre data-prefix="12"><code><span class="text-secondary-focus">  }</span></code></pre>
             </div>
             <p>
               Itu componentNamesama dengan nama yang digunakan dalam tag HTML setelah x-awalan. Jadi akan .
-              <'x-alert />_ Elemen akan berisi semua atribut yang ada pada tag HTML. Elemen adalah instance dengan
+              &ltx-alert />_ Elemen akan berisi semua atribut yang ada pada tag HTML. Elemen adalah instance dengan
               konten slot komponen.componentNamealertattributesslotIlluminate\Support\HtmlString <br><br>
               Penutupan harus mengembalikan string. Jika string yang dikembalikan sesuai dengan tampilan yang ada,
               tampilan tersebut akan dirender; jika tidak, string yang dikembalikan akan dievaluasi sebagai tampilan
@@ -912,13 +924,13 @@
               <pre data-prefix="11"><code>      $this->message = $message;</code></pre>
               <pre data-prefix="12"><code><span class="text-secondary-focus">     }</span> </code></pre>
             </div>
-            <h2 class="card-title text-neutral mt-4 font-bold">Hiding Attributes / Methods</h2>
-            <p>
+            <h2 class="card-title text-neutral mt-4 font-bold font-sans">Hiding Attributes / Methods</h2>
+            <p class="font-sans">
               Jika Anda ingin mencegah beberapa metode atau properti publik diekspos sebagai variabel ke templat
               komponen Anda, Anda dapat menambahkannya ke $exceptproperti array di komponen Anda
             </p>
             <div class="mockup-code m-4 bg-primary-content text-secondary">
-              <pre data-prefix="1"><code><'?php</code></pre>
+              <pre data-prefix="1"><code>&lt?php</code></pre>
               <pre data-prefix="2"><code>namespace App\View\Components;</code></pre>
               <pre data-prefix="3"><code>use Illuminate\View\Component;</code></pre><br>
               <pre
@@ -939,8 +951,8 @@
             </div>
 
             <!-- 18. Component Attributes -->
-            <h2 class="card-title text-neutral font-bold">Component Attributes</h2>
-            <p>
+            <h2 class="card-title text-neutral font-bold font-sans">Component Attributes</h2>
+            <p class="font-sans">
               Terkadang kita mungkin perlu menentukan atribut HTML tambahan, seperti “class”, yang bukan merupakan
               bagian dari data yang diperlukan agar component berfungsi. Biasanya, kita ingin meneruskan atribut
               tambahan ini ke elemen root template komponen. Misalnya, bayangkan kita ingin me-render component “alert”
@@ -950,7 +962,8 @@
               <pre
                 data-prefix="1"><code>&lt;<span class="text-warning">x-alert </span>type="error" :message="$message" class="mt-4"/&gt;</code></pre>
             </div>
-            <p>
+            <p></p>
+            <p class="font-sans">
               Semua atribut yang bukan bagian dari konstruktor komponen akan secara otomatis ditambahkan ke "tas
               atribut" component. Tas atribut ini secara otomatis tersedia untuk komponen melalui variabel
               “$attributes”. Semua atribut dapat di-render dalam komponen dengan menggunakan variabel ini:
@@ -962,8 +975,8 @@
               <pre data-prefix="3"><code>&lt;<span class="text-warning">/div</span>&gt;</code></pre>
             </div>
             <p></p>
-            <h2 class="card-title text-neutral font-semibold">Default/Merged Attributes</h2>
-            <p>
+            <h2 class="card-title text-neutral font-semibold font-sans">Default/Merged Attributes</h2>
+            <p class="font-sans">
               Terkadang kita mungkin perlu menentukan nilai default untuk atribut atau menggabungkan nilai tambahan ke
               dalam beberapa atribut component. Untuk mencapai ini, kita dapat menggunakan metode tas atribut “merge”.
               Metode ini sangat berguna untuk mendefinisikan satu set kelas CSS default yang harus selalu diterapkan ke
@@ -1182,7 +1195,7 @@
     </div>
 
     <!-- 24. Anonymous Components -->
-    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
+    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10" id="Anonymous Components">
       <h1 class="font-bold text-3xl">Anonymous Components</h1>
     </div>
     <!-- Akhir judul -->
@@ -1298,7 +1311,7 @@
 
     <!-- Isi konten -->
     <!-- Judul -->
-    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
+    <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10" id="Building Layouts">
       <h1 class="font-bold text-3xl">Building Layouts</h1>
     </div>
     <!-- Akhir judul -->
@@ -1414,7 +1427,7 @@
 
         </div>
 
-        <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10">
+        <div class="container text-center p-4 text-2xl border-primary-content border-b-4 text-primary-content mt-10" id="Forms">
           <h1 class="font-bold text-3xl">Forms</h1>
         </div>
 
